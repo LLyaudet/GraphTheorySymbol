@@ -151,8 +151,9 @@
 % \marg{color} The color that must be used by GraphTheorySymbol afterward.
 %    \begin{macrocode}
 \newcommand{\GTSsetMainColor}[1]{%
-\def\GTS@mainColorBackup{\GTS@mainColor}%
-\def\GTS@mainColor{#1}%
+\edef\GTS@mainColorTemp{#1}%
+\edef\GTS@mainColorBackup{\GTS@mainColor}%
+\edef\GTS@mainColor{\GTS@mainColorTemp}%
 }
 %    \end{macrocode}
 % \end{macro}
@@ -163,8 +164,9 @@
 % \marg{color} The color that must be used by GraphTheorySymbol afterward.
 %    \begin{macrocode}
 \newcommand{\GTSsetSecondColor}[1]{%
-\def\GTS@secondColorBackup{\GTS@secondColor}%
-\def\GTS@secondColor{#1}%
+\edef\GTS@secondColorTemp{#1}%
+\edef\GTS@secondColorBackup{\GTS@secondColor}%
+\edef\GTS@secondColor{\GTS@secondColorTemp}%
 }
 %    \end{macrocode}
 % \end{macro}
@@ -557,8 +559,10 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \begin{macrocode}
 \GTS@newcommand{\GTSadjacencyMonochrome}{%
 \GTSsetMainColor{black}%
+\GTSsetSecondColor{black}%
 \GTSadjacency/%
 \GTSsetMainColor{\GTS@mainColorBackup}%
+\GTSsetSecondColor{\GTS@secondColorBackup}%
 }
 
 \GTS@newcommand{\GTSaM}{\GTSadjacencyMonochrome/}
@@ -721,8 +725,10 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \begin{macrocode}
 \GTS@newcommand{\GTSincidenceMonochrome}{%
 \GTSsetMainColor{black}%
+\GTSsetSecondColor{black}%
 \GTSincidence/%
 \GTSsetMainColor{\GTS@mainColorBackup}%
+\GTSsetSecondColor{\GTS@secondColorBackup}%
 }
 
 \GTS@newcommand{\GTSiM}{\GTSincidenceMonochrome/}

@@ -57,12 +57,14 @@
   \@ifdefinable{#1}{\def#1/{#2}}
 }}
 \newcommand{\GTSsetMainColor}[1]{%
-\def\GTS@mainColorBackup{\GTS@mainColor}%
-\def\GTS@mainColor{#1}%
+\edef\GTS@mainColorTemp{#1}%
+\edef\GTS@mainColorBackup{\GTS@mainColor}%
+\edef\GTS@mainColor{\GTS@mainColorTemp}%
 }
 \newcommand{\GTSsetSecondColor}[1]{%
-\def\GTS@secondColorBackup{\GTS@secondColor}%
-\def\GTS@secondColor{#1}%
+\edef\GTS@secondColorTemp{#1}%
+\edef\GTS@secondColorBackup{\GTS@secondColor}%
+\edef\GTS@secondColor{\GTS@secondColorTemp}%
 }
 \GTS@newcommand{\GTSadjacency}{%
 \text{\ensuremath{%
@@ -266,8 +268,10 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 \GTS@newcommand{\GTSnIIR}{\GTSnegatedInIncidenceRelation/}
 \GTS@newcommand{\GTSadjacencyMonochrome}{%
 \GTSsetMainColor{black}%
+\GTSsetSecondColor{black}%
 \GTSadjacency/%
 \GTSsetMainColor{\GTS@mainColorBackup}%
+\GTSsetSecondColor{\GTS@secondColorBackup}%
 }
 
 \GTS@newcommand{\GTSaM}{\GTSadjacencyMonochrome/}
@@ -336,8 +340,10 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 }
 \GTS@newcommand{\GTSincidenceMonochrome}{%
 \GTSsetMainColor{black}%
+\GTSsetSecondColor{black}%
 \GTSincidence/%
 \GTSsetMainColor{\GTS@mainColorBackup}%
+\GTSsetSecondColor{\GTS@secondColorBackup}%
 }
 
 \GTS@newcommand{\GTSiM}{\GTSincidenceMonochrome/}
