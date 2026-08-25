@@ -1,0 +1,384 @@
+\documentclass[10pt]{article}
+\usepackage{graph-theory-symbol}
+
+\begin{document}
+
+\newcommand{\GTStestText}[2]{
+\noindent
+Paragraph #1 paragraph.\newline
+Abbreviation: #1B., B.#1, B.#1B.\newline
+Normal size math : normal $a#1b$, relation $u#2v$.\newline
+Index math : normal $G_{a#1b}$, relation $G_{u#2v}$.\newline
+Exponent math : normal $H^{a#1b}$, relation $H^{u#2v}$.\newline
+}
+
+\newcommand{\GTStestTextII}[2]{
+\noindent
+Paragraph #1 paragraph.\newline
+Abbreviation: #1B., B.#1, B.#1B.\newline
+Normal size math : normal $a#1e$, relation $u#2f$.\newline
+Index math : normal $G_{a#1e}$, relation $G_{u#2f}$.\newline
+Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
+}
+
+
+
+
+\section{Standard symbols}
+
+\subsection{Adjacency}
+
+\GTStestText{\GTSadjacency/}{\GTSadjacencyRelation/}
+
+\GTStestText{\GTSa/}{\GTSaR/}
+
+\subsection{Unadjacency}
+
+\GTStestText{\GTSunadjacency/}{\GTSunadjacencyRelation/}
+
+\GTStestText{\GTSu/}{\GTSuR/}
+
+\subsection{Directed adjacency up}
+
+\GTStestText{\GTSdirectedAdjacencyUp/}{\GTSdirectedAdjacencyUpRelation/}
+
+\GTStestText{\GTSdAU/}{\GTSdAUR/}
+
+\subsection{Negated directed adjacency up}
+
+\GTStestText{\GTSnegatedDirectedAdjacencyUp/}{%
+\GTSnegatedDirectedAdjacencyUpRelation/%
+}
+
+\GTStestText{\GTSnDAU/}{\GTSnDAUR/}
+
+\subsection{Directed adjacency down}
+
+\GTStestText{\GTSdirectedAdjacencyDown/}{%
+\GTSdirectedAdjacencyDownRelation/%
+}
+
+\GTStestText{\GTSdAD/}{\GTSdADR/}
+
+\subsection{Negated directed adjacency down}
+
+\GTStestText{\GTSnegatedDirectedAdjacencyDown/}{%
+\GTSnegatedDirectedAdjacencyDownRelation/%
+}
+
+\GTStestText{\GTSnDAD/}{\GTSnDADR/}
+
+\subsection{Incidence}
+
+\GTStestTextII{\GTSincidence/}{\GTSincidenceRelation/}
+
+\GTStestTextII{\GTSi/}{\GTSiR/}
+
+\subsection{Negated incidence}
+
+\GTStestTextII{\GTSnegatedIncidence/}{\GTSnegatedIncidenceRelation/}
+
+\GTStestTextII{\GTSnI/}{\GTSnIR/}
+
+\subsection{Directed incidence up/out}
+
+\GTStestTextII{\GTSoutIncidence/}{\GTSoutIncidenceRelation/}
+
+\GTStestTextII{\GTSoI/}{\GTSoIR/}
+
+\subsection{Negated directed incidence up/out}
+
+\GTStestTextII{\GTSnegatedOutIncidence/}{\GTSnegatedOutIncidenceRelation/}
+
+\GTStestTextII{\GTSnOI/}{\GTSnOIR/}
+
+\subsection{Directed incidence down/in}
+
+\GTStestTextII{\GTSinIncidence/}{\GTSinIncidenceRelation/}
+
+\GTStestTextII{\GTSiI/}{\GTSiIR/}
+
+\subsection{Negated directed incidence down/in}
+
+\GTStestTextII{\GTSnegatedInIncidence/}{\GTSnegatedInIncidenceRelation/}
+
+\GTStestTextII{\GTSnII/}{\GTSnIIR/}
+
+
+
+\section{Every adjacency/incidency types in blue}
+
+\GTSsetMainColor{blue}
+
+\subsection{Adjacency}
+
+\GTStestText{\GTSadjacency/}{\GTSadjacencyRelation/}
+
+\GTStestText{\GTSa/}{\GTSaR/}
+
+\subsection{Unadjacency}
+
+\GTStestText{\GTSunadjacency/}{\GTSunadjacencyRelation/}
+
+\GTStestText{\GTSu/}{\GTSuR/}
+
+\subsection{Directed adjacency up}
+
+\GTStestText{\GTSdirectedAdjacencyUp/}{\GTSdirectedAdjacencyUpRelation/}
+
+\GTStestText{\GTSdAU/}{\GTSdAUR/}
+
+\subsection{Negated directed adjacency up}
+
+\GTStestText{\GTSnegatedDirectedAdjacencyUp/}{%
+\GTSnegatedDirectedAdjacencyUpRelation/%
+}
+
+\GTStestText{\GTSnDAU/}{\GTSnDAUR/}
+
+\subsection{Directed adjacency down}
+
+\GTStestText{\GTSdirectedAdjacencyDown/}{%
+\GTSdirectedAdjacencyDownRelation/%
+}
+
+\GTStestText{\GTSdAD/}{\GTSdADR/}
+
+\subsection{Negated directed adjacency down}
+
+\GTStestText{\GTSnegatedDirectedAdjacencyDown/}{%
+\GTSnegatedDirectedAdjacencyDownRelation/%
+}
+
+\GTStestText{\GTSnDAD/}{\GTSnDADR/}
+
+\subsection{Incidence}
+
+\GTStestTextII{\GTSincidence/}{\GTSincidenceRelation/}
+
+\GTStestTextII{\GTSi/}{\GTSiR/}
+
+\subsection{Negated incidence}
+
+\GTStestTextII{\GTSnegatedIncidence/}{\GTSnegatedIncidenceRelation/}
+
+\GTStestTextII{\GTSnI/}{\GTSnIR/}
+
+\subsection{Directed incidence up/out}
+
+\GTStestTextII{\GTSoutIncidence/}{\GTSoutIncidenceRelation/}
+
+\GTStestTextII{\GTSoI/}{\GTSoIR/}
+
+\subsection{Negated directed incidence up/out}
+
+\GTStestTextII{\GTSnegatedOutIncidence/}{\GTSnegatedOutIncidenceRelation/}
+
+\GTStestTextII{\GTSnOI/}{\GTSnOIR/}
+
+\subsection{Directed incidence down/in}
+
+\GTStestTextII{\GTSinIncidence/}{\GTSinIncidenceRelation/}
+
+\GTStestTextII{\GTSiI/}{\GTSiIR/}
+
+\subsection{Negated directed incidence down/in}
+
+\GTStestTextII{\GTSnegatedInIncidence/}{\GTSnegatedInIncidenceRelation/}
+
+\GTStestTextII{\GTSnII/}{\GTSnIIR/}
+
+
+
+\section{Every adjacency/incidency types in red}
+
+\GTSsetMainColor{red}
+
+\subsection{Adjacency}
+
+\GTStestText{\GTSadjacency/}{\GTSadjacencyRelation/}
+
+\GTStestText{\GTSa/}{\GTSaR/}
+
+\subsection{Unadjacency}
+
+\GTStestText{\GTSunadjacency/}{\GTSunadjacencyRelation/}
+
+\GTStestText{\GTSu/}{\GTSuR/}
+
+\subsection{Directed adjacency up}
+
+\GTStestText{\GTSdirectedAdjacencyUp/}{\GTSdirectedAdjacencyUpRelation/}
+
+\GTStestText{\GTSdAU/}{\GTSdAUR/}
+
+\subsection{Negated directed adjacency up}
+
+\GTStestText{\GTSnegatedDirectedAdjacencyUp/}{%
+\GTSnegatedDirectedAdjacencyUpRelation/%
+}
+
+\GTStestText{\GTSnDAU/}{\GTSnDAUR/}
+
+\subsection{Directed adjacency down}
+
+\GTStestText{\GTSdirectedAdjacencyDown/}{%
+\GTSdirectedAdjacencyDownRelation/%
+}
+
+\GTStestText{\GTSdAD/}{\GTSdADR/}
+
+\subsection{Negated directed adjacency down}
+
+\GTStestText{\GTSnegatedDirectedAdjacencyDown/}{%
+\GTSnegatedDirectedAdjacencyDownRelation/%
+}
+
+\GTStestText{\GTSnDAD/}{\GTSnDADR/}
+
+\subsection{Incidence}
+
+\GTStestTextII{\GTSincidence/}{\GTSincidenceRelation/}
+
+\GTStestTextII{\GTSi/}{\GTSiR/}
+
+\subsection{Negated incidence}
+
+\GTStestTextII{\GTSnegatedIncidence/}{\GTSnegatedIncidenceRelation/}
+
+\GTStestTextII{\GTSnI/}{\GTSnIR/}
+
+\subsection{Directed incidence up/out}
+
+\GTStestTextII{\GTSoutIncidence/}{\GTSoutIncidenceRelation/}
+
+\GTStestTextII{\GTSoI/}{\GTSoIR/}
+
+\subsection{Negated directed incidence up/out}
+
+\GTStestTextII{\GTSnegatedOutIncidence/}{\GTSnegatedOutIncidenceRelation/}
+
+\GTStestTextII{\GTSnOI/}{\GTSnOIR/}
+
+\subsection{Directed incidence down/in}
+
+\GTStestTextII{\GTSinIncidence/}{\GTSinIncidenceRelation/}
+
+\GTStestTextII{\GTSiI/}{\GTSiIR/}
+
+\subsection{Negated directed incidence down/in}
+
+\GTStestTextII{\GTSnegatedInIncidence/}{\GTSnegatedInIncidenceRelation/}
+
+\GTStestTextII{\GTSnII/}{\GTSnIIR/}
+
+
+
+\section{Every symbols in monochrome}
+
+\subsection{Adjacency}
+
+\GTStestText{\GTSadjacencyMonochrome/}{\GTSadjacencyMonochromeRelation/}
+
+\GTStestText{\GTSaM/}{\GTSaMR/}
+
+Checking if normal colors are ok.
+
+\GTStestText{\GTSadjacency/}{\GTSadjacencyRelation/}
+
+\GTStestText{\GTSa/}{\GTSaR/}
+
+\subsection{Unadjacency}
+
+\GTStestText{\GTSunadjacencyMonochrome/}{%
+\GTSunadjacencyMonochromeRelation/%
+}
+
+\GTStestText{\GTSuM/}{\GTSuMR/}
+
+\subsection{Directed adjacency up}
+
+\GTStestText{\GTSdirectedAdjacencyUpMonochrome/}{%
+\GTSdirectedAdjacencyUpMonochromeRelation/%
+}
+
+\GTStestText{\GTSdAUM/}{\GTSdAUMR/}
+
+\subsection{Negated directed adjacency up}
+
+\GTStestText{\GTSnegatedDirectedAdjacencyUpMonochrome/}{%
+\GTSnegatedDirectedAdjacencyUpMonochromeRelation/%
+}
+
+\GTStestText{\GTSnDAUM/}{\GTSnDAUMR/}
+
+\subsection{Directed adjacency down}
+
+\GTStestText{\GTSdirectedAdjacencyDownMonochrome/}{%
+\GTSdirectedAdjacencyDownMonochromeRelation/%
+}
+
+\GTStestText{\GTSdADM/}{\GTSdADMR/}
+
+\subsection{Negated directed adjacency down}
+
+\GTStestText{\GTSnegatedDirectedAdjacencyDownMonochrome/}{%
+\GTSnegatedDirectedAdjacencyDownMonochromeRelation/%
+}
+
+\GTStestText{\GTSnDADM/}{\GTSnDADMR/}
+
+\subsection{Incidence}
+
+\GTStestTextII{\GTSincidenceMonochrome/}{\GTSincidenceMonochromeRelation/}
+
+\GTStestTextII{\GTSiM/}{\GTSiMR/}
+
+Checking if normal colors are ok.
+
+\GTStestTextII{\GTSincidence/}{\GTSincidenceRelation/}
+
+\GTStestTextII{\GTSi/}{\GTSiR/}
+
+\subsection{Negated incidence}
+
+\GTStestTextII{\GTSnegatedIncidenceMonochrome/}{%
+\GTSnegatedIncidenceMonochromeRelation/%
+}
+
+\GTStestTextII{\GTSnIM/}{\GTSnIMR/}
+
+\subsection{Directed incidence up/out}
+
+\GTStestTextII{\GTSoutIncidenceMonochrome/}{%
+\GTSoutIncidenceMonochromeRelation/%
+}
+
+\GTStestTextII{\GTSoIM/}{\GTSoIMR/}
+
+\subsection{Negated directed incidence up/out}
+
+\GTStestTextII{\GTSnegatedOutIncidenceMonochrome/}{%
+\GTSnegatedOutIncidenceMonochromeRelation/%
+}
+
+\GTStestTextII{\GTSnOIM/}{\GTSnOIMR/}
+
+\subsection{Directed incidence down/in}
+
+\GTStestTextII{\GTSinIncidenceMonochrome/}{%
+\GTSinIncidenceMonochromeRelation/%
+}
+
+\GTStestTextII{\GTSiIM/}{\GTSiIMR/}
+
+\subsection{Negated directed incidence down/in}
+
+\GTStestTextII{\GTSnegatedInIncidenceMonochrome/}{%
+\GTSnegatedInIncidenceMonochromeRelation/%
+}
+
+\GTStestTextII{\GTSnIIM/}{\GTSnIIMR/}
+
+
+\end{document}

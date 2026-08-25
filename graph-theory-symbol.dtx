@@ -1,0 +1,894 @@
+% \iffalse meta-comment
+% This is file `graph-theory-symbol.dtx'.
+% This file is part of GraphTheorySymbol.
+%
+% GraphTheorySymbol is free software:
+% you can redistribute it and/or modify it
+% under the terms of the GNU Lesser General Public License
+% as published by the Free Software Foundation,
+% either version 3 of the License,
+% or (at your option) any later version.
+%
+% GraphTheorySymbol is distributed
+% in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY;
+% without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+% See the GNU Lesser General Public License for more details.
+%
+% You should have received a copy of
+% the GNU Lesser General Public License
+% along with GraphTheorySymbol.
+% If not, see <https://www.gnu.org/licenses/>.
+%
+% This work is maintained by Laurent Lyaudet.
+%
+% This work consists of the files graph-theory-symbol.dtx and
+%                                 graph-theory-symbol.ins,
+% and the derived files           graph-theory-symbol.sty and
+%                                 graph-theory-symbol-doc.pdf.
+%
+% ©Copyright 2026 Laurent Frédéric Bernard François Lyaudet
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{graph-theory-symbol.dtx}
+%</driver>
+%<*package>
+\NeedsTeXFormat{LaTeX2e}[2025/11/01]
+\ProvidesPackage{graph-theory-symbol}%
+[2026/08/23 v1.0.0%
+ A set of LaTeX commands to have symbols designed for Graph Theory]
+%</package>
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage[a4paper,margin=20mm,left=50mm,nohead]{geometry}
+\usepackage[numbered]{hypdoc}
+\usepackage{longtable}
+\usepackage{graph-theory-symbol}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{graph-theory-symbol.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \GetFileInfo{graph-theory-symbol.dtx}
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+% \title{^^A
+%   \textsf{graph-theory-symbol}^^A
+%   --- A set of LaTeX commands to have symbols designed for Graph Theory^^A
+% }
+% \date{\large\fileversion\quad\filedate}
+% \author{Laurent Frédéric Bernard François Lyaudet\thanks{Email: Laurent.Lyaudet@gmail.com}}
+% \maketitle
+% \changes{v0.1}{2026-08-01}{Initial version}
+% \changes{v1.0.0}{2026-08-24}{First public release}
+% \begin{abstract}\noindent
+% This documentation is for package GraphTheorySymbol.
+% \end{abstract}
+% \tableofcontents
+%
+% \section{Usage}
+%
+% All symbols macros were designed with ease of use in mind:
+% they are called with a trailing slash, they can be called in text mode or
+% in math mode, a variant with relation spacing for math mode exists with
+% suffix ``relation''.
+%
+% \DescribeMacro{\GTS@newcommand}
+% This macro will enforce that the other macros are called with a trailing
+% slash, avoiding problems with spaces after macro call.
+% \marg{commandname} The name of the command to create.
+% \marg{commandcode} The code of the command to create.
+% This macro does nothing.\index{doing nothing|usage} It is merely an
+% example.  If this were a real macro, you would put a paragraph here
+% describing what the macro is supposed to do, what its mandatory and
+% optional arguments are, and so forth.
+% Some text about an example macro called \cs{examplemacro}, which
+% might have an optional argument \oarg{arg1} and mandatory one
+% \marg{arg2}.
+%
+% \DescribeMacro{\GTSsetMainColor}
+% This macro will set the main color used in GraphTheorySymbol.
+% This color has initial value ``black''.
+% \marg{color} The color that must be used by GraphTheorySymbol afterward.
+%
+% \DescribeMacro{\GTSadjacency}
+% This macro will draw an adjacency symbol.
+% A first drawing didn't include the small dots in the middle of the two
+% circles corresponding to the graph vertices.
+% But it was too similar to `` spoon'' and multimap symbols,
+% and could be confused with a graph with only two vertices and one edge.
+% Hence, these dots were added and they have the nice property to remind
+% of the classical textual notation of adjacency relation as Adj(.,.).
+%
+% \MaybeStop{^^A
+% \PrintChanges
+% \PrintIndex
+% }
+% \section{Implementation}
+%
+%    \begin{macrocode}
+%<*package>
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{fdsymbol}
+\RequirePackage{lua-unicode-math}
+\RequirePackage{xcolor}
+
+\def \GTS@mainColor {black}
+\def \GTS@secondColor {gray}
+\def \GTS@mainColorBackup {black}
+\def \GTS@secondColorBackup {gray}
+\def \GTS@drawSlash {}
+\def \GTS@drawUpArrow {}
+\def \GTS@drawDownArrow {}
+
+%    \end{macrocode}
+% \begin{macro}{\GTS@newcommand}
+% This macro will enforce that the other macros are called with a trailing
+% slash, avoiding problems with spaces after macro call.
+% \marg{commandname} The name of the command to create.
+% \marg{commandcode} The code of the command to create.
+%    \begin{macrocode}
+\@ifdefinable{\GTS@newcommand}{\def\GTS@newcommand#1#2{%
+  \@ifdefinable{#1}{\def#1/{#2}}
+}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSsetMainColor}
+% This macro will set the main color used in GraphTheorySymbol.
+% This color has initial value ``black''.
+% \marg{color} The color that must be used by GraphTheorySymbol afterward.
+%    \begin{macrocode}
+\newcommand{\GTSsetMainColor}[1]{%
+\def\GTS@mainColorBackup{\GTS@mainColor}%
+\def\GTS@mainColor{#1}%
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSsetSecondColor}
+% This macro will set the second color used in GraphTheorySymbol.
+% This color has initial value ``gray''.
+% \marg{color} The color that must be used by GraphTheorySymbol afterward.
+%    \begin{macrocode}
+\newcommand{\GTSsetSecondColor}[1]{%
+\def\GTS@secondColorBackup{\GTS@secondColor}%
+\def\GTS@secondColor{#1}%
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSadjacency,\GTSa}
+% This macro will draw an adjacency symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSadjacency}{%
+\text{\ensuremath{%
+\raisebox{-0.2ex}{\scalebox{1.5}[1.5]{%
+%
+\raisebox{0.7ex}{\scalebox{0.7}[0.7]{%
+$\mathcolor{\GTS@secondColor}{\circ}$%
+}}%
+\hspace{-0.39ex}%
+\raisebox{1.05ex}{\scalebox{0.1}[0.1]{%
+$\mathcolor{\GTS@secondColor}{\bullet}$%
+}}%
+\hspace{-0.12ex}%
+\raisebox{0.11ex}{\scalebox{0.1}[0.73]{%
+$\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
+}}%
+\hspace{-0.40ex}%
+\raisebox{-0.3ex}{\scalebox{0.7}[0.7]{%
+$\mathcolor{\GTS@secondColor}{\circ}$%
+}}%
+\hspace{-0.39ex}%
+\raisebox{0.05ex}{\scalebox{0.1}[0.1]{%
+$\mathcolor{\GTS@secondColor}{\bullet}$%
+}}%
+\hspace{0.27ex}%
+\if\GTS@drawUpArrow\empty\else%
+\hspace{-0.65ex}%
+\raisebox{-0.18ex}{\scalebox{0.5}[0.5]{%
+\textcolor{\GTS@mainColor}{\textasciicircum}%
+}}%
+\fi%
+\if\GTS@drawDownArrow\empty\else%
+\hspace{-0.65ex}%
+\raisebox{1.37ex}{\scalebox{0.5}[-0.5]{%
+\textcolor{\GTS@mainColor}{\textasciicircum}%
+}}%
+\fi%
+\if\GTS@drawSlash\empty\else%
+\hspace{-0.65ex}%
+\raisebox{0.25ex}{\scalebox{0.6}[0.6]{%
+\textcolor{black}{/}%
+}}%
+\fi%
+%
+}}%
+}}%
+}
+
+\GTS@newcommand{\GTSa}{\GTSadjacency/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSadjacencyRelation,\GTSaR}
+% This macro will draw an adjacency symbol with relation spacing in math
+% mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSadjacencyRelation}{\mathrel{\GTSadjacency/}}
+\GTS@newcommand{\GTSaR}{\GTSadjacencyRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSunadjacency,\GTSu}
+% This macro will draw an unadjacency symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSunadjacency}{%
+\def\GTS@drawSlash{1}%
+\GTSadjacency/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSu}{\GTSunadjacency/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSunadjacencyRelation,\GTSuR}
+% This macro will draw an unadjacency symbol with relation spacing in math
+% mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSunadjacencyRelation}{\mathrel{\GTSunadjacency/}}
+\GTS@newcommand{\GTSuR}{\GTSunadjacencyRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSdirectedAdjacencyUp,\GTSdAU}
+% This macro will draw a directed adjacency upward symbol.
+% The operand on the left of the symbol should be considered the source
+% of the arc;
+% the operand on the right of the symbol should be considered the target
+% of the arc.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSdirectedAdjacencyUp}{%
+\def\GTS@drawUpArrow{1}%
+\GTSadjacency/%
+\def\GTS@drawUpArrow{}%
+}
+
+\GTS@newcommand{\GTSdAU}{\GTSdirectedAdjacencyUp/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSdirectedAdjacencyUpRelation,\GTSdAUR}
+% This macro will draw a directed adjacency upward symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSdirectedAdjacencyUpRelation}{%
+\mathrel{\GTSdirectedAdjacencyUp/}%
+}
+\GTS@newcommand{\GTSdAUR}{\GTSdirectedAdjacencyUpRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedDirectedAdjacencyUp,\GTSnDAU}
+% This macro will draw a negated directed adjacency upward symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyUp}{%
+\def\GTS@drawSlash{1}%
+\GTSdirectedAdjacencyUp/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnDAU}{\GTSnegatedDirectedAdjacencyUp/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedDirectedAdjacencyUpRelation,\GTSnDAUR}
+% This macro will draw a negated directed adjacency upward symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyUpRelation}{%
+\mathrel{\GTSnegatedDirectedAdjacencyUp/}%
+}
+\GTS@newcommand{\GTSnDAUR}{\GTSnegatedDirectedAdjacencyDownRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSdirectedAdjacencyDown,\GTSdAD}
+% This macro will draw a directed adjacency downward symbol.
+% The operand on the left of the symbol should be considered the target
+% of the arc;
+% the operand on the right of the symbol should be considered the source
+% of the arc.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSdirectedAdjacencyDown}{%
+\def\GTS@drawDownArrow{1}%
+\GTSadjacency/%
+\def\GTS@drawDownArrow{}%
+}
+
+\GTS@newcommand{\GTSdAD}{\GTSdirectedAdjacencyDown/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSdirectedAdjacencyDownRelation,\GTSdADR}
+% This macro will draw a directed adjacency downward symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSdirectedAdjacencyDownRelation}{%
+\mathrel{\GTSdirectedAdjacencyDown/}%
+}
+\GTS@newcommand{\GTSdADR}{\GTSdirectedAdjacencyDownRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedDirectedAdjacencyDown,\GTSnDAD}
+% This macro will draw a negated directed adjacency downward symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyDown}{%
+\def\GTS@drawSlash{1}%
+\GTSdirectedAdjacencyDown/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnDAD}{\GTSnegatedDirectedAdjacencyDown/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedDirectedAdjacencyDownRelation,\GTSnDADR}
+% This macro will draw a negated directed adjacency downward symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyDownRelation}{%
+\mathrel{\GTSnegatedDirectedAdjacencyDown/}%
+}
+\GTS@newcommand{\GTSnDADR}{\GTSnegatedDirectedAdjacencyDownRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+%
+%
+% \begin{macro}{\GTSincidence,\GTSi}
+% This macro will draw an incidence symbol.
+% The operand on the left of the symbol should be considered the vertex
+% to which the edge/the operand on the right of the symbol is incident.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSincidence}{%
+\text{\ensuremath{%
+\raisebox{0ex}{\scalebox{1.8}[1.8]{%
+%
+\raisebox{-0.3ex}{\scalebox{0.7}[0.7]{%
+$\mathcolor{\GTS@secondColor}{\circ}$%
+}}%
+\hspace{-0.39ex}%
+\raisebox{0.05ex}{\scalebox{0.1}[0.1]{%
+$\mathcolor{\GTS@secondColor}{\bullet}$%
+}}%
+\hspace{-0.12ex}%
+\raisebox{0.11ex}{\scalebox{0.1}[0.73]{%
+$\mathcolor{\GTS@secondColor}{\smallblacksquare}$%
+}}%
+\hspace{-0.18ex}%
+\raisebox{0.15ex}{\scalebox{0.2}[0.2]{%
+$\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
+}}%
+\hspace{0.2ex}%
+\if\GTS@drawUpArrow\empty\else%
+\hspace{-0.65ex}%
+\raisebox{-0.18ex}{\scalebox{0.5}[0.5]{%
+\textcolor{\GTS@secondColor}{\textasciicircum}%
+}}%
+\fi%
+\if\GTS@drawDownArrow\empty\else%
+\hspace{-0.65ex}%
+\raisebox{1.37ex}{\scalebox{0.5}[-0.5]{%
+\textcolor{\GTS@secondColor}{\textasciicircum}%
+}}%
+\fi%
+\if\GTS@drawSlash\empty\else%
+\hspace{-0.65ex}%
+\raisebox{0.1ex}{\scalebox{0.5}[0.5]{%
+\textcolor{black}{/}%
+}}%
+\fi%
+%
+}}%
+}}%
+}
+
+\GTS@newcommand{\GTSi}{\GTSincidence/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSincidenceRelation,\GTSiR}
+% This macro will draw an incidence symbol with relation spacing in math
+% mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSincidenceRelation}{\mathrel{\GTSincidence/}}
+\GTS@newcommand{\GTSiR}{\GTSincidenceRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedIncidence,\GTSnI}
+% This macro will draw a negated incidence symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedIncidence}{%
+\def\GTS@drawSlash{1}%
+\GTSincidence/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnI}{\GTSnegatedIncidence/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedIncidenceRelation,\GTSnIR}
+% This macro will draw a negated incidence symbol with relation spacing
+% in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedIncidenceRelation}{%
+\mathrel{\GTSnegatedIncidence/}%
+}
+\GTS@newcommand{\GTSnIR}{\GTSnegatedIncidenceRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSoutIncidence,\GTSoI}
+% This macro will draw a directed incidence upward (out(ward) incidence)
+% symbol.
+% The operand on the left of the symbol should be considered the vertex
+% to which the arc/the operand on the right of the symbol is incident.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSoutIncidence}{%
+\def\GTS@drawUpArrow{1}%
+\GTSincidence/%
+\def\GTS@drawUpArrow{}%
+}
+
+\GTS@newcommand{\GTSoI}{\GTSoutIncidence/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSoutIncidenceRelation,\GTSoIR}
+% This macro will draw a directed incidence upward (out(ward) incidence)
+% symbol with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSoutIncidenceRelation}{%
+\mathrel{\GTSoutIncidence/}%
+}
+\GTS@newcommand{\GTSoIR}{\GTSoutIncidenceRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedOutIncidence,\GTSnOI}
+% This macro will draw a negated directed incidence upward
+% (out(ward) incidence) symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedOutIncidence}{%
+\def\GTS@drawSlash{1}%
+\GTSoutIncidence/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnOI}{\GTSnegatedOutIncidence/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedOutIncidenceRelation,\GTSnOIR}
+% This macro will draw a negated directed incidence upward
+% (out(ward) incidence) symbol with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedOutIncidenceRelation}{%
+\mathrel{\GTSnegatedOutIncidence/}%
+}
+\GTS@newcommand{\GTSnOIR}{\GTSnegatedOutIncidenceRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSinIncidence,\GTSiI}
+% This macro will draw a directed incidence downward (in(ward) incidence)
+% symbol.
+% The operand on the left of the symbol should be considered the vertex
+% to which the arc/the operand on the right of the symbol is incident.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSinIncidence}{%
+\def\GTS@drawDownArrow{1}%
+\GTSincidence/%
+\def\GTS@drawDownArrow{}%
+}
+
+\GTS@newcommand{\GTSiI}{\GTSinIncidence/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSinIncidenceRelation,\GTSiIR}
+% This macro will draw a directed incidence downward (in(ward) incidence)
+% symbol with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSinIncidenceRelation}{%
+\mathrel{\GTSinIncidence/}%
+}
+\GTS@newcommand{\GTSiIR}{\GTSinIncidenceRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedInIncidence,\GTSnII}
+% This macro will draw a negated directed incidence downward
+% (in(ward) incidence) symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedInIncidence}{%
+\def\GTS@drawSlash{1}%
+\GTSinIncidence/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnII}{\GTSnegatedInIncidence/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedInIncidenceRelation,\GTSnIIR}
+% This macro will draw a negated directed incidence downward
+% (in(ward) incidence) symbol with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedInIncidenceRelation}{%
+\mathrel{\GTSnegatedInIncidence/}%
+}
+\GTS@newcommand{\GTSnIIR}{\GTSnegatedInIncidenceRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+%
+%
+%
+% \begin{macro}{\GTSadjacencyMonochrome,\GTSaM}
+% This macro will draw a monochrome adjacency symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSadjacencyMonochrome}{%
+\GTSsetMainColor{black}%
+\GTSadjacency/%
+\GTSsetMainColor{\GTS@mainColorBackup}%
+}
+
+\GTS@newcommand{\GTSaM}{\GTSadjacencyMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSadjacencyMonochromeRelation,\GTSaMR}
+% This macro will draw a monochrome adjacency symbol with relation spacing
+% in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSadjacencyMonochromeRelation}{%
+\mathrel{\GTSadjacencyMonochrome/}%
+}
+\GTS@newcommand{\GTSaMR}{\GTSadjacencyMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSunadjacencyMonochrome,\GTSuM}
+% This macro will draw a monochrome unadjacency symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSunadjacencyMonochrome}{%
+\def\GTS@drawSlash{1}%
+\GTSadjacencyMonochrome/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSuM}{\GTSunadjacencyMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSunadjacencyMonochromeRelation,\GTSuMR}
+% This macro will draw a monochrome unadjacency symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSunadjacencyMonochromeRelation}{%
+\mathrel{\GTSunadjacencyMonochrome/}%
+}
+\GTS@newcommand{\GTSuMR}{\GTSunadjacencyMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSdirectedAdjacencyUpMonochrome,\GTSdAUM}
+% This macro will draw a monochrome directed adjacency upward symbol.
+% The operand on the left of the symbol should be considered the source
+% of the arc;
+% the operand on the right of the symbol should be considered the target
+% of the arc.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSdirectedAdjacencyUpMonochrome}{%
+\def\GTS@drawUpArrow{1}%
+\GTSadjacencyMonochrome/%
+\def\GTS@drawUpArrow{}%
+}
+
+\GTS@newcommand{\GTSdAUM}{\GTSdirectedAdjacencyUpMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSdirectedAdjacencyUpMonochromeRelation,\GTSdAUMR}
+% This macro will draw a monochrome directed adjacency upward symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSdirectedAdjacencyUpMonochromeRelation}{%
+\mathrel{\GTSdirectedAdjacencyUpMonochrome/}%
+}
+\GTS@newcommand{\GTSdAUMR}{\GTSdirectedAdjacencyUpMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedDirectedAdjacencyUpMonochrome,\GTSnDAUM}
+% This macro will draw a
+% monochrome negated directed adjacency upward symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyUpMonochrome}{%
+\def\GTS@drawSlash{1}%
+\GTSdirectedAdjacencyUpMonochrome/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnDAUM}{\GTSnegatedDirectedAdjacencyUpMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedDirectedAdjacencyUpMonochromeRelation,\GTSnDAUMR}
+% This macro will draw a
+% monochrome negated directed adjacency upward symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyUpMonochromeRelation}{%
+\mathrel{\GTSnegatedDirectedAdjacencyUpMonochrome/}%
+}
+\GTS@newcommand{\GTSnDAUMR}{%
+\GTSnegatedDirectedAdjacencyDownMonochromeRelation/%
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSdirectedAdjacencyDownMonochrome,\GTSdADM}
+% This macro will draw a monochrome directed adjacency downward symbol.
+% The operand on the left of the symbol should be considered the target
+% of the arc;
+% the operand on the right of the symbol should be considered the source
+% of the arc.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSdirectedAdjacencyDownMonochrome}{%
+\def\GTS@drawDownArrow{1}%
+\GTSadjacencyMonochrome/%
+\def\GTS@drawDownArrow{}%
+}
+
+\GTS@newcommand{\GTSdADM}{\GTSdirectedAdjacencyDownMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSdirectedAdjacencyDownMonochromeRelation,\GTSdADMR}
+% This macro will draw a monochrome directed adjacency downward symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSdirectedAdjacencyDownMonochromeRelation}{%
+\mathrel{\GTSdirectedAdjacencyDownMonochrome/}%
+}
+\GTS@newcommand{\GTSdADMR}{\GTSdirectedAdjacencyDownMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedDirectedAdjacencyDownMonochrome,\GTSnDADM}
+% This macro will draw a
+% monochrome negated directed adjacency downward symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyDownMonochrome}{%
+\def\GTS@drawSlash{1}%
+\GTSdirectedAdjacencyDownMonochrome/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnDADM}{\GTSnegatedDirectedAdjacencyDownMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedDirectedAdjacencyDownMonochromeRelation,\GTSnDADMR}
+% This macro will draw a
+% monochrome negated directed adjacency downward symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyDownMonochromeRelation}{%
+\mathrel{\GTSnegatedDirectedAdjacencyDownMonochrome/}%
+}
+\GTS@newcommand{\GTSnDADMR}{%
+\GTSnegatedDirectedAdjacencyDownMonochromeRelation/%
+}
+%    \end{macrocode}
+% \end{macro}
+%
+%
+%
+% \begin{macro}{\GTSincidenceMonochrome,\GTSiM}
+% This macro will draw a monochrome incidence symbol.
+% The operand on the left of the symbol should be considered the vertex
+% to which the edge/the operand on the right of the symbol is incident.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSincidenceMonochrome}{%
+\GTSsetMainColor{black}%
+\GTSincidence/%
+\GTSsetMainColor{\GTS@mainColorBackup}%
+}
+
+\GTS@newcommand{\GTSiM}{\GTSincidenceMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSincidenceMonochromeRelation,\GTSiMR}
+% This macro will draw a monochrome incidence symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSincidenceMonochromeRelation}{%
+\mathrel{\GTSincidenceMonochrome/}%
+}
+\GTS@newcommand{\GTSiMR}{\GTSincidenceMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedIncidenceMonochrome,\GTSnIM}
+% This macro will draw a monochrome negated incidence symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedIncidenceMonochrome}{%
+\def\GTS@drawSlash{1}%
+\GTSincidenceMonochrome/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnIM}{\GTSnegatedIncidenceMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedIncidenceMonochromeRelation,\GTSnIMR}
+% This macro will draw a monochrome negated incidence symbol
+% with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedIncidenceMonochromeRelation}{%
+\mathrel{\GTSnegatedIncidenceMonochrome/}%
+}
+\GTS@newcommand{\GTSnIMR}{\GTSnegatedIncidenceMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSoutIncidenceMonochrome,\GTSoIM}
+% This macro will draw a
+% monochrome directed incidence upward (out(ward) incidence) symbol.
+% The operand on the left of the symbol should be considered the vertex
+% to which the arc/the operand on the right of the symbol is incident.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSoutIncidenceMonochrome}{%
+\def\GTS@drawUpArrow{1}%
+\GTSincidenceMonochrome/%
+\def\GTS@drawUpArrow{}%
+}
+
+\GTS@newcommand{\GTSoIM}{\GTSoutIncidenceMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSoutIncidenceMonochromeRelation,\GTSoIMR}
+% This macro will draw a monochrome directed incidence upward
+% (out(ward) incidence) symbol with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSoutIncidenceMonochromeRelation}{%
+\mathrel{\GTSoutIncidenceMonochrome/}%
+}
+\GTS@newcommand{\GTSoIMR}{\GTSoutIncidenceMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedOutIncidenceMonochrome,\GTSnOIM}
+% This macro will draw a monochrome negated directed incidence upward
+% (out(ward) incidence) symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedOutIncidenceMonochrome}{%
+\def\GTS@drawSlash{1}%
+\GTSoutIncidenceMonochrome/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnOIM}{\GTSnegatedOutIncidenceMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedOutIncidenceMonochromeRelation,\GTSnOIMR}
+% This macro will draw a monochrome negated directed incidence upward
+% (out(ward) incidence) symbol with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedOutIncidenceMonochromeRelation}{%
+\mathrel{\GTSnegatedOutIncidenceMonochrome/}%
+}
+\GTS@newcommand{\GTSnOIMR}{\GTSnegatedOutIncidenceMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSinIncidenceMonochrome,\GTSiIM}
+% This macro will draw a monochrome directed incidence downward
+% (in(ward) incidence) symbol.
+% The operand on the left of the symbol should be considered the vertex
+% to which the arc/the operand on the right of the symbol is incident.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSinIncidenceMonochrome}{%
+\def\GTS@drawDownArrow{1}%
+\GTSincidenceMonochrome/%
+\def\GTS@drawDownArrow{}%
+}
+
+\GTS@newcommand{\GTSiIM}{\GTSinIncidenceMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSinIncidenceMonochromeRelation,\GTSiIMR}
+% This macro will draw a monochrome directed incidence downward
+% (in(ward) incidence) symbol with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSinIncidenceMonochromeRelation}{%
+\mathrel{\GTSinIncidenceMonochrome/}%
+}
+\GTS@newcommand{\GTSiIMR}{\GTSinIncidenceMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedInIncidenceMonochrome,\GTSnIIM}
+% This macro will draw a monochrome negated directed incidence downward
+% (in(ward) incidence) symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedInIncidenceMonochrome}{%
+\def\GTS@drawSlash{1}%
+\GTSinIncidenceMonochrome/%
+\def\GTS@drawSlash{}%
+}
+
+\GTS@newcommand{\GTSnIIM}{\GTSnegatedInIncidenceMonochrome/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSnegatedInIncidenceMonochromeRelation,\GTSnIIMR}
+% This macro will draw a monochrome negated directed incidence downward
+% (in(ward) incidence) symbol with relation spacing in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSnegatedInIncidenceMonochromeRelation}{%
+\mathrel{\GTSnegatedInIncidenceMonochrome/}%
+}
+\GTS@newcommand{\GTSnIIMR}{\GTSnegatedInIncidenceMonochromeRelation/}
+%    \end{macrocode}
+% \end{macro}
+
+%
+% \begin{macro}{\dummyMacro}
+% This is a dummy macro.  If it did anything, we'd describe its
+% implementation here.
+% \changes{v1.0.0}{2026-08-23}{Added a spurious change log entry to
+%   show what a change \emph{within} an environment definition looks
+%   like.}"
+%    \begin{macrocode}
+\newcommand{\dummyMacro}{
+%    \end{macrocode}
+
+% Don't use |%| to introduce a code comment within a |macrocode|
+% environment.  Instead, you should typeset all of your comments with
+% LaTeX---doing so gives much prettier results.  For comments within a
+% macro/environment body, just do an |\end{macrocode}|, include some
+% commentary, and do another |\begin{macrocode}|.  It's that simple.
+%    \begin{macrocode}
+}
+%    \end{macrocode}
+% \end{macro}
+
+%    \begin{macrocode}
+\endinput
+%</package>
+%    \end{macrocode}
+%\Finale
