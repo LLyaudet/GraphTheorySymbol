@@ -48,6 +48,7 @@
 \usepackage[a4paper,margin=20mm,left=50mm,nohead]{geometry}
 \usepackage[numbered]{hypdoc}
 \usepackage{longtable}
+\usepackage[columns=1]{idxlayout}
 \usepackage{graph-theory-symbol}
 \EnableCrossrefs
 \CodelineIndex
@@ -59,7 +60,11 @@
 % \fi
 %
 % \GetFileInfo{graph-theory-symbol.dtx}
-% \DoNotIndex{\newcommand,\newenvironment}
+% \DoNotIndex{\@ifdefinable,\bullet,\circ,\def,\edef,\else,\empty}
+% \DoNotIndex{\endinput,\ensuremath,\fi,\hspace,\if,\mathcolor,\mathrel}
+% \DoNotIndex{\newcommand,\raisebox,\RequirePackage,\scalebox}
+% \DoNotIndex{\smallblacksquare,\text,\textasciicircum,\textcolor}
+% \let\GTSspecialMainMacroIndex\SpecialMainMacroIndex
 %
 % \title{^^A
 %   \textsf{graph-theory-symbol}^^A
@@ -68,7 +73,7 @@
 % \date{\large\fileversion\quad\filedate}
 % \author{Laurent Frédéric Bernard François Lyaudet\thanks{Email: Laurent.Lyaudet@gmail.com}}
 % \maketitle
-% \changes{v0.1}{2026-08-01}{Initial version}
+% \changes{v0.1.0}{2026-08-01}{Initial version}
 % \changes{v1.0.0}{2026-08-25}{First public release}
 % \begin{abstract}\noindent
 % This documentation is for package GraphTheorySymbol.
@@ -273,7 +278,11 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSdirectedAdjacencyUpRelation,\GTSdAUR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSdirectedAdjacencyUp-, Relation, \GTSdAUR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSdirectedAdjacencyUpRelation}
+% \SpecialMainMacroIndex{\GTSdAUR}
 % This macro will draw a directed adjacency upward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
