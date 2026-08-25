@@ -20,8 +20,5 @@ Clone it with this URL: <git@github.com:LLyaudet/GraphTheorySymbol.git>.
 A set of LaTeX macros to have symbols designed for Graph Theory
 
 ## Installation:
-1. Run "lualatex graph-theory-symbol.ins" to create the sty file
-2. Run "lualatex --jobname graph-theory-symbol-doc\
-  graph-theory-symbol.dtx" to create the documentation file
-3. Run "lualatex test.tex" to create a test PDF file to check the symbols
-  in details.
+1. Run "make" to build all the files.
+2. Run "make clean" to remove the unnecessary files.
