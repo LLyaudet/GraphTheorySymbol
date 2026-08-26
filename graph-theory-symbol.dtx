@@ -40,7 +40,7 @@
 %<*package>
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
 \ProvidesPackage{graph-theory-symbol}%
-[2026/08/25 v1.0.0%
+[2026/08/26 v1.0.0%
  A set of LaTeX commands to have symbols designed for Graph Theory]
 %</package>
 %<*driver>
@@ -74,7 +74,7 @@
 % \author{Laurent Frédéric Bernard François Lyaudet\thanks{Email: Laurent.Lyaudet@gmail.com}}
 % \maketitle
 % \changes{v0.1.0}{2026-08-01}{Initial version}
-% \changes{v1.0.0}{2026-08-25}{First public release}
+% \changes{v1.0.0}{2026-08-26}{First public release}
 % \begin{abstract}\noindent
 % This documentation is for package GraphTheorySymbol.
 % \end{abstract}
@@ -293,7 +293,11 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedDirectedAdjacencyUp,\GTSnDAU}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedDirected-, AdjacencyUp, \GTSnDAU}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyUp}
+% \SpecialMainMacroIndex{\GTSnDAU}
 % This macro will draw a negated directed adjacency upward symbol.
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyUp}{%
@@ -306,7 +310,11 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedDirectedAdjacencyUpRelation,\GTSnDAUR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedDirected-, AdjacencyUpRelation, \GTSnDAUR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyUpRelation}
+% \SpecialMainMacroIndex{\GTSnDAUR}
 % This macro will draw a negated directed adjacency upward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
@@ -334,7 +342,11 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSdirectedAdjacencyDownRelation,\GTSdADR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSdirectedAdjacencyDown-, Relation, \GTSdADR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSdirectedAdjacencyDownRelation}
+% \SpecialMainMacroIndex{\GTSdADR}
 % This macro will draw a directed adjacency downward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
@@ -345,7 +357,11 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedDirectedAdjacencyDown,\GTSnDAD}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedDirected-, AdjacencyDown, \GTSnDAD}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyDown}
+% \SpecialMainMacroIndex{\GTSnDAD}
 % This macro will draw a negated directed adjacency downward symbol.
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyDown}{%
@@ -358,7 +374,11 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedDirectedAdjacencyDownRelation,\GTSnDADR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedDirected-, AdjacencyDownRelation, \GTSnDADR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyDownRelation}
+% \SpecialMainMacroIndex{\GTSnDADR}
 % This macro will draw a negated directed adjacency downward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
@@ -445,7 +465,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedIncidenceRelation,\GTSnIR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedIncidence-, Relation, \GTSnIR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedIncidenceRelation}
+% \SpecialMainMacroIndex{\GTSnIR}
 % This macro will draw a negated incidence symbol with relation spacing
 % in math mode.
 %    \begin{macrocode}
@@ -497,7 +521,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedOutIncidenceRelation,\GTSnOIR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedOutIncidence-, Relation, \GTSnOIR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedOutIncidenceRelation}
+% \SpecialMainMacroIndex{\GTSnOIR}
 % This macro will draw a negated directed incidence upward
 % (out(ward) incidence) symbol with relation spacing in math mode.
 %    \begin{macrocode}
@@ -549,7 +577,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedInIncidenceRelation,\GTSnIIR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedInIncidence-, Relation, \GTSnIIR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedInIncidenceRelation}
+% \SpecialMainMacroIndex{\GTSnIIR}
 % This macro will draw a negated directed incidence downward
 % (in(ward) incidence) symbol with relation spacing in math mode.
 %    \begin{macrocode}
@@ -578,7 +610,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSadjacencyMonochromeRelation,\GTSaMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSadjacencyMonochrome-, Relation, \GTSaMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSadjacencyMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSaMR}
 % This macro will draw a monochrome adjacency symbol with relation spacing
 % in math mode.
 %    \begin{macrocode}
@@ -602,7 +638,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSunadjacencyMonochromeRelation,\GTSuMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSunadjacencyMonochrome-, Relation, \GTSuMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSunadjacencyMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSuMR}
 % This macro will draw a monochrome unadjacency symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
@@ -613,7 +653,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSdirectedAdjacencyUpMonochrome,\GTSdAUM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSdirectedAdjacencyUp-, Monochrome, \GTSdAUM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSdirectedAdjacencyUpMonochrome}
+% \SpecialMainMacroIndex{\GTSdAUM}
 % This macro will draw a monochrome directed adjacency upward symbol.
 % The operand on the left of the symbol should be considered the source
 % of the arc;
@@ -630,7 +674,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSdirectedAdjacencyUpMonochromeRelation,\GTSdAUMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSdirectedAdjacencyUp-, MonochromeRelation, \GTSdAUMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSdirectedAdjacencyUpMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSdAUMR}
 % This macro will draw a monochrome directed adjacency upward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
@@ -641,7 +689,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedDirectedAdjacencyUpMonochrome,\GTSnDAUM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedDirected-, AdjacencyUpMonochrome, \GTSnDAUM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyUpMonochrome}
+% \SpecialMainMacroIndex{\GTSnDAUM}
 % This macro will draw a
 % monochrome negated directed adjacency upward symbol.
 %    \begin{macrocode}
@@ -655,7 +707,12 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedDirectedAdjacencyUpMonochromeRelation,\GTSnDAUMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedDirected-, AdjacencyUpMonochrome-, Relation,%
+% \GTSnDAUMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyUpMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSnDAUMR}
 % This macro will draw a
 % monochrome negated directed adjacency upward symbol
 % with relation spacing in math mode.
@@ -669,7 +726,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSdirectedAdjacencyDownMonochrome,\GTSdADM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSdirectedAdjacencyDown-, Monochrome, \GTSdADM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSdirectedAdjacencyDownMonochrome}
+% \SpecialMainMacroIndex{\GTSdADM}
 % This macro will draw a monochrome directed adjacency downward symbol.
 % The operand on the left of the symbol should be considered the target
 % of the arc;
@@ -686,7 +747,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSdirectedAdjacencyDownMonochromeRelation,\GTSdADMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSdirectedAdjacencyDown-, MonochromeRelation, \GTSdADMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSdirectedAdjacencyDownMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSdADMR}
 % This macro will draw a monochrome directed adjacency downward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
@@ -697,7 +762,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedDirectedAdjacencyDownMonochrome,\GTSnDADM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedDirected-, AdjacencyDownMonochrome, \GTSnDADM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyDownMonochrome}
+% \SpecialMainMacroIndex{\GTSnDADM}
 % This macro will draw a
 % monochrome negated directed adjacency downward symbol.
 %    \begin{macrocode}
@@ -711,7 +780,12 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedDirectedAdjacencyDownMonochromeRelation,\GTSnDADMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedDirected-, AdjacencyDownMonochrome-, Relation,%
+% \GTSnDADMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyDownMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSnDADMR}
 % This macro will draw a
 % monochrome negated directed adjacency downward symbol
 % with relation spacing in math mode.
@@ -744,7 +818,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSincidenceMonochromeRelation,\GTSiMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSincidenceMonochrome-, Relation, \GTSiMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSincidenceMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSiMR}
 % This macro will draw a monochrome incidence symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
@@ -755,7 +833,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedIncidenceMonochrome,\GTSnIM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedIncidence-, Monochrome, \GTSnIM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedIncidenceMonochrome}
+% \SpecialMainMacroIndex{\GTSnIM}
 % This macro will draw a monochrome negated incidence symbol.
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedIncidenceMonochrome}{%
@@ -768,7 +850,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedIncidenceMonochromeRelation,\GTSnIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedIncidence-, MonochromeRelation, \GTSnIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedIncidenceMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSnIMR}
 % This macro will draw a monochrome negated incidence symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
@@ -795,7 +881,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSoutIncidenceMonochromeRelation,\GTSoIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSoutIncidenceMonochrome-, Relation, \GTSoIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSoutIncidenceMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSoIMR}
 % This macro will draw a monochrome directed incidence upward
 % (out(ward) incidence) symbol with relation spacing in math mode.
 %    \begin{macrocode}
@@ -806,7 +896,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedOutIncidenceMonochrome,\GTSnOIM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedOutIncidence-, Monochrome, \GTSnOIM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedOutIncidenceMonochrome}
+% \SpecialMainMacroIndex{\GTSnOIM}
 % This macro will draw a monochrome negated directed incidence upward
 % (out(ward) incidence) symbol.
 %    \begin{macrocode}
@@ -820,7 +914,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedOutIncidenceMonochromeRelation,\GTSnOIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedOutIncidence-, MonochromeRelation, \GTSnOIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedOutIncidenceMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSnOIMR}
 % This macro will draw a monochrome negated directed incidence upward
 % (out(ward) incidence) symbol with relation spacing in math mode.
 %    \begin{macrocode}
@@ -847,7 +945,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSinIncidenceMonochromeRelation,\GTSiIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSinIncidenceMonochrome-, Relation, \GTSiIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSinIncidenceMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSiIMR}
 % This macro will draw a monochrome directed incidence downward
 % (in(ward) incidence) symbol with relation spacing in math mode.
 %    \begin{macrocode}
@@ -858,7 +960,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedInIncidenceMonochrome,\GTSnIIM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedInIncidence-, Monochrome, \GTSnIIM}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedInIncidenceMonochrome}
+% \SpecialMainMacroIndex{\GTSnIIM}
 % This macro will draw a monochrome negated directed incidence downward
 % (in(ward) incidence) symbol.
 %    \begin{macrocode}
@@ -872,7 +978,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSnegatedInIncidenceMonochromeRelation,\GTSnIIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{}
+% \begin{macro}{\GTSnegatedInIncidence-, MonochromeRelation, \GTSnIIMR}
+% \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
+% \SpecialMainMacroIndex{\GTSnegatedInIncidenceMonochromeRelation}
+% \SpecialMainMacroIndex{\GTSnIIMR}
 % This macro will draw a monochrome negated directed incidence downward
 % (in(ward) incidence) symbol with relation spacing in math mode.
 %    \begin{macrocode}
