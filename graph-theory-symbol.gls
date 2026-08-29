@@ -1,0 +1,11 @@
+
+ \begin{theglossary} 
+
+    \makeatletter\scan@allowedfalse
+
+  \item v0.1.0 -- 2026-08-01\efill 
+ \subitem General:\ Initial version\pfill \hdpindex{}{1}
+  \item v1.0.0 -- 2026-08-26\efill 
+ \subitem General:\ First public release\pfill \hdpindex{}{1}
+
+ \end{theglossary}
