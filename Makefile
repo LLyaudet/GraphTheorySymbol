@@ -18,7 +18,7 @@ test.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx test.tex
 
 archive: graph-theory-symbol.tar.gz
 
-graph-theory-symbol.tar.gz: README.md Makefile VERSION_* DEPENDS.txt COPYING COPYING.LESSER graph-theory-symbol.ins graph-theory-symbol.dtx test.tex graph-theory-symbol-doc.pdf
+graph-theory-symbol.tar.gz: README.md Makefile VERSION_* DEPENDS.txt COPYING COPYING.LESSER graph-theory-symbol.ins graph-theory-symbol.dtx graph-theory-symbol-memo.tex test.tex graph-theory-symbol-doc.pdf graph-theory-symbol-memo.pdf
 	cp README.md Makefile VERSION_* DEPENDS.txt COPYING COPYING.LESSER graph-theory-symbol.ins graph-theory-symbol.dtx test.tex graph-theory-symbol-doc.pdf graph-theory-symbol/
 	tar czf graph-theory-symbol.tar.gz graph-theory-symbol/
 
