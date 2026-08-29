@@ -1,15 +1,17 @@
 .PHONY: build archive clean
 
-build: graph-theory-symbol-doc.pdf test.pdf
+build: graph-theory-symbol-doc.pdf graph-theory-symbol-memo.pdf test.pdf
 
-graph-theory-symbol-doc.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx test.tex
+graph-theory-symbol-doc.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx
 	lualatex graph-theory-symbol.ins
 	lualatex graph-theory-symbol.dtx
 	test -e graph-theory-symbol.glo && makeindex -s gglo.ist -o graph-theory-symbol.gls graph-theory-symbol.glo
 	makeindex -s gind.ist -o graph-theory-symbol.ind graph-theory-symbol.idx
 	lualatex graph-theory-symbol.dtx
 	mv graph-theory-symbol.pdf graph-theory-symbol-doc.pdf
-	lualatex test.tex
+
+graph-theory-symbol-memo.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx graph-theory-symbol-memo.tex
+	lualatex graph-theory-symbol-memo.tex
 
 test.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx test.tex
 	lualatex test.tex
