@@ -1,7 +1,7 @@
 # GraphTheorySymbol
 A set of LaTeX commands to have symbols designed for Graph Theory
 
-Version 1.1.0 2026/08/29
+Version 1.1.1 2026/08/30
 
 Designed by Laurent Frédéric Bernard François Lyaudet
 
@@ -17,7 +17,9 @@ Clone it with this URL: <git@github.com:LLyaudet/GraphTheorySymbol.git>.
 
 ## Short description:
 
-A set of LaTeX macros to have symbols designed for Graph Theory
+A set of LaTeX macros to have symbols designed for Graph Theory.
+Symbols are available for (directed and undirected) adjacency and
+incidency, etc.
 
 ## Installation:
 1. Run "make" to build all the files.
