@@ -15,7 +15,7 @@ archivable-files := README.md\
                     graph-theory-symbol.dtx\
                     graph-theory-symbol-memo.tex\
                     test.tex\
-                    $(tex-directory-files)\
+                    tex/\
                     graph-theory-symbol-doc.pdf\
                     graph-theory-symbol-memo.pdf
 
@@ -38,7 +38,7 @@ test.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx test.tex
 archive: graph-theory-symbol.tar.gz
 
 graph-theory-symbol.tar.gz: $(archivable-files)
-	cp $(archivable-files) graph-theory-symbol/
+	cp -r $(archivable-files) graph-theory-symbol/
 	tar czf graph-theory-symbol.tar.gz graph-theory-symbol/
 
 clean:
