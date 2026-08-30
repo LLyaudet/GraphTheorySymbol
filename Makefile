@@ -1,5 +1,10 @@
 .PHONY: build archive clean
 
+tex-directory-files := ./tex/switch-to-memo-geometry.tex\
+                       ./tex/return-to-previous-geometry.tex\
+                       ./tex/memo-symbols-standard.tex\
+                       ./tex/memo-symbols-monochrome.tex
+
 archivable-files := README.md\
                     Makefile\
                     VERSION_*\
@@ -10,6 +15,7 @@ archivable-files := README.md\
                     graph-theory-symbol.dtx\
                     graph-theory-symbol-memo.tex\
                     test.tex\
+                    $(tex-directory-files)\
                     graph-theory-symbol-doc.pdf\
                     graph-theory-symbol-memo.pdf
 
@@ -23,7 +29,7 @@ graph-theory-symbol-doc.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx
 	lualatex graph-theory-symbol.dtx
 	mv graph-theory-symbol.pdf graph-theory-symbol-doc.pdf
 
-graph-theory-symbol-memo.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx graph-theory-symbol-memo.tex
+graph-theory-symbol-memo.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx graph-theory-symbol-memo.tex $(tex-directory-files)
 	lualatex graph-theory-symbol-memo.tex
 
 test.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx test.tex
