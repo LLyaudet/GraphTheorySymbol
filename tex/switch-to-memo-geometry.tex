@@ -1,4 +1,4 @@
-% This is file `graph-theory-symbol-memo.tex'.
+% This is file `switch-to-memo-geometry.tex'.
 % This file is part of GraphTheorySymbol.
 %
 % GraphTheorySymbol is free software:
@@ -36,35 +36,24 @@
 %                                 test.pdf.
 %
 % ©Copyright 2026 Laurent Frédéric Bernard François Lyaudet
-\documentclass[11pt]{article}
-\usepackage{graph-theory-symbol}
-\usepackage{shortvrb}
-%\usepackage[showframe]{geometry}
-\usepackage{geometry}
 
-\input{./tex/switch-to-memo-geometry.tex}
+\newlength{\topmarginBackup}
+\newlength{\headheightBackup}
+\newlength{\headsepBackup}
+\newlength{\voffsetBackup}
+\newlength{\textheightBackup}
+\newlength{\marginparsepBackup}
+\newlength{\marginparwidthBackup}
+\newlength{\textwidthBackup}
+\newlength{\hoffsetBackup}
 
-\begin{document}
+\setlength{\topmargin}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\voffset}{-1.5cm}
+\setlength{\textheight}{25.2cm}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\textwidth}{18cm}
+\setlength{\hoffset}{-1.5cm}
 
-\ \vspace{2cm}
-\begin{center}
-{\Huge GraphTheorySymbol Memo}\\
-{\huge v1.1.1 2026/08/30}
-\end{center}
-\vspace{2cm}
-
-\MakeShortVerb{\|}
-
-Add in your preamble: |\usepackage{graph-theory-symbol}|.
-
-\input{./tex/memo-symbols-standard.tex}
-
-\input{./tex/memo-symbols-monochrome.tex}
-
-\hrule
-\GTSsetMainColor{blue}
-|\GTSsetMainColor{blue}|
-
-\input{./tex/memo-symbols-standard.tex}
-
-\end{document}
