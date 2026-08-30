@@ -1,5 +1,18 @@
 .PHONY: build archive clean
 
+archivable-files := README.md\
+                    Makefile\
+                    VERSION_*\
+                    DEPENDS.txt\
+                    COPYING\
+                    COPYING.LESSER\
+                    graph-theory-symbol.ins\
+                    graph-theory-symbol.dtx\
+                    graph-theory-symbol-memo.tex\
+                    test.tex\
+                    graph-theory-symbol-doc.pdf\
+                    graph-theory-symbol-memo.pdf
+
 build: graph-theory-symbol-doc.pdf graph-theory-symbol-memo.pdf test.pdf
 
 graph-theory-symbol-doc.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx
@@ -18,8 +31,8 @@ test.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx test.tex
 
 archive: graph-theory-symbol.tar.gz
 
-graph-theory-symbol.tar.gz: README.md Makefile VERSION_* DEPENDS.txt COPYING COPYING.LESSER graph-theory-symbol.ins graph-theory-symbol.dtx graph-theory-symbol-memo.tex test.tex graph-theory-symbol-doc.pdf graph-theory-symbol-memo.pdf
-	cp README.md Makefile VERSION_* DEPENDS.txt COPYING COPYING.LESSER graph-theory-symbol.ins graph-theory-symbol.dtx graph-theory-symbol-memo.tex test.tex graph-theory-symbol-doc.pdf graph-theory-symbol-memo.pdf graph-theory-symbol/
+graph-theory-symbol.tar.gz: $(archivable-files)
+	cp $(archivable-files) graph-theory-symbol/
 	tar czf graph-theory-symbol.tar.gz graph-theory-symbol/
 
 clean:
