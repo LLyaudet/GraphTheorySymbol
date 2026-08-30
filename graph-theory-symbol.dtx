@@ -123,9 +123,28 @@ A set of LaTeX commands to have symbols designed for Graph Theory]
 % If you know how to produce better \LaTeX{} code,
 % please submit a pull request on GitHub.
 %
+% \newpage
 % \section{Usage}
 %
-% Make sure to have a look at graph-theory-symbol-memo.pdf.
+% \subsection{Memo or for the impatient}
+%
+% Add in your preamble: |\usepackage{graph-theory-symbol}|.
+%
+% \begingroup\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}\endgroup
+%
+% \hrule
+%
+% \begingroup\catcode`\%=14 \input{./tex/memo-symbols-monochrome.tex}\endgroup
+%
+% \newpage
+% \GTSsetMainColor{blue}
+% |\GTSsetMainColor{blue}|
+%
+% \begingroup\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}\endgroup
+% \GTSsetMainColor{black}
+%
+% \newpage
+% \subsection{Detailed usage}
 %
 % First you need to add in your preamble:
 % |\usepackage{graph-theory-symbol}|.
