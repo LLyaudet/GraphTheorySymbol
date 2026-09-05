@@ -60,27 +60,36 @@ Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
 }
 
 
-
-
-\section{Standard symbols}
-
+\newcommand{\GTStestNormalSymbolsCalls}{
 \subsection{Adjacency}
 
 \GTStestText{\GTSadjacency/}{\GTSadjacencyRelation/}
 
+\GTStestText{\GTSadj/}{\GTSadjRel/}
+
 \GTStestText{\GTSa/}{\GTSaR/}
+
+\GTStestText{\GTSxa[]}{\GTSxa[r]}
 
 \subsection{Unadjacency}
 
 \GTStestText{\GTSunadjacency/}{\GTSunadjacencyRelation/}
 
+\GTStestText{\GTSunadj/}{\GTSunadjRel/}
+
 \GTStestText{\GTSu/}{\GTSuR/}
+
+\GTStestText{\GTSxa[n]}{\GTSxa[n,r]}
 
 \subsection{Directed adjacency up}
 
 \GTStestText{\GTSdirectedAdjacencyUp/}{\GTSdirectedAdjacencyUpRelation/}
 
+\GTStestText{\GTSdirAdjUp/}{\GTSdirAdjUpRel/}
+
 \GTStestText{\GTSdAU/}{\GTSdAUR/}
+
+\GTStestText{\GTSxa[u]}{\GTSxa[u,r]}
 
 \subsection{Negated directed adjacency up}
 
@@ -88,7 +97,11 @@ Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
 \GTSnegatedDirectedAdjacencyUpRelation/%
 }
 
+\GTStestText{\GTSnegDirAdjUp/}{\GTSnegDirAdjUpRel/}
+
 \GTStestText{\GTSnDAU/}{\GTSnDAUR/}
+
+\GTStestText{\GTSxa[n,u]}{\GTSxa[n,u,r]}
 
 \subsection{Directed adjacency down}
 
@@ -96,7 +109,11 @@ Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
 \GTSdirectedAdjacencyDownRelation/%
 }
 
+\GTStestText{\GTSdirAdjDown/}{\GTSdirAdjDownRel/}
+
 \GTStestText{\GTSdAD/}{\GTSdADR/}
+
+\GTStestText{\GTSxa[d]}{\GTSxa[d,r]}
 
 \subsection{Negated directed adjacency down}
 
@@ -104,7 +121,11 @@ Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
 \GTSnegatedDirectedAdjacencyDownRelation/%
 }
 
+\GTStestText{\GTSnegDirAdjDown/}{\GTSnegDirAdjDownRel/}
+
 \GTStestText{\GTSnDAD/}{\GTSnDADR/}
+
+\GTStestText{\GTSxa[n,d]}{\GTSxa[n,d,r]}
 
 \subsection{Incidence}
 
@@ -141,176 +162,23 @@ Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
 \GTStestTextII{\GTSnegatedInIncidence/}{\GTSnegatedInIncidenceRelation/}
 
 \GTStestTextII{\GTSnII/}{\GTSnIIR/}
+}
 
+\section{Standard symbols}
 
+\GTStestNormalSymbolsCalls
 
 \section{Every adjacency/incidency types in blue}
 
 \GTSsetMainColor{blue}
 
-\subsection{Adjacency}
-
-\GTStestText{\GTSadjacency/}{\GTSadjacencyRelation/}
-
-\GTStestText{\GTSa/}{\GTSaR/}
-
-\subsection{Unadjacency}
-
-\GTStestText{\GTSunadjacency/}{\GTSunadjacencyRelation/}
-
-\GTStestText{\GTSu/}{\GTSuR/}
-
-\subsection{Directed adjacency up}
-
-\GTStestText{\GTSdirectedAdjacencyUp/}{\GTSdirectedAdjacencyUpRelation/}
-
-\GTStestText{\GTSdAU/}{\GTSdAUR/}
-
-\subsection{Negated directed adjacency up}
-
-\GTStestText{\GTSnegatedDirectedAdjacencyUp/}{%
-\GTSnegatedDirectedAdjacencyUpRelation/%
-}
-
-\GTStestText{\GTSnDAU/}{\GTSnDAUR/}
-
-\subsection{Directed adjacency down}
-
-\GTStestText{\GTSdirectedAdjacencyDown/}{%
-\GTSdirectedAdjacencyDownRelation/%
-}
-
-\GTStestText{\GTSdAD/}{\GTSdADR/}
-
-\subsection{Negated directed adjacency down}
-
-\GTStestText{\GTSnegatedDirectedAdjacencyDown/}{%
-\GTSnegatedDirectedAdjacencyDownRelation/%
-}
-
-\GTStestText{\GTSnDAD/}{\GTSnDADR/}
-
-\subsection{Incidence}
-
-\GTStestTextII{\GTSincidence/}{\GTSincidenceRelation/}
-
-\GTStestTextII{\GTSi/}{\GTSiR/}
-
-\subsection{Negated incidence}
-
-\GTStestTextII{\GTSnegatedIncidence/}{\GTSnegatedIncidenceRelation/}
-
-\GTStestTextII{\GTSnI/}{\GTSnIR/}
-
-\subsection{Directed incidence up/out}
-
-\GTStestTextII{\GTSoutIncidence/}{\GTSoutIncidenceRelation/}
-
-\GTStestTextII{\GTSoI/}{\GTSoIR/}
-
-\subsection{Negated directed incidence up/out}
-
-\GTStestTextII{\GTSnegatedOutIncidence/}{\GTSnegatedOutIncidenceRelation/}
-
-\GTStestTextII{\GTSnOI/}{\GTSnOIR/}
-
-\subsection{Directed incidence down/in}
-
-\GTStestTextII{\GTSinIncidence/}{\GTSinIncidenceRelation/}
-
-\GTStestTextII{\GTSiI/}{\GTSiIR/}
-
-\subsection{Negated directed incidence down/in}
-
-\GTStestTextII{\GTSnegatedInIncidence/}{\GTSnegatedInIncidenceRelation/}
-
-\GTStestTextII{\GTSnII/}{\GTSnIIR/}
-
-
+\GTStestNormalSymbolsCalls
 
 \section{Every adjacency/incidency types in red}
 
 \GTSsetMainColor{red}
 
-\subsection{Adjacency}
-
-\GTStestText{\GTSadjacency/}{\GTSadjacencyRelation/}
-
-\GTStestText{\GTSa/}{\GTSaR/}
-
-\subsection{Unadjacency}
-
-\GTStestText{\GTSunadjacency/}{\GTSunadjacencyRelation/}
-
-\GTStestText{\GTSu/}{\GTSuR/}
-
-\subsection{Directed adjacency up}
-
-\GTStestText{\GTSdirectedAdjacencyUp/}{\GTSdirectedAdjacencyUpRelation/}
-
-\GTStestText{\GTSdAU/}{\GTSdAUR/}
-
-\subsection{Negated directed adjacency up}
-
-\GTStestText{\GTSnegatedDirectedAdjacencyUp/}{%
-\GTSnegatedDirectedAdjacencyUpRelation/%
-}
-
-\GTStestText{\GTSnDAU/}{\GTSnDAUR/}
-
-\subsection{Directed adjacency down}
-
-\GTStestText{\GTSdirectedAdjacencyDown/}{%
-\GTSdirectedAdjacencyDownRelation/%
-}
-
-\GTStestText{\GTSdAD/}{\GTSdADR/}
-
-\subsection{Negated directed adjacency down}
-
-\GTStestText{\GTSnegatedDirectedAdjacencyDown/}{%
-\GTSnegatedDirectedAdjacencyDownRelation/%
-}
-
-\GTStestText{\GTSnDAD/}{\GTSnDADR/}
-
-\subsection{Incidence}
-
-\GTStestTextII{\GTSincidence/}{\GTSincidenceRelation/}
-
-\GTStestTextII{\GTSi/}{\GTSiR/}
-
-\subsection{Negated incidence}
-
-\GTStestTextII{\GTSnegatedIncidence/}{\GTSnegatedIncidenceRelation/}
-
-\GTStestTextII{\GTSnI/}{\GTSnIR/}
-
-\subsection{Directed incidence up/out}
-
-\GTStestTextII{\GTSoutIncidence/}{\GTSoutIncidenceRelation/}
-
-\GTStestTextII{\GTSoI/}{\GTSoIR/}
-
-\subsection{Negated directed incidence up/out}
-
-\GTStestTextII{\GTSnegatedOutIncidence/}{\GTSnegatedOutIncidenceRelation/}
-
-\GTStestTextII{\GTSnOI/}{\GTSnOIR/}
-
-\subsection{Directed incidence down/in}
-
-\GTStestTextII{\GTSinIncidence/}{\GTSinIncidenceRelation/}
-
-\GTStestTextII{\GTSiI/}{\GTSiIR/}
-
-\subsection{Negated directed incidence down/in}
-
-\GTStestTextII{\GTSnegatedInIncidence/}{\GTSnegatedInIncidenceRelation/}
-
-\GTStestTextII{\GTSnII/}{\GTSnIIR/}
-
-
+\GTStestNormalSymbolsCalls
 
 \section{Every symbols in monochrome}
 
@@ -319,6 +187,8 @@ Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
 \GTStestText{\GTSadjacencyMonochrome/}{\GTSadjacencyMonochromeRelation/}
 
 \GTStestText{\GTSaM/}{\GTSaMR/}
+
+\GTStestText{\GTSxa[m]}{\GTSxa[m,r]}
 
 Checking if normal colors are ok.
 
@@ -334,6 +204,8 @@ Checking if normal colors are ok.
 
 \GTStestText{\GTSuM/}{\GTSuMR/}
 
+\GTStestText{\GTSxa[m,n]}{\GTSxa[m,n,r]}
+
 \subsection{Directed adjacency up}
 
 \GTStestText{\GTSdirectedAdjacencyUpMonochrome/}{%
@@ -341,6 +213,8 @@ Checking if normal colors are ok.
 }
 
 \GTStestText{\GTSdAUM/}{\GTSdAUMR/}
+
+\GTStestText{\GTSxa[m,u]}{\GTSxa[m,u,r]}
 
 \subsection{Negated directed adjacency up}
 
@@ -350,6 +224,8 @@ Checking if normal colors are ok.
 
 \GTStestText{\GTSnDAUM/}{\GTSnDAUMR/}
 
+\GTStestText{\GTSxa[m,n,u]}{\GTSxa[m,n,u,r]}
+
 \subsection{Directed adjacency down}
 
 \GTStestText{\GTSdirectedAdjacencyDownMonochrome/}{%
@@ -358,6 +234,8 @@ Checking if normal colors are ok.
 
 \GTStestText{\GTSdADM/}{\GTSdADMR/}
 
+\GTStestText{\GTSxa[m,d]}{\GTSxa[m,d,r]}
+
 \subsection{Negated directed adjacency down}
 
 \GTStestText{\GTSnegatedDirectedAdjacencyDownMonochrome/}{%
@@ -365,6 +243,8 @@ Checking if normal colors are ok.
 }
 
 \GTStestText{\GTSnDADM/}{\GTSnDADMR/}
+
+\GTStestText{\GTSxa[m,n,d]}{\GTSxa[m,n,d,r]}
 
 \subsection{Incidence}
 

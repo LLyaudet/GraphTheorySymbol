@@ -1,6 +1,7 @@
 hard amsmath
 hard amssymb
 hard graphicx
+hard keyval
 hard fdsymbol
 hard lua-unicode-math
 hard xcolor

@@ -177,7 +177,52 @@ A set of LaTeX commands to have symbols designed for Graph Theory]
 % Argument:\\
 % \marg{color} The color that must be used by GraphTheorySymbol afterward.
 %
-% \DescribeMacro{\GTSadjacency}\DescribeMacro{\GTSa}
+% \DescribeMacro{\GTS@a}
+% This macro will draw any of the adjacency symbols
+% if the correct arguments are given.
+% It is not expected to be used directly.
+% See the macros derived from it and \cs{GTS@b}: \cs{GTSxadjacency},
+% \cs{GTSxadj}, and \cs{GTSxa}.
+% Arguments:\\
+% \marg{mainColor} If non-empty, this color will be used as main color.\\
+% \marg{secondColor} If non-empty, this color will be used as second
+% color.\\
+% \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
+% \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
+% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.
+%
+% \DescribeMacro{\GTS@b}
+% This macro builds on top of \cs{GTS@a} to handle mathematical relation
+% spacing if sixth argument is not empty.
+% It is not expected to be used directly.
+% See the macros derived from it and \cs{GTS@a}: \cs{GTSxadjacency},
+% \cs{GTSxadj}, and \cs{GTSxa}.
+% Arguments:\\
+% \marg{mainColor} If non-empty, this color will be used as main color.\\
+% \marg{secondColor} If non-empty, this color will be used as second
+% color.\\
+% \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
+% \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
+% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.\\
+% \marg{relation} Non-empty implies that relation spacing will be added.
+%
+% \DescribeMacro{\GTSxa}
+% \DescribeMacro{\GTSxadj}
+% \DescribeMacro{\GTSxadjacency}
+% Versatile macros for adjacency that can be given options.
+% Argument:\\
+% \oarg{optionsList} Sets the following options if not empty:\\
+% mainColor=color1 or mainC=color1 or mColor=color1 or mC=color1,\\
+% secondColor=color2 or secondC=color2 or sColor=color2 or sC=color2,\\
+% monochrome or mon or m (equivalent to mC=black,sC=black),\\
+% negated or not or n,\\
+% up or u,\\
+% down or d,\\
+% relation or rel or r.
+%
+% \DescribeMacro{\GTSadjacency}
+% \DescribeMacro{\GTSadj}
+% \DescribeMacro{\GTSa}
 % This macro will draw an adjacency symbol.
 % A first drawing didn't include the small dots in the middle of the two
 % circles corresponding to the graph vertices.
@@ -185,126 +230,170 @@ A set of LaTeX commands to have symbols designed for Graph Theory]
 % and could be confused with a graph with only two vertices and one edge.
 % Hence, these dots were added and they have the nice property to remind
 % of the classical textual notation of adjacency relation as Adj(.,.).\\
-% |A.\GTSadjacency/A.| or |A.\GTSa/A.| will yield A.\GTSa/A.\\
-% |u \GTSadjacency/ v| or |u \GTSa/ v| will yield u \GTSa/ v.\\
-% |$u \GTSadjacency/ v$| or |$u \GTSa/ v$| will yield $u \GTSa/ v$.
+% |A.\GTSadjacency/A.| or |A.\GTSadj/A.| or |A.\GTSa/A.|
+% will yield A.\GTSa/A.\\
+% |u \GTSadjacency/ v| or |u \GTSadj/ v| or |u \GTSa/ v|
+% will yield u \GTSa/ v.\\
+% |$u \GTSadjacency/ v$| or |$u \GTSadj/ v$| or |$u \GTSa/ v$|
+% will yield $u \GTSa/ v$.
 %
-% \DescribeMacro{\GTSadjacencyRelation}\DescribeMacro{\GTSaR}
+% \DescribeMacro{\GTSadjacencyRelation}
+% \DescribeMacro{\GTSadjRel}
+% \DescribeMacro{\GTSaR}
 % This macro will draw an adjacency symbol.\\
-% |$u\GTSadjacencyRelation/v$| or |$u\GTSaR/v$| will yield $u\GTSaR/v$.
+% |$u\GTSadjacencyRelation/v$| or |$u\GTSadjRel/v$| or |$u\GTSaR/v$|
+% will yield $u\GTSaR/v$.
 %
-% \DescribeMacro{\GTSunadjacency}\DescribeMacro{\GTSu}
+% \DescribeMacro{\GTSunadjacency}
+% \DescribeMacro{\GTSunadj}
+% \DescribeMacro{\GTSu}
 % This macro will draw an unadjacency symbol.\\
-% |A.\GTSunadjacency/A.| or |A.\GTSu/A.| will yield A.\GTSu/A.\\
-% |u \GTSunadjacency/ v| or |u \GTSu/ v| will yield u \GTSu/ v.\\
-% |$u \GTSunadjacency/ v$| or |$u \GTSu/ v$| will yield $u \GTSu/ v$.
+% |A.\GTSunadjacency/A.| or |A.\GTSunadj/A.| or |A.\GTSu/A.|
+% will yield A.\GTSu/A.\\
+% |u \GTSunadjacency/ v| or |u \GTSunadj/ v| or |u \GTSu/ v|
+% will yield u \GTSu/ v.\\
+% |$u \GTSunadjacency/ v$| or |$u \GTSunadj/ v$| or |$u \GTSu/ v$|
+% will yield $u \GTSu/ v$.
 %
-% \DescribeMacro{\GTSunadjacencyRelation}\DescribeMacro{\GTSuR}
+% \DescribeMacro{\GTSunadjacencyRelation}
+% \DescribeMacro{\GTSunadjRel}
+% \DescribeMacro{\GTSuR}
 % This macro will draw an unadjacency symbol.\\
-% |$u\GTSunadjacencyRelation/v$| or |$u\GTSuR/v$| will yield $u\GTSuR/v$.
+% |$u\GTSunadjacencyRelation/v$| or |$u\GTSunadjRel/v$|
+% or |$u\GTSuR/v$| will yield $u\GTSuR/v$.
 %
-% \DescribeMacro{\GTSdirectedAdjacencyUp}\DescribeMacro{\GTSdAU}
+% \DescribeMacro{\GTSdirectedAdjacencyUp}
+% \DescribeMacro{\GTSdirAdjUp}
+% \DescribeMacro{\GTSdAU}
 % This macro will draw a directed adjacency upward symbol.
 % The operand on the left of the symbol should be considered the source
 % of the arc;
 % the operand on the right of the symbol should be considered the target
 % of the arc.\\
-% |A.\GTSdirectedAdjacencyUp/A.| or |A.\GTSdAU/A.|
+% |A.\GTSdirectedAdjacencyUp/A.| or |A.\GTSdirAdjUp/A.| or |A.\GTSdAU/A.|
 % will yield A.\GTSdAU/A.\\
-% |u \GTSdirectedAdjacencyUp/ v| or |u \GTSdAU/ v|
+% |u \GTSdirectedAdjacencyUp/ v| or |u \GTSdirAdjUp/ v| or |u \GTSdAU/ v|
 % will yield u \GTSdAU/ v.\\
-% |$u \GTSdirectedAdjacencyUp/ v$| or |$u \GTSdAU/ v$|
+% |$u \GTSdirectedAdjacencyUp/ v$| or |$u \GTSdirAdjUp/ v$|
+% or |$u \GTSdAU/ v$|
 % will yield $u \GTSdAU/ v$.
 %
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSdirectedAdjacencyUp-}
 % \DescribeMacro{Relation}
+% \DescribeMacro{\GTSdirAdjUpRel}
 % \DescribeMacro{\GTSdAUR}
 % \renewcommand{\SpecialMacroIndex}[1]{\GTSspecialMacroIndex{#1}}
 % \SpecialMacroIndex{\GTSdirectedAdjacencyUpRelation}
+% \SpecialMacroIndex{\GTSdirAdjUpRel}
 % \SpecialMacroIndex{\GTSdAUR}
 % This macro will draw a directed adjacency upward symbol
 % with relation spacing in math mode.\\
-% |$u\GTSdirectedAdjacencyUpRelation/v$| or |$u\GTSdAUR/v$|
+% |$u\GTSdirectedAdjacencyUpRelation/v$| or |$u\GTSdirAdjUpRel/v$|
+% or |$u\GTSdAUR/v$|
 % will yield $u\GTSdAUR/v$.
 %
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyUp}
+% \DescribeMacro{\GTSnegDirAdjUp}
 % \DescribeMacro{\GTSnDAU}
 % \renewcommand{\SpecialMacroIndex}[1]{\GTSspecialMacroIndex{#1}}
 % \SpecialMacroIndex{\GTSnegatedDirectedAdjacencyUp}
+% \SpecialMacroIndex{\GTSnegDirAdjUp}
 % \SpecialMacroIndex{\GTSnDAU}
 % This macro will draw a negated directed adjacency upward symbol.\\
-% |A.\GTSnegatedDirectedAdjacencyUp/A.| or |A.\GTSnDAU/A.|
+% |A.\GTSnegatedDirectedAdjacencyUp/A.| or |A.\GTSnegDirAdjUp/A.|
+% or |A.\GTSnDAU/A.|
 % will yield A.\GTSnDAU/A.\\
-% |u \GTSnegatedDirectedAdjacencyUp/ v| or |u \GTSnDAU/ v|
+% |u \GTSnegatedDirectedAdjacencyUp/ v| or |u \GTSnegDirAdjUp/ v|
+% or |u \GTSnDAU/ v|
 % will yield u \GTSnDAU/ v.\\
-% |$u \GTSnegatedDirectedAdjacencyUp/ v$| or |$u \GTSnDAU/ v$|
+% |$u \GTSnegatedDirectedAdjacencyUp/ v$| or |$u \GTSnegDirAdjUp/ v$|
+% or |$u \GTSnDAU/ v$|
 % will yield $u \GTSnDAU/ v$.
 %
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyUpRelation}
+% \DescribeMacro{\GTSnegDirAdjUpRel}
 % \DescribeMacro{\GTSnDAUR}
 % \renewcommand{\SpecialMacroIndex}[1]{\GTSspecialMacroIndex{#1}}
 % \SpecialMacroIndex{\GTSnegatedDirectedAdjacencyUpRelation}
+% \SpecialMacroIndex{\GTSnegDirAdjUpRel}
 % \SpecialMacroIndex{\GTSnDAUR}
 % This macro will draw a negated directed adjacency upward symbol
 % with relation spacing in math mode.\\
-% |$u\GTSdirectedAdjacencyUpRelation/v$| or |$u\GTSdAUR/v$|
-% will yield $u\GTSdAUR/v$.
+% |$u\GTSnegatedDirectedAdjacencyUpRelation/v$|
+% or |$u\GTSnegDirAdjUpRel/v$| or |$u\GTSnDAUR/v$|
+% will yield $u\GTSnDAUR/v$.
 %
-% \DescribeMacro{\GTSdirectedAdjacencyDown}\DescribeMacro{\GTSdAD}
+% \DescribeMacro{\GTSdirectedAdjacencyDown}
+% \DescribeMacro{\GTSdirAdjDown}
+% \DescribeMacro{\GTSdAD}
 % This macro will draw a directed adjacency downward symbol.
 % The operand on the left of the symbol should be considered the target
 % of the arc;
 % the operand on the right of the symbol should be considered the source
 % of the arc.\\
-% |A.\GTSdirectedAdjacencyDown/A.| or |A.\GTSdAD/A.|
+% |A.\GTSdirectedAdjacencyDown/A.| or |A.\GTSdirAdjDown/A.|
+% or |A.\GTSdAD/A.|
 % will yield A.\GTSdAD/A.\\
-% |u \GTSdirectedAdjacencyDown/ v| or |u \GTSdAD/ v|
+% |u \GTSdirectedAdjacencyDown/ v| or |u \GTSdirAdjDown/ v|
+% or |u \GTSdAD/ v|
 % will yield u \GTSdAD/ v.\\
-% |$u \GTSdirectedAdjacencyDown/ v$| or |$u \GTSdAD/ v$|
+% |$u \GTSdirectedAdjacencyDown/ v$| or |$u \GTSdirAdjDown/ v$|
+% or |$u \GTSdAD/ v$|
 % will yield $u \GTSdAD/ v$.
 %
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSdirectedAdjacencyDown-}
 % \DescribeMacro{Relation}
+% \DescribeMacro{\GTSdirAdjDownRel}
 % \DescribeMacro{\GTSdADR}
 % \renewcommand{\SpecialMacroIndex}[1]{\GTSspecialMacroIndex{#1}}
 % \SpecialMacroIndex{\GTSdirectedAdjacencyDownRelation}
+% \SpecialMacroIndex{\GTSdirAdjDownRel}
 % \SpecialMacroIndex{\GTSdADR}
 % This macro will draw a directed adjacency downward symbol
 % with relation spacing in math mode.\\
-% |$u\GTSdirectedAdjacencyDownRelation/v$| or |$u\GTSdADR/v$|
+% |$u\GTSdirectedAdjacencyDownRelation/v$| or |$u\GTSdirAdjDownRel/v$|
+% or |$u\GTSdADR/v$|
 % will yield $u\GTSdADR/v$.
 %
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyDown}
+% \DescribeMacro{\GTSnegDirAdjDown}
 % \DescribeMacro{\GTSnDAD}
 % \renewcommand{\SpecialMacroIndex}[1]{\GTSspecialMacroIndex{#1}}
 % \SpecialMacroIndex{\GTSnegatedDirectedAdjacencyDown}
+% \SpecialMacroIndex{\GTSnegDirAdjDown}
 % \SpecialMacroIndex{\GTSnDAD}
 % This macro will draw a negated directed adjacency downward symbol.\\
-% |A.\GTSnegatedDirectedAdjacencyDown/A.| or |A.\GTSnDAD/A.|
+% |A.\GTSnegatedDirectedAdjacencyDown/A.| or |A.\GTSnegDirAdjDown/A.|
+% or |A.\GTSnDAD/A.|
 % will yield A.\GTSnDAD/A.\\
-% |u \GTSnegatedDirectedAdjacencyDown/ v| or |u \GTSnDAD/ v|
+% |u \GTSnegatedDirectedAdjacencyDown/ v| or |u \GTSnegDirAdjDown/ v|
+% or |u \GTSnDAD/ v|
 % will yield u \GTSnDAD/ v.\\
-% |$u \GTSnegatedDirectedAdjacencyDown/ v$| or |$u \GTSnDAD/ v$|
+% |$u \GTSnegatedDirectedAdjacencyDown/ v$| or |$u \GTSnegDirAdjDown/ v$|
+% or |$u \GTSnDAD/ v$|
 % will yield $u \GTSnDAD/ v$.
 %
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyDownRelation}
+% \DescribeMacro{\GTSnegDirAdjDownRel}
 % \DescribeMacro{\GTSnDADR}
 % \renewcommand{\SpecialMacroIndex}[1]{\GTSspecialMacroIndex{#1}}
 % \SpecialMacroIndex{\GTSnegatedDirectedAdjacencyDownRelation}
+% \SpecialMacroIndex{\GTSnegDirAdjDownRel}
 % \SpecialMacroIndex{\GTSnDADR}
 % This macro will draw a negated directed adjacency downward symbol
 % with relation spacing in math mode.\\
-% |$u\GTSnegatedDirectedAdjacencyDownRelation/v$| or |$u\GTSnDADR/v$|
+% |$u\GTSnegatedDirectedAdjacencyDownRelation/v$|
+% or |$u\GTSnegDirAdjDownRel/v$| or |$u\GTSnDADR/v$|
 % will yield $u\GTSnDADR/v$.
 %
 % \DescribeMacro{\GTSincidence}\DescribeMacro{\GTSi}
@@ -763,6 +852,7 @@ A set of LaTeX commands to have symbols designed for Graph Theory]
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{graphicx}
+\RequirePackage{keyval}
 \RequirePackage{fdsymbol}
 \RequirePackage{lua-unicode-math}
 \RequirePackage{xcolor}
@@ -817,10 +907,19 @@ A set of LaTeX commands to have symbols designed for Graph Theory]
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSadjacency,\GTSa}
-% This macro will draw an adjacency symbol.
+% \begin{macro}{\GTS@a}
+% This macro will draw any adjacency symbol given the correct parameters.
+% Its use is purely technical.
+% See the macros derived from it and \cs{GTS@b}: \cs{GTSxadjacency},
+% \cs{GTSxadj}, and \cs{GTSxa}.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSadjacency}{%
+\newcommand{\GTS@a}[5]{%
+\if#1\empty\else%
+\GTSsetMainColor{#1}%
+\fi%
+\if#2\empty\else%
+\GTSsetSecondColor{#2}%
+\fi%
 \text{\ensuremath{%
 \raisebox{-0.2ex}{\scalebox{1.5}[1.5]{%
 %
@@ -844,19 +943,28 @@ $\mathcolor{\GTS@secondColor}{\circ}$%
 $\mathcolor{\GTS@secondColor}{\bullet}$%
 }}%
 \hspace{0.27ex}%
-\if\GTS@drawUpArrow\empty\else%
+%    \end{macrocode}
+% if GTS@drawUpArrow empty else
+%    \begin{macrocode}
+\if#4\empty\else%
 \hspace{-0.65ex}%
 \raisebox{-0.18ex}{\scalebox{0.5}[0.5]{%
 \textcolor{\GTS@mainColor}{\textasciicircum}%
 }}%
 \fi%
-\if\GTS@drawDownArrow\empty\else%
+%    \end{macrocode}
+% if GTS@drawDownArrow empty else
+%    \begin{macrocode}
+\if#5\empty\else%
 \hspace{-0.65ex}%
 \raisebox{1.37ex}{\scalebox{0.5}[-0.5]{%
 \textcolor{\GTS@mainColor}{\textasciicircum}%
 }}%
 \fi%
-\if\GTS@drawSlash\empty\else%
+%    \end{macrocode}
+% if GTS@drawSlash empty else
+%    \begin{macrocode}
+\if#3\empty\else%
 \hspace{-0.65ex}%
 \raisebox{0.25ex}{\scalebox{0.6}[0.6]{%
 \textcolor{black}{/}%
@@ -865,168 +973,237 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %
 }}%
 }}%
+\if#1\empty\else%
+\GTSsetMainColor{\GTS@mainColorBackup}%
+\fi%
+\if#2\empty\else%
+\GTSsetSecondColor{\GTS@secondColorBackup}%
+\fi%
 }
-
-\GTS@newcommand{\GTSa}{\GTSadjacency/}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSadjacencyRelation,\GTSaR}
+% \begin{macro}{\GTS@b}
+% This macro will handle wrapping in mathematical relation spacing
+% if needed.
+% Its use is purely technical.
+% See the macros derived from it and \cs{GTS@a}: \cs{GTSxadjacency},
+% \cs{GTSxadj}, and \cs{GTSxa}.
+%    \begin{macrocode}
+\newcommand{\GTS@b}[6]{%
+\if#6\empty%
+\GTS@a{#1}{#2}{#3}{#4}{#5}%
+\else%
+\mathrel{\GTS@a{#1}{#2}{#3}{#4}{#5}}%
+\fi%
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSxa,\GTSxadj,\GTSxadjacency}
+% Versatile macros for adjacency that can be given options:\\
+% mainColor=color1 or mainC=color1 or mColor=color1 or mC=color1,\\
+% secondColor=color2 or secondC=color2 or sColor=color2 or sC=color2,\\
+% monochrome or mon or m,\\
+% negated or not or n,\\
+% up or u,\\
+% down or d,\\
+% relation or rel or r.
+%    \begin{macrocode}
+\define@key{GTSxa}{mainColor}{\def{\GTS@@mainColor}{#1}}
+\define@key{GTSxa}{mainC}{\def{\GTS@@mainColor}{#1}}
+\define@key{GTSxa}{mColor}{\def{\GTS@@mainColor}{#1}}
+\define@key{GTSxa}{mC}{\def{\GTS@@mainColor}{#1}}
+\define@key{GTSxa}{secondColor}{\def{\GTS@@secondColor}{#1}}
+\define@key{GTSxa}{secondC}{\def{\GTS@@secondColor}{#1}}
+\define@key{GTSxa}{sColor}{\def{\GTS@@secondColor}{#1}}
+\define@key{GTSxa}{sC}{\def{\GTS@@secondColor}{#1}}
+\define@key{GTSxa}{monochrome}[true]%
+{\def{\GTS@@mainColor}{black}\def{\GTS@@secondColor}{black}}
+\define@key{GTSxa}{mon}[true]%
+{\def{\GTS@@mainColor}{black}\def{\GTS@@secondColor}{black}}
+\define@key{GTSxa}{m}[true]%
+{\def{\GTS@@mainColor}{black}\def{\GTS@@secondColor}{black}}
+\define@key{GTSxa}{secondC}{\def{\GTS@@secondColor}{#1}}
+\define@key{GTSxa}{sColor}{\def{\GTS@@secondColor}{#1}}
+\define@key{GTSxa}{negated}[true]{\def{\GTS@@drawSlash}{1}}
+\define@key{GTSxa}{not}[true]{\def{\GTS@@drawSlash}{1}}
+\define@key{GTSxa}{n}[true]{\def{\GTS@@drawSlash}{1}}
+\define@key{GTSxa}{up}[true]{\def{\GTS@@drawUpArrow}{1}}
+\define@key{GTSxa}{u}[true]{\def{\GTS@@drawUpArrow}{1}}
+\define@key{GTSxa}{down}[true]{\def{\GTS@@drawDownArrow}{1}}
+\define@key{GTSxa}{d}[true]{\def{\GTS@@drawDownArrow}{1}}
+\define@key{GTSxa}{relation}[true]{\def{\GTS@@relation}{1}}
+\define@key{GTSxa}{rel}[true]{\def{\GTS@@relation}{1}}
+\define@key{GTSxa}{r}[true]{\def{\GTS@@relation}{1}}
+
+\newcommand{\GTSxa}[1][]{%
+\def{\GTS@@mainColor}{}%
+\def{\GTS@@secondColor}{}%
+\def{\GTS@@drawSlash}{}%
+\def{\GTS@@drawUpArrow}{}%
+\def{\GTS@@drawDownArrow}{}%
+\def{\GTS@@relation}{}%
+\setkeys{GTSxa}{#1}%
+\GTS@b{\GTS@@mainColor}{\GTS@@secondColor}{\GTS@@drawSlash}%
+{\GTS@@drawUpArrow}{\GTS@@drawDownArrow}{\GTS@@relation}%
+}
+
+\newcommand{\GTSxadj}[1][]{\GTSxa[#1]}
+
+\newcommand{\GTSxadjacency}[1][]{\GTSxa[#1]}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSadjacency,\GTSadj,\GTSa}
+% This macro will draw an adjacency symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSadjacency}{\GTS@a{}{}{}{}{}}
+\GTS@newcommand{\GTSadj}{\GTS@a{}{}{}{}{}}
+\GTS@newcommand{\GTSa}{\GTS@a{}{}{}{}{}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSadjacencyRelation,\GTSadjRel,\GTSaR}
 % This macro will draw an adjacency symbol with relation spacing in math
 % mode.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSadjacencyRelation}{\mathrel{\GTSadjacency/}}
-\GTS@newcommand{\GTSaR}{\GTSadjacencyRelation/}
+\GTS@newcommand{\GTSadjacencyRelation}{\mathrel{\GTSa/}}
+\GTS@newcommand{\GTSadjRel}{\mathrel{\GTSa/}}
+\GTS@newcommand{\GTSaR}{\mathrel{\GTSa/}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSunadjacency,\GTSu}
+% \begin{macro}{\GTSunadjacency,\GTSunadj,\GTSu}
 % This macro will draw an unadjacency symbol.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSunadjacency}{%
-\def\GTS@drawSlash{1}%
-\GTSadjacency/%
-\def\GTS@drawSlash{}%
-}
-
-\GTS@newcommand{\GTSu}{\GTSunadjacency/}
+\GTS@newcommand{\GTSunadjacency}{\GTS@a{}{}{1}{}{}}
+\GTS@newcommand{\GTSunadj}{\GTS@a{}{}{1}{}{}}
+\GTS@newcommand{\GTSu}{\GTS@a{}{}{1}{}{}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSunadjacencyRelation,\GTSuR}
+% \begin{macro}{\GTSunadjacencyRelation,\GTSunadjRel,\GTSuR}
 % This macro will draw an unadjacency symbol with relation spacing in math
 % mode.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSunadjacencyRelation}{\mathrel{\GTSunadjacency/}}
-\GTS@newcommand{\GTSuR}{\GTSunadjacencyRelation/}
+\GTS@newcommand{\GTSunadjacencyRelation}{\mathrel{\GTSu/}}
+\GTS@newcommand{\GTSunadjRel}{\mathrel{\GTSu/}}
+\GTS@newcommand{\GTSuR}{\mathrel{\GTSu/}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSdirectedAdjacencyUp,\GTSdAU}
+% \begin{macro}{\GTSdirectedAdjacencyUp,\GTSdirAdjUp,\GTSdAU}
 % This macro will draw a directed adjacency upward symbol.
 % The operand on the left of the symbol should be considered the source
 % of the arc;
 % the operand on the right of the symbol should be considered the target
 % of the arc.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSdirectedAdjacencyUp}{%
-\def\GTS@drawUpArrow{1}%
-\GTSadjacency/%
-\def\GTS@drawUpArrow{}%
-}
-
-\GTS@newcommand{\GTSdAU}{\GTSdirectedAdjacencyUp/}
+\GTS@newcommand{\GTSdirectedAdjacencyUp}{\GTS@a{}{}{}{1}{}}
+\GTS@newcommand{\GTSdirAdjUp}{\GTS@a{}{}{}{1}{}}
+\GTS@newcommand{\GTSdAU}{\GTS@a{}{}{}{1}{}}
 %    \end{macrocode}
 % \end{macro}
 %
 % \renewcommand{\SpecialMainMacroIndex}[1]{}
-% \begin{macro}{\GTSdirectedAdjacencyUp-, Relation, \GTSdAUR}
+% \begin{macro}{\GTSdirectedAdjacencyUp-,Relation,\GTSdirAdjUpRel,\GTSdAUR}
 % \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
 % \SpecialMainMacroIndex{\GTSdirectedAdjacencyUpRelation}
+% \SpecialMainMacroIndex{\GTSdirAdjUpRel}
 % \SpecialMainMacroIndex{\GTSdAUR}
 % This macro will draw a directed adjacency upward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSdirectedAdjacencyUpRelation}{%
-\mathrel{\GTSdirectedAdjacencyUp/}%
-}
-\GTS@newcommand{\GTSdAUR}{\GTSdirectedAdjacencyUpRelation/}
+\GTS@newcommand{\GTSdirectedAdjacencyUpRelation}{\mathrel{\GTSdAU/}}
+\GTS@newcommand{\GTSdirAdjUpRel}{\mathrel{\GTSdAU/}}
+\GTS@newcommand{\GTSdAUR}{\mathrel{\GTSdAU/}}
 %    \end{macrocode}
 % \end{macro}
 %
 % \renewcommand{\SpecialMainMacroIndex}[1]{}
-% \begin{macro}{\GTSnegatedDirected-, AdjacencyUp, \GTSnDAU}
+% \begin{macro}{\GTSnegatedDirected-,AdjacencyUp,\GTSnegDirAdjUp,\GTSnDAU}
 % \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
 % \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyUp}
+% \SpecialMainMacroIndex{\GTSnegDirAdjUp}
 % \SpecialMainMacroIndex{\GTSnDAU}
 % This macro will draw a negated directed adjacency upward symbol.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSnegatedDirectedAdjacencyUp}{%
-\def\GTS@drawSlash{1}%
-\GTSdirectedAdjacencyUp/%
-\def\GTS@drawSlash{}%
-}
-
-\GTS@newcommand{\GTSnDAU}{\GTSnegatedDirectedAdjacencyUp/}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyUp}{\GTS@a{}{}{1}{1}{}}
+\GTS@newcommand{\GTSnegDirAdjUp}{\GTS@a{}{}{1}{1}{}}
+\GTS@newcommand{\GTSnDAU}{\GTS@a{}{}{1}{1}{}}
 %    \end{macrocode}
 % \end{macro}
 %
 % \renewcommand{\SpecialMainMacroIndex}[1]{}
-% \begin{macro}{\GTSnegatedDirected-, AdjacencyUpRelation, \GTSnDAUR}
+% \begin{macro}{\GTSnegatedDirected-,AdjacencyUpRelation,\GTSnegDirAdjUpRel,\GTSnDAUR}
 % \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
 % \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyUpRelation}
+% \SpecialMainMacroIndex{\GTSnegDirAdjUpRel}
 % \SpecialMainMacroIndex{\GTSnDAUR}
 % This macro will draw a negated directed adjacency upward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSnegatedDirectedAdjacencyUpRelation}{%
-\mathrel{\GTSnegatedDirectedAdjacencyUp/}%
-}
-\GTS@newcommand{\GTSnDAUR}{\GTSnegatedDirectedAdjacencyDownRelation/}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyUpRelation}{\mathrel{\GTSnDAU/}}
+\GTS@newcommand{\GTSnegDirAdjUpRel}{\mathrel{\GTSnDAU/}}
+\GTS@newcommand{\GTSnDAUR}{\mathrel{\GTSnDAU/}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\GTSdirectedAdjacencyDown,\GTSdAD}
+% \begin{macro}{\GTSdirectedAdjacencyDown,\GTSdirAdjDown,\GTSdAD}
 % This macro will draw a directed adjacency downward symbol.
 % The operand on the left of the symbol should be considered the target
 % of the arc;
 % the operand on the right of the symbol should be considered the source
 % of the arc.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSdirectedAdjacencyDown}{%
-\def\GTS@drawDownArrow{1}%
-\GTSadjacency/%
-\def\GTS@drawDownArrow{}%
-}
-
-\GTS@newcommand{\GTSdAD}{\GTSdirectedAdjacencyDown/}
+\GTS@newcommand{\GTSdirectedAdjacencyDown}{\GTS@a{}{}{}{}{1}}
+\GTS@newcommand{\GTSdirAdjDown}{\GTS@a{}{}{}{}{1}}
+\GTS@newcommand{\GTSdAD}{\GTS@a{}{}{}{}{1}}
 %    \end{macrocode}
 % \end{macro}
 %
 % \renewcommand{\SpecialMainMacroIndex}[1]{}
-% \begin{macro}{\GTSdirectedAdjacencyDown-, Relation, \GTSdADR}
+% \begin{macro}{\GTSdirectedAdjacencyDown-,Relation,\GTSdirAdjDownRel,\GTSdADR}
 % \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
 % \SpecialMainMacroIndex{\GTSdirectedAdjacencyDownRelation}
+% \SpecialMainMacroIndex{\GTSdirAdjDownRel}
 % \SpecialMainMacroIndex{\GTSdADR}
 % This macro will draw a directed adjacency downward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSdirectedAdjacencyDownRelation}{%
-\mathrel{\GTSdirectedAdjacencyDown/}%
-}
-\GTS@newcommand{\GTSdADR}{\GTSdirectedAdjacencyDownRelation/}
+\GTS@newcommand{\GTSdirectedAdjacencyDownRelation}{\mathrel{\GTSdAD/}}
+\GTS@newcommand{\GTSdirAdjDownRel}{\mathrel{\GTSdAD/}}
+\GTS@newcommand{\GTSdADR}{\mathrel{\GTSdAD/}}
 %    \end{macrocode}
 % \end{macro}
 %
 % \renewcommand{\SpecialMainMacroIndex}[1]{}
-% \begin{macro}{\GTSnegatedDirected-, AdjacencyDown, \GTSnDAD}
+% \begin{macro}{\GTSnegatedDirected-,AdjacencyDown,\GTSnegDirAdjDown,\GTSnDAD}
 % \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
 % \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyDown}
+% \SpecialMainMacroIndex{\GTSnegDirAdjDown}
 % \SpecialMainMacroIndex{\GTSnDAD}
 % This macro will draw a negated directed adjacency downward symbol.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSnegatedDirectedAdjacencyDown}{%
-\def\GTS@drawSlash{1}%
-\GTSdirectedAdjacencyDown/%
-\def\GTS@drawSlash{}%
-}
-
-\GTS@newcommand{\GTSnDAD}{\GTSnegatedDirectedAdjacencyDown/}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyDown}{\GTS@a{}{}{1}{}{1}}
+\GTS@newcommand{\GTSnegDirAdjDown}{\GTS@a{}{}{1}{}{1}}
+\GTS@newcommand{\GTSnDAD}{\GTS@a{}{}{1}{}{1}}
 %    \end{macrocode}
 % \end{macro}
 %
 % \renewcommand{\SpecialMainMacroIndex}[1]{}
-% \begin{macro}{\GTSnegatedDirected-, AdjacencyDownRelation, \GTSnDADR}
+% \begin{macro}{\GTSnegatedDirected-,AdjacencyDownRelation,\GTSnegDirAdjDownRel,\GTSnDADR}
 % \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
 % \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyDownRelation}
+% \SpecialMainMacroIndex{\GTSnegDirAdjDownRel}
 % \SpecialMainMacroIndex{\GTSnDADR}
 % This macro will draw a negated directed adjacency downward symbol
 % with relation spacing in math mode.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSnegatedDirectedAdjacencyDownRelation}{%
-\mathrel{\GTSnegatedDirectedAdjacencyDown/}%
-}
-\GTS@newcommand{\GTSnDADR}{\GTSnegatedDirectedAdjacencyDownRelation/}
+\GTS@newcommand{\GTSnegatedDirectedAdjacencyDownRelation}{\mathrel{\GTSnDAD/}}
+\GTS@newcommand{\GTSnegDirAdjDownRel}{\mathrel{\GTSnDAD/}}
+\GTS@newcommand{\GTSnDADR}{\mathrel{\GTSnDAD/}}
 %    \end{macrocode}
 % \end{macro}
 %
