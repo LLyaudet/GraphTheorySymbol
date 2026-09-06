@@ -18,7 +18,7 @@ Clone it with this URL: <git@github.com:LLyaudet/GraphTheorySymbol.git>.
 This package is available on CTAN:
 <https://ctan.org/pkg/graph-theory-symbol>.
 
-## Short description:
+## Short description
 
 A set of LaTeX macros to have symbols designed for Graph Theory.
 Symbols are available for (directed and undirected) adjacency and
@@ -29,6 +29,11 @@ and math mode, without any spacing control;
 a "Relation" one that works only in math mode,
 with automatic spacing of mathematical relations.
 
-## Installation:
+## Installation
 1. Run "make" to build all the files.
 2. Run "make clean" to remove the unnecessary files.
+
+## Support
+
+This package is gratis and free.
+But if you can star it on GitHub, it is a nice encouragement.
