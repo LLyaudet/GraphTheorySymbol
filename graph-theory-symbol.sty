@@ -55,13 +55,13 @@ A set of LaTeX commands to have symbols designed for Graph Theory]
 \RequirePackage{lua-unicode-math}
 \RequirePackage{xcolor}
 
-\def \GTS@mainColor {black}
-\def \GTS@secondColor {gray}
-\def \GTS@mainColorBackup {black}
-\def \GTS@secondColorBackup {gray}
-\def \GTS@drawSlash {}
-\def \GTS@drawUpArrow {}
-\def \GTS@drawDownArrow {}
+\def\GTS@mainColor{black}
+\def\GTS@secondColor{gray}
+\def\GTS@mainColorBackup{black}
+\def\GTS@secondColorBackup{gray}
+\def\GTS@drawSlash{}
+\def\GTS@drawUpArrow{}
+\def\GTS@drawDownArrow{}
 
 \@ifdefinable{\GTS@newcommand}{\def\GTS@newcommand#1#2{%
   \@ifdefinable{#1}{\def#1/{#2}}
@@ -133,46 +133,44 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 \fi%
 }
 \newcommand{\GTS@b}[6]{%
-\if#6\empty%
-\GTS@a{#1}{#2}{#3}{#4}{#5}%
-\else%
+\if#61%
 \mathrel{\GTS@a{#1}{#2}{#3}{#4}{#5}}%
+\else%
+\GTS@a{#1}{#2}{#3}{#4}{#5}%
 \fi%
 }
-\define@key{GTSxa}{mainColor}{\def{\GTS@@mainColor}{#1}}
-\define@key{GTSxa}{mainC}{\def{\GTS@@mainColor}{#1}}
-\define@key{GTSxa}{mColor}{\def{\GTS@@mainColor}{#1}}
-\define@key{GTSxa}{mC}{\def{\GTS@@mainColor}{#1}}
-\define@key{GTSxa}{secondColor}{\def{\GTS@@secondColor}{#1}}
-\define@key{GTSxa}{secondC}{\def{\GTS@@secondColor}{#1}}
-\define@key{GTSxa}{sColor}{\def{\GTS@@secondColor}{#1}}
-\define@key{GTSxa}{sC}{\def{\GTS@@secondColor}{#1}}
-\define@key{GTSxa}{monochrome}[true]%
-{\def{\GTS@@mainColor}{black}\def{\GTS@@secondColor}{black}}
-\define@key{GTSxa}{mon}[true]%
-{\def{\GTS@@mainColor}{black}\def{\GTS@@secondColor}{black}}
-\define@key{GTSxa}{m}[true]%
-{\def{\GTS@@mainColor}{black}\def{\GTS@@secondColor}{black}}
-\define@key{GTSxa}{secondC}{\def{\GTS@@secondColor}{#1}}
-\define@key{GTSxa}{sColor}{\def{\GTS@@secondColor}{#1}}
-\define@key{GTSxa}{negated}[true]{\def{\GTS@@drawSlash}{1}}
-\define@key{GTSxa}{not}[true]{\def{\GTS@@drawSlash}{1}}
-\define@key{GTSxa}{n}[true]{\def{\GTS@@drawSlash}{1}}
-\define@key{GTSxa}{up}[true]{\def{\GTS@@drawUpArrow}{1}}
-\define@key{GTSxa}{u}[true]{\def{\GTS@@drawUpArrow}{1}}
-\define@key{GTSxa}{down}[true]{\def{\GTS@@drawDownArrow}{1}}
-\define@key{GTSxa}{d}[true]{\def{\GTS@@drawDownArrow}{1}}
-\define@key{GTSxa}{relation}[true]{\def{\GTS@@relation}{1}}
-\define@key{GTSxa}{rel}[true]{\def{\GTS@@relation}{1}}
-\define@key{GTSxa}{r}[true]{\def{\GTS@@relation}{1}}
+\define@key{GTSxa}{mainColor}{\def\GTS@@mainColor{#1}}
+\define@key{GTSxa}{mainC}{\def\GTS@@mainColor{#1}}
+\define@key{GTSxa}{mColor}{\def\GTS@@mainColor{#1}}
+\define@key{GTSxa}{mC}{\def\GTS@@mainColor{#1}}
+\define@key{GTSxa}{secondColor}{\def\GTS@@secondColor{#1}}
+\define@key{GTSxa}{secondC}{\def\GTS@@secondColor{#1}}
+\define@key{GTSxa}{sColor}{\def\GTS@@secondColor{#1}}
+\define@key{GTSxa}{sC}{\def\GTS@@secondColor{#1}}
+\define@key{GTSxa}{monochrome}[1]%
+{\def\GTS@@mainColor{black}\def\GTS@@secondColor{black}}
+\define@key{GTSxa}{mon}[1]%
+{\def\GTS@@mainColor{black}\def\GTS@@secondColor{black}}
+\define@key{GTSxa}{m}[1]%
+{\def\GTS@@mainColor{black}\def\GTS@@secondColor{black}}
+\define@key{GTSxa}{negated}[1]{\def\GTS@@drawSlash{1}}
+\define@key{GTSxa}{not}[1]{\def\GTS@@drawSlash{1}}
+\define@key{GTSxa}{n}[1]{\def\GTS@@drawSlash{1}}
+\define@key{GTSxa}{up}[1]{\def\GTS@@drawUpArrow{1}}
+\define@key{GTSxa}{u}[1]{\def\GTS@@drawUpArrow{1}}
+\define@key{GTSxa}{down}[1]{\def\GTS@@drawDownArrow{1}}
+\define@key{GTSxa}{d}[1]{\def\GTS@@drawDownArrow{1}}
+\define@key{GTSxa}{relation}[1]{\def\GTS@@relation{1}}
+\define@key{GTSxa}{rel}[1]{\def\GTS@@relation{1}}
+\define@key{GTSxa}{r}[1]{\def\GTS@@relation{1}}
 
 \newcommand{\GTSxa}[1][]{%
-\def{\GTS@@mainColor}{}%
-\def{\GTS@@secondColor}{}%
-\def{\GTS@@drawSlash}{}%
-\def{\GTS@@drawUpArrow}{}%
-\def{\GTS@@drawDownArrow}{}%
-\def{\GTS@@relation}{}%
+\def\GTS@@mainColor{}%
+\def\GTS@@secondColor{}%
+\def\GTS@@drawSlash{}%
+\def\GTS@@drawUpArrow{}%
+\def\GTS@@drawDownArrow{}%
+\def\GTS@@relation{}%
 \setkeys{GTSxa}{#1}%
 \GTS@b{\GTS@@mainColor}{\GTS@@secondColor}{\GTS@@drawSlash}%
 {\GTS@@drawUpArrow}{\GTS@@drawDownArrow}{\GTS@@relation}%
