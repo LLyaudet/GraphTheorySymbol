@@ -1,7 +1,7 @@
 # GraphTheorySymbol
 A set of LaTeX commands to have symbols designed for Graph Theory
 
-Version 1.2.0 2026/09/05
+Version 1.2.0 2026/09/06
 
 Designed by Laurent Frédéric Bernard François Lyaudet
 
