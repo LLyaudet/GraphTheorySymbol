@@ -236,19 +236,21 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % slash, avoiding problems with spaces after macro call.\\
 % Arguments:\\
 % \marg{commandname} The name of the command to create.\\
-% \marg{commandcode} The code of the command to create.
+% \marg{commandcode} The code of the command to create.\\
 %
 % \DescribeMacro{\GTSsetMainColor}
 % This macro will set the main color used in GraphTheorySymbol.
 % This color has initial value ``black''.\\
 % Argument:\\
 % \marg{color} The color that must be used by GraphTheorySymbol afterward.
+% \\
 %
 % \DescribeMacro{\GTSsetSecondColor}
 % This macro will set the second color used in GraphTheorySymbol.
 % This color has initial value ``gray''.\\
 % Argument:\\
 % \marg{color} The color that must be used by GraphTheorySymbol afterward.
+% \\
 %
 % \DescribeMacro{\GTS@a}
 % This macro will draw any of the adjacency symbols
@@ -262,7 +264,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % color.\\
 % \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
-% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.
+% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.\\
 %
 % \DescribeMacro{\GTS@b}
 % This macro builds on top of \cs{GTS@a} to handle mathematical relation
@@ -277,7 +279,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
 % \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.\\
-% \marg{relation} Non-empty implies that relation spacing will be added.
+% \marg{relation} Non-empty implies that relation spacing will be added.\\
 %
 % \DescribeMacro{\GTSxa}
 % \DescribeMacro{\GTSxadj}
@@ -291,7 +293,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % negated or not or n,\\
 % up or u,\\
 % down or d,\\
-% relation or rel or r.
+% relation or rel or r.\\
 %
 % \DescribeMacro{\GTSadjacency}
 % \DescribeMacro{\GTSadj}
@@ -347,6 +349,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIII{GTSdirectedAdjacencyUpRelation}{GTSdirAdjUpRel}%
 % {GTSdAUR}
 %
+% \newpage
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyUp}
@@ -439,7 +442,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % color.\\
 % \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
-% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.
+% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.\\
 %
 % \DescribeMacro{\GTS@j}
 % This macro builds on top of \cs{GTS@i} to handle mathematical relation
@@ -454,7 +457,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
 % \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.\\
-% \marg{relation} Non-empty implies that relation spacing will be added.
+% \marg{relation} Non-empty implies that relation spacing will be added.\\
 %
 % \DescribeMacro{\GTSxi}
 % \DescribeMacro{\GTSxinc}
@@ -468,7 +471,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % negated or not or n,\\
 % in or i,\\
 % out or o,\\
-% relation or rel or r.
+% relation or rel or r.\\
 %
 % \DescribeMacro{\GTSincidence}
 % \DescribeMacro{\GTSinc}
@@ -485,6 +488,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % mode.\\
 % \usageExampleIncRelIII{GTSincidenceRelation}{GTSincRel}{GTSiR}
 %
+% \newpage
 % \DescribeMacro{\GTSnegatedIncidence}
 % \DescribeMacro{\GTSnegInc}
 % \DescribeMacro{\GTSnI}
