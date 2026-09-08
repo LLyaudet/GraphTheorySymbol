@@ -69,14 +69,14 @@ will yield #1 \csname #5\endcsname/ #2.\\
 \texttt{\$#1 \textbackslash{}#3/ #2\$}\\
 or \texttt{\$#1 \textbackslash{}#4/ #2\$}\\
 or \texttt{\$#1 \textbackslash{}#5/ #2\$}\\
-will yield $#1 \csname #5\endcsname/ #2$.\\
+will yield $#1 \csname #5\endcsname/ #2$.
 }
 
 \newcommand{\usageExampleRelIII}[5]{
 \texttt{\$#1\textbackslash{}#3/#2\$}\\
 or \texttt{\$#1\textbackslash{}#4/#2\$}\\
 or \texttt{\$#1\textbackslash{}#5/#2\$}\\
-will yield $#1\csname #5\endcsname/#2$.\\
+will yield $#1\csname #5\endcsname/#2$.
 }
 
 \newcommand{\usageExampleIV}[6]{
@@ -94,7 +94,7 @@ will yield #1 \csname #6\endcsname/ #2.\\
 or \texttt{\$#1 \textbackslash{}#4/ #2\$}\\
 or \texttt{\$#1 \textbackslash{}#5/ #2\$}\\
 or \texttt{\$#1 \textbackslash{}#6/ #2\$}\\
-will yield $#1 \csname #6\endcsname/ #2$.\\
+will yield $#1 \csname #6\endcsname/ #2$.
 }
 
 \newcommand{\usageExampleRelIV}[6]{
@@ -102,7 +102,7 @@ will yield $#1 \csname #6\endcsname/ #2$.\\
 or \texttt{\$#1\textbackslash{}#4/#2\$}\\
 or \texttt{\$#1\textbackslash{}#5/#2\$}\\
 or \texttt{\$#1\textbackslash{}#6/#2\$}\\
-will yield $#1\csname #6\endcsname/#2$.\\
+will yield $#1\csname #6\endcsname/#2$.
 }
 
 \newcommand{\usageExampleAdjIII}[3]{\usageExampleIII{u}{v}{#1}{#2}{#3}}
@@ -231,27 +231,29 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % in math mode, a variant with relation spacing for math mode exists with
 % suffix ``relation''.
 %
+% \medskip
 % \DescribeMacro{\GTS@newcommand}
 % This macro will enforce that the other macros are called with a trailing
 % slash, avoiding problems with spaces after macro call.\\
 % Arguments:\\
 % \marg{commandname} The name of the command to create.\\
-% \marg{commandcode} The code of the command to create.\\
+% \marg{commandcode} The code of the command to create.
 %
+% \medskip
 % \DescribeMacro{\GTSsetMainColor}
 % This macro will set the main color used in GraphTheorySymbol.
 % This color has initial value ``black''.\\
 % Argument:\\
 % \marg{color} The color that must be used by GraphTheorySymbol afterward.
-% \\
 %
+% \medskip
 % \DescribeMacro{\GTSsetSecondColor}
 % This macro will set the second color used in GraphTheorySymbol.
 % This color has initial value ``gray''.\\
 % Argument:\\
 % \marg{color} The color that must be used by GraphTheorySymbol afterward.
-% \\
 %
+% \medskip
 % \DescribeMacro{\GTS@a}
 % This macro will draw any of the adjacency symbols
 % if the correct arguments are given.
@@ -264,8 +266,9 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % color.\\
 % \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
-% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.\\
+% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.
 %
+% \medskip
 % \DescribeMacro{\GTS@b}
 % This macro builds on top of \cs{GTS@a} to handle mathematical relation
 % spacing if sixth argument is not empty.
@@ -279,8 +282,9 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
 % \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.\\
-% \marg{relation} Non-empty implies that relation spacing will be added.\\
+% \marg{relation} Non-empty implies that relation spacing will be added.
 %
+% \medskip
 % \DescribeMacro{\GTSxa}
 % \DescribeMacro{\GTSxadj}
 % \DescribeMacro{\GTSxadjacency}
@@ -293,8 +297,9 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % negated or not or n,\\
 % up or u,\\
 % down or d,\\
-% relation or rel or r.\\
+% relation or rel or r.
 %
+% \medskip
 % \DescribeMacro{\GTSadjacency}
 % \DescribeMacro{\GTSadj}
 % \DescribeMacro{\GTSa}
@@ -307,24 +312,28 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % of the classical textual notation of adjacency relation as Adj(.,.).\\
 % \usageExampleAdjIII{GTSadjacency}{GTSadj}{GTSa}
 %
+% \medskip
 % \DescribeMacro{\GTSadjacencyRelation}
 % \DescribeMacro{\GTSadjRel}
 % \DescribeMacro{\GTSaR}
 % This macro will draw an adjacency symbol.\\
 % \usageExampleAdjRelIII{GTSadjacencyRelation}{GTSadjRel}{GTSaR}
 %
+% \medskip
 % \DescribeMacro{\GTSunadjacency}
 % \DescribeMacro{\GTSunadj}
 % \DescribeMacro{\GTSu}
 % This macro will draw an unadjacency symbol.\\
 % \usageExampleAdjIII{GTSunadjacency}{GTSunadj}{GTSu}
 %
+% \medskip
 % \DescribeMacro{\GTSunadjacencyRelation}
 % \DescribeMacro{\GTSunadjRel}
 % \DescribeMacro{\GTSuR}
 % This macro will draw an unadjacency symbol.\\
 % \usageExampleAdjRelIII{GTSunadjacencyRelation}{GTSunadjRel}{GTSuR}
 %
+% \medskip
 % \DescribeMacro{\GTSdirectedAdjacencyUp}
 % \DescribeMacro{\GTSdirAdjUp}
 % \DescribeMacro{\GTSdAU}
@@ -335,6 +344,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % of the arc.\\
 % \usageExampleAdjIII{GTSdirectedAdjacencyUp}{GTSdirAdjUp}{GTSdAU}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSdirectedAdjacencyUp-}
 % \DescribeMacro{Relation}
@@ -349,7 +359,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIII{GTSdirectedAdjacencyUpRelation}{GTSdirAdjUpRel}%
 % {GTSdAUR}
 %
-% \newpage
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyUp}
@@ -363,6 +373,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjIII{GTSnegatedDirectedAdjacencyUp}{GTSnegDirAdjUp}%
 % {GTSnDAU}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyUpRelation}
@@ -377,6 +388,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIII{GTSnegatedDirectedAdjacencyUpRelation}%
 % {GTSnegDirAdjUpRel}{GTSnDAUR}
 %
+% \medskip
 % \DescribeMacro{\GTSdirectedAdjacencyDown}
 % \DescribeMacro{\GTSdirAdjDown}
 % \DescribeMacro{\GTSdAD}
@@ -387,6 +399,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % of the arc.\\
 % \usageExampleAdjIII{GTSdirectedAdjacencyDown}{GTSdirAdjDown}{GTSnDAD}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSdirectedAdjacencyDown-}
 % \DescribeMacro{Relation}
@@ -401,6 +414,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIII{GTSdirectedAdjacencyDownRelation}%
 % {GTSdirAdjDownRel}{GTSdADR}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyDown}
@@ -414,6 +428,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjIII{GTSnegatedDirectedAdjacencyDown}{GTSnegDirAdjDown}%
 % {GTSnDAD}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyDownRelation}
@@ -428,6 +443,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIII{GTSnegatedDirectedAdjacencyDownRelation}%
 % {GTSnegDirAdjDownRel}{GTSnDADR}
 %
+% \medskip
 % \DescribeMacro{\GTS@i}
 % This macro will draw any of the incidence symbols
 % if the correct arguments are given.
@@ -442,8 +458,9 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % color.\\
 % \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
-% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.\\
+% \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.
 %
+% \medskip
 % \DescribeMacro{\GTS@j}
 % This macro builds on top of \cs{GTS@i} to handle mathematical relation
 % spacing if sixth argument is not empty.
@@ -457,8 +474,9 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \marg{drawSlash} Non-empty implies that a negation will be drawn.\\
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.\\
 % \marg{drawDownArrow} Non-empty implies that a down-arrow will be drawn.\\
-% \marg{relation} Non-empty implies that relation spacing will be added.\\
+% \marg{relation} Non-empty implies that relation spacing will be added.
 %
+% \medskip
 % \DescribeMacro{\GTSxi}
 % \DescribeMacro{\GTSxinc}
 % \DescribeMacro{\GTSxincidence}
@@ -471,8 +489,9 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % negated or not or n,\\
 % in or i,\\
 % out or o,\\
-% relation or rel or r.\\
+% relation or rel or r.
 %
+% \medskip
 % \DescribeMacro{\GTSincidence}
 % \DescribeMacro{\GTSinc}
 % \DescribeMacro{\GTSi}
@@ -481,6 +500,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % to which the edge/the operand on the right of the symbol is incident.\\
 % \usageExampleIncIII{GTSincidence}{GTSinc}{GTSi}
 %
+% \medskip
 % \DescribeMacro{\GTSincidenceRelation}
 % \DescribeMacro{\GTSincRel}
 % \DescribeMacro{\GTSiR}
@@ -488,13 +508,15 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % mode.\\
 % \usageExampleIncRelIII{GTSincidenceRelation}{GTSincRel}{GTSiR}
 %
-% \newpage
+% \medskip
 % \DescribeMacro{\GTSnegatedIncidence}
 % \DescribeMacro{\GTSnegInc}
 % \DescribeMacro{\GTSnI}
 % This macro will draw a negated incidence symbol.\\
 % \usageExampleIncIII{GTSnegatedIncidence}{GTSnegInc}{GTSnI}
 %
+% \newpage
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedIncidence-}
 % \DescribeMacro{Relation}
@@ -508,6 +530,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % in math mode.\\
 % \usageExampleIncRelIII{GTSnegatedIncidenceRelation}{GTSnegIncRel}{GTSnIR}
 %
+% \medskip
 % \DescribeMacro{\GTSoutIncidence}
 % \DescribeMacro{\GTSoutInc}
 % \DescribeMacro{\GTSoI}
@@ -517,6 +540,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % to which the arc/the operand on the right of the symbol is incident.\\
 % \usageExampleIncIII{GTSoutIncidence}{GTSoutInc}{GTSoI}
 %
+% \medskip
 % \DescribeMacro{\GTSoutIncidenceRelation}
 % \DescribeMacro{\GTSoutIncRel}
 % \DescribeMacro{\GTSoIR}
@@ -524,6 +548,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % symbol with relation spacing in math mode.\\
 % \usageExampleIncRelIII{GTSoutIncidenceRelation}{GTSoutIncRel}{GTSoIR}
 %
+% \medskip
 % \DescribeMacro{\GTSnegatedOutIncidence}
 % \DescribeMacro{\GTSnegOutInc}
 % \DescribeMacro{\GTSnOI}
@@ -531,6 +556,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % (out(ward) incidence) symbol.\\
 % \usageExampleIncIII{GTSnegatedOutIncidence}{GTSnegOutInc}{GTSnOI}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedOutIncidence-}
 % \DescribeMacro{Relation}
@@ -545,6 +571,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncRelIII{GTSnegatedOutIncidenceRelation}{GTSnegOutIncRel}%
 % {GTSnOIR}
 %
+% \medskip
 % \DescribeMacro{\GTSinIncidence}
 % \DescribeMacro{\GTSinInc}
 % \DescribeMacro{\GTSiI}
@@ -554,6 +581,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % to which the arc/the operand on the right of the symbol is incident.\\
 % \usageExampleIncIII{GTSinIncidence}{GTSinInc}{GTSiI}
 %
+% \medskip
 % \DescribeMacro{\GTSinIncidenceRelation}
 % \DescribeMacro{\GTSinIncRel}
 % \DescribeMacro{\GTSiIR}
@@ -561,6 +589,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % symbol with relation spacing in math mode.\\
 % \usageExampleIncRelIII{GTSinIncidenceRelation}{GTSinIncRel}{GTSiIR}
 %
+% \medskip
 % \DescribeMacro{\GTSnegatedInIncidence}
 % \DescribeMacro{\GTSnegInInc}
 % \DescribeMacro{\GTSnII}
@@ -568,6 +597,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % (in(ward) incidence) symbol.\\
 % \usageExampleIncIII{GTSnegatedInIncidence}{GTSnegInInc}{GTSnII}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedInIncidence-}
 % \DescribeMacro{Relation}
@@ -585,6 +615,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 %
 %
 %
+% \medskip
 % \DescribeMacro{\GTSadjacencyMonochrome}
 % \DescribeMacro{\GTSadjMono}
 % \DescribeMacro{\GTSadjMon}
@@ -592,6 +623,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % This macro will draw a monochrome adjacency symbol.\\
 % \usageExampleAdjIV{GTSadjacencyMonochrome}{GTSadjMono}{GTSadjMon}{GTSaM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSadjacencyMonochrome-}
 % \DescribeMacro{Relation}
@@ -608,6 +640,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}%
 % {GTSadjMonRel}{GTSaMR}
 %
+% \medskip
 % \DescribeMacro{\GTSunadjacencyMonochrome}
 % \DescribeMacro{\GTSunadjMono}
 % \DescribeMacro{\GTSunadjMon}
@@ -616,6 +649,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjIV{GTSunadjacencyMonochrome}{GTSunadjMono}{GTSunadjMon}%
 % {GTSuM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSunadjacencyMonochrome-}
 % \DescribeMacro{Relation}
@@ -632,6 +666,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIV{GTSunadjacencyMonochromeRelation}{GTSunadjMonoRel}%
 % {GTSunadjMonRel}{GTSuMR}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSdirectedAdjacencyUp-}
 % \DescribeMacro{Monochrome}
@@ -651,6 +686,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjIV{GTSdirectedAdjacencyUpMonochrome}{GTSdirAdjUpMono}%
 % {GTSdirAdjUpMon}{GTSdAUM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSdirectedAdjacencyUp-}
 % \DescribeMacro{MonochromeRelation}
@@ -667,6 +703,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIV{GTSdirectedAdjacencyUpMonochromeRelation}%
 % {GTSdirAdjUpMonoRel}{GTSdirAdjUpMonRel}{GTSdAUMR}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyUpMonochrome}
@@ -683,6 +720,8 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjIV{GTSnegatedDirectedAdjacencyUpMonochrome}%
 % {GTSnegDirAdjUpMono}{GTSnegDirAdjUpMon}{GTSnDAUM}
 %
+% \newpage
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyUpMonochrome-}
@@ -701,6 +740,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIV{GTSnegatedDirectedAdjacencyUpMonochromeRelation}%
 % {GTSnegDirAdjUpMonoRel}{GTSnegDirAdjUpMonRel}{GTSnDAUMR}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSdirectedAdjacencyDown-}
 % \DescribeMacro{Monochrome}
@@ -720,6 +760,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjIV{GTSdirectedAdjacencyDownMonochrome}%
 % {GTSdirAdjDownMono}{GTSdirAdjDownMon}{GTSdADM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSdirectedAdjacencyDown-}
 % \DescribeMacro{MonochromeRelation}
@@ -736,6 +777,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjRelIV{GTSdirectedAdjacencyDownMonochromeRelation}%
 % {GTSdirAdjDownMonoRel}{GTSdirAdjDownMonRel}{GTSdADMR}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyDownMonochrome}
@@ -752,6 +794,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleAdjIV{GTSnegatedDirectedAdjacencyDownMonochrome}%
 % {GTSnegDirAdjDownMono}{GTSnegDirAdjDownMon}{GTSnDADM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedDirected-}
 % \DescribeMacro{AdjacencyDownMonochrome-}
@@ -773,6 +816,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 %
 %
 %
+% \medskip
 % \DescribeMacro{\GTSincidenceMonochrome}
 % \DescribeMacro{\GTSincMono}
 % \DescribeMacro{\GTSincMon}
@@ -782,6 +826,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % to which the edge/the operand on the right of the symbol is incident.\\
 % \usageExampleIncIV{GTSincidenceMonochrome}{GTSincMono}{GTSincMon}{GTSiM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSincidenceMonochrome-}
 % \DescribeMacro{Relation}
@@ -798,6 +843,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncRelIV{GTSincidenceMonochromeRelation}{GTSincMonoRel}%
 % {GTSincMonRel}{GTSiMR}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedIncidence-}
 % \DescribeMacro{Monochrome}
@@ -813,6 +859,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncIV{GTSnegatedIncidenceMonochrome}{GTSnegIncMono}%
 % {GTSnegIncMon}{GTSnIM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedIncidence-}
 % \DescribeMacro{MonochromeRelation}
@@ -829,6 +876,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncRelIV{GTSnegatedIncidenceMonochromeRelation}%
 % {GTSnegIncMonoRel}{GTSnegIncMonRel}{GTSnIMR}
 %
+% \medskip
 % \DescribeMacro{\GTSoutIncidenceMonochrome}
 % \DescribeMacro{\GTSoutIncMono}
 % \DescribeMacro{\GTSoutIncMon}
@@ -840,6 +888,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncIV{GTSoutIncidenceMonochrome}{GTSoutIncMono}%
 % {GTSoutIncMon}{GTSoIM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSoutIncidenceMonochrome-}
 % \DescribeMacro{Relation}
@@ -856,6 +905,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncRelIV{GTSoutIncidenceMonochromeRelation}%
 % {GTSoutIncMonoRel}{GTSoutIncMonRel}{GTSoIMR}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedOutIncidence-}
 % \DescribeMacro{Monochrome}
@@ -872,6 +922,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncIV{GTSnegatedOutIncidenceMonochrome}{GTSnegOutIncMono}%
 % {GTSnegOutIncMon}{GTSnOIM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedOutIncidence-}
 % \DescribeMacro{MonochromeRelation}
@@ -888,6 +939,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncRelIV{GTSnegatedOutIncidenceMonochromeRelation}%
 % {GTSnegOutIncMonoRel}{GTSnegOutIncMonRel}{GTSnOIMR}
 %
+% \medskip
 % \DescribeMacro{\GTSinIncidenceMonochrome}
 % \DescribeMacro{\GTSinIncMono}
 % \DescribeMacro{\GTSinIncMon}
@@ -899,6 +951,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncIV{GTSinIncidenceMonochrome}{GTSinIncMono}{GTSinIncMon}%
 % {GTSiIM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSinIncidenceMonochrome-}
 % \DescribeMacro{Relation}
@@ -915,6 +968,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncRelIV{GTSinIncidenceMonochromeRelation}{GTSinIncMonoRel}%
 % {GTSinIncMonRel}{GTSiIMR}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedInIncidence-}
 % \DescribeMacro{Monochrome}
@@ -931,6 +985,7 @@ will yield $#1\csname #6\endcsname/#2$.\\
 % \usageExampleIncIV{GTSnegatedInIncidenceMonochrome}{GTSnegInIncMono}%
 % {GTSnegInIncMon}{GTSnIIM}
 %
+% \medskip
 % \renewcommand{\SpecialMacroIndex}[1]{}
 % \DescribeMacro{\GTSnegatedInIncidence-}
 % \DescribeMacro{MonochromeRelation}
