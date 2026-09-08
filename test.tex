@@ -59,133 +59,210 @@ Index math : normal $G_{a#1e}$, relation $G_{u#2f}$.\newline
 Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
 }
 
+\ExplSyntaxOn
+\makeatletter
+
+% These functions cannot be protected in the .dtx,
+% since they use global state for the default colors.
+% But for this test file, it is ok to protect them.
+\cs_set_eq:NN \GTS@a_unprotected \GTS@a
+\cs_set_eq:NN \GTS@b_unprotected \GTS@b
+\cs_set_eq:NN \GTS@i_unprotected \GTS@i
+\cs_set_eq:NN \GTS@j_unprotected \GTS@j
+
+\cs_set_protected:Npn \GTS@a #1#2#3#4#5%
+ {\GTS@a_unprotected{#1}{#2}{#3}{#4}{#5}}
+\cs_set_protected:Npn \GTS@b #1#2#3#4#5#6%
+ {\GTS@b_unprotected{#1}{#2}{#3}{#4}{#5}{#6}}
+\cs_set_protected:Npn \GTS@i #1#2#3#4#5%
+ {\GTS@i_unprotected{#1}{#2}{#3}{#4}{#5}}
+\cs_set_protected:Npn \GTS@j #1#2#3#4#5#6%
+ {\GTS@j_unprotected{#1}{#2}{#3}{#4}{#5}{#6}}
+
+\newcommand{\GTStestEqual}[2]{%
+\str_if_eq:eeTF {#1} {#2} {OK} {Fail!\newline #1\newline #2\newline}%
+}
+
+\makeatother
+\ExplSyntaxOff
+
+% If you want to test that \GTStestEqual behaves correctly
+% for simple aliases.
+% \GTStestEqual{abcd}{abcd}
+% \GTStestEqual{efgh}{abcd}
+% \GTStestEqual{\GTSa/}{\GTSa/}
+% \GTStestEqual{\GTSa/}{\GTSadjacency/}
+% \GTStestEqual{\GTSa/}{$\GTSaR/$}
+% But see that it doesn't work for macros that use keyval.
+% \GTStestEqual{\GTSa/}{\GTSxa[]}
+% \GTStestEqual{\GTSa/}{\GTSxa[r]}
+
+\newcommand{\GTStestEqualTextsI}[4]{%
+\GTStestEqual{\GTStestText{#1}{#2}}{\GTStestText{#3}{#4}}%
+}
+
+\newcommand{\GTStestEqualTextsII}[4]{%
+\GTStestEqual{\GTStestTextII{#1}{#2}}{\GTStestTextII{#3}{#4}}%
+}
+
 
 \newcommand{\GTStestNormalSymbolsCalls}{
 \subsection{Adjacency}
-
-\GTStestText{\GTSadjacency/}{\GTSadjacencyRelation/}
-
-\GTStestText{\GTSadj/}{\GTSadjRel/}
 
 \GTStestText{\GTSa/}{\GTSaR/}
 
 \GTStestText{\GTSxa[]}{\GTSxa[r]}
 
+\GTStestEqualTextsI{\GTSa/}{\GTSaR/}%
+{\GTSadjacency/}%
+{\GTSadjacencyRelation/}
+\GTStestEqualTextsI{\GTSa/}{\GTSaR/}%
+{\GTSadj/}%
+{\GTSadjRel/}
+
 \subsection{Unadjacency}
-
-\GTStestText{\GTSunadjacency/}{\GTSunadjacencyRelation/}
-
-\GTStestText{\GTSunadj/}{\GTSunadjRel/}
 
 \GTStestText{\GTSu/}{\GTSuR/}
 
 \GTStestText{\GTSxa[n]}{\GTSxa[n,r]}
 
+\GTStestEqualTextsI{\GTSu/}{\GTSuR/}%
+{\GTSunadjacency/}%
+{\GTSunadjacencyRelation/}
+\GTStestEqualTextsI{\GTSu/}{\GTSuR/}%
+{\GTSunadj/}%
+{\GTSunadjRel/}
+
 \subsection{Directed adjacency up}
-
-\GTStestText{\GTSdirectedAdjacencyUp/}{\GTSdirectedAdjacencyUpRelation/}
-
-\GTStestText{\GTSdirAdjUp/}{\GTSdirAdjUpRel/}
 
 \GTStestText{\GTSdAU/}{\GTSdAUR/}
 
 \GTStestText{\GTSxa[u]}{\GTSxa[u,r]}
 
+\GTStestEqualTextsI{\GTSdAU/}{\GTSdAUR/}%
+{\GTSdirectedAdjacencyUp/}%
+{\GTSdirectedAdjacencyUpRelation/}
+\GTStestEqualTextsI{\GTSdAU/}{\GTSdAUR/}%
+{\GTSdirAdjUp/}%
+{\GTSdirAdjUpRel/}
+
 \subsection{Negated directed adjacency up}
-
-\GTStestText{\GTSnegatedDirectedAdjacencyUp/}{%
-\GTSnegatedDirectedAdjacencyUpRelation/%
-}
-
-\GTStestText{\GTSnegDirAdjUp/}{\GTSnegDirAdjUpRel/}
 
 \GTStestText{\GTSnDAU/}{\GTSnDAUR/}
 
 \GTStestText{\GTSxa[n,u]}{\GTSxa[n,u,r]}
 
+\GTStestEqualTextsI{\GTSnDAU/}{\GTSnDAUR/}%
+{\GTSnegatedDirectedAdjacencyUp/}%
+{\GTSnegatedDirectedAdjacencyUpRelation/}
+\GTStestEqualTextsI{\GTSnDAU/}{\GTSnDAUR/}%
+{\GTSnegDirAdjUp/}%
+{\GTSnegDirAdjUpRel/}
+
 \subsection{Directed adjacency down}
-
-\GTStestText{\GTSdirectedAdjacencyDown/}{%
-\GTSdirectedAdjacencyDownRelation/%
-}
-
-\GTStestText{\GTSdirAdjDown/}{\GTSdirAdjDownRel/}
 
 \GTStestText{\GTSdAD/}{\GTSdADR/}
 
 \GTStestText{\GTSxa[d]}{\GTSxa[d,r]}
 
+\GTStestEqualTextsI{\GTSdAD/}{\GTSdADR/}%
+{\GTSdirectedAdjacencyDown/}%
+{\GTSdirectedAdjacencyDownRelation/}
+\GTStestEqualTextsI{\GTSdAD/}{\GTSdADR/}%
+{\GTSdirAdjDown/}%
+{\GTSdirAdjDownRel/}
+
 \subsection{Negated directed adjacency down}
-
-\GTStestText{\GTSnegatedDirectedAdjacencyDown/}{%
-\GTSnegatedDirectedAdjacencyDownRelation/%
-}
-
-\GTStestText{\GTSnegDirAdjDown/}{\GTSnegDirAdjDownRel/}
 
 \GTStestText{\GTSnDAD/}{\GTSnDADR/}
 
 \GTStestText{\GTSxa[n,d]}{\GTSxa[n,d,r]}
 
+\GTStestEqualTextsI{\GTSnDAD/}{\GTSnDADR/}%
+{\GTSnegatedDirectedAdjacencyDown/}%
+{\GTSnegatedDirectedAdjacencyDownRelation/}
+\GTStestEqualTextsI{\GTSnDAD/}{\GTSnDADR/}%
+{\GTSnegDirAdjDown/}%
+{\GTSnegDirAdjDownRel/}
+
 \subsection{Incidence}
-
-\GTStestTextII{\GTSincidence/}{\GTSincidenceRelation/}
-
-\GTStestTextII{\GTSinc/}{\GTSincRel/}
 
 \GTStestTextII{\GTSi/}{\GTSiR/}
 
-\GTStestText{\GTSxi[]}{\GTSxi[r]}
+\GTStestTextII{\GTSxi[]}{\GTSxi[r]}
+
+\GTStestEqualTextsII{\GTSi/}{\GTSiR/}%
+{\GTSincidence/}%
+{\GTSincidenceRelation/}
+\GTStestEqualTextsII{\GTSi/}{\GTSiR/}%
+{\GTSinc/}%
+{\GTSincRel/}
+
 
 \subsection{Negated incidence}
 
-\GTStestTextII{\GTSnegatedIncidence/}{\GTSnegatedIncidenceRelation/}
-
-\GTStestTextII{\GTSnegInc/}{\GTSnegIncRel/}
-
 \GTStestTextII{\GTSnI/}{\GTSnIR/}
 
-\GTStestText{\GTSxi[n]}{\GTSxi[n,r]}
+\GTStestTextII{\GTSxi[n]}{\GTSxi[n,r]}
+
+\GTStestEqualTextsII{\GTSnI/}{\GTSnIR/}%
+{\GTSnegatedIncidence/}%
+{\GTSnegatedIncidenceRelation/}
+\GTStestEqualTextsII{\GTSnI/}{\GTSnIR/}%
+{\GTSnegInc/}%
+{\GTSnegIncRel/}
 
 \subsection{Directed incidence up/out}
 
-\GTStestTextII{\GTSoutIncidence/}{\GTSoutIncidenceRelation/}
-
-\GTStestTextII{\GTSoutInc/}{\GTSoutIncRel/}
-
 \GTStestTextII{\GTSoI/}{\GTSoIR/}
 
-\GTStestText{\GTSxi[o]}{\GTSxi[o,r]}
+\GTStestTextII{\GTSxi[o]}{\GTSxi[o,r]}
+
+\GTStestEqualTextsII{\GTSoI/}{\GTSoIR/}%
+{\GTSoutIncidence/}%
+{\GTSoutIncidenceRelation/}
+\GTStestEqualTextsII{\GTSoI/}{\GTSoIR/}%
+{\GTSoutInc/}%
+{\GTSoutIncRel/}
 
 \subsection{Negated directed incidence up/out}
 
-\GTStestTextII{\GTSnegatedOutIncidence/}{\GTSnegatedOutIncidenceRelation/}
-
-\GTStestTextII{\GTSnegOutInc/}{\GTSnegOutIncRel/}
-
 \GTStestTextII{\GTSnOI/}{\GTSnOIR/}
 
-\GTStestText{\GTSxi[n,o]}{\GTSxi[n,o,r]}
+\GTStestTextII{\GTSxi[n,o]}{\GTSxi[n,o,r]}
+
+\GTStestEqualTextsII{\GTSnOI/}{\GTSnOIR/}%
+{\GTSnegatedOutIncidence/}%
+{\GTSnegatedOutIncidenceRelation/}
+\GTStestEqualTextsII{\GTSnOI/}{\GTSnOIR/}%
+{\GTSnegOutInc/}%
+{\GTSnegOutIncRel/}
 
 \subsection{Directed incidence down/in}
 
-\GTStestTextII{\GTSinIncidence/}{\GTSinIncidenceRelation/}
-
-\GTStestTextII{\GTSinInc/}{\GTSinIncRel/}
-
 \GTStestTextII{\GTSiI/}{\GTSiIR/}
 
-\GTStestText{\GTSxi[i]}{\GTSxi[i,r]}
+\GTStestTextII{\GTSxi[i]}{\GTSxi[i,r]}
+
+\GTStestEqualTextsII{\GTSiI/}{\GTSiIR/}%
+{\GTSinIncidence/}%
+{\GTSinIncidenceRelation/}
+\GTStestEqualTextsII{\GTSiI/}{\GTSiIR/}%
+{\GTSinInc/}%
+{\GTSinIncRel/}
 
 \subsection{Negated directed incidence down/in}
 
-\GTStestTextII{\GTSnegatedInIncidence/}{\GTSnegatedInIncidenceRelation/}
-
-\GTStestTextII{\GTSnegInInc/}{\GTSnegInIncRel/}
-
 \GTStestTextII{\GTSnII/}{\GTSnIIR/}
 
-\GTStestText{\GTSxi[n,i]}{\GTSxi[n,i,r]}
+\GTStestTextII{\GTSxi[n,i]}{\GTSxi[n,i,r]}
+
+\GTStestEqualTextsII{\GTSnII/}{\GTSnIIR/}%
+{\GTSnegatedInIncidence/}%
+{\GTSnegatedInIncidenceRelation/}
+\GTStestEqualTextsII{\GTSnII/}{\GTSnIIR/}%
+{\GTSnegInInc/}%
+{\GTSnegInIncRel/}
 }
 
 \section{Standard symbols}
@@ -208,163 +285,166 @@ Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
 
 \subsection{Adjacency}
 
-\GTStestText{\GTSadjacencyMonochrome/}{\GTSadjacencyMonochromeRelation/}
-
-\GTStestText{\GTSadjMon/}{\GTSadjMonRel/}
-
 \GTStestText{\GTSaM/}{\GTSaMR/}
 
 \GTStestText{\GTSxa[m]}{\GTSxa[m,r]}
 
+\GTStestEqualTextsI{\GTSaM/}{\GTSaMR/}%
+{\GTSadjacencyMonochrome/}%
+{\GTSadjacencyMonochromeRelation/}
+\GTStestEqualTextsI{\GTSaM/}{\GTSaMR/}%
+{\GTSadjMon/}%
+{\GTSadjMonRel/}
+
 Checking if normal colors are ok.
-
-\GTStestText{\GTSadjacency/}{\GTSadjacencyRelation/}
-
-\GTStestText{\GTSadj/}{\GTSadjRel/}
 
 \GTStestText{\GTSa/}{\GTSaR/}
 
-\GTStestText{\GTSxa[]}{\GTSxa[r]}
-
 \subsection{Unadjacency}
-
-\GTStestText{\GTSunadjacencyMonochrome/}{%
-\GTSunadjacencyMonochromeRelation/%
-}
-
-\GTStestText{\GTSunadjMon/}{\GTSunadjMonRel/}
 
 \GTStestText{\GTSuM/}{\GTSuMR/}
 
 \GTStestText{\GTSxa[m,n]}{\GTSxa[m,n,r]}
 
+\GTStestEqualTextsI{\GTSuM/}{\GTSuMR/}%
+{\GTSunadjacencyMonochrome/}%
+{\GTSunadjacencyMonochromeRelation/}
+\GTStestEqualTextsI{\GTSuM/}{\GTSuMR/}%
+{\GTSunadjMon/}%
+{\GTSunadjMonRel/}
+
 \subsection{Directed adjacency up}
-
-\GTStestText{\GTSdirectedAdjacencyUpMonochrome/}{%
-\GTSdirectedAdjacencyUpMonochromeRelation/%
-}
-
-\GTStestText{\GTSdirAdjUpMon/}{\GTSdirAdjUpMonRel/}
 
 \GTStestText{\GTSdAUM/}{\GTSdAUMR/}
 
 \GTStestText{\GTSxa[m,u]}{\GTSxa[m,u,r]}
 
+\GTStestEqualTextsI{\GTSdAUM/}{\GTSdAUMR/}%
+{\GTSdirectedAdjacencyUpMonochrome/}%
+{\GTSdirectedAdjacencyUpMonochromeRelation/}
+\GTStestEqualTextsI{\GTSdAUM/}{\GTSdAUMR/}%
+{\GTSdirAdjUpMon/}%
+{\GTSdirAdjUpMonRel/}
+
 \subsection{Negated directed adjacency up}
-
-\GTStestText{\GTSnegatedDirectedAdjacencyUpMonochrome/}{%
-\GTSnegatedDirectedAdjacencyUpMonochromeRelation/%
-}
-
-\GTStestText{\GTSnegDirAdjUpMon/}{\GTSnegDirAdjUpMonRel/}
 
 \GTStestText{\GTSnDAUM/}{\GTSnDAUMR/}
 
 \GTStestText{\GTSxa[m,n,u]}{\GTSxa[m,n,u,r]}
 
+\GTStestEqualTextsI{\GTSnDAUM/}{\GTSnDAUMR/}%
+{\GTSnegatedDirectedAdjacencyUpMonochrome/}%
+{\GTSnegatedDirectedAdjacencyUpMonochromeRelation/}
+\GTStestEqualTextsI{\GTSnDAUM/}{\GTSnDAUMR/}%
+{\GTSnegDirAdjUpMon/}%
+{\GTSnegDirAdjUpMonRel/}
+
 \subsection{Directed adjacency down}
-
-\GTStestText{\GTSdirectedAdjacencyDownMonochrome/}{%
-\GTSdirectedAdjacencyDownMonochromeRelation/%
-}
-
-\GTStestText{\GTSdirAdjDownMon/}{\GTSdirAdjDownMonRel/}
 
 \GTStestText{\GTSdADM/}{\GTSdADMR/}
 
 \GTStestText{\GTSxa[m,d]}{\GTSxa[m,d,r]}
 
+\GTStestEqualTextsI{\GTSdADM/}{\GTSdADMR/}%
+{\GTSdirectedAdjacencyDownMonochrome/}%
+{\GTSdirectedAdjacencyDownMonochromeRelation/}
+\GTStestEqualTextsI{\GTSdADM/}{\GTSdADMR/}%
+{\GTSdirAdjDownMon/}%
+{\GTSdirAdjDownMonRel/}
+
 \subsection{Negated directed adjacency down}
-
-\GTStestText{\GTSnegatedDirectedAdjacencyDownMonochrome/}{%
-\GTSnegatedDirectedAdjacencyDownMonochromeRelation/%
-}
-
-\GTStestText{\GTSnegDirAdjDownMon/}{\GTSnegDirAdjDownMonRel/}
 
 \GTStestText{\GTSnDADM/}{\GTSnDADMR/}
 
 \GTStestText{\GTSxa[m,n,d]}{\GTSxa[m,n,d,r]}
 
+\GTStestEqualTextsI{\GTSnDADM/}{\GTSnDADMR/}%
+{\GTSnegatedDirectedAdjacencyDownMonochrome/}%
+{\GTSnegatedDirectedAdjacencyDownMonochromeRelation/}
+\GTStestEqualTextsI{\GTSnDADM/}{\GTSnDADMR/}%
+{\GTSnegDirAdjDownMon/}%
+{\GTSnegDirAdjDownMonRel/}
+
 \subsection{Incidence}
-
-\GTStestTextII{\GTSincidenceMonochrome/}{\GTSincidenceMonochromeRelation/}
-
-\GTStestTextII{\GTSincMon/}{\GTSincMonRel/}
 
 \GTStestTextII{\GTSiM/}{\GTSiMR/}
 
-\GTStestText{\GTSxi[m]}{\GTSxi[m,r]}
+\GTStestTextII{\GTSxi[m]}{\GTSxi[m,r]}
+
+\GTStestEqualTextsII{\GTSiM/}{\GTSiMR/}%
+{\GTSincidenceMonochrome/}%
+{\GTSincidenceMonochromeRelation/}
+\GTStestEqualTextsII{\GTSiM/}{\GTSiMR/}%
+{\GTSincMon/}%
+{\GTSincMonRel/}
 
 Checking if normal colors are ok.
 
-\GTStestTextII{\GTSincidence/}{\GTSincidenceRelation/}
-
-\GTStestTextII{\GTSinc/}{\GTSincRel/}
-
 \GTStestTextII{\GTSi/}{\GTSiR/}
-
-\GTStestText{\GTSxi[]}{\GTSxi[r]}
 
 \subsection{Negated incidence}
 
-\GTStestTextII{\GTSnegatedIncidenceMonochrome/}{%
-\GTSnegatedIncidenceMonochromeRelation/%
-}
-
-\GTStestTextII{\GTSnegIncMon/}{\GTSnegIncMonRel/}
-
 \GTStestTextII{\GTSnIM/}{\GTSnIMR/}
 
-\GTStestText{\GTSxi[m,n]}{\GTSxi[m,n,r]}
+\GTStestTextII{\GTSxi[m,n]}{\GTSxi[m,n,r]}
+
+\GTStestEqualTextsII{\GTSnIM/}{\GTSnIMR/}%
+{\GTSnegatedIncidenceMonochrome/}%
+{\GTSnegatedIncidenceMonochromeRelation/}
+\GTStestEqualTextsII{\GTSnIM/}{\GTSnIMR/}%
+{\GTSnegIncMon/}%
+{\GTSnegIncMonRel/}
 
 \subsection{Directed incidence up/out}
 
-\GTStestTextII{\GTSoutIncidenceMonochrome/}{%
-\GTSoutIncidenceMonochromeRelation/%
-}
-
-\GTStestTextII{\GTSoutIncMon/}{\GTSoutIncMonRel/}
-
 \GTStestTextII{\GTSoIM/}{\GTSoIMR/}
 
-\GTStestText{\GTSxi[m,o]}{\GTSxi[m,o,r]}
+\GTStestTextII{\GTSxi[m,o]}{\GTSxi[m,o,r]}
+
+\GTStestEqualTextsII{\GTSoIM/}{\GTSoIMR/}%
+{\GTSoutIncidenceMonochrome/}%
+{\GTSoutIncidenceMonochromeRelation/}
+\GTStestEqualTextsII{\GTSoIM/}{\GTSoIMR/}%
+{\GTSoutIncMon/}%
+{\GTSoutIncMonRel/}
 
 \subsection{Negated directed incidence up/out}
 
-\GTStestTextII{\GTSnegatedOutIncidenceMonochrome/}{%
-\GTSnegatedOutIncidenceMonochromeRelation/%
-}
-
-\GTStestTextII{\GTSnegOutIncMon/}{\GTSnegOutIncMonRel/}
-
 \GTStestTextII{\GTSnOIM/}{\GTSnOIMR/}
 
-\GTStestText{\GTSxi[m,n,o]}{\GTSxi[m,n,o,r]}
+\GTStestTextII{\GTSxi[m,n,o]}{\GTSxi[m,n,o,r]}
+
+\GTStestEqualTextsII{\GTSnOIM/}{\GTSnOIMR/}%
+{\GTSnegatedOutIncidenceMonochrome/}%
+{\GTSnegatedOutIncidenceMonochromeRelation/}
+\GTStestEqualTextsII{\GTSnOIM/}{\GTSnOIMR/}%
+{\GTSnegOutIncMon/}%
+{\GTSnegOutIncMonRel/}
 
 \subsection{Directed incidence down/in}
 
-\GTStestTextII{\GTSinIncidenceMonochrome/}{%
-\GTSinIncidenceMonochromeRelation/%
-}
-
-\GTStestTextII{\GTSinIncMon/}{\GTSinIncMonRel/}
-
 \GTStestTextII{\GTSiIM/}{\GTSiIMR/}
 
-\GTStestText{\GTSxi[m,i]}{\GTSxi[m,i,r]}
+\GTStestTextII{\GTSxi[m,i]}{\GTSxi[m,i,r]}
+
+\GTStestEqualTextsII{\GTSiIM/}{\GTSiIMR/}%
+{\GTSinIncidenceMonochrome/}%
+{\GTSinIncidenceMonochromeRelation/}
+\GTStestEqualTextsII{\GTSiIM/}{\GTSiIMR/}%
+{\GTSinIncMon/}%
+{\GTSinIncMonRel/}
 
 \subsection{Negated directed incidence down/in}
 
-\GTStestTextII{\GTSnegatedInIncidenceMonochrome/}{%
-\GTSnegatedInIncidenceMonochromeRelation/%
-}
-
-\GTStestTextII{\GTSnegInIncMon/}{\GTSnegInIncMonRel/}
-
 \GTStestTextII{\GTSnIIM/}{\GTSnIIMR/}
 
-\GTStestText{\GTSxi[m,n,i]}{\GTSxi[m,n,i,r]}
+\GTStestTextII{\GTSxi[m,n,i]}{\GTSxi[m,n,i,r]}
 
+\GTStestEqualTextsII{\GTSnIIM/}{\GTSnIIMR/}%
+{\GTSnegatedInIncidenceMonochrome/}%
+{\GTSnegatedInIncidenceMonochromeRelation/}
+\GTStestEqualTextsII{\GTSnIIM/}{\GTSnIIMR/}%
+{\GTSnegInIncMon/}%
+{\GTSnegInIncMonRel/}
 
 \end{document}
