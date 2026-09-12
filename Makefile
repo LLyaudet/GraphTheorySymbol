@@ -4,7 +4,9 @@ tex-directory-files := ./tex/switch-to-memo-geometry.tex\
                        ./tex/return-to-previous-geometry.tex\
                        ./tex/memo-symbols-standard.tex\
                        ./tex/memo-symbols-monochrome.tex\
-                       ./tex/memo-symbols-meta-logic.tex
+                       ./tex/memo-symbols-meta-logic.tex\
+                       ./tex/memo-preamble.tex\
+                       ./tex/memo-versatile-macros.tex
 
 archivable-files := README.md\
                     Makefile\

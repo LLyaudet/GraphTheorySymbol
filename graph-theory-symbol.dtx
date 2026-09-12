@@ -30,6 +30,8 @@
 %                                 tex/memo-symbols-standard.tex,
 %                                 tex/memo-symbols-monochrome.tex,
 %                                 tex/memo-symbols-meta-logic.tex,
+%                                 tex/memo-preamble.tex,
+%                                 tex/memo-versatile-macros.tex,
 %                                 graph-theory-symbol-memo.tex, and
 %                                 test.tex,
 % and the derived files           graph-theory-symbol.sty,
@@ -246,6 +248,20 @@ will yield $#1\csname #6\endcsname/#2$.
 % \bigskip
 % {\catcode`\%=14 \input{./tex/memo-symbols-meta-logic.tex}}
 %
+% \bigskip
+% \hrule
+%
+% \bigskip
+% {\catcode`\%=14 \input{./tex/memo-symbols-meta-logic.tex}}
+%
+% \bigskip
+% Apart from these symbol macros, versatile macros to call them all
+% are available with options:\\
+% |\GTSxa|, |\GTSxadj|, or |\GTSxadjacency| for adjacency symbols,
+% |\GTSxi|, |\GTSxinc|, or |\GTSxincidence| for incidence symbols,
+% |\GTSxml|, or |\GTSxmetalogic| for meta-logic symbols,
+% |\GTSx| for all symbols.
+% See Detailed usage section for full syntax of these macros.
 % \newpage
 % \subsection{Detailed usage}
 %

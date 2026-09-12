@@ -29,6 +29,8 @@
 %                                 tex/memo-symbols-standard.tex,
 %                                 tex/memo-symbols-monochrome.tex,
 %                                 tex/memo-symbols-meta-logic.tex,
+%                                 tex/memo-preamble.tex,
+%                                 tex/memo-versatile-macros.tex,
 %                                 graph-theory-symbol-memo.tex, and
 %                                 test.tex,
 % and the derived files           graph-theory-symbol.sty,
@@ -56,10 +58,7 @@
 
 \MakeShortVerb{\|}
 
-Add in your preamble: |\usepackage{graph-theory-symbol}|.
-
-For clarity, below we only show long macro names and short macro names;
-see Detailed usage section for intermediate length macro names.
+\input{./tex/memo-preamble.tex}
 
 \input{./tex/memo-symbols-standard.tex}
 
@@ -75,5 +74,11 @@ see Detailed usage section for intermediate length macro names.
 \GTSsetMainColor{black}
 
 \input{./tex/memo-symbols-meta-logic.tex}
+
+\bigskip
+\hrule
+
+\bigskip
+\input{./tex/memo-versatile-macros.tex}
 
 \end{document}

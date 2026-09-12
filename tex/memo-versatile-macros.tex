@@ -1,4 +1,4 @@
-% This is file `return-to-previous-geometry.tex'.
+% This is file `memo-symbols-standard.tex'.
 % This file is part of GraphTheorySymbol.
 %
 % GraphTheorySymbol is free software:
@@ -40,13 +40,12 @@
 %
 % ©Copyright 2026 Laurent Frédéric Bernard François Lyaudet
 
-\setlength{\topmargin}{\topmarginBackup}
-\setlength{\headheight}{\headheightBackup}
-\setlength{\headsep}{\headsepBackup}
-\setlength{\voffset}{\voffsetBackup}
-\setlength{\textheight}{\textheightBackup}
-\setlength{\marginparsep}{\marginparsepBackup}
-\setlength{\marginparwidth}{\marginparwidthBackup}
-\setlength{\textwidth}{\textwidthBackup}
-\setlength{\hoffset}{\hoffsetBackup}
-
+Apart from these symbol macros, versatile macros to call them all
+are available with options:\\
+|\GTSxa[]|, |\GTSxadj[]|, or |\GTSxadjacency[]| for adjacency symbols,\\
+|\GTSxi[]|, |\GTSxinc[]|, or |\GTSxincidence[]| for incidence symbols,\\
+|\GTSxml[]|, or |\GTSxmetalogic[]| for meta-logic symbols,\\
+|\GTSx[]{}| for all symbols\\
+(|\GTSx[]{a} = \GTSxa[]|, |\GTSx[]{i} = \GTSxi[]|,\\
+|\GTSx[]{m} = \GTSxml[]|).\\
+See Detailed usage section for full syntax of these macros.
