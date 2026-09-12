@@ -1147,7 +1147,10 @@ will yield $#1\csname #6\endcsname/#2$.
 % sequence of consecutive ors or ands (with parentheses if needed):\\
 % $\exists u,v, u
 % \mathrel{[\GTSmO/\GTSxa[mC=red,d]\GTSxa[mC=green,d]\GTSxa[mC=blue,u]]}
-% v$.
+% v$.\\
+% $\exists v,e, v
+% \mathrel{[\GTSmO/\GTSxi[mC=red,i]\GTSxi[mC=green,i]\GTSxi[mC=blue,o]]}
+% e$.
 %
 % \MaybeStop{^^A
 % \PrintChanges
@@ -1578,7 +1581,7 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 \GTSsetSecondColor{#2}%
 \fi%
 \text{\ensuremath{%
-\raisebox{0ex}{\scalebox{1.8}[1.8]{%
+\raisebox{-0.22ex}{\scalebox{2.05}[2.05]{%
 %
 \raisebox{-0.3ex}{\scalebox{0.7}[0.7]{%
 $\mathcolor{\GTS@secondColor}{\circ}$%
