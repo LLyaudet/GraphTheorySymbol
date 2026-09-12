@@ -150,21 +150,29 @@ will yield $#1\csname #6\endcsname/#2$.
 %   A set of \LaTeX{} commands to have symbols designed for Graph Theory^^A
 % }
 % \date{\large\fileversion\quad\filedate}
-% \author{Laurent Frédéric Bernard François Lyaudet\\Email: Laurent.Lyaudet@gmail.com}
+% \author{
+%   Laurent Frédéric Bernard François Lyaudet\\
+%   Website: \url{https://lyaudet.eu/laurent/}\\
+%   Email:
+%   \href{mailto:Laurent.Lyaudet@gmail.com}{Laurent.Lyaudet@gmail.com}
+% }
 % \maketitle
 % \changes{v0.1.0}{2026-08-01}{Initial version}
 % \changes{v1.0.0}{2026-08-26}{First public release}
 % \changes{v1.1.0}{2026-08-29}{Added a memo}
 % \changes{v1.1.1}{2026-08-30}{Small corrections and improvements}
-% \changes{v1.2.0}{2026-09-06}{CTAN URL, new macros for same set of symbols}
+% \changes{v1.2.0}{2026-09-06}%
+% {CTAN URL, new macros for same set of symbols}
 % \changes{v1.2.1}{2026-09-08}{smaller tests output}
 % \changes{v1.3.0}{2026-09-08}{new macros for monochrome symbols}
-% \changes{v1.4.0}{2026-09-12}{macros for symbols for logical operations on relations}
+% \changes{v1.4.0}{2026-09-12}%
+% {macros for symbols for logical operations on relations}
 % \begin{abstract}\noindent
 % This documentation is for \LaTeX{} package GraphTheorySymbol.
 % It provides symbols used in graph theory.
-% The adjacency and incidence symbols were created by the author
-% of this package.
+% The adjacency and incidence symbols,
+% and the meta-logical operators symbols
+% were created by the author of this package.
 % \end{abstract}
 % \tableofcontents
 %
@@ -172,8 +180,9 @@ will yield $#1\csname #6\endcsname/#2$.
 %
 % This documentation is for \LaTeX{} package GraphTheorySymbol.
 % It provides symbols used in graph theory.
-% The adjacency and incidence symbols were created by the author
-% of this package.
+% The adjacency and incidence symbols,
+% and the meta-logical operators symbols
+% were created by the author of this package.
 %
 % This package is licenced under Lesser GNU General Public License version
 % 3 or later (LGPLv3+).
@@ -208,17 +217,17 @@ will yield $#1\csname #6\endcsname/#2$.
 %
 % Add in your preamble: |\usepackage{graph-theory-symbol}|.
 %
-% \begingroup\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}\endgroup
+% {\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}}
 %
 % \hrule
 %
-% \begingroup\catcode`\%=14 \input{./tex/memo-symbols-monochrome.tex}\endgroup
+% {\catcode`\%=14 \input{./tex/memo-symbols-monochrome.tex}}
 %
 % \newpage
 % \GTSsetMainColor{blue}
 % |\GTSsetMainColor{blue}|
 %
-% \begingroup\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}\endgroup
+% {\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}}
 % \GTSsetMainColor{black}
 %
 % \newpage
@@ -2039,7 +2048,8 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \begin{macro}{\GTSnegatedDirected-,AdjacencyDownMonochrome-,Relation,%
 % \GTSnegDirAdjDownMonoRel,\GTSnegDirAdjDownMonRel,\GTSnDADMR}
 % \renewcommand{\SpecialMainMacroIndex}[1]{\GTSspecialMainMacroIndex{#1}}
-% \SpecialMainMacroIndex{\GTSnegatedDirectedAdjacencyDownMonochromeRelation}
+% \SpecialMainMacroIndex
+% {\GTSnegatedDirectedAdjacencyDownMonochromeRelation}
 % \SpecialMainMacroIndex{\GTSnegDirAdjDownMonoRel}
 % \SpecialMainMacroIndex{\GTSnegDirAdjDownMonRel}
 % \SpecialMainMacroIndex{\GTSnDADMR}
