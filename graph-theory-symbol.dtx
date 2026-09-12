@@ -47,7 +47,7 @@
 %<*package>
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
 \ProvidesPackage{graph-theory-symbol}%
-[2026/09/12 v1.4.0 %
+[2026/09/12 v1.5.0 %
 A set of LaTeX commands to have symbols designed for Graph Theory]
 %</package>
 %<*driver>
@@ -167,10 +167,11 @@ will yield $#1\csname #6\endcsname/#2$.
 % \changes{v1.1.1}{2026-08-30}{Small corrections and improvements}
 % \changes{v1.2.0}{2026-09-06}%
 % {CTAN URL, new macros for same set of symbols}
-% \changes{v1.2.1}{2026-09-08}{smaller tests output}
-% \changes{v1.3.0}{2026-09-08}{new macros for monochrome symbols}
+% \changes{v1.2.1}{2026-09-08}{Smaller tests output}
+% \changes{v1.3.0}{2026-09-08}{New macros for monochrome symbols}
 % \changes{v1.4.0}{2026-09-12}%
-% {macros for symbols for logical operations on relations}
+% {New macros for symbols for logical operations on relations}
+% \changes{v1.5.0}{2026-09-12}{One macro to rule them all}
 % \begin{abstract}\noindent
 % This documentation is for \LaTeX{} package GraphTheorySymbol.
 % It provides symbols used in graph theory.
@@ -1121,6 +1122,57 @@ will yield $#1\csname #6\endcsname/#2$.
 % or |$u \GTSdAD/\GTSmetaOrRel/\GTSdAU/ v$|\\
 % or |$u \GTSdAD/\GTSmOR/\GTSdAU/ v$|\\
 % will yield $u \GTSdAD/\GTSmOR/\GTSdAU/ v$.
+%
+% \medskip
+% \DescribeMacro{\GTSxml}
+% \DescribeMacro{\GTSxmetalogic}
+% Versatile macros for meta-logic symbols that can be given options.\\
+% Argument:\\
+% \oarg{optionsList} Sets the following options if not empty:\\
+% |not| or |n|,\\
+% |and| or |a|,\\
+% |or| or |o|,\\
+% |relation| or |rel| or |r|.\\
+% Of course first three options are incompatible,
+% and the fourth is compatible only with the second and third options.
+%
+% \medskip
+% \DescribeMacro{\GTSx}
+% One macro to rule them all.
+% Versatile macro for all symbols that can be given options,
+% and a symbol type mandatory switch.\\
+% Argument:\\
+% \oarg{optionsList} Sets the following options if not empty:\\
+% \begin{itemize}
+% \item If \marg{symbolType} below is |a|, see \cs{GTSxa}:\\
+% |mainColor=color1| or |mainC=color1| or |mColor=color1| or |mC=color1|,\\
+% |secondColor=color2| or |secondC=color2| or |sColor=color2|
+% or |sC=color2|,\\
+% |monochrome| or |mono| or |mon| or |m|
+% (equivalent to |mC=black,sC=black|),\\
+% |negated| or |not| or |n|,\\
+% |up| or |u|,\\
+% |down| or |d|,\\
+% |relation| or |rel| or |r|.
+% \item If \marg{symbolType} below is |i|, see \cs{GTSxi}:\\
+% |mainColor=color1| or |mainC=color1| or |mColor=color1| or |mC=color1|,\\
+% |secondColor=color2| or |secondC=color2| or |sColor=color2|
+% or |sC=color2|,\\
+% |monochrome| or |mono| or |mon| or |m|
+% (equivalent to |mC=black,sC=black|),\\
+% |negated| or |not| or |n|,\\
+% |in| or |i|,\\
+% |out| or |o|,\\
+% |relation| or |rel| or |r|.
+% \item If \marg{symbolType} below is |m|, see \cs{GTSxml}:\\
+% |not| or |n|,\\
+% |and| or |a|,\\
+% |or| or |o|,\\
+% |relation| or |rel| or |r|.
+% \end{itemize}
+% \marg{symbolType} a mandatory switch;
+% it can take value |a| for adjacency, |i| for incidence,
+% |m| for meta-logic.
 %
 % \subsection{Good practices}
 %
@@ -2407,6 +2459,112 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 \GTS@newcommand{\GTSmetaOrRelation}{\mathrel{\GTSmO/}}
 \GTS@newcommand{\GTSmetaOrRel}{\mathrel{\GTSmO/}}
 \GTS@newcommand{\GTSmOR}{\mathrel{\GTSmO/}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSxml,\GTSxmetalogic}
+% Versatile macros for meta-logic symbols that can be given options.\\
+% Argument:\\
+% \oarg{optionsList} Sets the following options if not empty:\\
+% |not| or |n|,\\
+% |and| or |a|,\\
+% |or| or |o|,\\
+% |relation| or |rel| or |r|.\\
+% Of course first three options are incompatible,
+% and the fourth is compatible only with the second and third options.
+%    \begin{macrocode}
+\define@key{GTSxml}{not}[1]{\def\GTS@@drawMetaNot{1}}
+\define@key{GTSxml}{n}[1]{\def\GTS@@drawMetaNot{1}}
+\define@key{GTSxml}{and}[1]{\def\GTS@@drawMetaAnd{1}}
+\define@key{GTSxml}{a}[1]{\def\GTS@@drawMetaAnd{1}}
+\define@key{GTSxml}{or}[1]{\def\GTS@@drawMetaOr{1}}
+\define@key{GTSxml}{o}[1]{\def\GTS@@drawMetaOr{1}}
+\define@key{GTSxml}{relation}[1]{\def\GTS@@relation{1}}
+\define@key{GTSxml}{rel}[1]{\def\GTS@@relation{1}}
+\define@key{GTSxml}{r}[1]{\def\GTS@@relation{1}}
+
+\newcommand{\GTSxml}[1][]{%
+\def\GTS@@drawMetaNot{}%
+\def\GTS@@drawMetaAnd{}%
+\def\GTS@@drawMetaOr{}%
+\def\GTS@@relation{}%
+\setkeys{GTSxml}{#1}%
+\if\GTS@@drawMetaNot1%
+\GTSmN/%
+\else\if\GTS@@drawMetaAnd1%
+\if\GTS@@relation{}1%
+\GTSmAR/%
+\else%
+\GTSmA/%
+\fi%
+\else\if\GTS@@drawMetaOr1%
+\if\GTS@@relation{}1%
+\GTSmOR/%
+\else%
+\GTSmO/%
+\fi%
+\else%
+Wrong call to \textbackslash{}GTSxml%
+\fi%
+\fi%
+\fi%
+}
+
+\newcommand{\GTSxmetalogic}[1][]{\GTSxml[#1]}
+%    \end{macrocode}
+% \end{macro}
+%
+% \medskip
+% \begin{macro}{\GTSx}
+% One macro to rule them all.
+% Versatile macro for all symbols that can be given options,
+% and a symbol type mandatory switch.\\
+% Argument:\\
+% \oarg{optionsList} Sets the following options if not empty:\\
+% \begin{itemize}
+% \item If \marg{symbolType} below is |a|, see \cs{GTSxa}:\\
+% |mainColor=color1| or |mainC=color1| or |mColor=color1| or |mC=color1|,\\
+% |secondColor=color2| or |secondC=color2| or |sColor=color2|
+% or |sC=color2|,\\
+% |monochrome| or |mono| or |mon| or |m|
+% (equivalent to |mC=black,sC=black|),\\
+% |negated| or |not| or |n|,\\
+% |up| or |u|,\\
+% |down| or |d|,\\
+% |relation| or |rel| or |r|.
+% \item If \marg{symbolType} below is |i|, see \cs{GTSxi}:\\
+% |mainColor=color1| or |mainC=color1| or |mColor=color1| or |mC=color1|,\\
+% |secondColor=color2| or |secondC=color2| or |sColor=color2|
+% or |sC=color2|,\\
+% |monochrome| or |mono| or |mon| or |m|
+% (equivalent to |mC=black,sC=black|),\\
+% |negated| or |not| or |n|,\\
+% |in| or |i|,\\
+% |out| or |o|,\\
+% |relation| or |rel| or |r|.
+% \item If \marg{symbolType} below is |m|, see \cs{GTSxml}:\\
+% |not| or |n|,\\
+% |and| or |a|,\\
+% |or| or |o|,\\
+% |relation| or |rel| or |r|.
+% \end{itemize}
+% \marg{symbolType} a mandatory switch;
+% it can take value |a| for adjacency, |i| for incidence,
+% |m| for meta-logic.
+%    \begin{macrocode}
+\newcommand{\GTSx}[2][]{%
+\if#2a%
+\GTSxa[#1]%
+\else\if#2i%
+\GTSxi[#1]%
+\else\if#2m%
+\GTSxml[#1]%
+\else%
+Wrong call to \textbackslash{}GTSx%
+\fi%
+\fi%
+\fi%
+}
 %    \end{macrocode}
 % \end{macro}
 %
