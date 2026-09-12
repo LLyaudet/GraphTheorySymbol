@@ -269,17 +269,53 @@ Exponent math : normal $H^{a#1e}$, relation $H^{u#2f}$.\newline
 
 \GTStestNormalSymbolsCalls
 
+\subsection{Meta-not/relation-not}
+
+\GTStestText{\GTSmN/}{\GTSmN/}
+
+\GTStestEqualTextsI{\GTSmN/}{\GTSmN/}%
+{\GTSmetaNot/}%
+{\GTSmetaNot/}
+
+\subsection{Meta-and/relation-and}
+
+\GTStestText{\GTSmA/}{\GTSmAR/}
+
+\GTStestEqualTextsI{\GTSmA/}{\GTSmAR/}%
+{\GTSmetaAnd/}%
+{\GTSmetaAndRelation/}
+\GTStestEqualTextsI{\GTSmA/}{\GTSmAR/}%
+{\GTSmetaAnd/}%
+{\GTSmetaAndRel/}
+
+\subsection{Meta-or/relation-or}
+
+\GTStestText{\GTSmO/}{\GTSmOR/}
+
+\GTStestEqualTextsI{\GTSmO/}{\GTSmOR/}%
+{\GTSmetaOr/}%
+{\GTSmetaOrRelation/}
+\GTStestEqualTextsI{\GTSmO/}{\GTSmOR/}%
+{\GTSmetaOr/}%
+{\GTSmetaOrRel/}
+
+
+
 \section{Every adjacency/incidency types in blue}
 
 \GTSsetMainColor{blue}
 
 \GTStestNormalSymbolsCalls
 
+
+
 \section{Every adjacency/incidency types in red}
 
 \GTSsetMainColor{red}
 
 \GTStestNormalSymbolsCalls
+
+
 
 \section{Every symbols in monochrome}
 

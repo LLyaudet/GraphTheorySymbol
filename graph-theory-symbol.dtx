@@ -250,6 +250,14 @@ will yield $#1\csname #6\endcsname/#2$.
 % \marg{commandcode} The code of the command to create.
 %
 % \medskip
+% \DescribeMacro{\GTS@newprotectedcommand}
+% This macro will enforce that the other macros are called with a trailing
+% slash, avoiding problems with spaces after macro call.\\
+% Arguments:\\
+% \marg{commandname} The name of the command to create.\\
+% \marg{commandcode} The code of the command to create.
+%
+% \medskip
 % \DescribeMacro{\GTSsetMainColor}
 % This macro will set the main color used in GraphTheorySymbol.
 % This color has initial value ``black''.\\
@@ -1175,6 +1183,19 @@ will yield $#1\csname #6\endcsname/#2$.
 %    \begin{macrocode}
 \@ifdefinable{\GTS@newcommand}{\def\GTS@newcommand#1#2{%
   \@ifdefinable{#1}{\def#1/{#2}}
+}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTS@newprotectedcommand}
+% This macro will enforce that the other macros are called with a trailing
+% slash, avoiding problems with spaces after macro call.\\
+% Arguments:\\
+% \marg{commandname} The name of the command to create.\\
+% \marg{commandcode} The code of the command to create.
+%    \begin{macrocode}
+\@ifdefinable{\GTS@newprotectedcommand}{\def\GTS@newprotectedcommand#1#2{%
+  \@ifdefinable{#1}{\protected\def#1/{#2}}
 }}
 %    \end{macrocode}
 % \end{macro}
@@ -2282,7 +2303,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \begin{macro}{\GTSmetaNot,\GTSmN}
 % This macro will draw a meta-not or relation-not symbol.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSmN}{%
+\GTS@newprotectedcommand{\GTSmN}{%
 \text{\ensuremath{%
 \raisebox{0ex}{\scalebox{1}[1]{%
 \raisebox{0ex}{\scalebox{1}[1]{$\lnot$}}%
@@ -2307,7 +2328,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % various meanings,
 % whilst we want an unambiguous symbol.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSmA}{%
+\GTS@newprotectedcommand{\GTSmA}{%
 \text{\ensuremath{%
 \raisebox{0ex}{\scalebox{1}[1]{%
 \raisebox{0ex}{\scalebox{1}[1]{$\wedge$}}%
@@ -2341,7 +2362,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % various meanings,
 % whilst we want an unambiguous symbol.
 %    \begin{macrocode}
-\GTS@newcommand{\GTSmO}{%
+\GTS@newprotectedcommand{\GTSmO}{%
 \text{\ensuremath{%
 \raisebox{0ex}{\scalebox{1}[1]{%
 \raisebox{0ex}{\scalebox{1}[1]{$\vee$}}%

@@ -65,6 +65,9 @@ A set of LaTeX commands to have symbols designed for Graph Theory]
 \@ifdefinable{\GTS@newcommand}{\def\GTS@newcommand#1#2{%
   \@ifdefinable{#1}{\def#1/{#2}}
 }}
+\@ifdefinable{\GTS@newprotectedcommand}{\def\GTS@newprotectedcommand#1#2{%
+  \@ifdefinable{#1}{\protected\def#1/{#2}}
+}}
 \newcommand{\GTSsetMainColor}[1]{%
 \edef\GTS@mainColorTemp{#1}%
 \edef\GTS@mainColorBackup{\GTS@mainColor}%
@@ -479,7 +482,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 \GTS@newcommand{\GTSnegInIncMonoRel}{\mathrel{\GTSnIIM/}}
 \GTS@newcommand{\GTSnegInIncMonRel}{\mathrel{\GTSnIIM/}}
 \GTS@newcommand{\GTSnIIMR}{\mathrel{\GTSnIIM/}}
-\GTS@newcommand{\GTSmN}{%
+\GTS@newprotectedcommand{\GTSmN}{%
 \text{\ensuremath{%
 \raisebox{0ex}{\scalebox{1}[1]{%
 \raisebox{0ex}{\scalebox{1}[1]{$\lnot$}}%
@@ -490,7 +493,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 }}%
 }
 \GTS@newcommand{\GTSmetaNot}{\GTSmN/}
-\GTS@newcommand{\GTSmA}{%
+\GTS@newprotectedcommand{\GTSmA}{%
 \text{\ensuremath{%
 \raisebox{0ex}{\scalebox{1}[1]{%
 \raisebox{0ex}{\scalebox{1}[1]{$\wedge$}}%
@@ -503,7 +506,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 \GTS@newcommand{\GTSmetaAndRelation}{\mathrel{\GTSmA/}}
 \GTS@newcommand{\GTSmetaAndRel}{\mathrel{\GTSmA/}}
 \GTS@newcommand{\GTSmAR}{\mathrel{\GTSmA/}}
-\GTS@newcommand{\GTSmO}{%
+\GTS@newprotectedcommand{\GTSmO}{%
 \text{\ensuremath{%
 \raisebox{0ex}{\scalebox{1}[1]{%
 \raisebox{0ex}{\scalebox{1}[1]{$\vee$}}%
