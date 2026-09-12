@@ -1194,7 +1194,10 @@ will yield $#1\csname #6\endcsname/#2$.
 % u \mathrel{\GTSdAD/\GTSmA/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSmA/\GTSdAU/} v$,\\
 % or $\forall u,v, u
 % \mathrel{(\GTSdAD/\GTSmA/\GTSnDAU/)\GTSmO/(\GTSnDAD/\GTSmA/\GTSdAU/)}
-% v$.\\
+% v$,\\
+% or even $\forall u,v,
+% ((u \GTSdADR/ v) \land (u \GTSnDAUR/ v))
+% \lor ((u \GTSnDADR/ v) \land (u\GTSdAUR/ v))$.\\
 % Note the use of macros without Relation suffix above, and adding a single
 % |\mathrel{}| around the composition of all relations:\\
 % |\mathrel{\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/}|.\\
