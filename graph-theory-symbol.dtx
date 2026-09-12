@@ -145,7 +145,7 @@ will yield $#1\csname #6\endcsname/#2$.
 % \DoNotIndex{\empty,\endinput,\ensuremath,\fi,\hspace,\if,\lnot}
 % \DoNotIndex{\mathcolor,\mathrel,\newcommand,\protected,\raisebox}
 % \DoNotIndex{\RequirePackage,\scalebox,\setkeys,\smallblacksquare,\text}
-% \DoNotIndex{\textasciicircum,\textcolor,\vee,\wedge}
+% \DoNotIndex{\textasciicircum,\textbackslash,\textcolor,\vee,\wedge}
 % \let\GTSspecialMainMacroIndex\SpecialMainMacroIndex
 % \let\GTSspecialMacroIndex\SpecialMacroIndex
 %
@@ -222,11 +222,9 @@ will yield $#1\csname #6\endcsname/#2$.
 %
 % \subsection{Memo or for the impatient}
 %
-% Add in your preamble: |\usepackage{graph-theory-symbol}|.
+% {\catcode`\%=14 \input{./tex/memo-preamble.tex}}
 %
-% For clarity, below we only show long macro names and short macro names;
-% see Detailed usage section for intermediate length macro names.
-%
+% \medskip
 % {\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}}
 %
 % \bigskip
@@ -252,16 +250,8 @@ will yield $#1\csname #6\endcsname/#2$.
 % \hrule
 %
 % \bigskip
-% {\catcode`\%=14 \input{./tex/memo-symbols-meta-logic.tex}}
+% {\catcode`\%=14 \input{./tex/memo-versatile-macros.tex}}
 %
-% \bigskip
-% Apart from these symbol macros, versatile macros to call them all
-% are available with options:\\
-% |\GTSxa|, |\GTSxadj|, or |\GTSxadjacency| for adjacency symbols,
-% |\GTSxi|, |\GTSxinc|, or |\GTSxincidence| for incidence symbols,
-% |\GTSxml|, or |\GTSxmetalogic| for meta-logic symbols,
-% |\GTSx| for all symbols.
-% See Detailed usage section for full syntax of these macros.
 % \newpage
 % \subsection{Detailed usage}
 %
