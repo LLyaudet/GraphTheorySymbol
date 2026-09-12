@@ -29,6 +29,7 @@
 %                                 tex/return-to-previous-geometry.tex,
 %                                 tex/memo-symbols-standard.tex,
 %                                 tex/memo-symbols-monochrome.tex,
+%                                 tex/memo-symbols-meta-logic.tex,
 %                                 graph-theory-symbol-memo.tex, and
 %                                 test.tex,
 % and the derived files           graph-theory-symbol.sty,
@@ -220,10 +221,15 @@ will yield $#1\csname #6\endcsname/#2$.
 %
 % Add in your preamble: |\usepackage{graph-theory-symbol}|.
 %
+% For clarity, below we only show long macro names and short macro names;
+% see Detailed usage section for intermediate length macro names.
+%
 % {\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}}
 %
+% \bigskip
 % \hrule
 %
+% \bigskip
 % {\catcode`\%=14 \input{./tex/memo-symbols-monochrome.tex}}
 %
 % \newpage
@@ -232,6 +238,12 @@ will yield $#1\csname #6\endcsname/#2$.
 %
 % {\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}}
 % \GTSsetMainColor{black}
+%
+% \bigskip
+% \hrule
+%
+% \bigskip
+% {\catcode`\%=14 \input{./tex/memo-symbols-meta-logic.tex}}
 %
 % \newpage
 % \subsection{Detailed usage}

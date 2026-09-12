@@ -1,4 +1,4 @@
-% This is file `graph-theory-symbol-memo.tex'.
+% This is file `memo-symbols-standard.tex'.
 % This file is part of GraphTheorySymbol.
 %
 % GraphTheorySymbol is free software:
@@ -37,43 +37,39 @@
 %                                 test.pdf.
 %
 % ©Copyright 2026 Laurent Frédéric Bernard François Lyaudet
-\documentclass[11pt]{article}
-\usepackage{graph-theory-symbol}
-\usepackage{shortvrb}
-%\usepackage[showframe]{geometry}
-\usepackage{geometry}
 
-\input{./tex/switch-to-memo-geometry.tex}
+\begin{tabular}{@{}llll@{}}
+Long name & Short name & Result & In context\\
+|\GTSmetaNot/| & |\GTSmN/| & \GTSmN/ & \GTSmN/\GTSa/\\
+|\GTSmetaAnd/| & |\GTSmA/| & \GTSmA/
+  & \GTSxa[mC=red]\GTSmA/\GTSxa[mC=green]\\
+|\GTSmetaOr/| & |\GTSmO/| & \GTSmO/
+  & \GTSxa[mC=red]\GTSmO/\GTSxa[mC=green]\\
+\end{tabular}
 
-\begin{document}
+Implicit meta-and via concatenation,
+no space except around whole relations compositions,
+no parentheses via higher priority to meta-and, brackets when all possible
+adjacencies are specified between two vertices:\\
+Tournament adjacency:\\
+$\forall u,v,
+u \mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/]} v$.\\
+Tournament adjacency with maybe some colored edge also, who knows?:\\
+$\forall u,v,
+u \mathrel{\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/} v$.\\
+Directed graph:\\
+$\forall u,v,
+u \mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/
+\GTSmO/\GTSdAD/\GTSdAU/\GTSmO/\GTSnDAD/\GTSnDAU/]} v$.\\
+Oriented graph:\\
+$\forall u,v,
+u \mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/
+\GTSmO/\GTSnDAD/\GTSnDAU/]} v$.
 
-\ \vspace{2cm}
-\begin{center}
-{\Huge GraphTheorySymbol Memo}\\
-{\huge v1.4.0 2026/09/12}
-\end{center}
-\vspace{2cm}
-
-\MakeShortVerb{\|}
-
-Add in your preamble: |\usepackage{graph-theory-symbol}|.
-
-For clarity, below we only show long macro names and short macro names;
-see Detailed usage section for intermediate length macro names.
-
-\input{./tex/memo-symbols-standard.tex}
-
-\input{./tex/memo-symbols-monochrome.tex}
-
-\medskip
-\hrule
-\medskip
-\GTSsetMainColor{blue}
-|\GTSsetMainColor{blue}|
-
-\input{./tex/memo-symbols-standard.tex}
-\GTSsetMainColor{black}
-
-\input{./tex/memo-symbols-meta-logic.tex}
-
-\end{document}
+Prefix notation:\\
+$\exists u,v, u
+\mathrel{[\GTSmO/\GTSxa[mC=red,d]\GTSxa[mC=green,d]\GTSxa[mC=blue,u]]}
+v$.\\
+$\exists v,e, v
+\mathrel{[\GTSmO/\GTSxi[mC=red,i]\GTSxi[mC=green,i]\GTSxi[mC=blue,o]]}
+e$.

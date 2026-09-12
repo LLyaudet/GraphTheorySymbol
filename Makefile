@@ -3,7 +3,8 @@
 tex-directory-files := ./tex/switch-to-memo-geometry.tex\
                        ./tex/return-to-previous-geometry.tex\
                        ./tex/memo-symbols-standard.tex\
-                       ./tex/memo-symbols-monochrome.tex
+                       ./tex/memo-symbols-monochrome.tex\
+                       ./tex/memo-symbols-meta-logic.tex
 
 archivable-files := README.md\
                     Makefile\
@@ -21,15 +22,19 @@ archivable-files := README.md\
 
 build: graph-theory-symbol-doc.pdf graph-theory-symbol-memo.pdf test.pdf
 
-graph-theory-symbol-doc.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx
+graph-theory-symbol-doc.pdf: graph-theory-symbol.ins\
+    graph-theory-symbol.dtx $(tex-directory-files)
 	lualatex graph-theory-symbol.ins
 	lualatex graph-theory-symbol.dtx
-	test -e graph-theory-symbol.glo && makeindex -s gglo.ist -o graph-theory-symbol.gls graph-theory-symbol.glo
+	test -e graph-theory-symbol.glo && makeindex -s gglo.ist\
+    -o graph-theory-symbol.gls graph-theory-symbol.glo
 	makeindex -s gind.ist -o graph-theory-symbol.ind graph-theory-symbol.idx
 	lualatex graph-theory-symbol.dtx
 	mv graph-theory-symbol.pdf graph-theory-symbol-doc.pdf
 
-graph-theory-symbol-memo.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx graph-theory-symbol-memo.tex $(tex-directory-files)
+graph-theory-symbol-memo.pdf: graph-theory-symbol.ins\
+    graph-theory-symbol.dtx graph-theory-symbol-memo.tex\
+    $(tex-directory-files)
 	lualatex graph-theory-symbol-memo.tex
 
 test.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx test.tex
