@@ -44,7 +44,7 @@
 %% ©Copyright 2026 Laurent Frédéric Bernard François Lyaudet
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
 \ProvidesPackage{graph-theory-symbol}%
-[2026/09/08 v1.3.0 %
+[2026/09/12 v1.4.0 %
 A set of LaTeX commands to have symbols designed for Graph Theory]
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -479,3 +479,40 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 \GTS@newcommand{\GTSnegInIncMonoRel}{\mathrel{\GTSnIIM/}}
 \GTS@newcommand{\GTSnegInIncMonRel}{\mathrel{\GTSnIIM/}}
 \GTS@newcommand{\GTSnIIMR}{\mathrel{\GTSnIIM/}}
+\GTS@newcommand{\GTSmN}{%
+\text{\ensuremath{%
+\raisebox{0ex}{\scalebox{1}[1]{%
+\raisebox{0ex}{\scalebox{1}[1]{$\lnot$}}%
+\hspace{-1.46ex}%
+\raisebox{1.2ex}{\scalebox{0.7}[0.7]{m}}%
+\hspace{0.2ex}%
+}}%
+}}%
+}
+\GTS@newcommand{\GTSmetaNot}{\GTSmN/}
+\GTS@newcommand{\GTSmA}{%
+\text{\ensuremath{%
+\raisebox{0ex}{\scalebox{1}[1]{%
+\raisebox{0ex}{\scalebox{1}[1]{$\wedge$}}%
+\hspace{-1.46ex}%
+\raisebox{1.4ex}{\scalebox{0.7}[0.7]{m}}%
+}}%
+}}%
+}
+\GTS@newcommand{\GTSmetaAnd}{\GTSmA/}
+\GTS@newcommand{\GTSmetaAndRelation}{\mathrel{\GTSmA/}}
+\GTS@newcommand{\GTSmetaAndRel}{\mathrel{\GTSmA/}}
+\GTS@newcommand{\GTSmAR}{\mathrel{\GTSmA/}}
+\GTS@newcommand{\GTSmO}{%
+\text{\ensuremath{%
+\raisebox{0ex}{\scalebox{1}[1]{%
+\raisebox{0ex}{\scalebox{1}[1]{$\vee$}}%
+\hspace{-1.46ex}%
+\raisebox{1.4ex}{\scalebox{0.7}[0.7]{m}}%
+}}%
+}}%
+}
+\GTS@newcommand{\GTSmetaOr}{\GTSmO/}
+\GTS@newcommand{\GTSmetaOrRelation}{\mathrel{\GTSmO/}}
+\GTS@newcommand{\GTSmetaOrRel}{\mathrel{\GTSmO/}}
+\GTS@newcommand{\GTSmOR}{\mathrel{\GTSmO/}}

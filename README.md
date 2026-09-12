@@ -1,7 +1,7 @@
 # GraphTheorySymbol
 A set of LaTeX commands to have symbols designed for Graph Theory
 
-Version 1.3.0 2026/09/08
+Version 1.4.0 2026/09/12
 
 Designed by Laurent Frédéric Bernard François Lyaudet
 
@@ -22,7 +22,10 @@ This package is available on CTAN:
 
 A set of LaTeX macros to have symbols designed for Graph Theory.
 Symbols are available for (directed and undirected) adjacency and
-incidency, etc.
+incidency,
+for logical operations on one relation, or many relations (of same arity),
+instead of boolean values (meta-not, meta-or, meta-and),
+etc.
 All symbol macros come in two "flavors":
 a normal one that works in both text mode
 and math mode, without any spacing control;

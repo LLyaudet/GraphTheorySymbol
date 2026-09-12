@@ -46,7 +46,7 @@
 %<*package>
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
 \ProvidesPackage{graph-theory-symbol}%
-[2026/09/08 v1.3.0 %
+[2026/09/12 v1.4.0 %
 A set of LaTeX commands to have symbols designed for Graph Theory]
 %</package>
 %<*driver>
@@ -159,6 +159,7 @@ will yield $#1\csname #6\endcsname/#2$.
 % \changes{v1.2.0}{2026-09-06}{CTAN URL, new macros for same set of symbols}
 % \changes{v1.2.1}{2026-09-08}{smaller tests output}
 % \changes{v1.3.0}{2026-09-08}{new macros for monochrome symbols}
+% \changes{v1.4.0}{2026-09-12}{macros for symbols for logical operations on relations}
 % \begin{abstract}\noindent
 % This documentation is for \LaTeX{} package GraphTheorySymbol.
 % It provides symbols used in graph theory.
@@ -1001,6 +1002,135 @@ will yield $#1\csname #6\endcsname/#2$.
 % (in(ward) incidence) symbol with relation spacing in math mode.\\
 % \usageExampleIncRelIV{GTSnegatedInIncidenceMonochromeRelation}%
 % {GTSnegInIncMonoRel}{GTSnegInIncMonRel}{GTSnIIMR}
+%
+% \medskip
+% \DescribeMacro{\GTSmetaNot}
+% \DescribeMacro{\GTSmN}
+% This macro will draw a meta-not or relation-not symbol.\\
+% |A.\GTSmetaNot/A.|\\
+% or |A.\GTSmN/A.|\\
+% will yield A.\GTSmN/A.\\
+% |u \GTSmetaNot/\GTSdAU/ v|\\
+% or |u \GTSmN/\GTSdAU/ v|\\
+% will yield u \GTSmN/\GTSdAU/ v.\\
+% |$u \GTSmetaNot/ \GTSdAU/ v$|\\
+% or |$u \GTSmN/ \GTSdAU/ v$|\\
+% will yield $u \GTSmN/ \GTSdAU/ v$.
+%
+% \medskip
+% \DescribeMacro{\GTSmetaAnd}
+% \DescribeMacro{\GTSmA}
+% This macro will draw a meta-and or relations-and symbol.
+% This is your duty to check that all relations have same arity.
+% It should be easy as long as you remain in the realm of
+% graphs/2-structures/binary structures.
+% We didn't use Tarski's notation,
+% since square cup has taken the preemptive meaning of disjoint union.
+% Similarly, doublewedge or other wedge symbols have taken
+% various meanings,
+% whilst we want an unambiguous symbol.\\
+% Look at the discussion after all logical symbols for less trivial uses
+% and recommendations.\\
+% |A.\GTSmetaAnd/A.|\\
+% or |A.\GTSmA/A.|\\
+% will yield A.\GTSmA/A.\\
+% |u \GTSdAD/\GTSmetaAnd/\GTSdAU/ v|\\
+% or |u \GTSdAD/\GTSmA/\GTSdAU/ v|\\
+% will yield u \GTSdAD/\GTSmA/\GTSdAU/ v.\\
+% |$u \GTSdAD/ \GTSmetaAnd/ \GTSdAU/ v$|\\
+% or |$u \GTSdAD/ \GTSmA/ \GTSdAU/ v$|\\
+% will yield $u \GTSdAD/ \GTSmA/ \GTSdAU/ v$.
+%
+% \medskip
+% \DescribeMacro{\GTSmetaAndRelation}
+% \DescribeMacro{\GTSmetaAndRel}
+% \DescribeMacro{\GTSmAR}
+% This macro will draw a meta-and symbol with relation spacing
+% in math mode.\\
+% |$u \GTSdAD/\GTSmetaAndRelation/\GTSdAU/ v$|\\
+% or |$u \GTSdAD/\GTSmetaAndRel/\GTSdAU/ v$|\\
+% or |$u \GTSdAD/\GTSmAR/\GTSdAU/ v$|\\
+% will yield $u \GTSdAD/\GTSmAR/\GTSdAU/ v$.
+%
+% \medskip
+% \DescribeMacro{\GTSmetaOr}
+% \DescribeMacro{\GTSmO}
+% This macro will draw a meta-or or relations-or symbol.
+% This is your duty to check that all relations have same arity.
+% It should be easy as long as you remain in the realm of
+% graphs/2-structures/binary structures.
+% We didn't use Tarski's notation,
+% since square cup has taken the preemptive meaning of disjoint union.
+% Similarly, doublewedge or other wedge symbols have taken
+% various meanings,
+% whilst we want an unambiguous symbol.\\
+% Look at the discussion after all logical symbols for less trivial uses
+% and recommendations.\\
+% |A.\GTSmetaOr/A.|\\
+% or |A.\GTSmO/A.|\\
+% will yield A.\GTSmO/A.\\
+% |u \GTSdAD/\GTSmetaOr/\GTSdAU/ v|\\
+% or |u \GTSdAD/\GTSmO/\GTSdAU/ v|\\
+% will yield u \GTSdAD/\GTSmO/\GTSdAU/ v.\\
+% |$u \GTSdAD/ \GTSmetaOr/ \GTSdAU/ v$|\\
+% or |$u \GTSdAD/ \GTSmO/ \GTSdAU/ v$|\\
+% will yield $u \GTSdAD/ \GTSmO/ \GTSdAU/ v$.
+%
+% \medskip
+% \DescribeMacro{\GTSmetaOrRelation}
+% \DescribeMacro{\GTSmetaOrRel}
+% \DescribeMacro{\GTSmOR}
+% This macro will draw a meta-or symbol with relation spacing
+% in math mode.\\
+% |$u \GTSdAD/\GTSmetaOrRelation/\GTSdAU/ v$|\\
+% or |$u \GTSdAD/\GTSmetaOrRel/\GTSdAU/ v$|\\
+% or |$u \GTSdAD/\GTSmOR/\GTSdAU/ v$|\\
+% will yield $u \GTSdAD/\GTSmOR/\GTSdAU/ v$.
+%
+% \subsection{Good practices}
+%
+% As is customary in algebra and logic, the conjunction/multiplication
+% can be replaced by concatenation,
+% and has higher priority than disjunction.
+% So the following formulas are equivalent;
+% we recommend using the shortest one:\\
+% Tournament adjacency:\\
+% $\forall u,v, u \mathrel{\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/} v$\\
+% is prefered over\\
+% $\forall u,v,
+% u \mathrel{\GTSdAD/\GTSmA/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSmA/\GTSdAU/} v$,\\
+% or $\forall u,v, u
+% \mathrel{(\GTSdAD/\GTSmA/\GTSnDAU/)\GTSmO/(\GTSnDAD/\GTSmA/\GTSdAU/)}
+% v$.\\
+% Note the use of macros without Relation suffix above, and adding a single
+% |\mathrel{}| around the composition of all relations:\\
+% |\mathrel{\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/}|.\\
+% This is the spacing practice that we recommend,
+% although for very long compositions, it may be quite unreadable,
+% and then spacing everything with Relation could/should be prefered.
+%
+% We also recommend using brackets when the composition reflects all of the
+% adjacencies between two vertices:\\
+% Tournament adjacency:\\
+% $\forall u,v,
+% u \mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/]} v$.\\
+% Tournament adjacency with maybe some colored edge also, who knows?:\\
+% $\forall u,v,
+% u \mathrel{\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/} v$.\\
+% Directed graph:\\
+% $\forall u,v,
+% u \mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/
+% \GTSmO/\GTSdAD/\GTSdAU/\GTSmO/\GTSnDAD/\GTSnDAU/]} v$.\\
+% Oriented graph:\\
+% $\forall u,v,
+% u \mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/
+% \GTSmO/\GTSnDAD/\GTSnDAU/]} v$.
+%
+% Finally, we recommend prefix notation without ``big'' symbol for a
+% sequence of consecutive ors or ands (with parentheses if needed):\\
+% $\exists u,v, u
+% \mathrel{[\GTSmO/\GTSxa[mC=red,d]\GTSxa[mC=green,d]\GTSxa[mC=blue,u]]}
+% v$.
 %
 % \MaybeStop{^^A
 % \PrintChanges
@@ -2136,6 +2266,91 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 \GTS@newcommand{\GTSnegInIncMonoRel}{\mathrel{\GTSnIIM/}}
 \GTS@newcommand{\GTSnegInIncMonRel}{\mathrel{\GTSnIIM/}}
 \GTS@newcommand{\GTSnIIMR}{\mathrel{\GTSnIIM/}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSmetaNot,\GTSmN}
+% This macro will draw a meta-not or relation-not symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSmN}{%
+\text{\ensuremath{%
+\raisebox{0ex}{\scalebox{1}[1]{%
+\raisebox{0ex}{\scalebox{1}[1]{$\lnot$}}%
+\hspace{-1.46ex}%
+\raisebox{1.2ex}{\scalebox{0.7}[0.7]{m}}%
+\hspace{0.2ex}%
+}}%
+}}%
+}
+\GTS@newcommand{\GTSmetaNot}{\GTSmN/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSmetaAnd,\GTSmA}
+% This macro will draw a meta-and or relations-and symbol.
+% This is your duty to check that all relations have same arity.
+% It should be easy as long as you remain in the realm of
+% graphs/2-structures/binary structures.
+% We didn't use Tarski's notation,
+% since square cup has taken the preemptive meaning of disjoint union.
+% Similarly, doublewedge or other wedge symbols have taken
+% various meanings,
+% whilst we want an unambiguous symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSmA}{%
+\text{\ensuremath{%
+\raisebox{0ex}{\scalebox{1}[1]{%
+\raisebox{0ex}{\scalebox{1}[1]{$\wedge$}}%
+\hspace{-1.46ex}%
+\raisebox{1.4ex}{\scalebox{0.7}[0.7]{m}}%
+}}%
+}}%
+}
+\GTS@newcommand{\GTSmetaAnd}{\GTSmA/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSmetaAndRelation,\GTSmetaAndRel,\GTSmAR}
+% This macro will draw a meta-and symbol with relation spacing
+% in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSmetaAndRelation}{\mathrel{\GTSmA/}}
+\GTS@newcommand{\GTSmetaAndRel}{\mathrel{\GTSmA/}}
+\GTS@newcommand{\GTSmAR}{\mathrel{\GTSmA/}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSmetaOr,\GTSmO}
+% This macro will draw a meta-or or relations-or symbol.
+% This is your duty to check that all relations have same arity.
+% It should be easy as long as you remain in the realm of
+% graphs/2-structures/binary structures ;).
+% We didn't use Tarski's notation,
+% since square cup has taken the preemptive meaning of disjoint union.
+% Similarly, doublevee or other vee symbols have taken
+% various meanings,
+% whilst we want an unambiguous symbol.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSmO}{%
+\text{\ensuremath{%
+\raisebox{0ex}{\scalebox{1}[1]{%
+\raisebox{0ex}{\scalebox{1}[1]{$\vee$}}%
+\hspace{-1.46ex}%
+\raisebox{1.4ex}{\scalebox{0.7}[0.7]{m}}%
+}}%
+}}%
+}
+\GTS@newcommand{\GTSmetaOr}{\GTSmO/}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\GTSmetaOrRelation,\GTSmetaOrRel,\GTSmOR}
+% This macro will draw a meta-or symbol with relation spacing
+% in math mode.
+%    \begin{macrocode}
+\GTS@newcommand{\GTSmetaOrRelation}{\mathrel{\GTSmO/}}
+\GTS@newcommand{\GTSmetaOrRel}{\mathrel{\GTSmO/}}
+\GTS@newcommand{\GTSmOR}{\mathrel{\GTSmO/}}
 %    \end{macrocode}
 % \end{macro}
 %
