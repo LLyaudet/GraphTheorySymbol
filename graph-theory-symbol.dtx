@@ -53,8 +53,19 @@
 A set of LaTeX commands to have symbols designed for Graph Theory]
 %</package>
 %<*driver>
+\if\buildtarget0% A4 paper
 \documentclass{ltxdoc}
-\usepackage[a4paper,margin=20mm,nohead]{geometry}
+\usepackage[a4paper,vmargin=20mm,left=27mm,right=27mm,nohead]{geometry}
+\else\if\buildtarget1% US Letter paper
+\documentclass{ltxdoc}
+\usepackage[letterpaper,vmargin=20mm,left=27mm,right=27mm,nohead]{geometry}
+\else\if\buildtarget2% Book with US Letter paper
+\documentclass[twoside]{ltxdoc}
+\usepackage[letterpaper,vmargin=20mm,outer=24mm,inner=24mm,nohead,
+bindingoffset=5mm]{geometry}
+\fi
+\fi
+\fi
 \usepackage[numbered]{hypdoc}
 \usepackage{longtable}
 \usepackage[columns=1]{idxlayout}

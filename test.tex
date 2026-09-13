@@ -39,7 +39,19 @@
 %                                 test.pdf.
 %
 % ©Copyright 2026 Laurent Frédéric Bernard François Lyaudet
-\documentclass[10pt]{article}
+\if\buildtarget0% A4 paper
+\documentclass{article}
+\usepackage[a4paper,vmargin=20mm,left=27mm,right=27mm,nohead]{geometry}
+\else\if\buildtarget1% US Letter paper
+\documentclass{article}
+\usepackage[letterpaper,vmargin=20mm,left=27mm,right=27mm,nohead]{geometry}
+\else\if\buildtarget2% Book with US Letter paper
+\documentclass[twoside]{article}
+\usepackage[letterpaper,vmargin=20mm,outer=24mm,inner=24mm,nohead,
+bindingoffset=5mm]{geometry}
+\fi
+\fi
+\fi
 \usepackage{graph-theory-symbol}
 
 \begin{document}

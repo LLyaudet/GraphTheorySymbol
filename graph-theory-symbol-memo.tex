@@ -39,13 +39,23 @@
 %                                 test.pdf.
 %
 % ©Copyright 2026 Laurent Frédéric Bernard François Lyaudet
+\if\buildtarget0% A4 paper
 \documentclass[11pt]{article}
+\usepackage[a4paper,vmargin=20mm,left=27mm,right=27mm,nohead]{geometry}
+\else\if\buildtarget1% US Letter paper
+\documentclass[11pt]{article}
+\usepackage[letterpaper,vmargin=15mm,left=27mm,right=27mm,nohead]{geometry}
+\else\if\buildtarget2% Book with US Letter paper
+\documentclass[11pt,twoside]{article}
+\usepackage[letterpaper,vmargin=15mm,outer=24mm,inner=24mm,nohead,
+bindingoffset=5mm]{geometry}
+\fi
+\fi
+\fi
 \usepackage{graph-theory-symbol}
 \usepackage{shortvrb}
-%\usepackage[showframe]{geometry}
-\usepackage{geometry}
 
-\input{./tex/switch-to-memo-geometry.tex}
+%\input{./tex/switch-to-memo-geometry.tex}
 
 \begin{document}
 
@@ -65,9 +75,9 @@
 
 \input{./tex/memo-symbols-monochrome.tex}
 
-\medskip
+\if\buildtarget0\medskip\fi
 \hrule
-\medskip
+\if\buildtarget0\medskip\fi
 \GTSsetMainColor{blue}
 |\GTSsetMainColor{blue}|
 
