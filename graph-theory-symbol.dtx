@@ -25,8 +25,6 @@
 %
 % This work consists of the files graph-theory-symbol.dtx,
 %                                 graph-theory-symbol.ins,
-%                                 tex/switch-to-memo-geometry.tex,
-%                                 tex/return-to-previous-geometry.tex,
 %                                 tex/memo-symbols-standard.tex,
 %                                 tex/memo-symbols-monochrome.tex,
 %                                 tex/memo-symbols-meta-logic.tex,
@@ -35,9 +33,15 @@
 %                                 graph-theory-symbol-memo.tex, and
 %                                 test.tex,
 % and the derived files           graph-theory-symbol.sty,
-%                                 graph-theory-symbol-doc.pdf,
-%                                 graph-theory-symbol-memo.pdf, and
-%                                 test.pdf.
+%                                 graph-theory-symbol-doc-A4.pdf,
+%                                 graph-theory-symbol-doc-USLetter.pdf,
+%                                 graph-theory-symbol-doc-Book.pdf,
+%                                 graph-theory-symbol-memo-A4.pdf,
+%                                 graph-theory-symbol-memo-USLetter.pdf,
+%                                 graph-theory-symbol-memo-Book.pdf,
+%                                 test-A4.pdf,
+%                                 test-USLetter.pdf, and
+%                                 test-Book.pdf.
 %
 % ©Copyright 2026 Laurent Frédéric Bernard François Lyaudet
 % \fi
@@ -49,7 +53,7 @@
 %<*package>
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
 \ProvidesPackage{graph-theory-symbol}%
-[2026/09/13 v1.5.1 %
+[2026/09/14 v1.5.2 %
 A set of LaTeX commands to have symbols designed for Graph Theory]
 %</package>
 %<*driver>
@@ -186,6 +190,8 @@ will yield $#1\csname #6\endcsname/#2$.
 % \changes{v1.5.1}{2026-09-13}%
 % {Use noprint option of doc package to avoid too big left margins,%
 % and use paragraph command instead}
+% \changes{v1.5.2}{2026-09-14}%
+% {Add A4, USLetter, and Book variants of PDFs.}
 % \begin{abstract}\noindent
 % This documentation is for \LaTeX{} package GraphTheorySymbol.
 % It provides symbols used in graph theory.
