@@ -22,24 +22,29 @@ archivable-files := README.md\
                     graph-theory-symbol-doc.pdf\
                     graph-theory-symbol-memo.pdf
 
-build: graph-theory-symbol-doc.pdf graph-theory-symbol-memo.pdf test.pdf
+build: graph-theory-symbol.sty\
+       graph-theory-symbol-doc.pdf\
+       graph-theory-symbol-memo.pdf\
+       test.pdf
 
-graph-theory-symbol-doc.pdf: graph-theory-symbol.ins\
-    graph-theory-symbol.dtx $(tex-directory-files)
+graph-theory-symbol.sty: graph-theory-symbol.ins graph-theory-symbol.dtx
 	lualatex graph-theory-symbol.ins
-	lualatex graph-theory-symbol.dtx
-	test -e graph-theory-symbol.glo && makeindex -s gglo.ist\
-    -o graph-theory-symbol.gls graph-theory-symbol.glo
-	makeindex -s gind.ist -o graph-theory-symbol.ind graph-theory-symbol.idx
-	lualatex graph-theory-symbol.dtx
-	mv graph-theory-symbol.pdf graph-theory-symbol-doc.pdf
 
-graph-theory-symbol-memo.pdf: graph-theory-symbol.ins\
-    graph-theory-symbol.dtx graph-theory-symbol-memo.tex\
-    $(tex-directory-files)
+graph-theory-symbol-doc.pdf: graph-theory-symbol.sty\
+                             graph-theory-symbol.dtx\
+                             $(tex-directory-files)
+	lualatex --jobname=graph-theory-symbol-doc graph-theory-symbol.dtx
+	test -e graph-theory-symbol-doc.glo && makeindex -s gglo.ist\
+    -o graph-theory-symbol-doc.gls graph-theory-symbol-doc.glo
+	makeindex -s gind.ist -o graph-theory-symbol-doc.ind graph-theory-symbol-doc.idx
+	lualatex --jobname=graph-theory-symbol-doc graph-theory-symbol.dtx
+
+graph-theory-symbol-memo.pdf: graph-theory-symbol.sty\
+                              graph-theory-symbol-memo.tex\
+                              $(tex-directory-files)
 	lualatex graph-theory-symbol-memo.tex
 
-test.pdf: graph-theory-symbol.ins graph-theory-symbol.dtx test.tex
+test.pdf: graph-theory-symbol.sty test.tex
 	lualatex test.tex
 
 archive: graph-theory-symbol.tar.gz
