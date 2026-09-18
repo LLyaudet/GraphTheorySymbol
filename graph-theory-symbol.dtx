@@ -240,17 +240,49 @@ will yield $#1\csname #6\endcsname/#2$.
 % \newpage
 % \section{Usage}
 %
+% \if\buildtarget0
+% \else\if\buildtarget1
+% \vspace{-0.4cm}
+% \else\if\buildtarget2
+% \vspace{-0.4cm}
+% \fi
+% \fi
+% \fi
 % \subsection{Memo or for the impatient}
 %
+% \if\buildtarget0
+% \else\if\buildtarget1
+% \vspace{-0.2cm}
+% \else\if\buildtarget2
+% \vspace{-0.2cm}
+% \fi
+% \fi
+% \fi
 % {\catcode`\%=14 \input{./tex/memo-preamble.tex}}
 %
+% \if\buildtarget0
 % \medskip
+% \else\if\buildtarget1
+% \else\if\buildtarget2
+% \fi
+% \fi
+% \fi
 % {\catcode`\%=14 \input{./tex/memo-symbols-standard.tex}}
 %
+% \if\buildtarget0
 % \bigskip
 % \hrule
 %
 % \bigskip
+% \else\if\buildtarget1
+% \hrule
+%
+% \else\if\buildtarget2
+% \hrule
+%
+% \fi
+% \fi
+% \fi
 % {\catcode`\%=14 \input{./tex/memo-symbols-monochrome.tex}}
 %
 % \newpage
@@ -264,6 +296,14 @@ will yield $#1\csname #6\endcsname/#2$.
 % \hrule
 %
 % \bigskip
+% \if\buildtarget0
+% \else\if\buildtarget1
+% \vspace{0.2cm}
+% \else\if\buildtarget2
+% \vspace{0.2cm}
+% \fi
+% \fi
+% \fi
 % {\catcode`\%=14 \input{./tex/memo-symbols-meta-logic.tex}}
 %
 % \bigskip
