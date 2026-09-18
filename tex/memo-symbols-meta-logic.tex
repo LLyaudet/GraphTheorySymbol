@@ -53,6 +53,8 @@ Long name & Short name & Result & In context\\
   & \GTSxa[mC=red]\GTSmO/\GTSxa[mC=green]\\
 \end{tabular}
 
+Meta-logic can be used for compound adjacency types, etc.
+
 Implicit meta-and via concatenation,
 no space except around whole relations compositions,
 no parentheses via higher priority to meta-and, brackets when all possible
@@ -70,7 +72,23 @@ u \mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/
 Oriented graph:\\
 $\forall u,v,
 u \mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/
-\GTSmO/\GTSnDAD/\GTSnDAU/]} v$.
+\GTSmO/\GTSnDAD/\GTSnDAU/]} v$.\\
+Tournament adjacency:\\
+$\mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/]}$
+is obtained with |\mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/]}|.\\
+Tournament adjacency with maybe some colored edge also, who knows?:\\
+$\mathrel{\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/}$
+is obtained with |\mathrel{\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/}|.\\
+Directed graph:\\
+$\mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/
+\GTSmO/\GTSdAD/\GTSdAU/\GTSmO/\GTSnDAD/\GTSnDAU/]}$ is obtained with\\
+|\mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/|\\
+|\GTSmO/\GTSdAD/\GTSdAU/\GTSmO/\GTSnDAD/\GTSnDAU/]}|.\\
+Oriented graph:\\
+$\mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/
+\GTSmO/\GTSnDAD/\GTSnDAU/]}$ is obtained with\\
+|\mathrel{[\GTSdAD/\GTSnDAU/\GTSmO/\GTSnDAD/\GTSdAU/|%
+|\GTSmO/\GTSnDAD/\GTSnDAU/]}|.
 
 Prefix notation:\\
 $\exists u,v, u
@@ -78,4 +96,10 @@ $\exists u,v, u
 v$.\\
 $\exists v,e, v
 \mathrel{[\GTSmO/\GTSxi[mC=red,i]\GTSxi[mC=green,i]\GTSxi[mC=blue,o]]}
-e$.
+e$.\\
+$\mathrel{[\GTSmO/\GTSxa[mC=red,d]\GTSxa[mC=green,d]\GTSxa[mC=blue,u]]}$
+is obtained with\\
+|\mathrel{[\GTSmO/\GTSxa[mC=red,d]\GTSxa[mC=green,d]\GTSxa[mC=blue,u]]}|.\\
+$\mathrel{[\GTSmO/\GTSxi[mC=red,i]\GTSxi[mC=green,i]\GTSxi[mC=blue,o]]}$
+is obtained with\\
+|\mathrel{[\GTSmO/\GTSxi[mC=red,i]\GTSxi[mC=green,i]\GTSxi[mC=blue,o]]}|.
