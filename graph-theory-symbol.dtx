@@ -78,53 +78,58 @@ bindingoffset=5mm]{geometry}
 \usepackage{longtable}
 \usepackage[columns=1]{idxlayout}
 \usepackage{graph-theory-symbol}
+\usepackage{tcolorbox}
 
 \newcommand{\usageExampleIII}[5]{
-\texttt{A.\textbackslash{}#3/A.}\\
-or \texttt{A.\textbackslash{}#4/A.}\\
-or \texttt{A.\textbackslash{}#5/A.}\\
-will yield A.\csname #5\endcsname/A.\\
-\texttt{#1 \textbackslash{}#3/ #2}\\
-or \texttt{#1 \textbackslash{}#4/ #2}\\
-or \texttt{#1 \textbackslash{}#5/ #2}\\
-will yield #1 \csname #5\endcsname/ #2.\\
-\texttt{\$#1 \textbackslash{}#3/ #2\$}\\
-or \texttt{\$#1 \textbackslash{}#4/ #2\$}\\
-or \texttt{\$#1 \textbackslash{}#5/ #2\$}\\
-will yield $#1 \csname #5\endcsname/ #2$.
+\tcbset{colback=white, colframe=black, on line, size=small}%
+\tcbox{\texttt{A.\textbackslash{}#3/A.}}\\
+or \tcbox{\texttt{A.\textbackslash{}#4/A.}}\\
+or \tcbox{\texttt{A.\textbackslash{}#5/A.}}\\
+will yield \tcbox[colframe=blue]{A.\csname #5\endcsname/A.}.\\
+\tcbox{\texttt{#1 \textbackslash{}#3/ #2}}\\
+or \tcbox{\texttt{#1 \textbackslash{}#4/ #2}}\\
+or \tcbox{\texttt{#1 \textbackslash{}#5/ #2}}\\
+will yield \tcbox[colframe=blue]{#1 \csname #5\endcsname/ #2}.\\
+\tcbox{\texttt{\$#1 \textbackslash{}#3/ #2\$}}\\
+or \tcbox{\texttt{\$#1 \textbackslash{}#4/ #2\$}}\\
+or \tcbox{\texttt{\$#1 \textbackslash{}#5/ #2\$}}\\
+will yield \tcbox[colframe=blue]{$#1 \csname #5\endcsname/ #2$}.
 }
 
 \newcommand{\usageExampleRelIII}[5]{
-\texttt{\$#1\textbackslash{}#3/#2\$}\\
-or \texttt{\$#1\textbackslash{}#4/#2\$}\\
-or \texttt{\$#1\textbackslash{}#5/#2\$}\\
-will yield $#1\csname #5\endcsname/#2$.
+\tcbset{colback=white, colframe=black, on line, size=small}%
+\tcbox{\texttt{\$#1\textbackslash{}#3/#2\$}}\\
+or \tcbox{\texttt{\$#1\textbackslash{}#4/#2\$}}\\
+or \tcbox{\texttt{\$#1\textbackslash{}#5/#2\$}}\\
+will yield \tcbox[colframe=blue]{$#1\csname #5\endcsname/#2$}.
 }
 
 \newcommand{\usageExampleIV}[6]{
-\texttt{A.\textbackslash{}#3/A.}\\
-or \texttt{A.\textbackslash{}#4/A.}\\
-or \texttt{A.\textbackslash{}#5/A.}\\
-or \texttt{A.\textbackslash{}#6/A.}\\
-will yield A.\csname #6\endcsname/A.\\
-\texttt{#1 \textbackslash{}#3/ #2}\\
-or \texttt{#1 \textbackslash{}#4/ #2}\\
-or \texttt{#1 \textbackslash{}#5/ #2}\\
-or \texttt{#1 \textbackslash{}#6/ #2}\\
-will yield #1 \csname #6\endcsname/ #2.\\
-\texttt{\$#1 \textbackslash{}#3/ #2\$}\\
-or \texttt{\$#1 \textbackslash{}#4/ #2\$}\\
-or \texttt{\$#1 \textbackslash{}#5/ #2\$}\\
-or \texttt{\$#1 \textbackslash{}#6/ #2\$}\\
-will yield $#1 \csname #6\endcsname/ #2$.
+\tcbset{colback=white, colframe=black, on line, size=small}%
+\tcbox{\texttt{A.\textbackslash{}#3/A.}}\\
+or \tcbox{\texttt{A.\textbackslash{}#4/A.}}\\
+or \tcbox{\texttt{A.\textbackslash{}#5/A.}}\\
+or \tcbox{\texttt{A.\textbackslash{}#6/A.}}\\
+will yield \tcbox[colframe=blue]{A.\csname #6\endcsname/A.}.\\
+\tcbox{\texttt{#1 \textbackslash{}#3/ #2}}\\
+or \tcbox{\texttt{#1 \textbackslash{}#4/ #2}}\\
+or \tcbox{\texttt{#1 \textbackslash{}#5/ #2}}\\
+or \tcbox{\texttt{#1 \textbackslash{}#6/ #2}}\\
+will yield \tcbox[colframe=blue]{#1 \csname #6\endcsname/ #2}.\\
+\tcbox{\texttt{\$#1 \textbackslash{}#3/ #2\$}}\\
+or \tcbox{\texttt{\$#1 \textbackslash{}#4/ #2\$}}\\
+or \tcbox{\texttt{\$#1 \textbackslash{}#5/ #2\$}}\\
+or \tcbox{\texttt{\$#1 \textbackslash{}#6/ #2\$}}\\
+will yield \tcbox[colframe=blue]{$#1 \csname #6\endcsname/ #2$}.
 }
 
 \newcommand{\usageExampleRelIV}[6]{
-\texttt{\$#1\textbackslash{}#3/#2\$}\\
-or \texttt{\$#1\textbackslash{}#4/#2\$}\\
-or \texttt{\$#1\textbackslash{}#5/#2\$}\\
-or \texttt{\$#1\textbackslash{}#6/#2\$}\\
-will yield $#1\csname #6\endcsname/#2$.
+\tcbset{colback=white, colframe=black, on line, size=small}%
+\tcbox{\texttt{\$#1\textbackslash{}#3/#2\$}}\\
+or \tcbox{\texttt{\$#1\textbackslash{}#4/#2\$}}\\
+or \tcbox{\texttt{\$#1\textbackslash{}#5/#2\$}}\\
+or \tcbox{\texttt{\$#1\textbackslash{}#6/#2\$}}\\
+will yield \tcbox[colframe=blue]{$#1\csname #6\endcsname/#2$}.
 }
 
 \newcommand{\usageExampleAdjIII}[3]{\usageExampleIII{u}{v}{#1}{#2}{#3}}
@@ -208,9 +213,11 @@ will yield $#1\csname #6\endcsname/#2$.
 % and the meta-logical operators symbols
 % were created by the author of this package.
 % \end{abstract}
+%
+% \newpage
 % \tableofcontents
 %
-%
+% \newpage
 % \section{Introduction}
 %
 % This documentation is for \LaTeX{} package GraphTheorySymbol.
@@ -297,16 +304,22 @@ will yield $#1\csname #6\endcsname/#2$.
 % in math mode, a variant with relation spacing for math mode exists with
 % suffix ``relation''.
 %
+% For completeness, we also documented macros with an at sign,
+% but as usual, you should not (have to) use them directly.
+%
 % \subsubsection{General macros}
 %
 % \paragraph{\textbackslash{}GTS@newcommand}
 %
 % \DescribeMacro[noprint]{\GTS@newcommand}
+% \def\GTS@newcommandDoc{
 % This macro will enforce that the other macros are called with a trailing
 % slash, avoiding problems with spaces after macro call.\\
 % Arguments:\\
 % \marg{commandname} The name of the command to create.\\
 % \marg{commandcode} The code of the command to create.
+% }
+% \GTS@newcommandDoc
 %
 % \paragraph{\textbackslash{}GTS@newprotectedcommand}
 %
@@ -1312,11 +1325,7 @@ will yield $#1\csname #6\endcsname/#2$.
 %    \end{macrocode}
 % \begin{macro}[noprint]{\GTS@newcommand}
 % \paragraphII{\textbackslash{}GTS@newcommand}
-% This macro will enforce that the other macros are called with a trailing
-% slash, avoiding problems with spaces after macro call.\\
-% Arguments:\\
-% \marg{commandname} The name of the command to create.\\
-% \marg{commandcode} The code of the command to create.
+% \GTS@newcommandDoc
 %    \begin{macrocode}
 \@ifdefinable{\GTS@newcommand}{\def\GTS@newcommand#1#2{%
   \@ifdefinable{#1}{\def#1/{#2}}
