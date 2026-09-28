@@ -289,8 +289,9 @@ on page \pageref*{macrodesc#1}.
 % \if\buildtarget0\bigskip\fi
 % \hrule
 %
-% \if\buildtarget0\bigskip\fi
+% \if\buildtarget0\bigskip\begingroup\hfuzz=6pt\fi
 % {\catcode`\%=14 \input{./tex/memo-symbols-monochrome.tex}}
+% \if\buildtarget0\endgroup\fi
 %
 % \newpage
 % \GTSsetMainColor{blue}
@@ -541,6 +542,7 @@ on page \pageref*{macrodesc#1}.
 % \DescribeMacro[noprint]{\GTSnegatedDirectedAdjacencyUpRelation}
 % \DescribeMacro[noprint]{\GTSnegDirAdjUpRel}
 % \DescribeMacro[noprint]{\GTSnDAUR}
+% \if\buildtarget0\\\fi
 % These macros will draw a negated directed adjacency upward symbol
 % with relation spacing in math mode.\\
 % \usageExampleAdjRelIII{GTSnegatedDirectedAdjacencyUpRelation}%
@@ -577,6 +579,7 @@ on page \pageref*{macrodesc#1}.
 % {GTSdirAdjDownRel}{GTSdADR}\\
 % \linkToImpl{gtsdadr}{1}
 %
+% \if\buildtarget0\begingroup\hfuzz=2pt\fi
 % \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyDown,
 % \textbackslash{}GTSnegDirAdjDown,
 % \textbackslash{}GTSnDAD}
@@ -589,7 +592,9 @@ on page \pageref*{macrodesc#1}.
 % \usageExampleAdjIII{GTSnegatedDirectedAdjacencyDown}{GTSnegDirAdjDown}%
 % {GTSnDAD}\\
 % \linkToImpl{gtsndad}{1}
+% \if\buildtarget0\par\endgroup\fi
 %
+% \if\buildtarget0\begingroup\hfuzz=1pt\fi
 % \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyDownRelation,
 % \textbackslash{}GTSnegDirAdjDownRel,
 % \textbackslash{}GTSnDADR}
@@ -603,6 +608,7 @@ on page \pageref*{macrodesc#1}.
 % \usageExampleAdjRelIII{GTSnegatedDirectedAdjacencyDownRelation}%
 % {GTSnegDirAdjDownRel}{GTSnDADR}\\
 % \linkToImpl{gtsndadr}{1}
+% \if\buildtarget0\par\endgroup\fi
 %
 % \subsubsection{Standard incidence macros}
 %
@@ -874,6 +880,7 @@ on page \pageref*{macrodesc#1}.
 % \DescribeMacro[noprint]{\GTSunadjMono}
 % \DescribeMacro[noprint]{\GTSunadjMon}
 % \DescribeMacro[noprint]{\GTSuM}
+% \if\buildtarget0\\\fi
 % These macros will draw a monochrome unadjacency symbol.\\
 % \usageExampleAdjIV{GTSunadjacencyMonochrome}{GTSunadjMono}{GTSunadjMon}%
 % {GTSuM}\\
@@ -881,7 +888,7 @@ on page \pageref*{macrodesc#1}.
 %
 % \paragraph{\textbackslash{}GTSunadjacencyMonochromeRelation,
 % \textbackslash{}GTSunadjMonoRel,
-% \textbackslash{}GTSunadjMonRel,
+% \textbackslash{}GTSunadjMonRel,\if\buildtarget0\\\fi
 % \textbackslash{}GTSuMR}
 % \label{macrodescgtsumr}
 %
@@ -897,7 +904,7 @@ on page \pageref*{macrodesc#1}.
 %
 % \paragraph{\textbackslash{}GTSdirectedAdjacencyUpMonochrome,
 % \textbackslash{}GTSdirAdjUpMono,
-% \textbackslash{}GTSdirAdjUpMon,
+% \textbackslash{}GTSdirAdjUpMon,\if\buildtarget0\\\fi
 % \textbackslash{}GTSdAUM}
 % \label{macrodescgtsdaum}
 %
@@ -914,9 +921,10 @@ on page \pageref*{macrodesc#1}.
 % {GTSdirAdjUpMon}{GTSdAUM}\\
 % \linkToImpl{gtsdaum}{1}
 %
+% \if\buildtarget0\begingroup\hfuzz=2pt\fi
 % \paragraph{\textbackslash{}GTSdirectedAdjacencyUpMonochromeRelation,
 % \textbackslash{}GTSdirAdjUpMonoRel,
-% \textbackslash{}GTSdirAdjUpMonRel,
+% \textbackslash{}GTSdirAdj\-UpMonRel,
 % \textbackslash{}GTSdAUMR}
 % \label{macrodescgtsdaumr}
 %
@@ -929,10 +937,11 @@ on page \pageref*{macrodesc#1}.
 % \usageExampleAdjRelIV{GTSdirectedAdjacencyUpMonochromeRelation}%
 % {GTSdirAdjUpMonoRel}{GTSdirAdjUpMonRel}{GTSdAUMR}\\
 % \linkToImpl{gtsdaumr}{1}
+% \if\buildtarget0\par\endgroup\fi
 %
 % \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyUpMonochrome,
-% \textbackslash{}GTSnegDirAdjUpMono,
-% \textbackslash{}GTSnegDirAdjUpMon,
+% \textbackslash{}GTSneg\-Dir\-AdjUpMono,
+% \textbackslash{}GTSneg\-Dir\-AdjUpMon,
 % \textbackslash{}GTSnDAUM}
 % \label{macrodescgtsndaum}
 %
@@ -1001,8 +1010,8 @@ on page \pageref*{macrodesc#1}.
 %
 % \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyDownMonochrome,
 % \textbackslash{}GTSnegDirAdjDownMono,
-% \textbackslash{}GTSnegDirAdjDownMon,
-% \textbackslash{}GTSnDADM}
+% \textbackslash{}GTS\-negDirAdjDownMon,
+% \textbackslash{}GTS\-nDADM}
 % \label{macrodescgtsndadm}
 %
 % \DescribeMacro[noprint]{\GTSnegatedDirectedAdjacencyDownMonochrome}
@@ -1015,8 +1024,9 @@ on page \pageref*{macrodesc#1}.
 % {GTSnegDirAdjDownMono}{GTSnegDirAdjDownMon}{GTSnDADM}\\
 % \linkToImpl{gtsndadm}{1}
 %
+% \if\buildtarget0\begingroup\hfuzz=6pt\fi
 % \paragraph{\textbs{}GTSnegatedDirectedAdjacencyDownMonochromeRelation,
-% \textbackslash{}GTSnegDirAdjDownMonoRel,
+% \textbackslash{}GTS\-neg\-Dir\-Adj\-Down\-Mono\-Rel,
 % \textbackslash{}GTSnegDirAdjDownMonRel,
 % \textbackslash{}GTSnDADMR}
 % \label{macrodescgtsndadmr}
@@ -1032,6 +1042,7 @@ on page \pageref*{macrodesc#1}.
 % \usageExampleAdjRelIV{GTSnegatedDirectedAdjacencyDownMonochromeRelation}%
 % {GTSnegDirAdjDownMonoRel}{GTSnegDirAdjDownMonRel}{GTSnDADMR}\\
 % \linkToImpl{gtsndadmr}{1}
+% \if\buildtarget0\par\endgroup\fi
 %
 %
 % \subsubsection{Monochrome incidence macros}
@@ -1120,7 +1131,7 @@ on page \pageref*{macrodesc#1}.
 %
 % \paragraph{\textbackslash{}GTSoutIncidenceMonochromeRelation,
 % \textbackslash{}GTSoutIncMonoRel,
-% \textbackslash{}GTSoutIncMonRel,
+% \textbackslash{}GTSoutIncMonRel,\if\buildtarget0\\\fi
 % \textbackslash{}GTSoIMR}
 % \label{macrodescgtsoimr}
 %
@@ -1134,6 +1145,7 @@ on page \pageref*{macrodesc#1}.
 % {GTSoutIncMonoRel}{GTSoutIncMonRel}{GTSoIMR}\\
 % \linkToImpl{gtsoimr}{1}
 %
+% \if\buildtarget0\newpage\fi
 % \paragraph{\textbackslash{}GTSnegatedOutIncidenceMonochrome,
 % \textbackslash{}GTSnegOutIncMono,
 % \textbackslash{}GTSnegOutIncMon,
@@ -1152,7 +1164,7 @@ on page \pageref*{macrodesc#1}.
 %
 % \paragraph{\textbackslash{}GTSnegatedOutIncidenceMonochromeRelation,
 % \textbackslash{}GTSnegOutIncMonoRel,
-% \textbackslash{}GTSnegOutIncMonRel,
+% \textbackslash{}GTSneg\-OutIncMonRel,
 % \textbackslash{}GTSnOIMR}
 % \label{macrodescgtsnoimr}
 %
@@ -1176,6 +1188,7 @@ on page \pageref*{macrodesc#1}.
 % \DescribeMacro[noprint]{\GTSinIncMono}
 % \DescribeMacro[noprint]{\GTSinIncMon}
 % \DescribeMacro[noprint]{\GTSiIM}
+% \if\buildtarget0\\\fi
 % These macros will draw a monochrome directed incidence downward
 % (in(ward) incidence) symbol.
 % The operand on the left of the symbol should be considered the vertex
@@ -1187,7 +1200,7 @@ on page \pageref*{macrodesc#1}.
 % \paragraph{\textbackslash{}GTSinIncidenceMonochromeRelation,
 % \textbackslash{}GTSinIncMonoRel,
 % \textbackslash{}GTSinIncMonRel,
-% \textbackslash{}GTSiIMR}
+% \textbackslash{}GTS\-iIMR}
 % \label{macrodescgtsiimr}
 %
 % \DescribeMacro[noprint]{\GTSinIncidenceMonochromeRelation}
@@ -1203,7 +1216,7 @@ on page \pageref*{macrodesc#1}.
 % \paragraph{\textbackslash{}GTSnegatedInIncidenceMonochrome,
 % \textbackslash{}GTSnegInIncMono,
 % \textbackslash{}GTSnegInIncMon,
-% \textbackslash{}GTSnIIM}
+% \textbackslash{}GTS\-nIIM}
 % \label{macrodescgtsniim}
 %
 % \DescribeMacro[noprint]{\GTSnegatedInIncidenceMonochrome}
@@ -1354,6 +1367,7 @@ on page \pageref*{macrodesc#1}.
 % and the fourth is compatible only with the second and third options.\\
 % \linkToImpl{gtsxml}{1}
 %
+% \if\buildtarget0\begingroup\hbadness=10000\fi
 % \paragraph{\textbackslash{}GTSx}
 % \label{macrodescgtsx}
 %
@@ -1394,6 +1408,7 @@ on page \pageref*{macrodesc#1}.
 % it can take value |a| for adjacency, |i| for incidence,
 % |m| for meta-logic.\\
 % \linkToImpl{gtsx}{0}
+% \if\buildtarget0\par\endgroup\fi
 %
 % \subsection{Good practices}
 %
@@ -1598,6 +1613,7 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %    \end{macrocode}
 % \end{macro}
 %
+% \if\buildtarget0\newpage\fi
 % \begin{macro}[noprint]{\GTS@b}
 % \paragraphII{\textbackslash{}GTS@b}
 % \linkToDesc{gtsab}{0}{0}
@@ -1768,6 +1784,7 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyUpRelation,
 % \textbackslash{}GTSnegDirAdjUpRel,
 % \textbackslash{}GTSnDAUR}
+% \if\buildtarget0\\\fi
 % These macros will draw a negated directed adjacency upward symbol
 % with relation spacing in math mode.\\
 % \linkToDesc{gtsndaur}{1}{1}
@@ -1828,6 +1845,7 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedDirectedAdjacencyDownRelation,%
 % \GTSnegDirAdjDownRel,\GTSnDADR}
+% \if\buildtarget0\hfuzz=1pt\fi
 % \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyDownRelation,
 % \textbackslash{}GTSnegDirAdjDownRel,
 % \textbackslash{}GTSnDADR}
@@ -2211,7 +2229,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \GTSunadjMonoRel,\GTSunadjMonRel,\GTSuMR}
 % \paragraphII{\textbackslash{}GTSunadjacencyMonochromeRelation,
 % \textbackslash{}GTSunadjMonoRel,
-% \textbackslash{}GTSunadjMonRel,
+% \textbackslash{}GTSunadjMonRel,\if\buildtarget0\\\fi
 % \textbackslash{}GTSuMR}
 % These macros will draw a monochrome unadjacency symbol
 % with relation spacing in math mode.\\
@@ -2228,7 +2246,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \GTSdirAdjUpMono,\GTSdirAdjUpMon,\GTSdAUM}
 % \paragraphII{\textbackslash{}GTSdirectedAdjacencyUpMonochrome,
 % \textbackslash{}GTSdirAdjUpMono,
-% \textbackslash{}GTSdirAdjUpMon,
+% \textbackslash{}GTSdirAdjUpMon,\if\buildtarget0\\\fi
 % \textbackslash{}GTSdAUM}
 % These macros will draw a monochrome directed adjacency upward symbol.
 % The operand on the left of the symbol should be considered the source
@@ -2248,9 +2266,10 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSdirectedAdjacencyUpMonochromeRelation,%
 % \GTSdirAdjUpMonoRel,\GTSdirAdjUpMonRel,\GTSdAUMR}
+% \if\buildtarget0\hfuzz=2pt\fi
 % \paragraphII{\textbackslash{}GTSdirectedAdjacencyUpMonochromeRelation,
 % \textbackslash{}GTSdirAdjUpMonoRel,
-% \textbackslash{}GTSdirAdjUpMonRel,
+% \textbackslash{}GTSdirAdj\-UpMonRel,
 % \textbackslash{}GTSdAUMR}
 % These macros will draw a monochrome directed adjacency upward symbol
 % with relation spacing in math mode.\\
@@ -2268,8 +2287,8 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \begin{macro}[noprint]{\GTSnegatedDirectedAdjacencyUpMonochrome,%
 % \GTSnegDirAdjUpMono,\GTSnegDirAdjUpMon,\GTSnDAUM}
 % \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyUpMonochrome,
-% \textbackslash{}GTSnegDirAdjUpMono,
-% \textbackslash{}GTSnegDirAdjUpMon,
+% \textbackslash{}GTSnegDir\-AdjUpMono,\if\buildtarget0\\\fi
+% \textbackslash{}GTSnegDir\-AdjUpMon,
 % \textbackslash{}GTSnDAUM}
 % These macros will draw a
 % monochrome negated directed adjacency upward symbol.\\
@@ -2349,7 +2368,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \GTSnegDirAdjDownMono,\GTSnegDirAdjDownMon,\GTSnDADM}
 % \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyDownMonochrome,
 % \textbackslash{}GTSnegDirAdjDownMono,
-% \textbackslash{}GTSnegDirAdjDownMon,
+% \textbackslash{}GTS\-negDirAdjDownMon,
 % \textbackslash{}GTSnDADM}
 % These macros will draw a
 % monochrome negated directed adjacency downward symbol.\\
@@ -2367,8 +2386,9 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \begin{macro}[noprint]%
 % {\GTSnegatedDirectedAdjacencyDownMonochromeRelation,%
 % \GTSnegDirAdjDownMonoRel,\GTSnegDirAdjDownMonRel,\GTSnDADMR}
+% \if\buildtarget0\hfuzz=6pt\fi
 % \paragraphII{\textbs{}GTSnegatedDirectedAdjacencyDownMonochromeRelation,
-% \textbackslash{}GTSnegDirAdjDownMonoRel,
+% \textbackslash{}GTSnegDirAdjDown\-Mono\-Rel,
 % \textbackslash{}GTSnegDirAdjDownMonRel,
 % \textbackslash{}GTSnDADMR}
 % These macros will draw a
@@ -2480,7 +2500,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \GTSoutIncMonoRel,\GTSoutIncMonRel,\GTSoIMR}
 % \paragraphII{\textbackslash{}GTSoutIncidenceMonochromeRelation,
 % \textbackslash{}GTSoutIncMonoRel,
-% \textbackslash{}GTSoutIncMonRel,
+% \textbackslash{}GTSoutIncMonRel,\if\buildtarget0\\\fi
 % \textbackslash{}GTSoIMR}
 % These macros will draw a monochrome directed incidence upward
 % (out(ward) incidence) symbol with relation spacing in math mode.\\
@@ -2516,7 +2536,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \GTSnegOutIncMonoRel,\GTSnegOutIncMonRel,\GTSnOIMR}
 % \paragraphII{\textbackslash{}GTSnegatedOutIncidenceMonochromeRelation,
 % \textbackslash{}GTSnegOutIncMonoRel,
-% \textbackslash{}GTSnegOutIncMonRel,
+% \textbackslash{}GTSneg\-Out\-IncMonRel,
 % \textbackslash{}GTSnOIMR}
 % These macros will draw a monochrome negated directed incidence upward
 % (out(ward) incidence) symbol with relation spacing in math mode.\\
@@ -2555,7 +2575,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \paragraphII{\textbackslash{}GTSinIncidenceMonochromeRelation,
 % \textbackslash{}GTSinIncMonoRel,
 % \textbackslash{}GTSinIncMonRel,
-% \textbackslash{}GTSiIMR}
+% \textbackslash{}GTS\-iIMR}
 % These macros will draw a monochrome directed incidence downward
 % (in(ward) incidence) symbol with relation spacing in math mode.\\
 % \linkToDesc{gtsiimr}{1}{1}
@@ -2572,7 +2592,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \paragraphII{\textbackslash{}GTSnegatedInIncidenceMonochrome,
 % \textbackslash{}GTSnegInIncMono,
 % \textbackslash{}GTSnegInIncMon,
-% \textbackslash{}GTSnIIM}
+% \textbackslash{}GTS\-nIIM}
 % These macros will draw a monochrome negated directed incidence downward
 % (in(ward) incidence) symbol.\\
 % \linkToDesc{gtsniim}{1}{1}
@@ -2696,6 +2716,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %    \end{macrocode}
 % \end{macro}
 %
+% \if\buildtarget0\newpage\fi
 % \begin{macro}[noprint]{\GTSxml,\GTSxmetalogic}
 % \paragraphII{\textbackslash{}GTSxmetalogic, \textbackslash{}GTSxml}
 % \linkToDesc{gtsxml}{1}{0}
