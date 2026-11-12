@@ -88,7 +88,7 @@ bindingoffset=5mm]{geometry}
 
 \newcommand{\DescribeMacrocro}[1]{\DescribeMacro[noprint]{#1}}
 
-\newcommand{\macroDescParagraph}[8]{%
+\newcommand{\macroDescParagraph}[9]{%
 % \AddToHookNext{para/begin}{^^A
 % \DescribeMacro[noprint]{\GTSadjacencyMonochromeRelation}^^A
 % \DescribeMacro[noprint]{\GTSadjMonoRel}^^A
@@ -108,12 +108,12 @@ bindingoffset=5mm]{geometry}
 \fi%
 }%
 % \paragraph{^^A
-% \textbackslash{}GTSadjacencyMonochromeRelation,
-% \textbackslash{}GTSadjMonoRel,
-% \textbackslash{}GTSadjMonRel,
-% \textbackslash{}GTSaMR}\leavevmode\unskip\newlineN^^A
+% \textbackslash{}GTSadjacencyMonochromeRelation/,
+% \textbackslash{}GTSadjMonoRel/,
+% \textbackslash{}GTSadjMonRel/,
+% \textbackslash{}GTSaMR/}\leavevmode\unskip\newlineN^^A
 \paragraph{%
-\textbackslash{}#1/%
+\textbackslash{}#1\if#91 /\fi%
 \if#3\empty\else%
 ,%
 \if#21%
@@ -121,7 +121,7 @@ bindingoffset=5mm]{geometry}
 \else%
  %
 \fi%
-\textbackslash{}#3/%
+\textbackslash{}#3\if#91/\fi%
 \if#5\empty\else%
 ,%
 \if#41%
@@ -129,7 +129,7 @@ bindingoffset=5mm]{geometry}
 \else%
  %
 \fi%
-\textbackslash{}#5/%
+\textbackslash{}#5\if#91/\fi%
 \if#7\empty\else%
 ,%
 \if#61%
@@ -137,7 +137,7 @@ bindingoffset=5mm]{geometry}
 \else%
  %
 \fi%
-\textbackslash{}#7/%
+\textbackslash{}#7\if#91/\fi%
 \fi%
 \fi%
 \fi%
@@ -174,6 +174,7 @@ bindingoffset=5mm]{geometry}
 
 \def\paragraphII#1{\phantomsection\textbf{#1}\newlineN}
 
+% 9th argument is the sum of 2^k flags : 1 = trailing slash, 2 = examples.
 \newcommand{\macroImplParagraph}[9]{%
 % \paragraphII{^^A
 % \textbackslash{}GTSadjacencyMonochromeRelation,
@@ -181,7 +182,7 @@ bindingoffset=5mm]{geometry}
 % \textbackslash{}GTSadjMonRel,
 % \textbackslash{}GTSaMR}^^A
 \paragraphII{%
-\textbackslash{}#1/%
+\textbackslash{}#1\if#91/\fi\if#93/\fi%
 \if#3\empty\else%
 ,%
 \if#21%
@@ -189,7 +190,7 @@ bindingoffset=5mm]{geometry}
 \else%
  %
 \fi%
-\textbackslash{}#3/%
+\textbackslash{}#3\if#91/\fi\if#93/\fi%
 \if#5\empty\else%
 ,%
 \if#41%
@@ -197,7 +198,7 @@ bindingoffset=5mm]{geometry}
 \else%
  %
 \fi%
-\textbackslash{}#5/%
+\textbackslash{}#5\if#91/\fi\if#93/\fi%
 \if#7\empty\else%
 ,%
 \if#61%
@@ -205,7 +206,7 @@ bindingoffset=5mm]{geometry}
 \else%
  %
 \fi%
-\textbackslash{}#7/%
+\textbackslash{}#7\if#91/\fi\if#93/\fi%
 \fi%
 \fi%
 \fi%
@@ -219,21 +220,21 @@ bindingoffset=5mm]{geometry}
 \if#3\empty%
 \label{macroImpl#1}%
 #8
-\linkToDesc{#1}{0}{#9}
+\linkToDesc{#1}{0}{\if#921\fi\if#931\fi}
 \else%
 \label{macroImpl#3}%
 #8
-\linkToDesc{#3}{1}{#9}
+\linkToDesc{#3}{1}{\if#921\fi\if#931\fi}
 \fi%
 \else%
 \label{macroImpl#5}%
 #8
-\linkToDesc{#5}{1}{#9}
+\linkToDesc{#5}{1}{\if#921\fi\if#931\fi}
 \fi%
 \else%
 \label{macroImpl#7}%
 #8
-\linkToDesc{#7}{1}{#9}
+\linkToDesc{#7}{1}{\if#921\fi\if#931\fi}
 \fi%
 }
 
@@ -2368,7 +2369,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % {GTSaMR}^^A
 % {These macros will draw a monochrome adjacency symbol with relation
 %  spacing in math mode.\newlineP}^^A
-% {1}
+% {3}
 %    \begin{macrocode}
 \GTS@newcommand{\GTSadjacencyMonochromeRelation}{\mathrel{\GTSaM/}}
 \GTS@newcommand{\GTSadjMonoRel}{\mathrel{\GTSaM/}}
