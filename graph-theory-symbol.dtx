@@ -487,16 +487,17 @@ on page \pageref*{macroDesc#1}.
 %
 % \subsubsection{General macros}
 %
-% \paragraph{\textbackslash{}GTS@newcommand}
-% \label{macrodescgtsnewcommand}
-%
-% \DescribeMacro[noprint]{\GTS@newcommand}\newlineN
-% This macro will enforce that the other macros are called with a trailing
-% slash, avoiding problems with spaces after macro call.\newlineP
-% Arguments:\newlineN
-% \marg{commandname} The name of the command to create.\newlineN
-% \marg{commandcode} The code of the command to create.\newlineP
-% \linkToImpl{gtsnewcommand}{0}
+% \macroDescParagraph{GTS@newcommand}{0}^^A
+% {}{0}^^A
+% {}{0}^^A
+% {}^^A
+% {This macro will enforce that the other macros are called with a trailing
+%  slash, avoiding problems with spaces after macro call.\newlineP
+%  Arguments:\newlineN
+%  \marg{commandname} The name of the command to create.\newlineN
+%  \marg{commandcode} The code of the command to create.\newlineP
+% }^^A
+% {0}
 %
 % \paragraph{\textbackslash{}GTS@newprotectedcommand}
 % \label{macrodescgtsnewprotectedcommand}
@@ -1681,8 +1682,9 @@ on page \pageref*{macroDesc#1}.
 
 %    \end{macrocode}
 % \begin{macro}[noprint]{\GTS@newcommand}
-% \paragraphII{\textbackslash{}GTS@newcommand}
-% \linkToDesc{gtsnewcommand}{0}{0}
+% \macroImplParagraph{GTS@newcommand}{0}{}{0}{}{0}{}^^A
+% {}^^A
+% {0}
 %    \begin{macrocode}
 \@ifdefinable{\GTS@newcommand}{\def\GTS@newcommand#1#2{%
   \@ifdefinable{#1}{\def#1/{#2}}
