@@ -87,6 +87,27 @@ bindingoffset=5mm]{geometry}
 \def\newlineP{\newlineInsidePar}
 \def\newlineN{\newlineInsideParNoPageBreak}
 
+\def\shortest{}
+\def\many{1}
+
+\newcommand{\getShortestMany}[4]{%
+\def\many{1}%
+\if#4\empty%
+\if#3\empty%
+\if#2\empty%
+\StrSubstitute{#1}{@}{a}[\shortest]%
+\edef\many{0}%
+\else%
+\StrSubstitute{#2}{@}{a}[\shortest]%
+\fi%
+\else%
+\StrSubstitute{#3}{@}{a}[\shortest]%
+\fi%
+\else%
+\StrSubstitute{#4}{@}{a}[\shortest]%
+\fi%
+}
+
 \newcommand{\DescribeMacrocro}[1]{\DescribeMacro[noprint]{#1}}
 
 \newcommand{\macroDescParagraph}[9]{%
@@ -149,21 +170,7 @@ bindingoffset=5mm]{geometry}
 % \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
 % {GTSadjMonRel}{GTSaMR}\newlineP
 % \linkToImpl{gtsamr}{1}
-\def\many{1}%
-\if#7\empty%
-\if#5\empty%
-\if#3\empty%
-\edef\shortest{\StrSubstitute{#1}{@}{a}}%
-\def\many{0}%
-\else%
-\edef\shortest{\StrSubstitute{#3}{@}{a}}%
-\fi%
-\else%
-\edef\shortest{\StrSubstitute{#5}{@}{a}}%
-\fi%
-\else%
-\edef\shortest{\StrSubstitute{#7}{@}{a}}%
-\fi%
+\getShortestMany{#1}{#3}{#5}{#7}%
 \label{macroDesc\shortest}%
 #8
 \linkToImpl{\shortest}{\many}
@@ -213,21 +220,7 @@ bindingoffset=5mm]{geometry}
 % These macros will draw a monochrome adjacency symbol with relation
 % spacing in math mode.\newlineP
 % \linkToDesc{gtsamr}{1}{1}
-\def\many{1}%
-\if#7\empty%
-\if#5\empty%
-\if#3\empty%
-\edef\shortest{\StrSubstitute{#1}{@}{a}}%
-\def\many{0}%
-\else%
-\edef\shortest{\StrSubstitute{#3}{@}{a}}%
-\fi%
-\else%
-\edef\shortest{\StrSubstitute{#5}{@}{a}}%
-\fi%
-\else%
-\edef\shortest{\StrSubstitute{#7}{@}{a}}%
-\fi%
+\getShortestMany{#1}{#3}{#5}{#7}%
 \label{macroImpl\shortest}%
 #8
 \linkToDesc{\shortest}{\many}{\if#921\fi\if#931\fi}
