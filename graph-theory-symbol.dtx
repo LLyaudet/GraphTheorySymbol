@@ -80,6 +80,7 @@ bindingoffset=5mm]{geometry}
 \usepackage{graph-theory-symbol}
 \usepackage{tcolorbox}
 \usepackage{hyperref}
+\usepackage{xstring}
 
 \def\newlineInsidePar{\newline\ignorespaces}
 \def\newlineInsideParNoPageBreak{\hfil\nopagebreak\break\ignorespaces}
@@ -148,27 +149,24 @@ bindingoffset=5mm]{geometry}
 % \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
 % {GTSadjMonRel}{GTSaMR}\newlineP
 % \linkToImpl{gtsamr}{1}
+\def\many{1}%
 \if#7\empty%
 \if#5\empty%
 \if#3\empty%
-\label{macroDesc#1}%
-#8
-\linkToImpl{#1}{0}
+\edef\shortest{\StrSubstitute{#1}{@}{a}}%
+\def\many{0}%
 \else%
-\label{macroDesc#3}%
-#8
-\linkToImpl{#3}{1}
+\edef\shortest{\StrSubstitute{#3}{@}{a}}%
 \fi%
 \else%
-\label{macroDesc#5}%
-#8
-\linkToImpl{#5}{1}
+\edef\shortest{\StrSubstitute{#5}{@}{a}}%
 \fi%
 \else%
-\label{macroDesc#7}%
-#8
-\linkToImpl{#7}{1}
+\edef\shortest{\StrSubstitute{#7}{@}{a}}%
 \fi%
+\label{macroDesc\shortest}%
+#8
+\linkToImpl{\shortest}{\many}
 }
 
 
@@ -215,27 +213,24 @@ bindingoffset=5mm]{geometry}
 % These macros will draw a monochrome adjacency symbol with relation
 % spacing in math mode.\newlineP
 % \linkToDesc{gtsamr}{1}{1}
+\def\many{1}%
 \if#7\empty%
 \if#5\empty%
 \if#3\empty%
-\label{macroImpl#1}%
-#8
-\linkToDesc{#1}{0}{\if#921\fi\if#931\fi}
+\edef\shortest{\StrSubstitute{#1}{@}{a}}%
+\def\many{0}%
 \else%
-\label{macroImpl#3}%
-#8
-\linkToDesc{#3}{1}{\if#921\fi\if#931\fi}
+\edef\shortest{\StrSubstitute{#3}{@}{a}}%
 \fi%
 \else%
-\label{macroImpl#5}%
-#8
-\linkToDesc{#5}{1}{\if#921\fi\if#931\fi}
+\edef\shortest{\StrSubstitute{#5}{@}{a}}%
 \fi%
 \else%
-\label{macroImpl#7}%
-#8
-\linkToDesc{#7}{1}{\if#921\fi\if#931\fi}
+\edef\shortest{\StrSubstitute{#7}{@}{a}}%
 \fi%
+\label{macroImpl\shortest}%
+#8
+\linkToDesc{\shortest}{\many}{\if#921\fi\if#931\fi}
 }
 
 
