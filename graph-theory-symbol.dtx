@@ -86,6 +86,158 @@ bindingoffset=5mm]{geometry}
 \def\newlineP{\newlineInsidePar}
 \def\newlineN{\newlineInsideParNoPageBreak}
 
+\newcommand{\DescribeMacrocro}[1]{\DescribeMacro[noprint]{#1}}
+
+\newcommand{\macroDescParagraph}[8]{%
+% \AddToHookNext{para/begin}{^^A
+% \DescribeMacro[noprint]{\GTSadjacencyMonochromeRelation}^^A
+% \DescribeMacro[noprint]{\GTSadjMonoRel}^^A
+% \DescribeMacro[noprint]{\GTSadjMonRel}^^A
+% \DescribeMacro[noprint]{\GTSaMR}^^A
+% }^^A
+\AddToHookNext{para/begin}{%
+\expandafter\DescribeMacrocro\expandafter{\csname #1\endcsname}%
+\if#3\empty\else%
+\expandafter\DescribeMacrocro\expandafter{\csname #3\endcsname}%
+\fi%
+\if#5\empty\else%
+\expandafter\DescribeMacrocro\expandafter{\csname #5\endcsname}%
+\fi%
+\if#7\empty\else%
+\expandafter\DescribeMacrocro\expandafter{\csname #7\endcsname}%
+\fi%
+}%
+% \paragraph{^^A
+% \textbackslash{}GTSadjacencyMonochromeRelation,
+% \textbackslash{}GTSadjMonoRel,
+% \textbackslash{}GTSadjMonRel,
+% \textbackslash{}GTSaMR}\leavevmode\unskip\newlineN^^A
+\paragraph{%
+\textbackslash{}#1/%
+\if#3\empty\else%
+,%
+\if#21%
+\newlineN%
+\else%
+ %
+\fi%
+\textbackslash{}#3/%
+\if#5\empty\else%
+,%
+\if#41%
+\newlineN%
+\else%
+ %
+\fi%
+\textbackslash{}#5/%
+\if#7\empty\else%
+,%
+\if#61%
+\newlineN%
+\else%
+ %
+\fi%
+\textbackslash{}#7/%
+\fi%
+\fi%
+\fi%
+}\leavevmode\unskip\newlineN%
+% \label{macrodescgtsamr}^^A
+% These macros will draw a monochrome adjacency symbol with relation
+% spacing in math mode.\newlineP
+% \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
+% {GTSadjMonRel}{GTSaMR}\newlineP
+% \linkToImpl{gtsamr}{1}
+\if#7\empty%
+\if#5\empty%
+\if#3\empty%
+\label{macroDesc#1}%
+#8
+\linkToImpl{#1}{0}
+\else%
+\label{macroDesc#3}%
+#8
+\linkToImpl{#3}{1}
+\fi%
+\else%
+\label{macroDesc#5}%
+#8
+\linkToImpl{#5}{1}
+\fi%
+\else%
+\label{macroDesc#7}%
+#8
+\linkToImpl{#7}{1}
+\fi%
+}
+
+
+\def\paragraphII#1{\phantomsection\textbf{#1}\newlineN}
+
+\newcommand{\macroImplParagraph}[9]{%
+% \paragraphII{^^A
+% \textbackslash{}GTSadjacencyMonochromeRelation,
+% \textbackslash{}GTSadjMonoRel,
+% \textbackslash{}GTSadjMonRel,
+% \textbackslash{}GTSaMR}^^A
+\paragraphII{%
+\textbackslash{}#1/%
+\if#3\empty\else%
+,%
+\if#21%
+\newlineN%
+\else%
+ %
+\fi%
+\textbackslash{}#3/%
+\if#5\empty\else%
+,%
+\if#41%
+\newlineN%
+\else%
+ %
+\fi%
+\textbackslash{}#5/%
+\if#7\empty\else%
+,%
+\if#61%
+\newlineN%
+\else%
+ %
+\fi%
+\textbackslash{}#7/%
+\fi%
+\fi%
+\fi%
+}%
+% \label{macroimplgtsamr}^^A
+% These macros will draw a monochrome adjacency symbol with relation
+% spacing in math mode.\newlineP
+% \linkToDesc{gtsamr}{1}{1}
+\if#7\empty%
+\if#5\empty%
+\if#3\empty%
+\label{macroImpl#1}%
+#8
+\linkToDesc{#1}{0}{#9}
+\else%
+\label{macroImpl#3}%
+#8
+\linkToDesc{#3}{1}{#9}
+\fi%
+\else%
+\label{macroImpl#5}%
+#8
+\linkToDesc{#5}{1}{#9}
+\fi%
+\else%
+\label{macroImpl#7}%
+#8
+\linkToDesc{#7}{1}{#9}
+\fi%
+}
+
+
 \newcommand{\usageExampleIII}[5]{
 \tcbset{colback=white, colframe=black, on line, size=small}%
 \tcbox{\texttt{A.\textbackslash{}#3/A.}}\newlineN
@@ -162,14 +314,13 @@ will yield \tcbox[colframe=blue]{$#1\csname #6\endcsname/#2$}.
 
 \newcommand{\linkToImpl}[2]{
 See \if#21their\else its\fi
-\ \hyperref[macroimpl#1]{implementation\if#21s\fi}
-on page \pageref*{macroimpl#1}.
+\ \hyperref[macroImpl#1]{implementation\if#21s\fi}
+on page \pageref*{macroImpl#1}.
 }
 \newcommand{\linkToDesc}[3]{
-\label{macroimpl#1}
-See \if#21their\else its\fi\ \hyperref[macrodesc#1]{description}
+See \if#21their\else its\fi\ \hyperref[macroDesc#1]{description}
 \if#31and usage examples\ \fi
-on page \pageref*{macrodesc#1}.
+on page \pageref*{macroDesc#1}.
 }
 
 \EnableCrossrefs
@@ -886,23 +1037,15 @@ on page \pageref*{macrodesc#1}.
 % {GTSaM}\newlineP
 % \linkToImpl{gtsam}{1}
 %
-% \AddToHookNext{para/begin}{^^A
-% \DescribeMacro[noprint]{\GTSadjacencyMonochromeRelation}^^A
-% \DescribeMacro[noprint]{\GTSadjMonoRel}^^A
-% \DescribeMacro[noprint]{\GTSadjMonRel}^^A
-% \DescribeMacro[noprint]{\GTSaMR}^^A
-% }^^A
-% \paragraph{^^A
-% \textbackslash{}GTSadjacencyMonochromeRelation,
-% \textbackslash{}GTSadjMonoRel,
-% \textbackslash{}GTSadjMonRel,
-% \textbackslash{}GTSaMR}\leavevmode\unskip\newlineN^^A
-% \label{macrodescgtsamr}^^A
-% These macros will draw a monochrome adjacency symbol with relation
-% spacing in math mode.\newlineP
-% \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
-% {GTSadjMonRel}{GTSaMR}\newlineP
-% \linkToImpl{gtsamr}{1}
+% \macroDescParagraph{GTSadjacencyMonochromeRelation}{0}^^A
+% {GTSadjMonoRel}{0}^^A
+% {GTSadjMonRel}{0}^^A
+% {GTSaMR}^^A
+% {These macros will draw a monochrome adjacency symbol with relation
+%  spacing in math mode.\newlineP
+%  \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
+%  {GTSadjMonRel}{GTSaMR}\newlineP
+% }
 %
 % \paragraph{\textbackslash{}GTSunadjacencyMonochrome,
 % \textbackslash{}GTSunadjMono,
@@ -1515,9 +1658,6 @@ on page \pageref*{macrodesc#1}.
 % But if the description is only one sentence, we do repeat it here,
 % because it makes no sense to have to go back and forth in the text
 % for only one sentence.
-%
-% \def\paragraphII#1{^^A
-% \phantomsection\textbf{#1}\hfil\nobreak\break\ignorespaces}
 %
 %    \begin{macrocode}
 %<*package>
@@ -2222,13 +2362,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSadjacencyMonochromeRelation,\GTSadjMonoRel,^^A
 % \GTSadjMonRel,\GTSaMR}
-% \paragraphII{\textbackslash{}GTSadjacencyMonochromeRelation,
-% \textbackslash{}GTSadjMonoRel,
-% \textbackslash{}GTSadjMonRel,
-% \textbackslash{}GTSaMR}
-% These macros will draw a monochrome adjacency symbol with relation
-% spacing in math mode.\newlineP
-% \linkToDesc{gtsamr}{1}{1}
+% \macroImplParagraph{GTSadjacencyMonochromeRelation}{0}^^A
+% {GTSadjMonoRel}{0}^^A
+% {GTSadjMonRel}{0}^^A
+% {GTSaMR}^^A
+% {These macros will draw a monochrome adjacency symbol with relation
+%  spacing in math mode.\newlineP}^^A
+% {1}
 %    \begin{macrocode}
 \GTS@newcommand{\GTSadjacencyMonochromeRelation}{\mathrel{\GTSaM/}}
 \GTS@newcommand{\GTSadjMonoRel}{\mathrel{\GTSaM/}}
