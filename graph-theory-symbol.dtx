@@ -92,9 +92,9 @@ bindingoffset=5mm]{geometry}
 
 \newcommand{\getShortestMany}[4]{%
 \def\many{1}%
-\if#4\empty%
-\if#3\empty%
-\if#2\empty%
+\if\relax\detokenize{#4}\relax%
+\if\relax\detokenize{#3}\relax%
+\if\relax\detokenize{#2}\relax%
 \StrSubstitute{#1}{@}{a}[\shortest]%
 \edef\many{0}%
 \else%
