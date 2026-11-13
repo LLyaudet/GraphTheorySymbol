@@ -87,30 +87,137 @@ bindingoffset=5mm]{geometry}
 \def\newlineP{\newlineInsidePar}
 \def\newlineN{\newlineInsideParNoPageBreak}
 
-\def\shortest{}
-\def\many{1}
+% \def\shortest{}
+% \def\many{1}
 
-\newcommand{\getShortestMany}[4]{%
-\def\many{1}%
-\if\relax\detokenize{#4}\relax%
-\if\relax\detokenize{#3}\relax%
-\if\relax\detokenize{#2}\relax%
-\StrSubstitute{#1}{@}{a}[\shortest]%
-\edef\many{0}%
-\else%
-\StrSubstitute{#2}{@}{a}[\shortest]%
-\fi%
-\else%
-\StrSubstitute{#3}{@}{a}[\shortest]%
-\fi%
-\else%
-\StrSubstitute{#4}{@}{a}[\shortest]%
-\fi%
-}
+% \newcommand{\getShortestMany}[4]{%
+% \def\many{1}%
+% \if\relax\detokenize{#4}\relax%
+% \if\relax\detokenize{#3}\relax%
+% \if\relax\detokenize{#2}\relax%
+% \StrSubstitute{#1}{@}{a}[\shortest]%
+% \edef\many{0}%
+% \else%
+% \StrSubstitute{#2}{@}{a}[\shortest]%
+% \fi%
+% \else%
+% \StrSubstitute{#3}{@}{a}[\shortest]%
+% \fi%
+% \else%
+% \StrSubstitute{#4}{@}{a}[\shortest]%
+% \fi%
+% }
 
 \newcommand{\DescribeMacrocro}[1]{\DescribeMacro[noprint]{#1}}
 
-\newcommand{\macroDescParagraph}[9]{%
+% \newcommand{\macroDescParagraph}[9]{%
+% % \AddToHookNext{para/begin}{^^A
+% % \DescribeMacro[noprint]{\GTSadjacencyMonochromeRelation}^^A
+% % \DescribeMacro[noprint]{\GTSadjMonoRel}^^A
+% % \DescribeMacro[noprint]{\GTSadjMonRel}^^A
+% % \DescribeMacro[noprint]{\GTSaMR}^^A
+% % }^^A
+% \AddToHookNext{para/begin}{%
+% \expandafter\DescribeMacrocro\expandafter{\csname #1\endcsname}%
+% \if#3\empty\else%
+% \expandafter\DescribeMacrocro\expandafter{\csname #3\endcsname}%
+% \fi%
+% \if#5\empty\else%
+% \expandafter\DescribeMacrocro\expandafter{\csname #5\endcsname}%
+% \fi%
+% \if#7\empty\else%
+% \expandafter\DescribeMacrocro\expandafter{\csname #7\endcsname}%
+% \fi%
+% }%
+% % \paragraph{^^A
+% % \textbackslash{}GTSadjacencyMonochromeRelation/,
+% % \textbackslash{}GTSadjMonoRel/,
+% % \textbackslash{}GTSadjMonRel/,
+% % \textbackslash{}GTSaMR/}\leavevmode\unskip\newlineN^^A
+% \paragraph{%
+% \textbackslash{}#1\if#91/\fi%
+% \if#3\empty\else%
+% ,%
+% \if#21%
+% \newlineN%
+% \else%
+%  %
+% \fi%
+% \textbackslash{}#3\if#91/\fi%
+% \if#5\empty\else%
+% ,%
+% \if#41%
+% \newlineN%
+% \else%
+%  %
+% \fi%
+% \textbackslash{}#5\if#91/\fi%
+% \if#7\empty\else%
+% ,%
+% \if#61%
+% \newlineN%
+% \else%
+%  %
+% \fi%
+% \textbackslash{}#7\if#91/\fi%
+% \fi%
+% \fi%
+% \fi%
+% }\leavevmode\unskip\newlineN%
+% % \label{macrodescgtsamr}^^A
+% % These macros will draw a monochrome adjacency symbol with relation
+% % spacing in math mode.\newlineP
+% % \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
+% % {GTSadjMonRel}{GTSaMR}\newlineP
+% % \linkToImpl{gtsamr}{1}
+% \getShortestMany{#1}{#3}{#5}{#7}%
+% \label{macroDesc\shortest}%
+% #8
+% \linkToImpl{\shortest}{\many}
+% }
+
+\def\macroDescParagraphMacroI{}
+\def\macroDescParagraphMacroINewline{0}
+\def\macroDescParagraphMacroII{}
+\def\macroDescParagraphMacroIINewline{0}
+\def\macroDescParagraphMacroIII{}
+\def\macroDescParagraphMacroIIINewline{0}
+\def\macroDescParagraphMacroIV{}
+\def\macroDescParagraphMacroIVNewline{0}
+\def\macroDescParagraphShortest{}
+\def\macroDescParagraphMany{0}
+
+\newcommand{\setMacroDescParagraphI}[2]{%
+% Je code avec le ... Talala...
+\def\macroDescParagraphMacroI{#1}%
+\def\macroDescParagraphMacroINewline{#2}%
+\def\macroDescParagraphMacroII{}%
+\def\macroDescParagraphMacroIINewline{0}%
+\def\macroDescParagraphMacroIII{}%
+\def\macroDescParagraphMacroIIINewline{0}%
+\def\macroDescParagraphMacroIV{}%
+\def\macroDescParagraphMacroIVNewline{0}%
+\StrSubstitute{#1}{@}{a}[\macroDescParagraphShortest]%
+\def\macroDescParagraphMany{0}%
+}
+\newcommand{\setMacroDescParagraphII}[2]{%
+\def\macroDescParagraphMacroII{#1}%
+\def\macroDescParagraphMacroIINewline{#2}%
+\StrSubstitute{#1}{@}{a}[\macroDescParagraphShortest]%
+\def\macroDescParagraphMany{1}%
+}
+\newcommand{\setMacroDescParagraphIII}[2]{%
+\def\macroDescParagraphMacroIII{#1}%
+\def\macroDescParagraphMacroIIINewline{#2}%
+\StrSubstitute{#1}{@}{a}[\macroDescParagraphShortest]%
+}
+\newcommand{\setMacroDescParagraphIV}[2]{%
+\def\macroDescParagraphMacroIV{#1}%
+\def\macroDescParagraphMacroIVNewline{#2}%
+\StrSubstitute{#1}{@}{a}[\macroDescParagraphShortest]%
+}
+
+\newcommand{\macroDescParagraph}[2]{%
 % \AddToHookNext{para/begin}{^^A
 % \DescribeMacro[noprint]{\GTSadjacencyMonochromeRelation}^^A
 % \DescribeMacro[noprint]{\GTSadjMonoRel}^^A
@@ -118,15 +225,23 @@ bindingoffset=5mm]{geometry}
 % \DescribeMacro[noprint]{\GTSaMR}^^A
 % }^^A
 \AddToHookNext{para/begin}{%
-\expandafter\DescribeMacrocro\expandafter{\csname #1\endcsname}%
-\if#3\empty\else%
-\expandafter\DescribeMacrocro\expandafter{\csname #3\endcsname}%
+\expandafter\expandafter\expandafter\DescribeMacrocro%
+\expandafter\expandafter\expandafter{%
+\expandafter\csname \macroDescParagraphMacroI\endcsname}%
+\if\macroDescParagraphMacroII\empty\else%
+\expandafter\expandafter\expandafter\DescribeMacrocro%
+\expandafter\expandafter\expandafter{%
+\expandafter\csname \macroDescParagraphMacroII\endcsname}%
 \fi%
-\if#5\empty\else%
-\expandafter\DescribeMacrocro\expandafter{\csname #5\endcsname}%
+\if\macroDescParagraphMacroIII\empty\else%
+\expandafter\expandafter\expandafter\DescribeMacrocro%
+\expandafter\expandafter\expandafter{%
+\expandafter\csname \macroDescParagraphMacroIII\endcsname}%
 \fi%
-\if#7\empty\else%
-\expandafter\DescribeMacrocro\expandafter{\csname #7\endcsname}%
+\if\macroDescParagraphMacroIV\empty\else%
+\expandafter\expandafter\expandafter\DescribeMacrocro%
+\expandafter\expandafter\expandafter{%
+\expandafter\csname \macroDescParagraphMacroIV\endcsname}%
 \fi%
 }%
 % \paragraph{^^A
@@ -135,31 +250,31 @@ bindingoffset=5mm]{geometry}
 % \textbackslash{}GTSadjMonRel/,
 % \textbackslash{}GTSaMR/}\leavevmode\unskip\newlineN^^A
 \paragraph{%
-\textbackslash{}#1\if#91/\fi%
-\if#3\empty\else%
+\textbackslash{}\macroDescParagraphMacroI\if#11/\fi%
+\if\macroDescParagraphMacroII\empty\else%
 ,%
-\if#21%
+\if\macroDescParagraphMacroINewline 1%
 \newlineN%
 \else%
  %
 \fi%
-\textbackslash{}#3\if#91/\fi%
-\if#5\empty\else%
+\textbackslash{}\macroDescParagraphMacroII\if#11/\fi%
+\if\macroDescParagraphMacroIII\empty\else%
 ,%
-\if#41%
+\if\macroDescParagraphMacroIINewline 1%
 \newlineN%
 \else%
  %
 \fi%
-\textbackslash{}#5\if#91/\fi%
-\if#7\empty\else%
+\textbackslash{}\macroDescParagraphMacroIII\if#11/\fi%
+\if\macroDescParagraphMacroIV\empty\else%
 ,%
-\if#61%
+\if\macroDescParagraphMacroIIINewline 1%
 \newlineN%
 \else%
  %
 \fi%
-\textbackslash{}#7\if#91/\fi%
+\textbackslash{}\macroDescParagraphMacroIV\if#11/\fi%
 \fi%
 \fi%
 \fi%
@@ -170,48 +285,134 @@ bindingoffset=5mm]{geometry}
 % \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
 % {GTSadjMonRel}{GTSaMR}\newlineP
 % \linkToImpl{gtsamr}{1}
-\getShortestMany{#1}{#3}{#5}{#7}%
-\label{macroDesc\shortest}%
-#8
-\linkToImpl{\shortest}{\many}
+\label{macroDesc\macroDescParagraphShortest}%
+#2
+\linkToImpl{\macroDescParagraphShortest}{\macroDescParagraphMany}
 }
 
 
 \def\paragraphII#1{\phantomsection\textbf{#1}\newlineN}
 
-% 9th argument is the sum of 2^k flags : 1 = trailing slash, 2 = examples.
-\newcommand{\macroImplParagraph}[9]{%
+%% 9th argument is the sum of 2^k flags : 1 = trailing slash, 2 = examples.
+% \newcommand{\macroImplParagraph}[9]{%
+% % \paragraphII{^^A
+% % \textbackslash{}GTSadjacencyMonochromeRelation,
+% % \textbackslash{}GTSadjMonoRel,
+% % \textbackslash{}GTSadjMonRel,
+% % \textbackslash{}GTSaMR}^^A
+% \paragraphII{%
+% \textbackslash{}#1\if#91/\fi\if#93/\fi%
+% \if#3\empty\else%
+% ,%
+% \if#21%
+% \newlineN%
+% \else%
+%  %
+% \fi%
+% \textbackslash{}#3\if#91/\fi\if#93/\fi%
+% \if#5\empty\else%
+% ,%
+% \if#41%
+% \newlineN%
+% \else%
+%  %
+% \fi%
+% \textbackslash{}#5\if#91/\fi\if#93/\fi%
+% \if#7\empty\else%
+% ,%
+% \if#61%
+% \newlineN%
+% \else%
+%  %
+% \fi%
+% \textbackslash{}#7\if#91/\fi\if#93/\fi%
+% \fi%
+% \fi%
+% \fi%
+% }%
+% % \label{macroimplgtsamr}^^A
+% % These macros will draw a monochrome adjacency symbol with relation
+% % spacing in math mode.\newlineP
+% % \linkToDesc{gtsamr}{1}{1}
+% \getShortestMany{#1}{#3}{#5}{#7}%
+% \label{macroImpl\shortest}%
+% #8
+% \linkToDesc{\shortest}{\many}{\if#921\fi\if#931\fi}
+% }
+
+\def\macroImplParagraphMacroI{}
+\def\macroImplParagraphMacroINewline{0}
+\def\macroImplParagraphMacroII{}
+\def\macroImplParagraphMacroIINewline{0}
+\def\macroImplParagraphMacroIII{}
+\def\macroImplParagraphMacroIIINewline{0}
+\def\macroImplParagraphMacroIV{}
+\def\macroImplParagraphMacroIVNewline{0}
+\def\macroImplParagraphShortest{}
+\def\macroImplParagraphMany{0}
+
+\newcommand{\setMacroImplParagraphI}[2]{%
+% Je code avec le ... Talala...
+\def\macroImplParagraphMacroI{#1}%
+\def\macroImplParagraphMacroINewline{#2}%
+\def\macroImplParagraphMacroII{}%
+\def\macroImplParagraphMacroIINewline{0}%
+\def\macroImplParagraphMacroIII{}%
+\def\macroImplParagraphMacroIIINewline{0}%
+\def\macroImplParagraphMacroIV{}%
+\def\macroImplParagraphMacroIVNewline{0}%
+\StrSubstitute{#1}{@}{a}[\macroImplParagraphShortest]%
+\def\macroImplParagraphMany{0}%
+}
+\newcommand{\setMacroImplParagraphII}[2]{%
+\def\macroImplParagraphMacroII{#1}%
+\def\macroImplParagraphMacroIINewline{#2}%
+\StrSubstitute{#1}{@}{a}[\macroImplParagraphShortest]%
+\def\macroImplParagraphMany{1}%
+}
+\newcommand{\setMacroImplParagraphIII}[2]{%
+\def\macroImplParagraphMacroIII{#1}%
+\def\macroImplParagraphMacroIIINewline{#2}%
+\StrSubstitute{#1}{@}{a}[\macroImplParagraphShortest]%
+}
+\newcommand{\setMacroImplParagraphIV}[2]{%
+\def\macroImplParagraphMacroIV{#1}%
+\def\macroImplParagraphMacroIVNewline{#2}%
+\StrSubstitute{#1}{@}{a}[\macroImplParagraphShortest]%
+}
+
+\newcommand{\macroImplParagraph}[3]{%
 % \paragraphII{^^A
 % \textbackslash{}GTSadjacencyMonochromeRelation,
 % \textbackslash{}GTSadjMonoRel,
 % \textbackslash{}GTSadjMonRel,
 % \textbackslash{}GTSaMR}^^A
 \paragraphII{%
-\textbackslash{}#1\if#91/\fi\if#93/\fi%
-\if#3\empty\else%
+\textbackslash{}\macroImplParagraphMacroI\if#11/\fi%
+\if\macroImplParagraphMacroII\empty\else%
 ,%
-\if#21%
+\if\macroImplParagraphMacroINewline 1%
 \newlineN%
 \else%
  %
 \fi%
-\textbackslash{}#3\if#91/\fi\if#93/\fi%
-\if#5\empty\else%
+\textbackslash{}\macroImplParagraphMacroII\if#11/\fi%
+\if\macroImplParagraphMacroIII\empty\else%
 ,%
-\if#41%
+\if\macroImplParagraphMacroIINewline 1%
 \newlineN%
 \else%
  %
 \fi%
-\textbackslash{}#5\if#91/\fi\if#93/\fi%
-\if#7\empty\else%
+\textbackslash{}\macroImplParagraphMacroIII\if#11/\fi%
+\if\macroImplParagraphMacroIV\empty\else%
 ,%
-\if#61%
+\if\macroImplParagraphMacroIIINewline 1%
 \newlineN%
 \else%
  %
 \fi%
-\textbackslash{}#7\if#91/\fi\if#93/\fi%
+\textbackslash{}\macroImplParagraphMacroIV\if#11/\fi%
 \fi%
 \fi%
 \fi%
@@ -220,10 +421,9 @@ bindingoffset=5mm]{geometry}
 % These macros will draw a monochrome adjacency symbol with relation
 % spacing in math mode.\newlineP
 % \linkToDesc{gtsamr}{1}{1}
-\getShortestMany{#1}{#3}{#5}{#7}%
-\label{macroImpl\shortest}%
-#8
-\linkToDesc{\shortest}{\many}{\if#921\fi\if#931\fi}
+\label{macroImpl\macroImplParagraphShortest}%
+#3
+\linkToDesc{\macroImplParagraphShortest}{\macroImplParagraphMany}{#2}
 }
 
 
@@ -475,17 +675,14 @@ on page \pageref*{macroDesc#1}.
 %
 % \subsubsection{General macros}
 %
-% \macroDescParagraph{GTS@newcommand}{0}^^A
-% {}{0}^^A
-% {}{0}^^A
-% {}^^A
+% \setMacroDescParagraphI{GTS@newcommand}{0}
+% \macroDescParagraph{0}^^A
 % {This macro will enforce that the other macros are called with a trailing
 %  slash, avoiding problems with spaces after macro call.\newlineP
 %  Arguments:\newlineN
 %  \marg{commandname} The name of the command to create.\newlineN
 %  \marg{commandcode} The code of the command to create.\newlineP
-% }^^A
-% {0}
+% }
 %
 % \paragraph{\textbackslash{}GTS@newprotectedcommand}
 % \label{macrodescgtsnewprotectedcommand}
@@ -1027,16 +1224,16 @@ on page \pageref*{macroDesc#1}.
 % {GTSaM}\newlineP
 % \linkToImpl{gtsam}{1}
 %
-% \macroDescParagraph{GTSadjacencyMonochromeRelation}{0}^^A
-% {GTSadjMonoRel}{0}^^A
-% {GTSadjMonRel}{0}^^A
-% {GTSaMR}^^A
+% \setMacroDescParagraphI{GTSadjacencyMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSadjMonoRel}{0}
+% \setMacroDescParagraphIII{GTSadjMonRel}{0}
+% \setMacroDescParagraphIV{GTSaMR}{0}
+% \macroDescParagraph{1}^^A
 % {These macros will draw a monochrome adjacency symbol with relation
 %  spacing in math mode.\newlineP
 %  \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
 %  {GTSadjMonRel}{GTSaMR}\newlineP
-% }^^A
-% {1}
+% }
 %
 % \paragraph{\textbackslash{}GTSunadjacencyMonochrome,
 % \textbackslash{}GTSunadjMono,
@@ -1670,9 +1867,8 @@ on page \pageref*{macroDesc#1}.
 
 %    \end{macrocode}
 % \begin{macro}[noprint]{\GTS@newcommand}
-% \macroImplParagraph{GTS@newcommand}{0}{}{0}{}{0}{}^^A
-% {}^^A
-% {0}
+% \setMacroImplParagraphI{GTS@newcommand}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \@ifdefinable{\GTS@newcommand}{\def\GTS@newcommand#1#2{%
   \@ifdefinable{#1}{\def#1/{#2}}
@@ -2354,13 +2550,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSadjacencyMonochromeRelation,\GTSadjMonoRel,^^A
 % \GTSadjMonRel,\GTSaMR}
-% \macroImplParagraph{GTSadjacencyMonochromeRelation}{0}^^A
-% {GTSadjMonoRel}{0}^^A
-% {GTSadjMonRel}{0}^^A
-% {GTSaMR}^^A
+% \setMacroImplParagraphI{GTSadjacencyMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSadjMonoRel}{0}
+% \setMacroImplParagraphIII{GTSadjMonRel}{0}
+% \setMacroImplParagraphIV{GTSaMR}{0}
+% \macroImplParagraph{1}{1}^^A
 % {These macros will draw a monochrome adjacency symbol with relation
-%  spacing in math mode.\newlineP}^^A
-% {3}
+%  spacing in math mode.\newlineP}
 %    \begin{macrocode}
 \GTS@newcommand{\GTSadjacencyMonochromeRelation}{\mathrel{\GTSaM/}}
 \GTS@newcommand{\GTSadjMonoRel}{\mathrel{\GTSaM/}}
