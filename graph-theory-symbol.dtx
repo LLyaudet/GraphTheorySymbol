@@ -676,53 +676,45 @@ on page \pageref*{macroDesc#1}.
 % \subsubsection{General macros}
 %
 % \setMacroDescParagraphI{GTS@newcommand}{0}
-% \macroDescParagraph{0}^^A
-% {This macro will enforce that the other macros are called with a trailing
-%  slash, avoiding problems with spaces after macro call.\newlineP
-%  Arguments:\newlineN
-%  \marg{commandname} The name of the command to create.\newlineN
-%  \marg{commandcode} The code of the command to create.\newlineP
-% }
-%
-% \paragraph{\textbackslash{}GTS@newprotectedcommand}
-% \label{macrodescgtsnewprotectedcommand}
-%
-% \DescribeMacro[noprint]{\GTS@newprotectedcommand}\newlineN
+% \macroDescParagraph{0}{^^A
 % This macro will enforce that the other macros are called with a trailing
 % slash, avoiding problems with spaces after macro call.\newlineP
 % Arguments:\newlineN
 % \marg{commandname} The name of the command to create.\newlineN
-% \marg{commandcode} The code of the command to create.\newlineP
-% \linkToImpl{gtsnewprotectedcommand}{0}
+% \marg{commandcode} The code of the command to create.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSsetMainColor}
-% \label{macrodescgtssetmaincolor}
+% \setMacroDescParagraphI{GTS@newprotectedcommand}{0}
+% \macroDescParagraph{0}{^^A
+% This macro will enforce that the other macros are called with a trailing
+% slash, avoiding problems with spaces after macro call.\newlineP
+% Arguments:\newlineN
+% \marg{commandname} The name of the command to create.\newlineN
+% \marg{commandcode} The code of the command to create.\newlineP^^A
+% }
 %
-% \DescribeMacro[noprint]{\GTSsetMainColor}\newlineN
+% \setMacroDescParagraphI{GTSsetMainColor}{0}
+% \macroDescParagraph{0}{^^A
 % This macro will set the main color used in GraphTheorySymbol.
 % This color has initial value ``black''.\newlineP
 % Argument:\newlineN
 % \marg{color} The color that must be used by GraphTheorySymbol
-% afterward.\newlineP
-% \linkToImpl{gtssetmaincolor}{0}
+% afterward.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSsetSecondColor}
-% \label{macrodescgtssetsecondcolor}
-%
-% \DescribeMacro[noprint]{\GTSsetSecondColor}\newlineN
+% \setMacroDescParagraphI{GTSsetSecondColor}{0}
+% \macroDescParagraph{0}{^^A
 % This macro will set the second color used in GraphTheorySymbol.
 % This color has initial value ``gray''.\newlineP
 % Argument:\newlineN
 % \marg{color} The color that must be used by GraphTheorySymbol
-% afterward.\newlineP
-% \linkToImpl{gtssetsecondcolor}{0}
+% afterward.\newlineP^^A
+% }
 %
 % \subsubsection{Standard adjacency macros}
 %
-% \paragraph{\textbackslash{}GTS@a}
-% \label{macrodescgtsaa}
-%
-% \DescribeMacro[noprint]{\GTS@a}\newlineN
+% \setMacroDescParagraphI{GTS@a}{0}
+% \macroDescParagraph{0}{^^A
 % This macro will draw any of the adjacency symbols
 % if the correct arguments are given.
 % It is not expected to be used directly.\newlineP
@@ -738,13 +730,11 @@ on page \pageref*{macroDesc#1}.
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.^^A
 % \newlineP
 % \marg{drawDownArrow} Non-empty implies that a down-arrow will be
-% drawn.\newlineP
-% \linkToImpl{gtsaa}{0}
+% drawn.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTS@b}
-% \label{macrodescgtsab}
-%
-% \DescribeMacro[noprint]{\GTS@b}\newlineN
+% \setMacroDescParagraphI{GTS@b}{0}
+% \macroDescParagraph{0}{^^A
 % This macro builds on top of \cs{GTS@a} to handle mathematical relation
 % spacing if sixth argument is not empty.
 % It is not expected to be used directly.\newlineP
@@ -762,17 +752,13 @@ on page \pageref*{macroDesc#1}.
 % \marg{drawDownArrow} Non-empty implies that a down-arrow will be
 % drawn.\newlineP
 % \marg{relation} Non-empty implies that relation spacing will be added.^^A
-% \newlineP
-% \linkToImpl{gtsab}{0}
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSxadjacency,
-% \textbackslash{}GTSxadj,
-% \textbackslash{}GTSxa}
-% \label{macrodescgtsxa}
-%
-% \DescribeMacro[noprint]{\GTSxadjacency}
-% \DescribeMacro[noprint]{\GTSxadj}
-% \DescribeMacro[noprint]{\GTSxa}\newlineN
+% \setMacroDescParagraphI{GTSxadjacency}{0}
+% \setMacroDescParagraphII{GTSxadj}{0}
+% \setMacroDescParagraphIII{GTSxa}{0}
+% \macroDescParagraph{0}{^^A
 % Versatile macros for adjacency that can be given options.\newlineP
 % Argument:\newlineN
 % \oarg{optionsList} Sets the following options if not empty:\newlineN
@@ -785,17 +771,13 @@ on page \pageref*{macroDesc#1}.
 % |negated| or |not| or |n|,\newlineP
 % |up| or |u|,\newlineP
 % |down| or |d|,\newlineP
-% |relation| or |rel| or |r|.\newlineP
-% \linkToImpl{gtsxa}{1}
+% |relation| or |rel| or |r|.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSadjacency,
-% \textbackslash{}GTSadj,
-% \textbackslash{}GTSa}
-% \label{macrodescgtsa}
-%
-% \DescribeMacro[noprint]{\GTSadjacency}
-% \DescribeMacro[noprint]{\GTSadj}
-% \DescribeMacro[noprint]{\GTSa}\newlineN
+% \setMacroDescParagraphI{GTSadjacency}{0}
+% \setMacroDescParagraphII{GTSadj}{0}
+% \setMacroDescParagraphIII{GTSa}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw an adjacency symbol.
 % A first drawing didn't include the small dots in the middle of the two
 % circles corresponding to the graph vertices.
@@ -804,171 +786,127 @@ on page \pageref*{macroDesc#1}.
 % Hence, these dots were added and they have the nice property to remind
 % of the classical textual notation of adjacency relation as Adj(.,.).^^A
 % \newlineP
-% \usageExampleAdjIII{GTSadjacency}{GTSadj}{GTSa}\newlineP
-% \linkToImpl{gtsa}{1}
+% \usageExampleAdjIII{GTSadjacency}{GTSadj}{GTSa}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSadjacencyRelation,
-% \textbackslash{}GTSadjRel,
-% \textbackslash{}GTSaR}
-% \label{macrodescgtsar}
-%
-% \DescribeMacro[noprint]{\GTSadjacencyRelation}
-% \DescribeMacro[noprint]{\GTSadjRel}
-% \DescribeMacro[noprint]{\GTSaR}\newlineN
+% \setMacroDescParagraphI{GTSadjacencyRelation}{0}
+% \setMacroDescParagraphII{GTSadjRel}{0}
+% \setMacroDescParagraphIII{GTSaR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw an adjacency symbol with relation spacing in math
 % mode.\newlineP
-% \usageExampleAdjRelIII{GTSadjacencyRelation}{GTSadjRel}{GTSaR}\newlineP
-% \linkToImpl{gtsar}{1}
+% \usageExampleAdjRelIII{GTSadjacencyRelation}{GTSadjRel}{GTSaR}^^A
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSunadjacency,
-% \textbackslash{}GTSunadj,
-% \textbackslash{}GTSu}
-% \label{macrodescgtsu}
-%
-% \DescribeMacro[noprint]{\GTSunadjacency}
-% \DescribeMacro[noprint]{\GTSunadj}
-% \DescribeMacro[noprint]{\GTSu}\newlineN
+% \setMacroDescParagraphI{GTSunadjacency}{0}
+% \setMacroDescParagraphII{GTSunadj}{0}
+% \setMacroDescParagraphIII{GTSu}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw an unadjacency symbol.\newlineP
-% \usageExampleAdjIII{GTSunadjacency}{GTSunadj}{GTSu}\newlineP
-% \linkToImpl{gtsu}{1}
+% \usageExampleAdjIII{GTSunadjacency}{GTSunadj}{GTSu}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSunadjacencyRelation,
-% \textbackslash{}GTSunadjRel,
-% \textbackslash{}GTSuR}
-% \label{macrodescgtsur}
-%
-% \DescribeMacro[noprint]{\GTSunadjacencyRelation}
-% \DescribeMacro[noprint]{\GTSunadjRel}
-% \DescribeMacro[noprint]{\GTSuR}\newlineN
+% \setMacroDescParagraphI{GTSunadjacencyRelation}{0}
+% \setMacroDescParagraphII{GTSunadjRel}{0}
+% \setMacroDescParagraphIII{GTSuR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw an unadjacency symbol with relation spacing in
 % math mode.\newlineP
 % \usageExampleAdjRelIII{GTSunadjacencyRelation}{GTSunadjRel}{GTSuR}^^A
-% \newlineP
-% \linkToImpl{gtsur}{1}
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSdirectedAdjacencyUp,
-% \textbackslash{}GTSdirAdjUp,
-% \textbackslash{}GTSdAU}
-% \label{macrodescgtsdau}
-%
-% \DescribeMacro[noprint]{\GTSdirectedAdjacencyUp}
-% \DescribeMacro[noprint]{\GTSdirAdjUp}
-% \DescribeMacro[noprint]{\GTSdAU}\newlineN
+% \setMacroDescParagraphI{GTSdirectedAdjacencyUp}{0}
+% \setMacroDescParagraphII{GTSdirAdjUp}{0}
+% \setMacroDescParagraphIII{GTSdAU}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a directed adjacency upward symbol.\newlineP
 % The operand on the left of the symbol should be considered the source
 % of the arc;
 % the operand on the right of the symbol should be considered the target
 % of the arc.\newlineP
-% \usageExampleAdjIII{GTSdirectedAdjacencyUp}{GTSdirAdjUp}{GTSdAU}\newlineP
-% \linkToImpl{gtsdau}{1}
+% \usageExampleAdjIII{GTSdirectedAdjacencyUp}{GTSdirAdjUp}{GTSdAU}^^A
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSdirectedAdjacencyUpRelation,
-% \textbackslash{}GTSdirAdjUpRel,
-% \textbackslash{}GTSdAUR}
-% \label{macrodescgtsdaur}
-%
-% \DescribeMacro[noprint]{\GTSdirectedAdjacencyUpRelation}
-% \DescribeMacro[noprint]{\GTSdirAdjUpRel}
-% \DescribeMacro[noprint]{\GTSdAUR}\newlineN
+% \setMacroDescParagraphI{GTSdirectedAdjacencyUpRelation}{0}
+% \setMacroDescParagraphII{GTSdirAdjUpRel}{0}
+% \setMacroDescParagraphIII{GTSdAUR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a directed adjacency upward symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleAdjRelIII{GTSdirectedAdjacencyUpRelation}{GTSdirAdjUpRel}^^A
-% {GTSdAUR}\newlineP
-% \linkToImpl{gtsdaur}{1}
+% {GTSdAUR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyUp,
-% \textbackslash{}GTSnegDirAdjUp,
-% \textbackslash{}GTSnDAU}
-% \label{macrodescgtsndau}
-%
-% \DescribeMacro[noprint]{\GTSnegatedDirectedAdjacencyUp}
-% \DescribeMacro[noprint]{\GTSnegDirAdjUp}
-% \DescribeMacro[noprint]{\GTSnDAU}\newlineN
+% \setMacroDescParagraphI{GTSnegatedDirectedAdjacencyUp}{0}
+% \setMacroDescParagraphII{GTSnegDirAdjUp}{0}
+% \setMacroDescParagraphIII{GTSnDAU}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated directed adjacency upward symbol.^^A
 % \newlineP
 % \usageExampleAdjIII{GTSnegatedDirectedAdjacencyUp}{GTSnegDirAdjUp}^^A
-% {GTSnDAU}\newlineP
-% \linkToImpl{gtsndau}{1}
+% {GTSnDAU}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyUpRelation,
-% \textbackslash{}GTSnegDirAdjUpRel,
-% \textbackslash{}GTSnDAUR}
-% \label{macrodescgtsndaur}
-%
-% \DescribeMacro[noprint]{\GTSnegatedDirectedAdjacencyUpRelation}
-% \DescribeMacro[noprint]{\GTSnegDirAdjUpRel}
-% \DescribeMacro[noprint]{\GTSnDAUR}\newlineN
+% \setMacroDescParagraphI{GTSnegatedDirectedAdjacencyUpRelation}{0}
+% \setMacroDescParagraphII{GTSnegDirAdjUpRel}{0}
+% \setMacroDescParagraphIII{GTSnDAUR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated directed adjacency upward symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleAdjRelIII{GTSnegatedDirectedAdjacencyUpRelation}^^A
-% {GTSnegDirAdjUpRel}{GTSnDAUR}\newlineP
-% \linkToImpl{gtsndaur}{1}
+% {GTSnegDirAdjUpRel}{GTSnDAUR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSdirectedAdjacencyDown,
-% \textbackslash{}GTSdirAdjDown,
-% \textbackslash{}GTSdAD}
-% \label{macrodescgtsdad}
-%
-% \DescribeMacro[noprint]{\GTSdirectedAdjacencyDown}
-% \DescribeMacro[noprint]{\GTSdirAdjDown}
-% \DescribeMacro[noprint]{\GTSdAD}\newlineN
+% \setMacroDescParagraphI{GTSdirectedAdjacencyDown}{0}
+% \setMacroDescParagraphII{GTSdirAdjDown}{0}
+% \setMacroDescParagraphIII{GTSdAD}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a directed adjacency downward symbol.\newlineP
 % The operand on the left of the symbol should be considered the target
 % of the arc;
 % the operand on the right of the symbol should be considered the source
 % of the arc.\newlineP
 % \usageExampleAdjIII{GTSdirectedAdjacencyDown}{GTSdirAdjDown}{GTSdAD}^^A
-% \newlineP
-% \linkToImpl{gtsdad}{1}
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSdirectedAdjacencyDownRelation,
-% \textbackslash{}GTSdirAdjDownRel,
-% \textbackslash{}GTSdADR}
-% \label{macrodescgtsdadr}
-%
-% \DescribeMacro[noprint]{\GTSdirectedAdjacencyDownRelation}
-% \DescribeMacro[noprint]{\GTSdirAdjDownRel}
-% \DescribeMacro[noprint]{\GTSdADR}\newlineN
+% \setMacroDescParagraphI{GTSdirectedAdjacencyDownRelation}{0}
+% \setMacroDescParagraphII{GTSdirAdjDownRel}{0}
+% \setMacroDescParagraphIII{GTSdADR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a directed adjacency downward symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleAdjRelIII{GTSdirectedAdjacencyDownRelation}^^A
-% {GTSdirAdjDownRel}{GTSdADR}\newlineP
-% \linkToImpl{gtsdadr}{1}
+% {GTSdirAdjDownRel}{GTSdADR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyDown,
-% \textbackslash{}GTSnegDirAdjDown,
-% \textbackslash{}GTSnDAD}
-% \label{macrodescgtsndad}
-%
-% \DescribeMacro[noprint]{\GTSnegatedDirectedAdjacencyDown}
-% \DescribeMacro[noprint]{\GTSnegDirAdjDown}
-% \DescribeMacro[noprint]{\GTSnDAD}\newlineN
+% \setMacroDescParagraphI{GTSnegatedDirectedAdjacencyDown}{0}
+% \setMacroDescParagraphII{GTSnegDirAdjDown}{0}
+% \setMacroDescParagraphIII{GTSnDAD}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated directed adjacency downward symbol.^^A
 % \newlineP
 % \usageExampleAdjIII{GTSnegatedDirectedAdjacencyDown}{GTSnegDirAdjDown}^^A
-% {GTSnDAD}\newlineP
-% \linkToImpl{gtsndad}{1}
+% {GTSnDAD}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyDownRelation,
-% \textbackslash{}GTSnegDirAdjDownRel,\if\buildtarget0\newlineN\else\ \fi
-% \textbackslash{}GTSnDADR}
-% \label{macrodescgtsndadr}
-%
-% \DescribeMacro[noprint]{\GTSnegatedDirectedAdjacencyDownRelation}
-% \DescribeMacro[noprint]{\GTSnegDirAdjDownRel}
-% \DescribeMacro[noprint]{\GTSnDADR}\newlineN
+% \setMacroDescParagraphI{GTSnegatedDirectedAdjacencyDownRelation}{0}
+% \setMacroDescParagraphII{GTSnegDirAdjDownRel}{\if\buildtarget01\else0\fi}
+% \setMacroDescParagraphIII{GTSnDADR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated directed adjacency downward symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleAdjRelIII{GTSnegatedDirectedAdjacencyDownRelation}^^A
-% {GTSnegDirAdjDownRel}{GTSnDADR}\newlineP
-% \linkToImpl{gtsndadr}{1}
+% {GTSnegDirAdjDownRel}{GTSnDADR}\newlineP^^A
+% }
 %
 % \subsubsection{Standard incidence macros}
 %
-% \paragraph{\textbackslash{}GTS@i}
-% \label{macrodescgtsai}
-%
-% \DescribeMacro[noprint]{\GTS@i}\newlineN
+% \setMacroDescParagraphI{GTS@i}{0}
+% \macroDescParagraph{0}{^^A
 % This macro will draw any of the incidence symbols
 % if the correct arguments are given.
 % It is not expected to be used directly.\newlineP
@@ -987,13 +925,11 @@ on page \pageref*{macroDesc#1}.
 % \marg{drawUpArrow} Non-empty implies that an up-arrow will be drawn.^^A
 % \newlineP
 % \marg{drawDownArrow} Non-empty implies that a down-arrow will be
-% drawn.\newlineP
-% \linkToImpl{gtsai}{0}
+% drawn.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTS@j}
-% \label{macrodescgtsaj}
-%
-% \DescribeMacro[noprint]{\GTS@j}\newlineN
+% \setMacroDescParagraphI{GTS@j}{0}
+% \macroDescParagraph{0}{^^A
 % This macro builds on top of \cs{GTS@i} to handle mathematical relation
 % spacing if sixth argument is not empty.
 % It is not expected to be used directly.\newlineP
@@ -1011,17 +947,13 @@ on page \pageref*{macroDesc#1}.
 % \marg{drawDownArrow} Non-empty implies that a down-arrow will be
 % drawn.\newlineP
 % \marg{relation} Non-empty implies that relation spacing will be added.^^A
-% \newlineP
-% \linkToImpl{gtsaj}{0}
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSxincidence,
-% \textbackslash{}GTSxinc,
-% \textbackslash{}GTSxi}
-% \label{macrodescgtsxi}
-%
-% \DescribeMacro[noprint]{\GTSxincidence}
-% \DescribeMacro[noprint]{\GTSxinc}
-% \DescribeMacro[noprint]{\GTSxi}\newlineN
+% \setMacroDescParagraphI{GTSxincidence}{0}
+% \setMacroDescParagraphII{GTSxinc}{0}
+% \setMacroDescParagraphIII{GTSxi}{0}
+% \macroDescParagraph{0}{^^A
 % Versatile macros for incidence that can be given options.\newlineP
 % Argument:\newlineN
 % \oarg{optionsList} Sets the following options if not empty:\newlineN
@@ -1034,248 +966,182 @@ on page \pageref*{macroDesc#1}.
 % |negated| or |not| or |n|,\newlineP
 % |in| or |i|,\newlineP
 % |out| or |o|,\newlineP
-% |relation| or |rel| or |r|.\newlineP
-% \linkToImpl{gtsxi}{1}
+% |relation| or |rel| or |r|.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSincidence,
-% \textbackslash{}GTSinc,
-% \textbackslash{}GTSi}
-% \label{macrodescgtsi}
-%
-% \DescribeMacro[noprint]{\GTSincidence}
-% \DescribeMacro[noprint]{\GTSinc}
-% \DescribeMacro[noprint]{\GTSi}\newlineN
+% \setMacroDescParagraphI{GTSincidence}{0}
+% \setMacroDescParagraphII{GTSinc}{0}
+% \setMacroDescParagraphIII{GTSi}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw an incidence symbol.\newlineP
 % The operand on the left of the symbol should be considered the vertex
 % to which the edge/the operand on the right of the symbol is incident.^^A
 % \newlineP
-% \usageExampleIncIII{GTSincidence}{GTSinc}{GTSi}\newlineP
-% \linkToImpl{gtsi}{1}
+% \usageExampleIncIII{GTSincidence}{GTSinc}{GTSi}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSincidenceRelation,
-% \textbackslash{}GTSincRel,
-% \textbackslash{}GTSiR}
-% \label{macrodescgtsir}
-%
-% \DescribeMacro[noprint]{\GTSincidenceRelation}
-% \DescribeMacro[noprint]{\GTSincRel}
-% \DescribeMacro[noprint]{\GTSiR}\newlineN
+% \setMacroDescParagraphI{GTSincidenceRelation}{0}
+% \setMacroDescParagraphII{GTSincRel}{0}
+% \setMacroDescParagraphIII{GTSiR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw an incidence symbol with relation spacing in math
 % mode.\newlineP
-% \usageExampleIncRelIII{GTSincidenceRelation}{GTSincRel}{GTSiR}\newlineP
-% \linkToImpl{gtsir}{1}
+% \usageExampleIncRelIII{GTSincidenceRelation}{GTSincRel}{GTSiR}^^A
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedIncidence,
-% \textbackslash{}GTSnegInc,
-% \textbackslash{}GTSnI}
-% \label{macrodescgtsni}
-%
-% \DescribeMacro[noprint]{\GTSnegatedIncidence}
-% \DescribeMacro[noprint]{\GTSnegInc}
-% \DescribeMacro[noprint]{\GTSnI}\newlineN
+% \setMacroDescParagraphI{GTSnegatedIncidence}{0}
+% \setMacroDescParagraphII{GTSnegInc}{0}
+% \setMacroDescParagraphIII{GTSnI}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated incidence symbol.\newlineP
-% \usageExampleIncIII{GTSnegatedIncidence}{GTSnegInc}{GTSnI}\newlineP
-% \linkToImpl{gtsni}{1}
+% \usageExampleIncIII{GTSnegatedIncidence}{GTSnegInc}{GTSnI}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedIncidenceRelation,
-% \textbackslash{}GTSnegIncRel,
-% \textbackslash{}GTSnIR}
-% \label{macrodescgtsnir}
-%
-% \DescribeMacro[noprint]{\GTSnegatedIncidenceRelation}
-% \DescribeMacro[noprint]{\GTSnegIncRel}
-% \DescribeMacro[noprint]{\GTSnIR}\newlineN
+% \setMacroDescParagraphI{GTSnegatedIncidenceRelation}{0}
+% \setMacroDescParagraphII{GTSnegIncRel}{0}
+% \setMacroDescParagraphIII{GTSnIR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated incidence symbol with relation spacing
 % in math mode.\newlineP
 % \usageExampleIncRelIII{GTSnegatedIncidenceRelation}{GTSnegIncRel}^^A
-% {GTSnIR}\newlineP
-% \linkToImpl{gtsnir}{1}
+% {GTSnIR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSoutIncidence,
-% \textbackslash{}GTSoutInc,
-% \textbackslash{}GTSoI}
-% \label{macrodescgtsoi}
-%
-% \DescribeMacro[noprint]{\GTSoutIncidence}
-% \DescribeMacro[noprint]{\GTSoutInc}
-% \DescribeMacro[noprint]{\GTSoI}\newlineN
+% \setMacroDescParagraphI{GTSoutIncidence}{0}
+% \setMacroDescParagraphII{GTSoutInc}{0}
+% \setMacroDescParagraphIII{GTSoI}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a directed incidence upward (out(ward) incidence)
 % symbol.\newlineP
 % The operand on the left of the symbol should be considered the vertex
 % to which the arc/the operand on the right of the symbol is incident.^^A
 % \newlineP
-% \usageExampleIncIII{GTSoutIncidence}{GTSoutInc}{GTSoI}\newlineP
-% \linkToImpl{gtsoi}{1}
+% \usageExampleIncIII{GTSoutIncidence}{GTSoutInc}{GTSoI}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSoutIncidenceRelation,
-% \textbackslash{}GTSoutIncRel,
-% \textbackslash{}GTSoIR}
-% \label{macrodescgtsoir}
-%
-% \DescribeMacro[noprint]{\GTSoutIncidenceRelation}
-% \DescribeMacro[noprint]{\GTSoutIncRel}
-% \DescribeMacro[noprint]{\GTSoIR}\newlineN
+% \setMacroDescParagraphI{GTSoutIncidenceRelation}{0}
+% \setMacroDescParagraphII{GTSoutIncRel}{0}
+% \setMacroDescParagraphIII{GTSoIR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a directed incidence upward (out(ward) incidence)
 % symbol with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIII{GTSoutIncidenceRelation}{GTSoutIncRel}{GTSoIR}^^A
-% \newlineP
-% \linkToImpl{gtsoir}{1}
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedOutIncidence,
-% \textbackslash{}GTSnegOutInc,
-% \textbackslash{}GTSnOI}
-% \label{macrodescgtsnoi}
-%
-% \DescribeMacro[noprint]{\GTSnegatedOutIncidence}
-% \DescribeMacro[noprint]{\GTSnegOutInc}
-% \DescribeMacro[noprint]{\GTSnOI}\newlineN
+% \setMacroDescParagraphI{GTSnegatedOutIncidence}{0}
+% \setMacroDescParagraphII{GTSnegOutInc}{0}
+% \setMacroDescParagraphIII{GTSnOI}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated directed incidence upward
 % (out(ward) incidence) symbol.\newlineP
 % \usageExampleIncIII{GTSnegatedOutIncidence}{GTSnegOutInc}{GTSnOI}^^A
-% \newlineP
-% \linkToImpl{gtsnoi}{1}
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedOutIncidenceRelation,
-% \textbackslash{}GTSnegOutIncRel,
-% \textbackslash{}GTSnOIR}
-% \label{macrodescgtsnoir}
-%
-% \DescribeMacro[noprint]{\GTSnegatedOutIncidenceRelation}
-% \DescribeMacro[noprint]{\GTSnegOutIncRel}
-% \DescribeMacro[noprint]{\GTSnOIR}\newlineN
+% \setMacroDescParagraphI{GTSnegatedOutIncidenceRelation}{0}
+% \setMacroDescParagraphII{GTSnegOutIncRel}{0}
+% \setMacroDescParagraphIII{GTSnOIR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated directed incidence upward
 % (out(ward) incidence) symbol with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIII{GTSnegatedOutIncidenceRelation}^^A
-% {GTSnegOutIncRel}{GTSnOIR}\newlineP
-% \linkToImpl{gtsnoir}{1}
+% {GTSnegOutIncRel}{GTSnOIR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSinIncidence,
-% \textbackslash{}GTSinInc,
-% \textbackslash{}GTSiI}
-% \label{macrodescgtsii}
-%
-% \DescribeMacro[noprint]{\GTSinIncidence}
-% \DescribeMacro[noprint]{\GTSinInc}
-% \DescribeMacro[noprint]{\GTSiI}\newlineN
+% \setMacroDescParagraphI{GTSinIncidence}{0}
+% \setMacroDescParagraphII{GTSinInc}{0}
+% \setMacroDescParagraphIII{GTSiI}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a directed incidence downward (in(ward) incidence)
 % symbol.\newlineP
 % The operand on the left of the symbol should be considered the vertex
 % to which the arc/the operand on the right of the symbol is incident.^^A
 % \newlineP
-% \usageExampleIncIII{GTSinIncidence}{GTSinInc}{GTSiI}\newlineP
-% \linkToImpl{gtsii}{1}
+% \usageExampleIncIII{GTSinIncidence}{GTSinInc}{GTSiI}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSinIncidenceRelation,
-% \textbackslash{}GTSinIncRel,
-% \textbackslash{}GTSiIR}
-% \label{macrodescgtsiir}
-%
-% \DescribeMacro[noprint]{\GTSinIncidenceRelation}
-% \DescribeMacro[noprint]{\GTSinIncRel}
-% \DescribeMacro[noprint]{\GTSiIR}\newlineN
+% \setMacroDescParagraphI{GTSinIncidenceRelation}{0}
+% \setMacroDescParagraphII{GTSinIncRel}{0}
+% \setMacroDescParagraphIII{GTSiIR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a directed incidence downward (in(ward) incidence)
 % symbol with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIII{GTSinIncidenceRelation}{GTSinIncRel}{GTSiIR}^^A
-% \newlineP
-% \linkToImpl{gtsiir}{1}
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedInIncidence,
-% \textbackslash{}GTSnegInInc,
-% \textbackslash{}GTSnII}
-% \label{macrodescgtsnii}
-%
-% \DescribeMacro[noprint]{\GTSnegatedInIncidence}
-% \DescribeMacro[noprint]{\GTSnegInInc}
-% \DescribeMacro[noprint]{\GTSnII}\newlineN
+% \setMacroDescParagraphI{GTSnegatedInIncidence}{0}
+% \setMacroDescParagraphII{GTSnegInInc}{0}
+% \setMacroDescParagraphIII{GTSnII}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated directed incidence downward
 % (in(ward) incidence) symbol.\newlineP
-% \usageExampleIncIII{GTSnegatedInIncidence}{GTSnegInInc}{GTSnII}\newlineP
-% \linkToImpl{gtsnii}{1}
+% \usageExampleIncIII{GTSnegatedInIncidence}{GTSnegInInc}{GTSnII}^^A
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedInIncidenceRelation,
-% \textbackslash{}GTSnegInIncRel,
-% \textbackslash{}GTSnIIR}
-% \label{macrodescgtsniir}
-%
-% \DescribeMacro[noprint]{\GTSnegatedInIncidenceRelation}
-% \DescribeMacro[noprint]{\GTSnegInIncRel}
-% \DescribeMacro[noprint]{\GTSnIIR}\newlineN
+% \setMacroDescParagraphI{GTSnegatedInIncidenceRelation}{0}
+% \setMacroDescParagraphII{GTSnegInIncRel}{0}
+% \setMacroDescParagraphIII{GTSnIIR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a negated directed incidence downward
 % (in(ward) incidence) symbol with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIII{GTSnegatedInIncidenceRelation}{GTSnegInIncRel}^^A
-% {GTSnIIR}\newlineP
-% \linkToImpl{gtsniir}{1}
+% {GTSnIIR}\newlineP^^A
+% }
 %
 %
 % \subsubsection{Monochrome adjacency macros}
 %
-% \paragraph{\textbackslash{}GTSadjacencyMonochrome,
-% \textbackslash{}GTSadjMono,
-% \textbackslash{}GTSadjMon,
-% \textbackslash{}GTSaM}
-% \label{macrodescgtsam}
-%
-% \DescribeMacro[noprint]{\GTSadjacencyMonochrome}
-% \DescribeMacro[noprint]{\GTSadjMono}
-% \DescribeMacro[noprint]{\GTSadjMon}
-% \DescribeMacro[noprint]{\GTSaM}\newlineN
+% \setMacroDescParagraphI{GTSadjacencyMonochrome}{0}
+% \setMacroDescParagraphII{GTSadjMono}{0}
+% \setMacroDescParagraphIII{GTSadjMon}{0}
+% \setMacroDescParagraphIV{GTSaM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome adjacency symbol.\newlineP
 % \usageExampleAdjIV{GTSadjacencyMonochrome}{GTSadjMono}{GTSadjMon}^^A
-% {GTSaM}\newlineP
-% \linkToImpl{gtsam}{1}
+% {GTSaM}\newlineP^^A
+% }
 %
 % \setMacroDescParagraphI{GTSadjacencyMonochromeRelation}{0}
 % \setMacroDescParagraphII{GTSadjMonoRel}{0}
 % \setMacroDescParagraphIII{GTSadjMonRel}{0}
 % \setMacroDescParagraphIV{GTSaMR}{0}
-% \macroDescParagraph{1}^^A
-% {These macros will draw a monochrome adjacency symbol with relation
-%  spacing in math mode.\newlineP
-%  \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
-%  {GTSadjMonRel}{GTSaMR}\newlineP
+% \macroDescParagraph{1}{^^A
+% These macros will draw a monochrome adjacency symbol with relation
+% spacing in math mode.\newlineP
+% \usageExampleAdjRelIV{GTSadjacencyMonochromeRelation}{GTSadjMonoRel}^^A
+% {GTSadjMonRel}{GTSaMR}\newlineP^^A
 % }
 %
-% \paragraph{\textbackslash{}GTSunadjacencyMonochrome,
-% \textbackslash{}GTSunadjMono,
-% \textbackslash{}GTSunadjMon,
-% \textbackslash{}GTSuM}
-% \label{macrodescgtsum}
-%
-% \DescribeMacro[noprint]{\GTSunadjacencyMonochrome}
-% \DescribeMacro[noprint]{\GTSunadjMono}
-% \DescribeMacro[noprint]{\GTSunadjMon}
-% \DescribeMacro[noprint]{\GTSuM}\newlineN
+% \setMacroDescParagraphI{GTSunadjacencyMonochrome}{0}
+% \setMacroDescParagraphII{GTSunadjMono}{0}
+% \setMacroDescParagraphIII{GTSunadjMon}{0}
+% \setMacroDescParagraphIV{GTSuM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome unadjacency symbol.\newlineP
 % \usageExampleAdjIV{GTSunadjacencyMonochrome}{GTSunadjMono}^^A
-% {GTSunadjMon}{GTSuM}\newlineP
-% \linkToImpl{gtsum}{1}
+% {GTSunadjMon}{GTSuM}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSunadjacencyMonochromeRelation,
-% \textbackslash{}GTSunadjMonoRel,
-% \textbackslash{}GTSunadjMonRel,\newlineN
-% \textbackslash{}GTSuMR}
-% \label{macrodescgtsumr}
-%
-% \DescribeMacro[noprint]{\GTSunadjacencyMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSunadjMonoRel}
-% \DescribeMacro[noprint]{\GTSunadjMonRel}
-% \DescribeMacro[noprint]{\GTSuMR}\newlineN
+% \setMacroDescParagraphI{GTSunadjacencyMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSunadjMonoRel}{0}
+% \setMacroDescParagraphIII{GTSunadjMonRel}{1}
+% \setMacroDescParagraphIV{GTSuMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome unadjacency symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleAdjRelIV{GTSunadjacencyMonochromeRelation}^^A
-% {GTSunadjMonoRel}{GTSunadjMonRel}{GTSuMR}\newlineP
-% \linkToImpl{gtsumr}{1}
+% {GTSunadjMonoRel}{GTSunadjMonRel}{GTSuMR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSdirectedAdjacencyUpMonochrome,
-% \textbackslash{}GTSdirAdjUpMono,
-% \textbackslash{}GTSdirAdjUpMon,\newlineN
-% \textbackslash{}GTSdAUM}
-% \label{macrodescgtsdaum}
-%
-% \DescribeMacro[noprint]{\GTSdirectedAdjacencyUpMonochrome}
-% \DescribeMacro[noprint]{\GTSdirAdjUpMono}
-% \DescribeMacro[noprint]{\GTSdirAdjUpMon}
-% \DescribeMacro[noprint]{\GTSdAUM}\newlineN
+% \setMacroDescParagraphI{GTSdirectedAdjacencyUpMonochrome}{0}
+% \setMacroDescParagraphII{GTSdirAdjUpMono}{0}
+% \setMacroDescParagraphIII{GTSdirAdjUpMon}{1}
+% \setMacroDescParagraphIV{GTSdAUM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome directed adjacency upward symbol.^^A
 % \newlineP
 % The operand on the left of the symbol should be considered the source
@@ -1283,69 +1149,49 @@ on page \pageref*{macroDesc#1}.
 % the operand on the right of the symbol should be considered the target
 % of the arc.\newlineP
 % \usageExampleAdjIV{GTSdirectedAdjacencyUpMonochrome}{GTSdirAdjUpMono}^^A
-% {GTSdirAdjUpMon}{GTSdAUM}\newlineP
-% \linkToImpl{gtsdaum}{1}
+% {GTSdirAdjUpMon}{GTSdAUM}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSdirectedAdjacencyUpMonochromeRelation,
-% \textbackslash{}GTSdirAdjUpMonoRel,\newlineN
-% \textbackslash{}GTSdirAdjUpMonRel,
-% \textbackslash{}GTSdAUMR}
-% \label{macrodescgtsdaumr}
-%
-% \DescribeMacro[noprint]{\GTSdirectedAdjacencyUpMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSdirAdjUpMonoRel}
-% \DescribeMacro[noprint]{\GTSdirAdjUpMonRel}
-% \DescribeMacro[noprint]{\GTSdAUMR}\newlineN
+% \setMacroDescParagraphI{GTSdirectedAdjacencyUpMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSdirAdjUpMonoRel}{1}
+% \setMacroDescParagraphIII{GTSdirAdjUpMonRel}{0}
+% \setMacroDescParagraphIV{GTSdAUMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome directed adjacency upward symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleAdjRelIV{GTSdirectedAdjacencyUpMonochromeRelation}^^A
-% {GTSdirAdjUpMonoRel}{GTSdirAdjUpMonRel}{GTSdAUMR}\newlineP
-% \linkToImpl{gtsdaumr}{1}
+% {GTSdirAdjUpMonoRel}{GTSdirAdjUpMonRel}{GTSdAUMR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyUpMonochrome,
-% \textbackslash{}GTSnegDirAdjUpMono,\newlineN
-% \textbackslash{}GTSnegDirAdjUpMon,
-% \textbackslash{}GTSnDAUM}
-% \label{macrodescgtsndaum}
-%
-% \DescribeMacro[noprint]{\GTSnegatedDirectedAdjacencyUpMonochrome}
-% \DescribeMacro[noprint]{\GTSnegDirAdjUpMono}
-% \DescribeMacro[noprint]{\GTSnegDirAdjUpMon}
-% \DescribeMacro[noprint]{\GTSnDAUM}\newlineN
+% \setMacroDescParagraphI{GTSnegatedDirectedAdjacencyUpMonochrome}{0}
+% \setMacroDescParagraphII{GTSnegDirAdjUpMono}{1}
+% \setMacroDescParagraphIII{GTSnegDirAdjUpMon}{0}
+% \setMacroDescParagraphIV{GTSnDAUM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a
 % monochrome negated directed adjacency upward symbol.\newlineP
 % \usageExampleAdjIV{GTSnegatedDirectedAdjacencyUpMonochrome}^^A
-% {GTSnegDirAdjUpMono}{GTSnegDirAdjUpMon}{GTSnDAUM}\newlineP
-% \linkToImpl{gtsndaum}{1}
+% {GTSnegDirAdjUpMono}{GTSnegDirAdjUpMon}{GTSnDAUM}\newlineP^^A
+% }
 %
-% \def\textbs{\textbackslash}
-% \paragraph{\textbs{}GTSnegatedDirectedAdjacencyUpMonochromeRelation,
-% \textbackslash{}GTSnegDirAdjUpMonoRel,\newlineN
-% \textbackslash{}GTSnegDirAdjUpMonRel,
-% \textbackslash{}GTSnDAUMR}
-% \label{macrodescgtsndaumr}
-%
-% \DescribeMacro[noprint]{\GTSnegatedDirectedAdjacencyUpMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSnegDirAdjUpMonoRel}
-% \DescribeMacro[noprint]{\GTSnegDirAdjUpMonRel}
-% \DescribeMacro[noprint]{\GTSnDAUMR}\newlineN
+% \setMacroDescParagraphI^^A
+% {GTSnegatedDirectedAdjacencyUpMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSnegDirAdjUpMonoRel}{1}
+% \setMacroDescParagraphIII{GTSnegDirAdjUpMonRel}{0}
+% \setMacroDescParagraphIV{GTSnDAUMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a
 % monochrome negated directed adjacency upward symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleAdjRelIV{GTSnegatedDirectedAdjacencyUpMonochromeRelation}^^A
-% {GTSnegDirAdjUpMonoRel}{GTSnegDirAdjUpMonRel}{GTSnDAUMR}\newlineP
-% \linkToImpl{gtsndaumr}{1}
+% {GTSnegDirAdjUpMonoRel}{GTSnegDirAdjUpMonRel}{GTSnDAUMR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSdirectedAdjacencyDownMonochrome,
-% \textbackslash{}GTSdirAdjDownMono,\newlineN
-% \textbackslash{}GTSdirAdjDownMon,
-% \textbackslash{}GTSdADM}
-% \label{macrodescgtsdadm}
-%
-% \DescribeMacro[noprint]{\GTSdirectedAdjacencyDownMonochrome}
-% \DescribeMacro[noprint]{\GTSdirAdjDownMono}
-% \DescribeMacro[noprint]{\GTSdirAdjDownMon}
-% \DescribeMacro[noprint]{\GTSdADM}\newlineN
+% \setMacroDescParagraphI{GTSdirectedAdjacencyDownMonochrome}{0}
+% \setMacroDescParagraphII{GTSdirAdjDownMono}{1}
+% \setMacroDescParagraphIII{GTSdirAdjDownMon}{0}
+% \setMacroDescParagraphIV{GTSdADM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome directed adjacency downward
 % symbol.\newlineP
 % The operand on the left of the symbol should be considered the target
@@ -1353,139 +1199,97 @@ on page \pageref*{macroDesc#1}.
 % the operand on the right of the symbol should be considered the source
 % of the arc.\newlineP
 % \usageExampleAdjIV{GTSdirectedAdjacencyDownMonochrome}^^A
-% {GTSdirAdjDownMono}{GTSdirAdjDownMon}{GTSdADM}\newlineP
-% \linkToImpl{gtsdadm}{1}
+% {GTSdirAdjDownMono}{GTSdirAdjDownMon}{GTSdADM}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSdirectedAdjacencyDownMonochromeRelation,
-% \textbackslash{}GTSdirAdjDownMonoRel,\newlineN
-% \textbackslash{}GTSdirAdjDownMonRel,
-% \textbackslash{}GTSdADMR}
-% \label{macrodescgtsdadmr}
-%
-% \DescribeMacro[noprint]{\GTSdirectedAdjacencyDownMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSdirAdjDownMonoRel}
-% \DescribeMacro[noprint]{\GTSdirAdjDownMonRel}
-% \DescribeMacro[noprint]{\GTSdADMR}\newlineN
+% \setMacroDescParagraphI{GTSdirectedAdjacencyDownMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSdirAdjDownMonoRel}{1}
+% \setMacroDescParagraphIII{GTSdirAdjDownMonRel}{0}
+% \setMacroDescParagraphIV{GTSdADMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome directed adjacency downward symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleAdjRelIV{GTSdirectedAdjacencyDownMonochromeRelation}^^A
-% {GTSdirAdjDownMonoRel}{GTSdirAdjDownMonRel}{GTSdADMR}\newlineP
-% \linkToImpl{gtsdadmr}{1}
+% {GTSdirAdjDownMonoRel}{GTSdirAdjDownMonRel}{GTSdADMR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedDirectedAdjacencyDownMonochrome,
-% \textbackslash{}GTSnegDirAdjDownMono,\newlineN
-% \textbackslash{}GTSnegDirAdjDownMon,
-% \textbackslash{}GTSnDADM}
-% \label{macrodescgtsndadm}
-%
-% \DescribeMacro[noprint]{\GTSnegatedDirectedAdjacencyDownMonochrome}
-% \DescribeMacro[noprint]{\GTSnegDirAdjDownMono}
-% \DescribeMacro[noprint]{\GTSnegDirAdjDownMon}
-% \DescribeMacro[noprint]{\GTSnDADM}\newlineN
+% \setMacroDescParagraphI{GTSnegatedDirectedAdjacencyDownMonochrome}{0}
+% \setMacroDescParagraphII{GTSnegDirAdjDownMono}{1}
+% \setMacroDescParagraphIII{GTSnegDirAdjDownMon}{0}
+% \setMacroDescParagraphIV{GTSnDADM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a
 % monochrome negated directed adjacency downward symbol.\newlineP
 % \usageExampleAdjIV{GTSnegatedDirectedAdjacencyDownMonochrome}^^A
-% {GTSnegDirAdjDownMono}{GTSnegDirAdjDownMon}{GTSnDADM}\newlineP
-% \linkToImpl{gtsndadm}{1}
+% {GTSnegDirAdjDownMono}{GTSnegDirAdjDownMon}{GTSnDADM}\newlineP^^A
+% }
 %
-% \paragraph{\textbs{}GTSnegatedDirectedAdjacencyDownMonochromeRelation,^^A
-% \newlineN
-% \textbackslash{}GTSnegDirAdjDownMonoRel,
-% \textbackslash{}GTSnegDirAdjDownMonRel,
-% \textbackslash{}GTSnDADMR}
-% \label{macrodescgtsndadmr}
-%
-% \DescribeMacro[noprint]^^A
-% {\GTSnegatedDirectedAdjacencyDownMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSnegDirAdjDownMonoRel}
-% \DescribeMacro[noprint]{\GTSnegDirAdjDownMonRel}
-% \DescribeMacro[noprint]{\GTSnDADMR}\newlineN
+% \setMacroDescParagraphI^^A
+% {GTSnegatedDirectedAdjacencyDownMonochromeRelation}{1}
+% \setMacroDescParagraphII{GTSnegDirAdjDownMonoRel}{0}
+% \setMacroDescParagraphIII{GTSnegDirAdjDownMonRel}{0}
+% \setMacroDescParagraphIV{GTSnDADMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a
 % monochrome negated directed adjacency downward symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleAdjRelIV^^A
 % {GTSnegatedDirectedAdjacencyDownMonochromeRelation}^^A
-% {GTSnegDirAdjDownMonoRel}{GTSnegDirAdjDownMonRel}{GTSnDADMR}\newlineP
-% \linkToImpl{gtsndadmr}{1}
+% {GTSnegDirAdjDownMonoRel}{GTSnegDirAdjDownMonRel}{GTSnDADMR}\newlineP^^A
+% }
 %
 %
 % \subsubsection{Monochrome incidence macros}
 %
-% \paragraph{\textbackslash{}GTSincidenceMonochrome,
-% \textbackslash{}GTSincMono,
-% \textbackslash{}GTSincMon,
-% \textbackslash{}GTSiM}
-% \label{macrodescgtsim}
-%
-% \DescribeMacro[noprint]{\GTSincidenceMonochrome}
-% \DescribeMacro[noprint]{\GTSincMono}
-% \DescribeMacro[noprint]{\GTSincMon}
-% \DescribeMacro[noprint]{\GTSiM}\newlineN
+% \setMacroDescParagraphI{GTSincidenceMonochrome}{0}
+% \setMacroDescParagraphII{GTSincMono}{0}
+% \setMacroDescParagraphIII{GTSincMon}{0}
+% \setMacroDescParagraphIV{GTSiM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome incidence symbol.\newlineP
 % The operand on the left of the symbol should be considered the vertex
 % to which the edge/the operand on the right of the symbol is incident.^^A
 % \newlineP
 % \usageExampleIncIV{GTSincidenceMonochrome}{GTSincMono}{GTSincMon}^^A
-% {GTSiM}\newlineP
-% \linkToImpl{gtsim}{1}
+% {GTSiM}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSincidenceMonochromeRelation,
-% \textbackslash{}GTSincMonoRel,
-% \textbackslash{}GTSincMonRel,
-% \textbackslash{}GTSiMR}
-% \label{macrodescgtsimr}
-%
-% \DescribeMacro[noprint]{\GTSincidenceMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSincMonoRel}
-% \DescribeMacro[noprint]{\GTSincMonRel}
-% \DescribeMacro[noprint]{\GTSiMR}\newlineN
+% \setMacroDescParagraphI{GTSincidenceMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSincMonoRel}{0}
+% \setMacroDescParagraphIII{GTSincMonRel}{0}
+% \setMacroDescParagraphIV{GTSiMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome incidence symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIV{GTSincidenceMonochromeRelation}{GTSincMonoRel}^^A
-% {GTSincMonRel}{GTSiMR}\newlineP
-% \linkToImpl{gtsimr}{1}
+% {GTSincMonRel}{GTSiMR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedIncidenceMonochrome,
-% \textbackslash{}GTSnegIncMono,
-% \textbackslash{}GTSnegIncMon,
-% \textbackslash{}GTSnIM}
-% \label{macrodescgtsnim}
-%
-% \DescribeMacro[noprint]{\GTSnegatedIncidenceMonochrome}
-% \DescribeMacro[noprint]{\GTSnegIncMono}
-% \DescribeMacro[noprint]{\GTSnegIncMon}
-% \DescribeMacro[noprint]{\GTSnIM}\newlineN
+% \setMacroDescParagraphI{GTSnegatedIncidenceMonochrome}{0}
+% \setMacroDescParagraphII{GTSnegIncMono}{0}
+% \setMacroDescParagraphIII{GTSnegIncMon}{0}
+% \setMacroDescParagraphIV{GTSnIM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome negated incidence symbol.\newlineP
 % \usageExampleIncIV{GTSnegatedIncidenceMonochrome}{GTSnegIncMono}^^A
-% {GTSnegIncMon}{GTSnIM}\newlineP
-% \linkToImpl{gtsnim}{1}
+% {GTSnegIncMon}{GTSnIM}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedIncidenceMonochromeRelation,
-% \textbackslash{}GTSnegIncMonoRel,\newlineN
-% \textbackslash{}GTSnegIncMonRel,
-% \textbackslash{}GTSnIMR}
-% \label{macrodescgtsnimr}
-%
-% \DescribeMacro[noprint]{\GTSnegatedIncidenceMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSnegIncMonoRel}
-% \DescribeMacro[noprint]{\GTSnegIncMonRel}
-% \DescribeMacro[noprint]{\GTSnIMR}\newlineN
+% \setMacroDescParagraphI{GTSnegatedIncidenceMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSnegIncMonoRel}{1}
+% \setMacroDescParagraphIII{GTSnegIncMonRel}{0}
+% \setMacroDescParagraphIV{GTSnIMR}{0}
 % These macros will draw a monochrome negated incidence symbol
 % with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIV{GTSnegatedIncidenceMonochromeRelation}^^A
-% {GTSnegIncMonoRel}{GTSnegIncMonRel}{GTSnIMR}\newlineP
-% \linkToImpl{gtsnimr}{1}
+% {GTSnegIncMonoRel}{GTSnegIncMonRel}{GTSnIMR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSoutIncidenceMonochrome,
-% \textbackslash{}GTSoutIncMono,
-% \textbackslash{}GTSoutIncMon,
-% \textbackslash{}GTSoIM}
-% \label{macrodescgtsoim}
-%
-% \DescribeMacro[noprint]{\GTSoutIncidenceMonochrome}
-% \DescribeMacro[noprint]{\GTSoutIncMono}
-% \DescribeMacro[noprint]{\GTSoutIncMon}
-% \DescribeMacro[noprint]{\GTSoIM}\newlineN
+% \setMacroDescParagraphI{GTSoutIncidenceMonochrome}{0}
+% \setMacroDescParagraphII{GTSoutIncMono}{0}
+% \setMacroDescParagraphIII{GTSoutIncMon}{0}
+% \setMacroDescParagraphIV{GTSoIM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a
 % monochrome directed incidence upward (out(ward) incidence) symbol.^^A
 % \newlineP
@@ -1493,132 +1297,95 @@ on page \pageref*{macroDesc#1}.
 % to which the arc/the operand on the right of the symbol is incident.^^A
 % \newlineP
 % \usageExampleIncIV{GTSoutIncidenceMonochrome}{GTSoutIncMono}^^A
-% {GTSoutIncMon}{GTSoIM}\newlineP
-% \linkToImpl{gtsoim}{1}
+% {GTSoutIncMon}{GTSoIM}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSoutIncidenceMonochromeRelation,
-% \textbackslash{}GTSoutIncMonoRel,
-% \textbackslash{}GTSoutIncMonRel,\newlineN
-% \textbackslash{}GTSoIMR}
-% \label{macrodescgtsoimr}
-%
-% \DescribeMacro[noprint]{\GTSoutIncidenceMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSoutIncMonoRel}
-% \DescribeMacro[noprint]{\GTSoutIncMonRel}
-% \DescribeMacro[noprint]{\GTSoIMR}\newlineN
+% \setMacroDescParagraphI{GTSoutIncidenceMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSoutIncMonoRel}{0}
+% \setMacroDescParagraphIII{GTSoutIncMonRel}{1}
+% \setMacroDescParagraphIV{GTSoIMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome directed incidence upward
 % (out(ward) incidence) symbol with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIV{GTSoutIncidenceMonochromeRelation}^^A
-% {GTSoutIncMonoRel}{GTSoutIncMonRel}{GTSoIMR}\newlineP
-% \linkToImpl{gtsoimr}{1}
+% {GTSoutIncMonoRel}{GTSoutIncMonRel}{GTSoIMR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedOutIncidenceMonochrome,
-% \textbackslash{}GTSnegOutIncMono,
-% \textbackslash{}GTSnegOutIncMon,\newlineN
-% \textbackslash{}GTSnOIM}
-% \label{macrodescgtsnoim}
-%
-% \DescribeMacro[noprint]{\GTSnegatedOutIncidenceMonochrome}
-% \DescribeMacro[noprint]{\GTSnegOutIncMono}
-% \DescribeMacro[noprint]{\GTSnegOutIncMon}
-% \DescribeMacro[noprint]{\GTSnOIM}\newlineN
+% \setMacroDescParagraphI{GTSnegatedOutIncidenceMonochrome}{0}
+% \setMacroDescParagraphII{GTSnegOutIncMono}{0}
+% \setMacroDescParagraphIII{GTSnegOutIncMon}{1}
+% \setMacroDescParagraphIV{GTSnOIM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome negated directed incidence upward
 % (out(ward) incidence) symbol.\newlineP
 % \usageExampleIncIV{GTSnegatedOutIncidenceMonochrome}{GTSnegOutIncMono}^^A
-% {GTSnegOutIncMon}{GTSnOIM}\newlineP
-% \linkToImpl{gtsnoim}{1}
+% {GTSnegOutIncMon}{GTSnOIM}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedOutIncidenceMonochromeRelation,
-% \textbackslash{}GTSnegOutIncMonoRel,\newlineN
-% \textbackslash{}GTSnegOutIncMonRel,
-% \textbackslash{}GTSnOIMR}
-% \label{macrodescgtsnoimr}
-%
-% \DescribeMacro[noprint]{\GTSnegatedOutIncidenceMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSnegOutIncMonoRel}
-% \DescribeMacro[noprint]{\GTSnegOutIncMonRel}
-% \DescribeMacro[noprint]{\GTSnOIMR}\newlineN
+% \setMacroDescParagraphI{GTSnegatedOutIncidenceMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSnegOutIncMonoRel}{1}
+% \setMacroDescParagraphIII{GTSnegOutIncMonRel}{0}
+% \setMacroDescParagraphIV{GTSnOIMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome negated directed incidence upward
 % (out(ward) incidence) symbol with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIV{GTSnegatedOutIncidenceMonochromeRelation}^^A
-% {GTSnegOutIncMonoRel}{GTSnegOutIncMonRel}{GTSnOIMR}\newlineP
-% \linkToImpl{gtsnoimr}{1}
+% {GTSnegOutIncMonoRel}{GTSnegOutIncMonRel}{GTSnOIMR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSinIncidenceMonochrome,
-% \textbackslash{}GTSinIncMono,
-% \textbackslash{}GTSinIncMon,
-% \textbackslash{}GTSiIM}
-% \label{macrodescgtsiim}
-%
-% \DescribeMacro[noprint]{\GTSinIncidenceMonochrome}
-% \DescribeMacro[noprint]{\GTSinIncMono}
-% \DescribeMacro[noprint]{\GTSinIncMon}
-% \DescribeMacro[noprint]{\GTSiIM}\newlineN
+% \setMacroDescParagraphI{GTSinIncidenceMonochrome}{0}
+% \setMacroDescParagraphII{GTSinIncMono}{0}
+% \setMacroDescParagraphIII{GTSinIncMon}{0}
+% \setMacroDescParagraphIV{GTSiIM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome directed incidence downward
 % (in(ward) incidence) symbol.\newlineP
 % The operand on the left of the symbol should be considered the vertex
 % to which the arc/the operand on the right of the symbol is incident.^^A
 % \newlineP
 % \usageExampleIncIV{GTSinIncidenceMonochrome}{GTSinIncMono}^^A
-% {GTSinIncMon}{GTSiIM}\newlineP
-% \linkToImpl{gtsiim}{1}
+% {GTSinIncMon}{GTSiIM}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSinIncidenceMonochromeRelation,
-% \textbackslash{}GTSinIncMonoRel,
-% \textbackslash{}GTSinIncMonRel,\newlineN
-% \textbackslash{}GTSiIMR}
-% \label{macrodescgtsiimr}
-%
-% \DescribeMacro[noprint]{\GTSinIncidenceMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSinIncMonoRel}
-% \DescribeMacro[noprint]{\GTSinIncMonRel}
-% \DescribeMacro[noprint]{\GTSiIMR}\newlineN
+% \setMacroDescParagraphI{GTSinIncidenceMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSinIncMonoRel}{0}
+% \setMacroDescParagraphIII{GTSinIncMonRel}{1}
+% \setMacroDescParagraphIV{GTSiIMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome directed incidence downward
 % (in(ward) incidence) symbol with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIV{GTSinIncidenceMonochromeRelation}^^A
-% {GTSinIncMonoRel}{GTSinIncMonRel}{GTSiIMR}\newlineP
-% \linkToImpl{gtsiimr}{1}
+% {GTSinIncMonoRel}{GTSinIncMonRel}{GTSiIMR}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedInIncidenceMonochrome,
-% \textbackslash{}GTSnegInIncMono,
-% \textbackslash{}GTSnegInIncMon,\newlineN
-% \textbackslash{}GTSnIIM}
-% \label{macrodescgtsniim}
-%
-% \DescribeMacro[noprint]{\GTSnegatedInIncidenceMonochrome}
-% \DescribeMacro[noprint]{\GTSnegInIncMono}
-% \DescribeMacro[noprint]{\GTSnegInIncMon}
-% \DescribeMacro[noprint]{\GTSnIIM}\newlineN
+% \setMacroDescParagraphI{GTSnegatedInIncidenceMonochrome}{0}
+% \setMacroDescParagraphII{GTSnegInIncMono}{0}
+% \setMacroDescParagraphIII{GTSnegInIncMon}{1}
+% \setMacroDescParagraphIV{GTSnIIM}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome negated directed incidence downward
 % (in(ward) incidence) symbol.\newlineP
 % \usageExampleIncIV{GTSnegatedInIncidenceMonochrome}{GTSnegInIncMono}^^A
-% {GTSnegInIncMon}{GTSnIIM}\newlineP
-% \linkToImpl{gtsniim}{1}
+% {GTSnegInIncMon}{GTSnIIM}\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSnegatedInIncidenceMonochromeRelation,
-% \textbackslash{}GTSnegInIncMonoRel,\newlineN
-% \textbackslash{}GTSnegInIncMonRel,
-% \textbackslash{}GTSnIIMR}
-% \label{macrodescgtsniimr}
-%
-% \DescribeMacro[noprint]{\GTSnegatedInIncidenceMonochromeRelation}
-% \DescribeMacro[noprint]{\GTSnegInIncMonoRel}
-% \DescribeMacro[noprint]{\GTSnegInIncMonRel}
-% \DescribeMacro[noprint]{\GTSnIIMR}\newlineN
+% \setMacroDescParagraphI{GTSnegatedInIncidenceMonochromeRelation}{0}
+% \setMacroDescParagraphII{GTSnegInIncMonoRel}{1}
+% \setMacroDescParagraphIII{GTSnegInIncMonRel}{0}
+% \setMacroDescParagraphIV{GTSnIIMR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome negated directed incidence downward
 % (in(ward) incidence) symbol with relation spacing in math mode.\newlineP
 % \usageExampleIncRelIV{GTSnegatedInIncidenceMonochromeRelation}^^A
-% {GTSnegInIncMonoRel}{GTSnegInIncMonRel}{GTSnIIMR}\newlineP
-% \linkToImpl{gtsniimr}{1}
+% {GTSnegInIncMonoRel}{GTSnegInIncMonRel}{GTSnIIMR}\newlineP^^A
+% }
 %
 %
 % \subsubsection{Meta-logic macros}
 %
-% \paragraph{\textbackslash{}GTSmetaNot, \textbackslash{}GTSmN}
-% \label{macrodescgtsmn}
-%
-% \DescribeMacro[noprint]{\GTSmetaNot}
-% \DescribeMacro[noprint]{\GTSmN}\newlineN
+% \setMacroDescParagraphI{GTSmetaNot}{0}
+% \setMacroDescParagraphII{GTSmN}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a meta-not or relation-not symbol.\newlineP
 % |A.\GTSmetaNot/A.|\newlineN
 % or |A.\GTSmN/A.|\newlineN
@@ -1628,14 +1395,12 @@ on page \pageref*{macroDesc#1}.
 % will yield u \GTSmN/\GTSdAU/ v.\newlineP
 % |$u \GTSmetaNot/ \GTSdAU/ v$|\newlineN
 % or |$u \GTSmN/ \GTSdAU/ v$|\newlineN
-% will yield $u \GTSmN/ \GTSdAU/ v$.\newlineP
-% \linkToImpl{gtsmn}{1}
+% will yield $u \GTSmN/ \GTSdAU/ v$.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSmetaAnd, \textbackslash{}GTSmA}
-% \label{macrodescgtsma}
-%
-% \DescribeMacro[noprint]{\GTSmetaAnd}
-% \DescribeMacro[noprint]{\GTSmA}\newlineN
+% \setMacroDescParagraphI{GTSmetaAnd}{0}
+% \setMacroDescParagraphII{GTSmA}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a meta-and or relations-and symbol.
 % This is your duty to check that all relations have same arity.
 % It should be easy as long as you remain in the realm of
@@ -1655,30 +1420,24 @@ on page \pageref*{macroDesc#1}.
 % will yield u \GTSdAD/\GTSmA/\GTSdAU/ v.\newlineP
 % |$u \GTSdAD/ \GTSmetaAnd/ \GTSdAU/ v$|\newlineN
 % or |$u \GTSdAD/ \GTSmA/ \GTSdAU/ v$|\newlineN
-% will yield $u \GTSdAD/ \GTSmA/ \GTSdAU/ v$.\newlineP
-% \linkToImpl{gtsma}{1}
+% will yield $u \GTSdAD/ \GTSmA/ \GTSdAU/ v$.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSmetaAndRelation,
-% \textbackslash{}GTSmetaAndRel,
-% \textbackslash{}GTSmAR}
-% \label{macrodescgtsmar}
-%
-% \DescribeMacro[noprint]{\GTSmetaAndRelation}
-% \DescribeMacro[noprint]{\GTSmetaAndRel}
-% \DescribeMacro[noprint]{\GTSmAR}\newlineN
+% \setMacroDescParagraphI{GTSmetaAndRelation}{0}
+% \setMacroDescParagraphII{GTSmetaAndRel}{0}
+% \setMacroDescParagraphIII{GTSmAR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a meta-and symbol with relation spacing
 % in math mode.\newlineP
 % |$u \GTSdAD/\GTSmetaAndRelation/\GTSdAU/ v$|\newlineN
 % or |$u \GTSdAD/\GTSmetaAndRel/\GTSdAU/ v$|\newlineN
 % or |$u \GTSdAD/\GTSmAR/\GTSdAU/ v$|\newlineN
-% will yield $u \GTSdAD/\GTSmAR/\GTSdAU/ v$.\newlineP
-% \linkToImpl{gtsmar}{1}
+% will yield $u \GTSdAD/\GTSmAR/\GTSdAU/ v$.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSmetaOr, \textbackslash{}GTSmO}
-% \label{macrodescgtsmo}
-%
-% \DescribeMacro[noprint]{\GTSmetaOr}
-% \DescribeMacro[noprint]{\GTSmO}\newlineN
+% \setMacroDescParagraphI{GTSmetaOr}{0}
+% \setMacroDescParagraphII{GTSmO}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a meta-or or relations-or symbol.
 % This is your duty to check that all relations have same arity.
 % It should be easy as long as you remain in the realm of
@@ -1698,30 +1457,24 @@ on page \pageref*{macroDesc#1}.
 % will yield u \GTSdAD/\GTSmO/\GTSdAU/ v.\newlineP
 % |$u \GTSdAD/ \GTSmetaOr/ \GTSdAU/ v$|\newlineN
 % or |$u \GTSdAD/ \GTSmO/ \GTSdAU/ v$|\newlineN
-% will yield $u \GTSdAD/ \GTSmO/ \GTSdAU/ v$.\newlineP
-% \linkToImpl{gtsmo}{1}
+% will yield $u \GTSdAD/ \GTSmO/ \GTSdAU/ v$.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSmetaOrRelation,
-% \textbackslash{}GTSmetaOrRel,
-% \textbackslash{}GTSmOR}
-% \label{macrodescgtsmor}
-%
-% \DescribeMacro[noprint]{\GTSmetaOrRelation}
-% \DescribeMacro[noprint]{\GTSmetaOrRel}
-% \DescribeMacro[noprint]{\GTSmOR}\newlineN
+% \setMacroDescParagraphI{GTSmetaOrRelation}{0}
+% \setMacroDescParagraphII{GTSmetaOrRel}{0}
+% \setMacroDescParagraphIII{GTSmOR}{0}
+% \macroDescParagraph{1}{^^A
 % These macros will draw a meta-or symbol with relation spacing
 % in math mode.\newlineP
 % |$u \GTSdAD/\GTSmetaOrRelation/\GTSdAU/ v$|\newlineN
 % or |$u \GTSdAD/\GTSmetaOrRel/\GTSdAU/ v$|\newlineN
 % or |$u \GTSdAD/\GTSmOR/\GTSdAU/ v$|\newlineN
-% will yield $u \GTSdAD/\GTSmOR/\GTSdAU/ v$.\newlineP
-% \linkToImpl{gtsmor}{1}
+% will yield $u \GTSdAD/\GTSmOR/\GTSdAU/ v$.\newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSxmetalogic, \textbackslash{}GTSxml}
-% \label{macrodescgtsxml}
-%
-% \DescribeMacro[noprint]{\GTSxmetalogic}
-% \DescribeMacro[noprint]{\GTSxml}\newlineN
+% \setMacroDescParagraphI{GTSxmetalogic}{0}
+% \setMacroDescParagraphII{GTSxml}{0}
+% \macroDescParagraph{0}{^^A
 % Versatile macros for meta-logic symbols that can be given options.^^A
 % \newlineP
 % Argument:\newlineN
@@ -1732,13 +1485,11 @@ on page \pageref*{macroDesc#1}.
 % |relation| or |rel| or |r|.\newlineP
 % Of course first three options are incompatible,
 % and the fourth is compatible only with the second and third options.^^A
-% \newlineP
-% \linkToImpl{gtsxml}{1}
+% \newlineP^^A
+% }
 %
-% \paragraph{\textbackslash{}GTSx}
-% \label{macrodescgtsx}
-%
-% \DescribeMacro[noprint]{\GTSx}\newlineN
+% \setMacroDescParagraphI{GTSx}{0}
+% \macroDescParagraph{0}{^^A
 % One macro to rule them all.\newlineP
 % Versatile macro for all symbols that can be given options,
 % and a symbol type mandatory switch.\newlineP
@@ -1775,8 +1526,8 @@ on page \pageref*{macroDesc#1}.
 % \end{itemize}
 % \marg{symbolType} a mandatory switch;
 % it can take value |a| for adjacency, |i| for incidence,
-% |m| for meta-logic.\newlineP
-% \linkToImpl{gtsx}{0}
+% |m| for meta-logic.\newlineP^^A
+% }
 %
 %
 % \subsection{Good practices}
@@ -1877,8 +1628,8 @@ on page \pageref*{macroDesc#1}.
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTS@newprotectedcommand}
-% \paragraphII{\textbackslash{}GTS@newprotectedcommand}
-% \linkToDesc{gtsnewprotectedcommand}{0}{0}
+% \setMacroImplParagraphI{GTS@newprotectedcommand}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \@ifdefinable{\GTS@newprotectedcommand}{\def\GTS@newprotectedcommand#1#2{%
   \@ifdefinable{#1}{\protected\def#1/{#2}}
@@ -1887,8 +1638,8 @@ on page \pageref*{macroDesc#1}.
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSsetMainColor}
-% \paragraphII{\textbackslash{}GTSsetMainColor}
-% \linkToDesc{gtssetmaincolor}{0}{0}
+% \setMacroImplParagraphI{GTSsetMainColor}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \newcommand{\GTSsetMainColor}[1]{%
 \edef\GTS@mainColorTemp{#1}%
@@ -1899,8 +1650,8 @@ on page \pageref*{macroDesc#1}.
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSsetSecondColor}
-% \paragraphII{\textbackslash{}GTSsetSecondColor}
-% \linkToDesc{gtssetsecondcolor}{0}{0}
+% \setMacroImplParagraphI{GTSsetSecondColor}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \newcommand{\GTSsetSecondColor}[1]{%
 \edef\GTS@secondColorTemp{#1}%
@@ -1911,8 +1662,8 @@ on page \pageref*{macroDesc#1}.
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTS@a}
-% \paragraphII{\textbackslash{}GTS@a}
-% \linkToDesc{gtsaa}{0}{0}
+% \setMacroImplParagraphI{GTS@a}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \newcommand{\GTS@a}[5]{%
 \if#1\empty\else%
@@ -1985,8 +1736,8 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTS@b}
-% \paragraphII{\textbackslash{}GTS@b}
-% \linkToDesc{gtsab}{0}{0}
+% \setMacroImplParagraphI{GTS@b}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \newcommand{\GTS@b}[6]{%
 \if#61%
@@ -1999,10 +1750,10 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSxa,\GTSxadj,\GTSxadjacency}
-% \paragraphII{\textbackslash{}GTSxadjacency,
-% \textbackslash{}GTSxadj,
-% \textbackslash{}GTSxa}
-% \linkToDesc{gtsxa}{1}{0}
+% \setMacroImplParagraphI{GTSxadjacency}{0}
+% \setMacroImplParagraphII{GTSxadj}{0}
+% \setMacroImplParagraphIII{GTSxa}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \define@key{GTSxa}{mainColor}{\def\GTS@@mainColor{#1}}
 \define@key{GTSxa}{mainC}{\def\GTS@@mainColor{#1}}
@@ -2050,11 +1801,12 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSadjacency,\GTSadj,\GTSa}
-% \paragraphII{\textbackslash{}GTSadjacency,
-% \textbackslash{}GTSadj,
-% \textbackslash{}GTSa}
-% These macros will draw an adjacency symbol.\newlineP
-% \linkToDesc{gtsa}{1}{1}
+% \setMacroImplParagraphI{GTSadjacency}{0}
+% \setMacroImplParagraphII{GTSadj}{0}
+% \setMacroImplParagraphIII{GTSa}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw an adjacency symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSadjacency}{\GTS@a{}{}{}{}{}}
 \GTS@newcommand{\GTSadj}{\GTS@a{}{}{}{}{}}
@@ -2063,12 +1815,13 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSadjacencyRelation,\GTSadjRel,\GTSaR}
-% \paragraphII{\textbackslash{}GTSadjacencyRelation,
-% \textbackslash{}GTSadjRel,
-% \textbackslash{}GTSaR}
+% \setMacroImplParagraphI{GTSadjacencyRelation}{0}
+% \setMacroImplParagraphII{GTSadjRel}{0}
+% \setMacroImplParagraphIII{GTSaR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw an adjacency symbol with relation spacing in math
-% mode.\newlineP
-% \linkToDesc{gtsar}{1}{1}
+% mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSadjacencyRelation}{\mathrel{\GTSa/}}
 \GTS@newcommand{\GTSadjRel}{\mathrel{\GTSa/}}
@@ -2077,11 +1830,12 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSunadjacency,\GTSunadj,\GTSu}
-% \paragraphII{\textbackslash{}GTSunadjacency,
-% \textbackslash{}GTSunadj,
-% \textbackslash{}GTSu}
-% These macros will draw an unadjacency symbol.\newlineP
-% \linkToDesc{gtsu}{1}{1}
+% \setMacroImplParagraphI{GTSunadjacency}{0}
+% \setMacroImplParagraphII{GTSunadj}{0}
+% \setMacroImplParagraphIII{GTSu}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw an unadjacency symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSunadjacency}{\GTS@a{}{}{1}{}{}}
 \GTS@newcommand{\GTSunadj}{\GTS@a{}{}{1}{}{}}
@@ -2090,12 +1844,13 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSunadjacencyRelation,\GTSunadjRel,\GTSuR}
-% \paragraphII{\textbackslash{}GTSunadjacencyRelation,
-% \textbackslash{}GTSunadjRel,
-% \textbackslash{}GTSuR}
+% \setMacroImplParagraphI{GTSunadjacencyRelation}{0}
+% \setMacroImplParagraphII{GTSunadjRel}{0}
+% \setMacroImplParagraphIII{GTSuR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw an unadjacency symbol with relation spacing in
-% math mode.\newlineP
-% \linkToDesc{gtsur}{1}{1}
+% math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSunadjacencyRelation}{\mathrel{\GTSu/}}
 \GTS@newcommand{\GTSunadjRel}{\mathrel{\GTSu/}}
@@ -2104,11 +1859,12 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSdirectedAdjacencyUp,\GTSdirAdjUp,\GTSdAU}
-% \paragraphII{\textbackslash{}GTSdirectedAdjacencyUp,
-% \textbackslash{}GTSdirAdjUp,
-% \textbackslash{}GTSdAU}
-% These macros will draw a directed adjacency upward symbol.\newlineP
-% \linkToDesc{gtsdau}{1}{1}
+% \setMacroImplParagraphI{GTSdirectedAdjacencyUp}{0}
+% \setMacroImplParagraphII{GTSdirAdjUp}{0}
+% \setMacroImplParagraphIII{GTSdAU}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a directed adjacency upward symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSdirectedAdjacencyUp}{\GTS@a{}{}{}{1}{}}
 \GTS@newcommand{\GTSdirAdjUp}{\GTS@a{}{}{}{1}{}}
@@ -2118,12 +1874,13 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %
 % \begin{macro}[noprint]{\GTSdirectedAdjacencyUpRelation,\GTSdirAdjUpRel,
 % \GTSdAUR}
-% \paragraphII{\textbackslash{}GTSdirectedAdjacencyUpRelation,
-% \textbackslash{}GTSdirAdjUpRel,
-% \textbackslash{}GTSdAUR}
+% \setMacroImplParagraphI{GTSdirectedAdjacencyUpRelation}{0}
+% \setMacroImplParagraphII{GTSdirAdjUpRel}{0}
+% \setMacroImplParagraphIII{GTSdAUR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a directed adjacency upward symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsdaur}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSdirectedAdjacencyUpRelation}{\mathrel{\GTSdAU/}}
 \GTS@newcommand{\GTSdirAdjUpRel}{\mathrel{\GTSdAU/}}
@@ -2133,12 +1890,13 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedDirectedAdjacencyUp,\GTSnegDirAdjUp,^^A
 % \GTSnDAU}
-% \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyUp,
-% \textbackslash{}GTSnegDirAdjUp,
-% \textbackslash{}GTSnDAU}
+% \setMacroImplParagraphI{GTSnegatedDirectedAdjacencyUp}{0}
+% \setMacroImplParagraphII{GTSnegDirAdjUp}{0}
+% \setMacroImplParagraphIII{GTSnDAU}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated directed adjacency upward symbol.^^A
-% \newlineP
-% \linkToDesc{gtsndau}{1}{1}
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyUp}{\GTS@a{}{}{1}{1}{}}
 \GTS@newcommand{\GTSnegDirAdjUp}{\GTS@a{}{}{1}{1}{}}
@@ -2148,12 +1906,13 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedDirectedAdjacencyUpRelation,^^A
 % \GTSnegDirAdjUpRel,\GTSnDAUR}
-% \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyUpRelation,
-% \textbackslash{}GTSnegDirAdjUpRel,
-% \textbackslash{}GTSnDAUR}
+% \setMacroImplParagraphI{GTSnegatedDirectedAdjacencyUpRelation}{0}
+% \setMacroImplParagraphII{GTSnegDirAdjUpRel}{0}
+% \setMacroImplParagraphIII{GTSnDAUR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated directed adjacency upward symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsndaur}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyUpRelation}{%
 \mathrel{\GTSnDAU/}%
@@ -2164,11 +1923,12 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSdirectedAdjacencyDown,\GTSdirAdjDown,\GTSdAD}
-% \paragraphII{\textbackslash{}GTSdirectedAdjacencyDown,
-% \textbackslash{}GTSdirAdjDown,
-% \textbackslash{}GTSdAD}
-% These macros will draw a directed adjacency downward symbol.\newlineP
-% \linkToDesc{gtsdad}{1}{1}
+% \setMacroImplParagraphI{GTSdirectedAdjacencyDown}{0}
+% \setMacroImplParagraphII{GTSdirAdjDown}{0}
+% \setMacroImplParagraphIII{GTSdAD}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a directed adjacency downward symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSdirectedAdjacencyDown}{\GTS@a{}{}{}{}{1}}
 \GTS@newcommand{\GTSdirAdjDown}{\GTS@a{}{}{}{}{1}}
@@ -2178,12 +1938,13 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %
 % \begin{macro}[noprint]{\GTSdirectedAdjacencyDownRelation,^^A
 % \GTSdirAdjDownRel,\GTSdADR}
-% \paragraphII{\textbackslash{}GTSdirectedAdjacencyDownRelation,
-% \textbackslash{}GTSdirAdjDownRel,
-% \textbackslash{}GTSdADR}
+% \setMacroImplParagraphI{GTSdirectedAdjacencyDownRelation}{0}
+% \setMacroImplParagraphII{GTSdirAdjDownRel}{0}
+% \setMacroImplParagraphIII{GTSdADR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a directed adjacency downward symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsdadr}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSdirectedAdjacencyDownRelation}{\mathrel{\GTSdAD/}}
 \GTS@newcommand{\GTSdirAdjDownRel}{\mathrel{\GTSdAD/}}
@@ -2193,12 +1954,14 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedDirectedAdjacencyDown,^^A
 % \GTSnegDirAdjDown,\GTSnDAD}
-% \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyDown,
-% \textbackslash{}GTSnegDirAdjDown,
-% \textbackslash{}GTSnDAD}
+% \setMacroImplParagraphI{GTSnegatedDirectedAdjacencyDown}{0}
+% \setMacroImplParagraphII{GTSnegDirAdjDown}{0}
+% \setMacroImplParagraphIII{GTSnDAD}{0}
+% \setMacroImplParagraphIV{GTSaMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated directed adjacency downward symbol.^^A
-% \newlineP
-% \linkToDesc{gtsndad}{1}{1}
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyDown}{\GTS@a{}{}{1}{}{1}}
 \GTS@newcommand{\GTSnegDirAdjDown}{\GTS@a{}{}{1}{}{1}}
@@ -2208,12 +1971,14 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedDirectedAdjacencyDownRelation,^^A
 % \GTSnegDirAdjDownRel,\GTSnDADR}
-% \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyDownRelation,
-% \textbackslash{}GTSnegDirAdjDownRel,\if\buildtarget0\newlineN\else\ \fi
-% \textbackslash{}GTSnDADR}
+% \setMacroImplParagraphI{GTSnegatedDirectedAdjacencyDownRelation}{0}
+% \setMacroImplParagraphII{GTSnegDirAdjDownRel}{\if\buildtarget01\else0\fi}
+% \setMacroImplParagraphIII{GTSnDADR}{0}
+% \setMacroImplParagraphIV{GTSaMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated directed adjacency downward symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsndadr}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyDownRelation}{%
 \mathrel{\GTSnDAD/}%
@@ -2226,8 +1991,8 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 %
 %
 % \begin{macro}[noprint]{\GTS@i}
-% \paragraphII{\textbackslash{}GTS@i}
-% \linkToDesc{gtsai}{0}{0}
+% \setMacroImplParagraphI{GTS@i}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \newcommand{\GTS@i}[5]{%
 \if#1\empty\else%
@@ -2296,8 +2061,8 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTS@j}
-% \paragraphII{\textbackslash{}GTS@j}
-% \linkToDesc{gtsaj}{0}{0}
+% \setMacroImplParagraphI{GTS@j}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \newcommand{\GTS@j}[6]{%
 \if#61%
@@ -2310,10 +2075,10 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSxincidence,\GTSxinc,\GTSxi}
-% \paragraphII{\textbackslash{}GTSxincidence,
-% \textbackslash{}GTSxinc,
-% \textbackslash{}GTSxi}
-% \linkToDesc{gtsxi}{1}{0}
+% \setMacroImplParagraphI{GTSxincidence}{0}
+% \setMacroImplParagraphII{GTSxinc}{0}
+% \setMacroImplParagraphIII{GTSxi}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \define@key{GTSxi}{mainColor}{\def\GTS@@mainColor{#1}}
 \define@key{GTSxi}{mainC}{\def\GTS@@mainColor{#1}}
@@ -2361,11 +2126,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSincidence,\GTSinc,\GTSi}
-% \paragraphII{\textbackslash{}GTSincidence,
-% \textbackslash{}GTSinc,
-% \textbackslash{}GTSi}
-% These macros will draw an incidence symbol.\newlineP
-% \linkToDesc{gtsi}{1}{1}
+% \setMacroImplParagraphI{GTSincidence}{0}
+% \setMacroImplParagraphII{GTSinc}{0}
+% \setMacroImplParagraphIII{GTSi}{0}
+% \setMacroImplParagraphIV{GTSaMR}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw an incidence symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSincidence}{\GTS@i{}{}{}{}{}}
 \GTS@newcommand{\GTSinc}{\GTS@i{}{}{}{}{}}
@@ -2374,12 +2141,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSincidenceRelation,\GTSincRel,\GTSiR}
-% \paragraphII{\textbackslash{}GTSincidenceRelation,
-% \textbackslash{}GTSincRel,
-% \textbackslash{}GTSiR}
+% \setMacroImplParagraphI{GTSincidenceRelation}{0}
+% \setMacroImplParagraphII{GTSincRel}{0}
+% \setMacroImplParagraphIII{GTSiR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw an incidence symbol with relation spacing in math
-% mode.\newlineP
-% \linkToDesc{gtsir}{1}{1}
+% mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSincidenceRelation}{\mathrel{\GTSi/}}
 \GTS@newcommand{\GTSincRel}{\mathrel{\GTSi/}}
@@ -2388,11 +2156,12 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSnegatedIncidence,\GTSnegInc,\GTSnI}
-% \paragraphII{\textbackslash{}GTSnegatedIncidence,
-% \textbackslash{}GTSnegInc,
-% \textbackslash{}GTSnI}
-% These macros will draw a negated incidence symbol.\newlineP
-% \linkToDesc{gtsni}{1}{1}
+% \setMacroImplParagraphI{GTSnegatedIncidence}{0}
+% \setMacroImplParagraphII{GTSnegInc}{0}
+% \setMacroImplParagraphIII{GTSnI}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a negated incidence symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedIncidence}{\GTS@i{}{}{1}{}{}}
 \GTS@newcommand{\GTSnegInc}{\GTS@i{}{}{1}{}{}}
@@ -2402,12 +2171,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedIncidenceRelation,\GTSnegIncRel,^^A
 % \GTSnIR}
-% \paragraphII{\textbackslash{}GTSnegatedIncidenceRelation,
-% \textbackslash{}GTSnegIncRel,
-% \textbackslash{}GTSnIR}
+% \setMacroImplParagraphI{GTSnegatedIncidenceRelation}{0}
+% \setMacroImplParagraphII{GTSnegIncRel}{0}
+% \setMacroImplParagraphIII{GTSnIR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated incidence symbol with relation spacing
-% in math mode.\newlineP
-% \linkToDesc{gtsnir}{1}{1}
+% in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedIncidenceRelation}{\mathrel{\GTSnI/}}
 \GTS@newcommand{\GTSnegIncRel}{\mathrel{\GTSnI/}}
@@ -2416,12 +2186,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSoutIncidence,\GTSoutInc,\GTSoI}
-% \paragraphII{\textbackslash{}GTSoutIncidence,
-% \textbackslash{}GTSoutInc,
-% \textbackslash{}GTSoI}
+% \setMacroImplParagraphI{GTSoutIncidence}{0}
+% \setMacroImplParagraphII{GTSoutInc}{0}
+% \setMacroImplParagraphIII{GTSoI}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a directed incidence upward (out(ward) incidence)
-% symbol.\newlineP
-% \linkToDesc{gtsoi}{1}{1}
+% symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSoutIncidence}{\GTS@i{}{}{}{1}{}}
 \GTS@newcommand{\GTSoutInc}{\GTS@i{}{}{}{1}{}}
@@ -2430,12 +2201,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSoutIncidenceRelation,\GTSoutIncRel,\GTSoIR}
-% \paragraphII{\textbackslash{}GTSoutIncidenceRelation,
-% \textbackslash{}GTSoutIncRel,
-% \textbackslash{}GTSoIR}
+% \setMacroImplParagraphI{GTSoutIncidenceRelation}{0}
+% \setMacroImplParagraphII{GTSoutIncRel}{0}
+% \setMacroImplParagraphIII{GTSoIR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a directed incidence upward (out(ward) incidence)
-% symbol with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsoir}{1}{1}
+% symbol with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSoutIncidenceRelation}{\mathrel{\GTSoI/}}
 \GTS@newcommand{\GTSoutIncRel}{\mathrel{\GTSoI/}}
@@ -2444,12 +2216,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSnegatedOutIncidence,\GTSnegOutInc,\GTSnOI}
-% \paragraphII{\textbackslash{}GTSnegatedOutIncidence,
-% \textbackslash{}GTSnegOutInc,
-% \textbackslash{}GTSnOI}
+% \setMacroImplParagraphI{GTSnegatedOutIncidence}{0}
+% \setMacroImplParagraphII{GTSnegOutInc}{0}
+% \setMacroImplParagraphIII{GTSnOI}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated directed incidence upward
-% (out(ward) incidence) symbol.\newlineP
-% \linkToDesc{gtsnoi}{1}{1}
+% (out(ward) incidence) symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedOutIncidence}{\GTS@i{}{}{1}{1}{}}
 \GTS@newcommand{\GTSnegOutInc}{\GTS@i{}{}{1}{1}{}}
@@ -2459,12 +2232,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedOutIncidenceRelation,^^A
 % \GTSnegOutIncRel,\GTSnOIR}
-% \paragraphII{\textbackslash{}GTSnegatedOutIncidenceRelation,
-% \textbackslash{}GTSnegOutIncRel,
-% \textbackslash{}GTSnOIR}
+% \setMacroImplParagraphI{GTSnegatedOutIncidenceRelation}{0}
+% \setMacroImplParagraphII{GTSnegOutIncRel}{0}
+% \setMacroImplParagraphIII{GTSnOIR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated directed incidence upward
-% (out(ward) incidence) symbol with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsnoir}{1}{1}
+% (out(ward) incidence) symbol with relation spacing in math mode.^^A
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedOutIncidenceRelation}{\mathrel{\GTSnOI/}}
 \GTS@newcommand{\GTSnegOutIncRel}{\mathrel{\GTSnOI/}}
@@ -2473,12 +2248,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSinIncidence,\GTSinInc,\GTSiI}
-% \paragraphII{\textbackslash{}GTSinIncidence,
-% \textbackslash{}GTSinInc,
-% \textbackslash{}GTSiI}
+% \setMacroImplParagraphI{GTSinIncidence}{0}
+% \setMacroImplParagraphII{GTSinInc}{0}
+% \setMacroImplParagraphIII{GTSiI}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a directed incidence downward (in(ward) incidence)
-% symbol.\newlineP
-% \linkToDesc{gtsii}{1}{1}
+% symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSinIncidence}{\GTS@i{}{}{}{}{1}}
 \GTS@newcommand{\GTSinInc}{\GTS@i{}{}{}{}{1}}
@@ -2487,12 +2263,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSinIncidenceRelation,\GTSinIncRel,\GTSiIR}
-% \paragraphII{\textbackslash{}GTSinIncidenceRelation,
-% \textbackslash{}GTSinIncRel,
-% \textbackslash{}GTSiIR}
+% \setMacroImplParagraphI{GTSinIncidenceRelation}{0}
+% \setMacroImplParagraphII{GTSinIncRel}{0}
+% \setMacroImplParagraphIII{GTSiIR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a directed incidence downward (in(ward) incidence)
-% symbol with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsiir}{1}{1}
+% symbol with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSinIncidenceRelation}{\mathrel{\GTSiI/}}
 \GTS@newcommand{\GTSinIncRel}{\mathrel{\GTSiI/}}
@@ -2501,12 +2278,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSnegatedInIncidence,\GTSnegInInc,\GTSnII}
-% \paragraphII{\textbackslash{}GTSnegatedInIncidence,
-% \textbackslash{}GTSnegInInc,
-% \textbackslash{}GTSnII}
+% \setMacroImplParagraphI{GTSnegatedInIncidence}{0}
+% \setMacroImplParagraphII{GTSnegInInc}{0}
+% \setMacroImplParagraphIII{GTSnII}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated directed incidence downward
-% (in(ward) incidence) symbol.\newlineP
-% \linkToDesc{gtsnii}{1}{1}
+% (in(ward) incidence) symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedInIncidence}{\GTS@i{}{}{1}{}{1}}
 \GTS@newcommand{\GTSnegInInc}{\GTS@i{}{}{1}{}{1}}
@@ -2516,12 +2294,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedInIncidenceRelation,\GTSnegInIncRel,^^A
 % \GTSnIIR}
-% \paragraphII{\textbackslash{}GTSnegatedInIncidenceRelation,
-% \textbackslash{}GTSnegInIncRel,
-% \textbackslash{}GTSnIIR}
+% \setMacroImplParagraphI{GTSnegatedInIncidenceRelation}{0}
+% \setMacroImplParagraphII{GTSnegInIncRel}{0}
+% \setMacroImplParagraphIII{GTSnIIR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated directed incidence downward
-% (in(ward) incidence) symbol with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsniir}{1}{1}
+% (in(ward) incidence) symbol with relation spacing in math mode.^^A
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedInIncidenceRelation}{\mathrel{\GTSnII/}}
 \GTS@newcommand{\GTSnegInIncRel}{\mathrel{\GTSnII/}}
@@ -2534,12 +2314,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSadjacencyMonochrome,\GTSadjMono,\GTSadjMon,^^A
 % \GTSaM}
-% \paragraphII{\textbackslash{}GTSadjacencyMonochrome,
-% \textbackslash{}GTSadjMono,
-% \textbackslash{}GTSadjMon,
-% \textbackslash{}GTSaM}
-% These macros will draw a monochrome adjacency symbol.\newlineP
-% \linkToDesc{gtsam}{1}{1}
+% \setMacroImplParagraphI{GTSadjacencyMonochrome}{0}
+% \setMacroImplParagraphII{GTSadjMono}{0}
+% \setMacroImplParagraphIII{GTSadjMon}{0}
+% \setMacroImplParagraphIV{GTSaM}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a monochrome adjacency symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSadjacencyMonochrome}{\GTS@a{black}{black}{}{}{}}
 \GTS@newcommand{\GTSadjMono}{\GTS@a{black}{black}{}{}{}}
@@ -2554,9 +2335,10 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \setMacroImplParagraphII{GTSadjMonoRel}{0}
 % \setMacroImplParagraphIII{GTSadjMonRel}{0}
 % \setMacroImplParagraphIV{GTSaMR}{0}
-% \macroImplParagraph{1}{1}^^A
-% {These macros will draw a monochrome adjacency symbol with relation
-%  spacing in math mode.\newlineP}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a monochrome adjacency symbol with relation
+% spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSadjacencyMonochromeRelation}{\mathrel{\GTSaM/}}
 \GTS@newcommand{\GTSadjMonoRel}{\mathrel{\GTSaM/}}
@@ -2567,12 +2349,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSunadjacencyMonochrome,\GTSunadjMono,^^A
 % \GTSunadjMon,\GTSuM}
-% \paragraphII{\textbackslash{}GTSunadjacencyMonochrome,
-% \textbackslash{}GTSunadjMono,
-% \textbackslash{}GTSunadjMon,
-% \textbackslash{}GTSuM}
-% These macros will draw a monochrome unadjacency symbol.\newlineP
-% \linkToDesc{gtsum}{1}{1}
+% \setMacroImplParagraphI{GTSunadjacencyMonochrome}{0}
+% \setMacroImplParagraphII{GTSunadjMono}{0}
+% \setMacroImplParagraphIII{GTSunadjMon}{0}
+% \setMacroImplParagraphIV{GTSuM}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a monochrome unadjacency symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSunadjacencyMonochrome}{\GTS@a{black}{black}{1}{}{}}
 \GTS@newcommand{\GTSunadjMono}{\GTS@a{black}{black}{1}{}{}}
@@ -2583,13 +2366,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSunadjacencyMonochromeRelation,^^A
 % \GTSunadjMonoRel,\GTSunadjMonRel,\GTSuMR}
-% \paragraphII{\textbackslash{}GTSunadjacencyMonochromeRelation,
-% \textbackslash{}GTSunadjMonoRel,
-% \textbackslash{}GTSunadjMonRel,\newlineN
-% \textbackslash{}GTSuMR}
+% \setMacroImplParagraphI{GTSunadjacencyMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSunadjMonoRel}{0}
+% \setMacroImplParagraphIII{GTSunadjMonRel}{1}
+% \setMacroImplParagraphIV{GTSuMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome unadjacency symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsumr}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSunadjacencyMonochromeRelation}{\mathrel{\GTSuM/}}
 \GTS@newcommand{\GTSunadjMonoRel}{\mathrel{\GTSuM/}}
@@ -2600,13 +2384,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSdirectedAdjacencyUpMonochrome,^^A
 % \GTSdirAdjUpMono,\GTSdirAdjUpMon,\GTSdAUM}
-% \paragraphII{\textbackslash{}GTSdirectedAdjacencyUpMonochrome,
-% \textbackslash{}GTSdirAdjUpMono,
-% \textbackslash{}GTSdirAdjUpMon,\newlineN
-% \textbackslash{}GTSdAUM}
+% \setMacroImplParagraphI{GTSdirectedAdjacencyUpMonochrome}{0}
+% \setMacroImplParagraphII{GTSdirAdjUpMono}{0}
+% \setMacroImplParagraphIII{GTSdirAdjUpMon}{1}
+% \setMacroImplParagraphIV{GTSdAUM}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome directed adjacency upward symbol.^^A
-% \newlineP
-% \linkToDesc{gtsdaum}{1}{1}
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSdirectedAdjacencyUpMonochrome}{%
 \GTS@a{black}{black}{}{1}{}%
@@ -2619,13 +2404,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSdirectedAdjacencyUpMonochromeRelation,^^A
 % \GTSdirAdjUpMonoRel,\GTSdirAdjUpMonRel,\GTSdAUMR}
-% \paragraphII{\textbackslash{}GTSdirectedAdjacencyUpMonochromeRelation,
-% \textbackslash{}GTSdirAdjUpMonoRel,\newlineN
-% \textbackslash{}GTSdirAdjUpMonRel,
-% \textbackslash{}GTSdAUMR}
+% \setMacroImplParagraphI{GTSdirectedAdjacencyUpMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSdirAdjUpMonoRel}{1}
+% \setMacroImplParagraphIII{GTSdirAdjUpMonRel}{0}
+% \setMacroImplParagraphIV{GTSdAUMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome directed adjacency upward symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsdaumr}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSdirectedAdjacencyUpMonochromeRelation}{%
 \mathrel{\GTSdAUM/}%
@@ -2638,13 +2424,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedDirectedAdjacencyUpMonochrome,^^A
 % \GTSnegDirAdjUpMono,\GTSnegDirAdjUpMon,\GTSnDAUM}
-% \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyUpMonochrome,
-% \textbackslash{}GTSnegDirAdjUpMono,\newlineN
-% \textbackslash{}GTSnegDirAdjUpMon,
-% \textbackslash{}GTSnDAUM}
+% \setMacroImplParagraphI{GTSnegatedDirectedAdjacencyUpMonochrome}{0}
+% \setMacroImplParagraphII{GTSnegDirAdjUpMono}{1}
+% \setMacroImplParagraphIII{GTSnegDirAdjUpMon}{0}
+% \setMacroImplParagraphIV{GTSnDAUM}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a
-% monochrome negated directed adjacency upward symbol.\newlineP
-% \linkToDesc{gtsndaum}{1}{1}
+% monochrome negated directed adjacency upward symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyUpMonochrome}{%
 \GTS@a{black}{black}{1}{1}{}%
@@ -2658,14 +2445,16 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \begin{macro}[noprint]^^A
 % {\GTSnegatedDirectedAdjacencyUpMonochromeRelation,^^A
 % \GTSnegDirAdjUpMonRel,\GTSnegDirAdjUpMonoRel,\GTSnDAUMR}
-% \paragraphII{\textbs{}GTSnegatedDirectedAdjacencyUpMonochromeRelation,
-% \textbackslash{}GTSnegDirAdjUpMonoRel,\newlineN
-% \textbackslash{}GTSnegDirAdjUpMonRel,
-% \textbackslash{}GTSnDAUMR}
+% \setMacroImplParagraphI^^A
+% {GTSnegatedDirectedAdjacencyUpMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSnegDirAdjUpMonoRel}{1}
+% \setMacroImplParagraphIII{GTSnegDirAdjUpMonRel}{0}
+% \setMacroImplParagraphIV{GTSnDAUMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a
 % monochrome negated directed adjacency upward symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsndaumr}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyUpMonochromeRelation}{%
 \mathrel{\GTSnDAUM/}%
@@ -2678,13 +2467,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSdirectedAdjacencyDownMonochrome,^^A
 % \GTSdirAdjDownMono,\GTSdirAdjDownMon,\GTSdADM}
-% \paragraphII{\textbackslash{}GTSdirectedAdjacencyDownMonochrome,
-% \textbackslash{}GTSdirAdjDownMono,\newlineN
-% \textbackslash{}GTSdirAdjDownMon,
-% \textbackslash{}GTSdADM}
+% \setMacroImplParagraphI{GTSdirectedAdjacencyDownMonochrome}{0}
+% \setMacroImplParagraphII{GTSdirAdjDownMono}{1}
+% \setMacroImplParagraphIII{GTSdirAdjDownMon}{0}
+% \setMacroImplParagraphIV{GTSdADM}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome directed adjacency downward
-% symbol.\newlineP
-% \linkToDesc{gtsdadm}{1}{1}
+% symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSdirectedAdjacencyDownMonochrome}{%
 \GTS@a{black}{black}{}{}{1}%
@@ -2697,13 +2487,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSdirectedAdjacencyDownMonochromeRelation,^^A
 % \GTSdirAdjDownMonoRel,\GTSdirAdjDownMonRel,\GTSdADMR}
-% \paragraphII{\textbackslash{}GTSdirectedAdjacencyDownMonochromeRelation,
-% \textbackslash{}GTSdirAdjDownMonoRel,\newlineN
-% \textbackslash{}GTSdirAdjDownMonRel,
-% \textbackslash{}GTSdADMR}
+% \setMacroImplParagraphI{GTSdirectedAdjacencyDownMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSdirAdjDownMonoRel}{1}
+% \setMacroImplParagraphIII{GTSdirAdjDownMonRel}{0}
+% \setMacroImplParagraphIV{GTSdADMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome directed adjacency downward symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsdadmr}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSdirectedAdjacencyDownMonochromeRelation}{%
 \mathrel{\GTSdADM/}%
@@ -2716,13 +2507,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedDirectedAdjacencyDownMonochrome,^^A
 % \GTSnegDirAdjDownMono,\GTSnegDirAdjDownMon,\GTSnDADM}
-% \paragraphII{\textbackslash{}GTSnegatedDirectedAdjacencyDownMonochrome,
-% \textbackslash{}GTSnegDirAdjDownMono,\newlineN
-% \textbackslash{}GTSnegDirAdjDownMon,
-% \textbackslash{}GTSnDADM}
+% \setMacroImplParagraphI{GTSnegatedDirectedAdjacencyDownMonochrome}{0}
+% \setMacroImplParagraphII{GTSnegDirAdjDownMono}{1}
+% \setMacroImplParagraphIII{GTSnegDirAdjDownMon}{0}
+% \setMacroImplParagraphIV{GTSnDADM}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a
-% monochrome negated directed adjacency downward symbol.\newlineP
-% \linkToDesc{gtsndadm}{1}{1}
+% monochrome negated directed adjacency downward symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyDownMonochrome}{%
 \GTS@a{black}{black}{1}{}{1}%
@@ -2736,14 +2528,16 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \begin{macro}[noprint]^^A
 % {\GTSnegatedDirectedAdjacencyDownMonochromeRelation,^^A
 % \GTSnegDirAdjDownMonoRel,\GTSnegDirAdjDownMonRel,\GTSnDADMR}
-% \paragraphII{\textbs{}GTSnegatedDirectedAdjacencyDownMonochromeRelation,
-% \newlineN\textbackslash{}GTSnegDirAdjDownMonoRel,
-% \textbackslash{}GTSnegDirAdjDownMonRel,
-% \textbackslash{}GTSnDADMR}
+% \setMacroImplParagraphI^^A
+% {GTSnegatedDirectedAdjacencyDownMonochromeRelation}{1}
+% \setMacroImplParagraphII{GTSnegDirAdjDownMonoRel}{0}
+% \setMacroImplParagraphIII{GTSnegDirAdjDownMonRel}{0}
+% \setMacroImplParagraphIV{GTSnDADMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a
 % monochrome negated directed adjacency downward symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsndadmr}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedDirectedAdjacencyDownMonochromeRelation}{%
 \mathrel{\GTSnDADM/}%
@@ -2758,12 +2552,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSincidenceMonochrome,\GTSincMono,\GTSincMon,^^A
 % \GTSiM}
-% \paragraphII{\textbackslash{}GTSincidenceMonochrome,
-% \textbackslash{}GTSincMono,
-% \textbackslash{}GTSincMon,
-% \textbackslash{}GTSiM}
-% These macros will draw a monochrome incidence symbol.\newlineP
-% \linkToDesc{gtsim}{1}{1}
+% \setMacroImplParagraphI{GTSincidenceMonochrome}{0}
+% \setMacroImplParagraphII{GTSincMono}{0}
+% \setMacroImplParagraphIII{GTSincMon}{0}
+% \setMacroImplParagraphIV{GTSiM}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a monochrome incidence symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSincidenceMonochrome}{\GTS@i{black}{black}{}{}{}}
 \GTS@newcommand{\GTSincMono}{\GTS@i{black}{black}{}{}{}}
@@ -2774,13 +2569,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSincidenceMonochromeRelation,\GTSincMonoRel,^^A
 % \GTSincMonRel,\GTSiMR}
-% \paragraphII{\textbackslash{}GTSincidenceMonochromeRelation,
-% \textbackslash{}GTSincMonoRel,
-% \textbackslash{}GTSincMonRel,
-% \textbackslash{}GTSiMR}
+% \setMacroImplParagraphI{GTSincidenceMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSincMonoRel}{0}
+% \setMacroImplParagraphIII{GTSincMonRel}{0}
+% \setMacroImplParagraphIV{GTSiMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome incidence symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsimr}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSincidenceMonochromeRelation}{\mathrel{\GTSiM/}}
 \GTS@newcommand{\GTSincMonoRel}{\mathrel{\GTSiM/}}
@@ -2791,12 +2587,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedIncidenceMonochrome,\GTSnegIncMono,^^A
 % \GTSnegIncMon,\GTSnIM}
-% \paragraphII{\textbackslash{}GTSnegatedIncidenceMonochrome,
-% \textbackslash{}GTSnegIncMono,
-% \textbackslash{}GTSnegIncMon,
-% \textbackslash{}GTSnIM}
-% These macros will draw a monochrome negated incidence symbol.\newlineP
-% \linkToDesc{gtsnim}{1}{1}
+% \setMacroImplParagraphI{GTSnegatedIncidenceMonochrome}{0}
+% \setMacroImplParagraphII{GTSnegIncMono}{0}
+% \setMacroImplParagraphIII{GTSnegIncMon}{0}
+% \setMacroImplParagraphIV{GTSnIM}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a monochrome negated incidence symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedIncidenceMonochrome}{%
 \GTS@i{black}{black}{1}{}{}%
@@ -2809,13 +2606,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedIncidenceMonochromeRelation,^^A
 % \GTSnegIncMonoRel,\GTSnegIncMonRel,\GTSnIMR}
-% \paragraphII{\textbackslash{}GTSnegatedIncidenceMonochromeRelation,
-% \textbackslash{}GTSnegIncMonoRel,\newlineN
-% \textbackslash{}GTSnegIncMonRel,
-% \textbackslash{}GTSnIMR}
+% \setMacroImplParagraphI{GTSnegatedIncidenceMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSnegIncMonoRel}{1}
+% \setMacroImplParagraphIII{GTSnegIncMonRel}{0}
+% \setMacroImplParagraphIV{GTSnIMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome negated incidence symbol
-% with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsnimr}{1}{1}
+% with relation spacing in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedIncidenceMonochromeRelation}{\mathrel{\GTSnIM/}}
 \GTS@newcommand{\GTSnegIncMonoRel}{\mathrel{\GTSnIM/}}
@@ -2826,14 +2624,15 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSoutIncidenceMonochrome,\GTSoutIncMono,^^A
 % \GTSoutIncMon,\GTSoIM}
-% \paragraphII{\textbackslash{}GTSoutIncidenceMonochrome,
-% \textbackslash{}GTSoutIncMono,
-% \textbackslash{}GTSoutIncMon,
-% \textbackslash{}GTSoIM}
+% \setMacroImplParagraphI{GTSoutIncidenceMonochrome}{0}
+% \setMacroImplParagraphII{GTSoutIncMono}{0}
+% \setMacroImplParagraphIII{GTSoutIncMon}{0}
+% \setMacroImplParagraphIV{GTSoIM}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a
 % monochrome directed incidence upward (out(ward) incidence) symbol.^^A
-% \newlineP
-% \linkToDesc{gtsoim}{1}{1}
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSoutIncidenceMonochrome}{\GTS@i{black}{black}{}{1}{}}
 \GTS@newcommand{\GTSoutIncMono}{\GTS@i{black}{black}{}{1}{}}
@@ -2844,13 +2643,15 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSoutIncidenceMonochromeRelation,^^A
 % \GTSoutIncMonoRel,\GTSoutIncMonRel,\GTSoIMR}
-% \paragraphII{\textbackslash{}GTSoutIncidenceMonochromeRelation,
-% \textbackslash{}GTSoutIncMonoRel,
-% \textbackslash{}GTSoutIncMonRel,\newlineN
-% \textbackslash{}GTSoIMR}
+% \setMacroImplParagraphI{GTSoutIncidenceMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSoutIncMonoRel}{0}
+% \setMacroImplParagraphIII{GTSoutIncMonRel}{1}
+% \setMacroImplParagraphIV{GTSoIMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome directed incidence upward
-% (out(ward) incidence) symbol with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsoimr}{1}{1}
+% (out(ward) incidence) symbol with relation spacing in math mode.^^A
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSoutIncidenceMonochromeRelation}{\mathrel{\GTSoIM/}}
 \GTS@newcommand{\GTSoutIncMonoRel}{\mathrel{\GTSoIM/}}
@@ -2861,13 +2662,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedOutIncidenceMonochrome,^^A
 % \GTSnegOutIncMono,\GTSnegOutIncMon,\GTSnOIM}
-% \paragraphII{\textbackslash{}GTSnegatedOutIncidenceMonochrome,
-% \textbackslash{}GTSnegOutIncMono,
-% \textbackslash{}GTSnegOutIncMon,\newlineN
-% \textbackslash{}GTSnOIM}
+% \setMacroImplParagraphI{GTSnegatedOutIncidenceMonochrome}{0}
+% \setMacroImplParagraphII{GTSnegOutIncMono}{0}
+% \setMacroImplParagraphIII{GTSnegOutIncMon}{1}
+% \setMacroImplParagraphIV{GTSnOIM}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome negated directed incidence upward
-% (out(ward) incidence) symbol.\newlineP
-% \linkToDesc{gtsnoim}{1}{1}
+% (out(ward) incidence) symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedOutIncidenceMonochrome}{%
 \GTS@i{black}{black}{1}{1}{}%
@@ -2880,13 +2682,15 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedOutIncidenceMonochromeRelation,^^A
 % \GTSnegOutIncMonoRel,\GTSnegOutIncMonRel,\GTSnOIMR}
-% \paragraphII{\textbackslash{}GTSnegatedOutIncidenceMonochromeRelation,
-% \textbackslash{}GTSnegOutIncMonoRel,\newlineN
-% \textbackslash{}GTSnegOutIncMonRel,
-% \textbackslash{}GTSnOIMR}
+% \setMacroImplParagraphI{GTSnegatedOutIncidenceMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSnegOutIncMonoRel}{1}
+% \setMacroImplParagraphIII{GTSnegOutIncMonRel}{0}
+% \setMacroImplParagraphIV{GTSnOIMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome negated directed incidence upward
-% (out(ward) incidence) symbol with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsnoimr}{1}{1}
+% (out(ward) incidence) symbol with relation spacing in math mode.^^A
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedOutIncidenceMonochromeRelation}{%
 \mathrel{\GTSnOIM/}%
@@ -2899,13 +2703,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSinIncidenceMonochrome,\GTSinIncMono,^^A
 % \GTSinIncMon,\GTSiIM}
-% \paragraphII{\textbackslash{}GTSinIncidenceMonochrome,
-% \textbackslash{}GTSinIncMono,
-% \textbackslash{}GTSinIncMon,
-% \textbackslash{}GTSiIM}
+% \setMacroImplParagraphI{GTSinIncidenceMonochrome}{0}
+% \setMacroImplParagraphII{GTSinIncMono}{0}
+% \setMacroImplParagraphIII{GTSinIncMon}{0}
+% \setMacroImplParagraphIV{GTSiIM}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome directed incidence downward
-% (in(ward) incidence) symbol.\newlineP
-% \linkToDesc{gtsiim}{1}{1}
+% (in(ward) incidence) symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSinIncidenceMonochrome}{\GTS@i{black}{black}{}{}{1}}
 \GTS@newcommand{\GTSinIncMono}{\GTS@i{black}{black}{}{}{1}}
@@ -2916,13 +2721,15 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSinIncidenceMonochromeRelation,^^A
 % \GTSinIncMonoRel,\GTSinIncMonRel,\GTSiIMR}
-% \paragraphII{\textbackslash{}GTSinIncidenceMonochromeRelation,
-% \textbackslash{}GTSinIncMonoRel,
-% \textbackslash{}GTSinIncMonRel,\newlineN
-% \textbackslash{}GTSiIMR}
+% \setMacroImplParagraphI{GTSinIncidenceMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSinIncMonoRel}{0}
+% \setMacroImplParagraphIII{GTSinIncMonRel}{1}
+% \setMacroImplParagraphIV{GTSiIMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome directed incidence downward
-% (in(ward) incidence) symbol with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsiimr}{1}{1}
+% (in(ward) incidence) symbol with relation spacing in math mode.^^A
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSinIncidenceMonochromeRelation}{\mathrel{\GTSiIM/}}
 \GTS@newcommand{\GTSinIncMonoRel}{\mathrel{\GTSiIM/}}
@@ -2933,13 +2740,14 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedInIncidenceMonochrome,^^A
 % \GTSnegInIncMono,\GTSnegInIncMon,\GTSnIIM}
-% \paragraphII{\textbackslash{}GTSnegatedInIncidenceMonochrome,
-% \textbackslash{}GTSnegInIncMono,
-% \textbackslash{}GTSnegInIncMon,\newlineN
-% \textbackslash{}GTSnIIM}
+% \setMacroImplParagraphI{GTSnegatedInIncidenceMonochrome}{0}
+% \setMacroImplParagraphII{GTSnegInIncMono}{0}
+% \setMacroImplParagraphIII{GTSnegInIncMon}{1}
+% \setMacroImplParagraphIV{GTSnIIM}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome negated directed incidence downward
-% (in(ward) incidence) symbol.\newlineP
-% \linkToDesc{gtsniim}{1}{1}
+% (in(ward) incidence) symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedInIncidenceMonochrome}{%
 \GTS@i{black}{black}{1}{}{1}%
@@ -2952,13 +2760,15 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 %
 % \begin{macro}[noprint]{\GTSnegatedInIncidenceMonochromeRelation,^^A
 % \GTSnegInIncMonoRel,\GTSnegInIncMonRel,\GTSnIIMR}
-% \paragraphII{\textbackslash{}GTSnegatedInIncidenceMonochromeRelation,
-% \textbackslash{}GTSnegInIncMonoRel,\newlineN
-% \textbackslash{}GTSnegInIncMonRel,
-% \textbackslash{}GTSnIIMR}
+% \setMacroImplParagraphI{GTSnegatedInIncidenceMonochromeRelation}{0}
+% \setMacroImplParagraphII{GTSnegInIncMonoRel}{1}
+% \setMacroImplParagraphIII{GTSnegInIncMonRel}{0}
+% \setMacroImplParagraphIV{GTSnIIMR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome negated directed incidence downward
-% (in(ward) incidence) symbol with relation spacing in math mode.\newlineP
-% \linkToDesc{gtsniimr}{1}{1}
+% (in(ward) incidence) symbol with relation spacing in math mode.^^A
+% \newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSnegatedInIncidenceMonochromeRelation}{%
 \mathrel{\GTSnIIM/}%
@@ -2970,9 +2780,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSmetaNot,\GTSmN}
-% \paragraphII{\textbackslash{}GTSmetaNot, \textbackslash{}GTSmN}
-% These macros will draw a meta-not or relation-not symbol.\newlineP
-% \linkToDesc{gtsmn}{1}{1}
+% \setMacroImplParagraphI{GTSmetaNot}{0}
+% \setMacroImplParagraphII{GTSmN}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a meta-not or relation-not symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newprotectedcommand{\GTSmN}{%
 \text{\ensuremath{%
@@ -2989,9 +2801,11 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSmetaAnd,\GTSmA}
-% \paragraphII{\textbackslash{}GTSmetaAnd, \textbackslash{}GTSmA}
-% These macros will draw a meta-and or relations-and symbol.\newlineP
-% \linkToDesc{gtsma}{1}{1}
+% \setMacroImplParagraphI{GTSmetaAnd}{0}
+% \setMacroImplParagraphII{GTSmA}{0}
+% \macroImplParagraph{1}{1}{^^A
+% These macros will draw a meta-and or relations-and symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newprotectedcommand{\GTSmA}{%
 \text{\ensuremath{%
@@ -3007,12 +2821,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSmetaAndRelation,\GTSmetaAndRel,\GTSmAR}
-% \paragraphII{\textbackslash{}GTSmetaAndRelation,
-% \textbackslash{}GTSmetaAndRel,
-% \textbackslash{}GTSmAR}
+% \setMacroImplParagraphI{GTSmetaAndRelation}{0}
+% \setMacroImplParagraphII{GTSmetaAndRel}{0}
+% \setMacroImplParagraphIII{GTSmAR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a meta-and symbol with relation spacing
-% in math mode.\newlineP
-% \linkToDesc{gtsmar}{1}{1}
+% in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSmetaAndRelation}{\mathrel{\GTSmA/}}
 \GTS@newcommand{\GTSmetaAndRel}{\mathrel{\GTSmA/}}
@@ -3021,7 +2836,9 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSmetaOr,\GTSmO}
-% \paragraphII{\textbackslash{}GTSmetaOr, \textbackslash{}GTSmO}
+% \setMacroImplParagraphI{GTSmetaOr}{0}
+% \setMacroImplParagraphII{GTSmO}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a meta-or or relations-or symbol.
 % This is your duty to check that all relations have same arity.
 % It should be easy as long as you remain in the realm of
@@ -3030,8 +2847,8 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % since square cup has taken the preemptive meaning of disjoint union.
 % Similarly, doublevee or other vee symbols have taken
 % various meanings,
-% whilst we want an unambiguous symbol.\newlineP
-% \linkToDesc{gtsmo}{1}{1}
+% whilst we want an unambiguous symbol.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newprotectedcommand{\GTSmO}{%
 \text{\ensuremath{%
@@ -3047,12 +2864,13 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSmetaOrRelation,\GTSmetaOrRel,\GTSmOR}
-% \paragraphII{\textbackslash{}GTSmetaOrRelation,
-% \textbackslash{}GTSmetaOrRel,
-% \textbackslash{}GTSmOR}
+% \setMacroImplParagraphI{GTSmetaOrRelation}{0}
+% \setMacroImplParagraphII{GTSmetaOrRel}{0}
+% \setMacroImplParagraphIII{GTSmOR}{0}
+% \macroImplParagraph{1}{1}{^^A
 % These macros will draw a meta-or symbol with relation spacing
-% in math mode.\newlineP
-% \linkToDesc{gtsmor}{1}{1}
+% in math mode.\newlineP^^A
+% }
 %    \begin{macrocode}
 \GTS@newcommand{\GTSmetaOrRelation}{\mathrel{\GTSmO/}}
 \GTS@newcommand{\GTSmetaOrRel}{\mathrel{\GTSmO/}}
@@ -3061,8 +2879,9 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \end{macro}
 %
 % \begin{macro}[noprint]{\GTSxml,\GTSxmetalogic}
-% \paragraphII{\textbackslash{}GTSxmetalogic, \textbackslash{}GTSxml}
-% \linkToDesc{gtsxml}{1}{0}
+% \setMacroImplParagraphI{GTSxmetalogic}{0}
+% \setMacroImplParagraphII{GTSxml}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \define@key{GTSxml}{not}[1]{\def\GTS@@drawMetaNot{1}}
 \define@key{GTSxml}{n}[1]{\def\GTS@@drawMetaNot{1}}
@@ -3107,8 +2926,8 @@ Wrong call to \textbackslash{}GTSxml%
 %
 % \medskip
 % \begin{macro}[noprint]{\GTSx}
-% \paragraphII{\textbackslash{}GTSx}
-% \linkToDesc{gtsx}{0}{0}
+% \setMacroImplParagraphI{GTSx}{0}
+% \macroImplParagraph{0}{0}{}
 %    \begin{macrocode}
 \newcommand{\GTSx}[2][]{%
 \if#2a%
