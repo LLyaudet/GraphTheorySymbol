@@ -422,7 +422,7 @@ bindingoffset=5mm]{geometry}
 % spacing in math mode.\newlineP
 % \linkToDesc{gtsamr}{1}{1}
 \label{macroImpl\macroImplParagraphShortest}%
-#3\newlineP
+#3\if#3\empty\else\newlineP\fi
 \linkToDesc{\macroImplParagraphShortest}{\macroImplParagraphMany}{#2}
 }
 
@@ -889,7 +889,7 @@ on page \pageref*{macroDesc#1}.
 % }
 %
 % \setMacroDescParagraphI{GTSnegatedDirectedAdjacencyDownRelation}{0}
-% \setMacroDescParagraphII{GTSnegDirAdjDownRel}{\if\buildtarget01\else0\fi}
+% \setMacroDescParagraphII{GTSnegDirAdjDownRel}{1}
 % \setMacroDescParagraphIII{GTSnDADR}{0}
 % \macroDescParagraph{1}{^^A
 % These macros will draw a negated directed adjacency downward symbol
@@ -1954,7 +1954,7 @@ $\mathcolor{\GTS@secondColor}{\bullet}$%
 % \begin{macro}[noprint]{\GTSnegatedDirectedAdjacencyDownRelation,^^A
 % \GTSnegDirAdjDownRel,\GTSnDADR}
 % \setMacroImplParagraphI{GTSnegatedDirectedAdjacencyDownRelation}{0}
-% \setMacroImplParagraphII{GTSnegDirAdjDownRel}{\if\buildtarget01\else0\fi}
+% \setMacroImplParagraphII{GTSnegDirAdjDownRel}{1}
 % \setMacroImplParagraphIII{GTSnDADR}{0}
 % \macroImplParagraph{1}{1}{^^A
 % These macros will draw a negated directed adjacency downward symbol
