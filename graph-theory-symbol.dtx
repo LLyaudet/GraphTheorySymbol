@@ -256,7 +256,7 @@ bindingoffset=5mm]{geometry}
 \if\macroDescParagraphMacroINewline 1%
 \newlineN%
 \else%
- %
+\ %
 \fi%
 \textbackslash{}\macroDescParagraphMacroII\if#11/\fi%
 \if\macroDescParagraphMacroIII\empty\else%
@@ -264,7 +264,7 @@ bindingoffset=5mm]{geometry}
 \if\macroDescParagraphMacroIINewline 1%
 \newlineN%
 \else%
- %
+\ %
 \fi%
 \textbackslash{}\macroDescParagraphMacroIII\if#11/\fi%
 \if\macroDescParagraphMacroIV\empty\else%
@@ -272,7 +272,7 @@ bindingoffset=5mm]{geometry}
 \if\macroDescParagraphMacroIIINewline 1%
 \newlineN%
 \else%
- %
+\ %
 \fi%
 \textbackslash{}\macroDescParagraphMacroIV\if#11/\fi%
 \fi%
@@ -394,7 +394,7 @@ bindingoffset=5mm]{geometry}
 \if\macroImplParagraphMacroINewline 1%
 \newlineN%
 \else%
- %
+\ %
 \fi%
 \textbackslash{}\macroImplParagraphMacroII\if#11/\fi%
 \if\macroImplParagraphMacroIII\empty\else%
@@ -402,7 +402,7 @@ bindingoffset=5mm]{geometry}
 \if\macroImplParagraphMacroIINewline 1%
 \newlineN%
 \else%
- %
+\ %
 \fi%
 \textbackslash{}\macroImplParagraphMacroIII\if#11/\fi%
 \if\macroImplParagraphMacroIV\empty\else%
@@ -410,7 +410,7 @@ bindingoffset=5mm]{geometry}
 \if\macroImplParagraphMacroIIINewline 1%
 \newlineN%
 \else%
- %
+\ %
 \fi%
 \textbackslash{}\macroImplParagraphMacroIV\if#11/\fi%
 \fi%
@@ -1096,7 +1096,7 @@ on page \pageref*{macroDesc#1}.
 %
 % \setMacroDescParagraphI{GTSadjacencyMonochromeRelation}{0}
 % \setMacroDescParagraphII{GTSadjMonoRel}{0}
-% \setMacroDescParagraphIII{GTSadjMonRel}{0}
+% \setMacroDescParagraphIII{GTSadjMonRel}{1}
 % \setMacroDescParagraphIV{GTSaMR}{0}
 % \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome adjacency symbol with relation
@@ -1164,8 +1164,8 @@ on page \pageref*{macroDesc#1}.
 % }
 %
 % \setMacroDescParagraphI^^A
-% {GTSnegatedDirectedAdjacencyUpMonochromeRelation}{0}
-% \setMacroDescParagraphII{GTSnegDirAdjUpMonoRel}{1}
+% {GTSnegatedDirectedAdjacencyUpMonochromeRelation}{1}
+% \setMacroDescParagraphII{GTSnegDirAdjUpMonoRel}{0}
 % \setMacroDescParagraphIII{GTSnegDirAdjUpMonRel}{0}
 % \setMacroDescParagraphIV{GTSnDAUMR}{0}
 % \macroDescParagraph{1}{^^A
@@ -1245,7 +1245,7 @@ on page \pageref*{macroDesc#1}.
 %
 % \setMacroDescParagraphI{GTSincidenceMonochromeRelation}{0}
 % \setMacroDescParagraphII{GTSincMonoRel}{0}
-% \setMacroDescParagraphIII{GTSincMonRel}{0}
+% \setMacroDescParagraphIII{GTSincMonRel}{1}
 % \setMacroDescParagraphIV{GTSiMR}{0}
 % \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome incidence symbol
@@ -1256,7 +1256,7 @@ on page \pageref*{macroDesc#1}.
 %
 % \setMacroDescParagraphI{GTSnegatedIncidenceMonochrome}{0}
 % \setMacroDescParagraphII{GTSnegIncMono}{0}
-% \setMacroDescParagraphIII{GTSnegIncMon}{0}
+% \setMacroDescParagraphIII{GTSnegIncMon}{1}
 % \setMacroDescParagraphIV{GTSnIM}{0}
 % \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome negated incidence symbol.\newlineP
@@ -1302,8 +1302,8 @@ on page \pageref*{macroDesc#1}.
 % }
 %
 % \setMacroDescParagraphI{GTSnegatedOutIncidenceMonochrome}{0}
-% \setMacroDescParagraphII{GTSnegOutIncMono}{0}
-% \setMacroDescParagraphIII{GTSnegOutIncMon}{1}
+% \setMacroDescParagraphII{GTSnegOutIncMono}{1}
+% \setMacroDescParagraphIII{GTSnegOutIncMon}{0}
 % \setMacroDescParagraphIV{GTSnOIM}{0}
 % \macroDescParagraph{1}{^^A
 % These macros will draw a monochrome negated directed incidence upward
@@ -2309,7 +2309,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \GTSadjMonRel,\GTSaMR}
 % \setMacroImplParagraphI{GTSadjacencyMonochromeRelation}{0}
 % \setMacroImplParagraphII{GTSadjMonoRel}{0}
-% \setMacroImplParagraphIII{GTSadjMonRel}{0}
+% \setMacroImplParagraphIII{GTSadjMonRel}{1}
 % \setMacroImplParagraphIV{GTSaMR}{0}
 % \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome adjacency symbol with relation
@@ -2421,8 +2421,8 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % {\GTSnegatedDirectedAdjacencyUpMonochromeRelation,^^A
 % \GTSnegDirAdjUpMonRel,\GTSnegDirAdjUpMonoRel,\GTSnDAUMR}
 % \setMacroImplParagraphI^^A
-% {GTSnegatedDirectedAdjacencyUpMonochromeRelation}{0}
-% \setMacroImplParagraphII{GTSnegDirAdjUpMonoRel}{1}
+% {GTSnegatedDirectedAdjacencyUpMonochromeRelation}{1}
+% \setMacroImplParagraphII{GTSnegDirAdjUpMonoRel}{0}
 % \setMacroImplParagraphIII{GTSnegDirAdjUpMonRel}{0}
 % \setMacroImplParagraphIV{GTSnDAUMR}{0}
 % \macroImplParagraph{1}{1}{^^A
@@ -2546,7 +2546,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \GTSincMonRel,\GTSiMR}
 % \setMacroImplParagraphI{GTSincidenceMonochromeRelation}{0}
 % \setMacroImplParagraphII{GTSincMonoRel}{0}
-% \setMacroImplParagraphIII{GTSincMonRel}{0}
+% \setMacroImplParagraphIII{GTSincMonRel}{1}
 % \setMacroImplParagraphIV{GTSiMR}{0}
 % \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome incidence symbol
@@ -2564,7 +2564,7 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \GTSnegIncMon,\GTSnIM}
 % \setMacroImplParagraphI{GTSnegatedIncidenceMonochrome}{0}
 % \setMacroImplParagraphII{GTSnegIncMono}{0}
-% \setMacroImplParagraphIII{GTSnegIncMon}{0}
+% \setMacroImplParagraphIII{GTSnegIncMon}{1}
 % \setMacroImplParagraphIV{GTSnIM}{0}
 % \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome negated incidence symbol.^^A
@@ -2637,8 +2637,8 @@ $\mathcolor{\GTS@mainColor}{\smallblacksquare}$%
 % \begin{macro}[noprint]{\GTSnegatedOutIncidenceMonochrome,^^A
 % \GTSnegOutIncMono,\GTSnegOutIncMon,\GTSnOIM}
 % \setMacroImplParagraphI{GTSnegatedOutIncidenceMonochrome}{0}
-% \setMacroImplParagraphII{GTSnegOutIncMono}{0}
-% \setMacroImplParagraphIII{GTSnegOutIncMon}{1}
+% \setMacroImplParagraphII{GTSnegOutIncMono}{1}
+% \setMacroImplParagraphIII{GTSnegOutIncMon}{0}
 % \setMacroImplParagraphIV{GTSnOIM}{0}
 % \macroImplParagraph{1}{1}{^^A
 % These macros will draw a monochrome negated directed incidence upward
